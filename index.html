@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <title>Habibi Digital Solution</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="favicon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
 
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -115,60 +116,6 @@
   Habibi Digital Solution,  
   <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 text-2xl sm:text-3xl md:text-5xl lg:text-6xl">
  Helping local Businesses Grow Online
-  </span>
-</h1>
-
-     <p class="mt-6 text-gray-200 text-lg">
-  <span id="dynamic-text"></span>
-</p>
-
-
-<script>
-const messages = [
-  "We help offline businesses go online using websites, Google buisness, maps & WhatsApp — so you receive real customer inquiries.",
-  "Boost your local business presence online and get more customers daily.",
-  "Turn your offline store into a 24/7 online business with ease."
-];
-
-let inde = 0;
-const textElement = document.getElementById("dynamic-text");
-
-function showNextMessage() {
-  textElement.innerText = messages[inde];
-  inde = (inde + 1) % messages.length;
-}
-
-// Change every 3 seconds
-showNextMessage();
-setInterval(showNextMessage, 3000);
-</script>
-
-
-      <div class="mt-8 flex gap-4">
-       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpHUzhCNFl7wNdywo7I5iHI32KcW9z1lLr9ACF2cPpV-YV8Q/viewform"
-   class="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition flex gap-2 items-center text-white font-semibold shadow-md">
-  <i data-lucide="clipboard-list"></i> Free Consultation
-</a>
-
-      <a href="#pricing" class="px-6 py-3 rounded-xl border border-white-300 text-white hover:bg-white/10 transition">
-  View Packages
-</a>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- HERO -->
-<section class="pt-10 scroll-reveal">
-  <div class="max-w-7xl mx-auto px-6 py-20 hero-bg fade-up">
-    <div class="hero-content max-w-3xl">
-      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white">
-  Habibi Digital Solution,  
-  <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 text-8xl md:text-6xl">
-    Helping local Businesses Grow Online
   </span>
 </h1>
 
@@ -715,11 +662,3 @@ document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
 
 </body>
 </html>
-
-
-
-
-
-
-
-
