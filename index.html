@@ -123,6 +123,42 @@
 </p>
 
 
+<script>
+const messages = [
+  "We help offline businesses go online using websites, Google buisness, maps & WhatsApp — so you receive real customer inquiries.",
+  "Boost your local business presence online and get more customers daily.",
+  "Turn your offline store into a 24/7 online business with ease."
+];
+
+let inde = 0;
+const textElement = document.getElementById("dynamic-text");
+
+function showNextMessage() {
+  textElement.innerText = messages[inde];
+  inde = (inde + 1) % messages.length;
+}
+
+// Change every 3 seconds
+showNextMessage();
+setInterval(showNextMessage, 3000);
+</script>
+
+
+      <div class="mt-8 flex gap-4">
+       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpHUzhCNFl7wNdywo7I5iHI32KcW9z1lLr9ACF2cPpV-YV8Q/viewform"
+   class="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition flex gap-2 items-center text-white font-semibold shadow-md">
+  <i data-lucide="clipboard-list"></i> Free Consultation
+</a>
+
+      <a href="#pricing" class="px-6 py-3 rounded-xl border border-white-300 text-white hover:bg-white/10 transition">
+  View Packages
+</a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 <!-- HERO -->
@@ -679,6 +715,7 @@ document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
 
 </body>
 </html>
+
 
 
 
