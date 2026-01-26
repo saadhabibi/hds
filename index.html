@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Habibi Digital Solution</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+.fade-up{opacity:0;transform:translateY(40px);animation:fadeUp .9s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+.gradient-flow{
+  background:linear-gradient(120deg,#2563eb,#7c3aed,#2563eb);
+  background-size:400% 400%;
+  animation:flow 10s ease infinite
+}
+@keyframes flow{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.logo {
+    max-height: 300%; 
+    width: auto;      
+    display: block;
+}
+.icon-circle{
+  width:56px;height:56px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:16px;
+  background:rgba(0,0,0,.05);
+}
+
+.hero-bg{
+  position:relative;
+  overflow:hidden;
+  border-radius:28px;
+}
+.hero-bg::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#000; /* Black background for hero */
+  filter:brightness(.7);
+}
+.hero-content{position:relative;z-index:2}
+
+.scroll-reveal{
+  opacity:0;
+  transform:translateY(80px);
+  transition:all 1s cubic-bezier(.22,1,.36,1);
+}
+.scroll-reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+<!-- HEADER -->
+<header class="fixed top-0 w-full backdrop-blur-md z-50 border-b border-gray-200 bg-white/70">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center" style="height: 60px;">
+
+    <!-- LOGO + BRAND -->
+    <div class="flex items-center gap-0 h-full">
+      <img src="logo.png" alt="Logo" class="logo">
+      <h1 class="text-lg font-bold text-gray-800"></h1> 
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="flex gap-3 items-center h-full">
+
+      <!-- FREE CONSULTATION BUTTON -->
+     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpHUzhCNFl7wNdywo7I5iHI32KcW9z1lLr9ACF2cPpV-YV8Q/viewform"
+   class="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition flex gap-2 items-center text-white font-semibold shadow-md">
+  <i data-lucide="clipboard-list"></i> Free Consultation
+</a>
+
+
+      <a href="tel:+91XXXXXXXXXX" 
+         class="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 flex gap-2 items-center text-white">
+        <i data-lucide="phone"></i> Call
+      </a>
+
+      <a href="https://wa.me/91XXXXXXXXXX" 
+         class="px-4 py-2 rounded-xl bg-green-600 flex gap-2 items-center text-white">
+        <i data-lucide="message-circle"></i> WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="pt-10 scroll-reveal">
+  <div class="max-w-7xl mx-auto px-6 py-20 hero-bg fade-up">
+    <div class="hero-content max-w-3xl">
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white">
+  Habibi Digital Solution,  
+  <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 text-8xl md:text-6xl">
+    Helping local Businesses Grow Online
+  </span>
+</h1>
+
+     <p class="mt-6 text-gray-200 text-lg">
+  <span id="dynamic-text"></span>
+</p>
+
+<script>
+const messages = [
+  "We help offline businesses go online using websites, Google buisness, maps & WhatsApp — so you receive real customer inquiries.",
+  "Boost your local business presence online and get more customers daily.",
+  "Turn your offline store into a 24/7 online business with ease."
+];
+
+let inde = 0;
+const textElement = document.getElementById("dynamic-text");
+
+function showNextMessage() {
+  textElement.innerText = messages[inde];
+  inde = (inde + 1) % messages.length;
+}
+
+// Change every 3 seconds
+showNextMessage();
+setInterval(showNextMessage, 3000);
+</script>
+
+
+      <div class="mt-8 flex gap-4">
+       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpHUzhCNFl7wNdywo7I5iHI32KcW9z1lLr9ACF2cPpV-YV8Q/viewform"
+   class="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition flex gap-2 items-center text-white font-semibold shadow-md">
+  <i data-lucide="clipboard-list"></i> Free Consultation
+</a>
+
+      <a href="#pricing" class="px-6 py-3 rounded-xl border border-white-300 text-white hover:bg-white/10 transition">
+  View Packages
+</a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="py-20 px-6 max-w-6xl mx-auto scroll-reveal">
+  <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Our Services</h2>
+
+  <div class="grid md:grid-cols-2 gap-10">
+
+    <div class="bg-white p-7 rounded-xl border border-gray-200 service-card">
+      <h3 class="text-xl font-semibold text-blue-500">Google Business Profile Setup</h3>
+      <p class="mt-4 text-gray-600">
+        Get your business verified and visible on Google Search & Maps, making it easy for customers to find you locally.
+      </p>
+      <ul class="mt-4 space-y-2 text-gray-500">
+        <li>✔ Profile creation & verification</li>
+        <li>✔ Business info, map & contact setup</li>
+        <li>✔ Photos & category setup</li>
+      </ul>
+    </div>
+
+    <div class="bg-white p-7 rounded-xl border border-gray-200 service-card">
+      <h3 class="text-xl font-semibold text-blue-500">1-Page Website + Google Business Setup</h3>
+      <p class="mt-4 text-gray-600">
+        One-page professional website along with Google Business setup, basic SEO, and lead capture through call & WhatsApp buttons.
+      </p>
+      <ul class="mt-4 space-y-2 text-gray-500">
+        <li>✔ 1-page HTML website</li>
+        <li>✔ Basic SEO setup</li>
+        <li>✔ Call & WhatsApp inquiry system</li>
+        <li>✔ Google Business Profile included</li>
+      </ul>
+    </div>
+
+    <div class="bg-white p-7 rounded-xl border border-gray-200 service-card">
+      <h3 class="text-xl font-semibold text-blue-500">Custom Website / Large Project</h3>
+      <p class="mt-4 text-gray-600">
+        For multi-page or complex websites, pricing will depend on project requirements. Contact us for a free consultation.
+      </p>
+      <ul class="mt-4 space-y-2 text-gray-500">
+        <li>✔ Fully customized design</li>
+        <li>✔ Advanced features & integrations</li>
+        <li>✔ Quote based on project scope</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- MONTHLY SERVICES SECTION -->
+<section class="py-20 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+        Monthly Support Services
+      </h2>
+      <p class="mt-4 text-gray-600 max-w-3xl mx-auto">
+        These plans are optional and meant for regular updates, content changes,
+        and profile care — not for guaranteed leads or rankings.
+      </p>
+    </div>
+
+    <!-- Service Boxes -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Content Updates -->
+      <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold text-gray-800 mb-3">
+          Content & Info Updates
+        </h3>
+        <ul class="space-y-2 text-gray-600 text-sm">
+          <li>• Text, timing & contact changes</li>
+          <li>• Offer or notice updates</li>
+          <li>• Business detail corrections</li>
+        </ul>
+      </div>
+
+      <!-- Website Health -->
+      <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold text-gray-800 mb-3">
+          Website Health Check
+        </h3>
+        <ul class="space-y-2 text-gray-600 text-sm">
+          <li>• Page speed & responsiveness check</li>
+          <li>• Broken links & form testing</li>
+          <li>• Mobile & browser compatibility</li>
+        </ul>
+      </div>
+
+      <!-- Inquiry System -->
+      <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold text-gray-800 mb-3">
+          Inquiry System Monitoring
+        </h3>
+        <ul class="space-y-2 text-gray-600 text-sm">
+          <li>• Call button testing</li>
+          <li>• Contact form working check</li>
+          <li>• Inquiry flow verification</li>
+        </ul>
+      </div>
+
+      <!-- Google Business Posts -->
+      <div class="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition">
+        <h3 class="text-lg font-semibold text-gray-800 mb-3">
+          Monthly Business Posts
+        </h3>
+        <ul class="space-y-2 text-gray-600 text-sm">
+          <li>• 2–3 posts uploaded monthly</li>
+          <li>• Business updates / offers</li>
+          <li>• Profile activity maintenance</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Note -->
+    <div class="mt-12 text-center">
+      <p class="text-sm text-gray-500">
+        Monthly support focuses on maintenance and profile activity.  
+        No guarantees for leads, traffic, or rankings.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing" class="py-20 px-6 bg-gray-50 scroll-reveal">
+  <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Pricing</h2>
+
+  <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+
+    <div class="bg-white p-6 rounded-xl border border-gray-200 text-center min-h-[240px] flex flex-col justify-between pricing-card">
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800">Google Business Setup</h3>
+        <p class="text-2xl font-bold mt-3 text-blue-500">₹3,000</p>
+        <ul class="mt-4 space-y-2 text-gray-500">
+          <li>✔ Profile creation & verification</li>
+          <li>✔ Business info, map & contact setup</li>
+          <li>✔ Photos & category setup</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-6 rounded-xl text-center min-h-[240px] flex flex-col justify-between scale-105 pricing-card">
+      <div>
+        <h3 class="text-lg font-semibold text-white">1-Page Website + GMB + Basic SEO + Lead System</h3>
+        <p class="text-2xl font-bold mt-3 text-white">₹6,000</p>
+        <ul class="mt-4 space-y-2 text-white">
+          <li>✔ 1-page website</li>
+          <li>✔ Google Business Profile setup</li>
+          <li>✔ Basic SEO</li>
+          <li>✔ Call & WhatsApp inquiry system</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl border border-gray-200 text-center min-h-[240px] flex flex-col justify-between pricing-card">
+      <div>
+        <h3 class="text-lg font-semibold text-blue-500">Custom / Multi-page Website</h3>
+        <p class="text-2xl font-bold mt-3 text-gray-800">Project-based</p>
+        <ul class="mt-4 space-y-2 text-gray-500">
+          <li>✔ Advanced, custom design</li>
+          <li>✔ Additional features & integrations</li>
+          <li>✔ Price depends on project scope</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- MONTHLY PRICING SECTION -->
+<section class="py-20 px-6 bg-gray-50">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+        Monthly Pricing Plans
+      </h2>
+      <p class="mt-4 text-gray-600 max-w-3xl mx-auto">
+        Ongoing monthly support to keep your website and Google presence
+        updated, active, and reliable.
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+
+      <!-- Basic -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-8 text-center hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+          Basic Care
+        </h3>
+        <p class="text-3xl font-bold text-blue-600 mb-4">
+          ₹999<span class="text-sm text-gray-500 font-medium">/month</span>
+        </p>
+        <ul class="space-y-3 text-gray-600 text-sm text-left">
+          <li>• Minor content updates</li>
+          <li>• Website health & uptime check</li>
+          <li>• Call inquiry system testing</li>
+          <li>• Support via call</li>
+        </ul>
+      </div>
+
+      <!-- Standard -->
+      <div class="bg-white border-2 border-blue-500 rounded-2xl p-8 text-center hover:shadow-xl transition scale-105">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+          Standard Support
+        </h3>
+        <p class="text-3xl font-bold text-blue-600 mb-4">
+          ₹1,999<span class="text-sm text-gray-500 font-medium">/month</span>
+        </p>
+        <ul class="space-y-3 text-gray-600 text-sm text-left">
+          <li>• Regular content & info updates</li>
+          <li>• Website performance monitoring</li>
+          <li>• Call inquiry system monitoring</li>
+          <li>• 2–3 Google Business posts per month</li>
+          <li>• Priority support</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="mt-14 text-center">
+      <p class="text-sm text-gray-500 max-w-4xl mx-auto">
+        Monthly plans include maintenance and updates only.
+        Leads, calls, traffic, or rankings are not guaranteed.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- WHY US -->
+
+<section class="bg-gray-50 py-20 scroll-reveal">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-12">Why Choose Habibi Digital Solution?</h2>
+
+    <div class="grid md:grid-cols-4 gap-8">
+
+      <!-- Card 1 -->
+      <div class="flex flex-col items-center gap-4 p-6 rounded-xl bg-white shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+        <div class="icon-circle bg-gradient-to-r from-blue-400 to-purple-600 text-white shadow-lg p-4">
+          <i data-lucide="wallet" class="w-8 h-8"></i>
+        </div>
+        <h3 class="font-semibold text-lg mt-2">Affordable Pricing</h3>
+        <p class="text-gray-500 text-sm mt-1">High value at minimal cost for all small & local businesses.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex flex-col items-center gap-4 p-6 rounded-xl bg-white shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+        <div class="icon-circle bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-lg p-4">
+          <i data-lucide="zap" class="w-8 h-8"></i>
+        </div>
+        <h3 class="font-semibold text-lg mt-2">Fast Delivery</h3>
+        <p class="text-gray-500 text-sm mt-1">Quick setup of websites and Google profile to start getting inquiries fast.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex flex-col items-center gap-4 p-6 rounded-xl bg-white shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+        <div class="icon-circle bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg p-4">
+          <i data-lucide="user-check" class="w-8 h-8"></i>
+        </div>
+        <h3 class="font-semibold text-lg mt-2">Personal Support</h3>
+        <p class="text-gray-500 text-sm mt-1">Direct assistance for any issue or inquiry — we guide you personally.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flex flex-col items-center gap-4 p-6 rounded-xl bg-white shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+        <div class="icon-circle bg-gradient-to-r from-yellow-400 to-orange-500 text-white shadow-lg p-4">
+          <i data-lucide="layers" class="w-8 h-8"></i>
+        </div>
+        <h3 class="font-semibold text-lg mt-2">Simple & Effective Systems</h3>
+        <p class="text-gray-500 text-sm mt-1">Easy-to-use systems for call, WhatsApp, and website inquiries that actually convert.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- SHOWCASE -->
+<section class="py-24 bg-gray-50 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+
+    <div class="w-full md:w-1/2 relative flex justify-center">
+      <div class="rounded-3xl overflow-hidden shadow-xl">
+        <div class="bg-gradient-to-br from-purple-700 via-blue-600 to-green-500 rounded-3xl p-0">
+          <div class="bg-white rounded-2xl overflow-hidden">
+            <img id="showcaseImage" src="images/school.png" class="w-full h-auto transition-all duration-700 object-cover" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full md:w-1/2 text-gray-800">
+      <h2 id="showcaseTitle" class="text-3xl md:text-4xl font-bold mb-4">School Website Solution</h2>
+      <p id="showcaseText" class="text-gray-700 text-lg leading-relaxed">
+        Modern school websites designed to increase admissions and parent inquiries with WhatsApp & Call buttons.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const showcaseData = [
+    { img:"images/school.png", title:"School Website Solution", text:"Modern school websites designed to increase admissions and parent inquiries with WhatsApp & Call buttons."},
+    { img:"images/portfolio.png", title:"Portfolio Website", text:"High-converting portfolio websites."},
+    { img:"images/business.png", title:"Local Business Website", text:"Professional business websites with Google Maps, WhatsApp chat and call integration."}
+  ];
+
+  let index = 0;
+  const imgEl = document.getElementById("showcaseImage");
+  const titleEl = document.getElementById("showcaseTitle");
+  const textEl = document.getElementById("showcaseText");
+
+  setInterval(() => {
+    index = (index + 1) % showcaseData.length;
+    imgEl.style.opacity = titleEl.style.opacity = textEl.style.opacity = 0;
+    setTimeout(() => {
+      imgEl.src = showcaseData[index].img;
+      titleEl.textContent = showcaseData[index].title;
+      textEl.textContent = showcaseData[index].text;
+      imgEl.style.opacity = titleEl.style.opacity = textEl.style.opacity = 1;
+    }, 400);
+  }, 4000);
+</script>
+<!-- PROCESS / HOW IT WORKS -->
+<section class="py-20 px-6 bg-white scroll-reveal">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-16 text-gray-800">How It Works</h2>
+    
+    <div class="grid md:grid-cols-4 gap-8">
+      
+      <!-- Step 1 -->
+      <div class="flex flex-col items-center p-6 bg-slate-50 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+        <div class="w-16 h-16 flex items-center justify-center bg-blue-500 text-white rounded-full text-2xl mb-4 animate-bounce">
+          1
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Consultation</h3>
+        <p class="text-gray-500 text-center">We discuss your business needs and goals to suggest the best solution.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="flex flex-col items-center p-6 bg-slate-50 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+        <div class="w-16 h-16 flex items-center justify-center bg-purple-500 text-white rounded-full text-2xl mb-4 animate-bounce">
+          2
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Setup</h3>
+        <p class="text-gray-500 text-center">We set up your Google Business Profile, one-page website, and inquiry systems.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="flex flex-col items-center p-6 bg-slate-50 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+        <div class="w-16 h-16 flex items-center justify-center bg-green-500 text-white rounded-full text-2xl mb-4 animate-bounce">
+          3
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Optimization</h3>
+        <p class="text-gray-500 text-center">Basic SEO and Google Profile optimization to improve visibility and ranking.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="flex flex-col items-center p-6 bg-slate-50 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+        <div class="w-16 h-16 flex items-center justify-center bg-red-500 text-white rounded-full text-2xl mb-4 animate-bounce">
+          4
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Lead Capture</h3>
+        <p class="text-gray-500 text-center">Customers can directly call or WhatsApp you, generating real inquiries instantly.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- FAQ SECTION -->
+<section class="py-20 px-6 bg-white scroll-reveal">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-16 text-gray-800">Frequently Asked Questions</h2>
+
+    <div class="space-y-4 text-left">
+
+      <!-- FAQ 1 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="w-full px-6 py-4 text-gray-800 font-medium flex justify-between items-center faq-btn">
+          What is included in the 1-page website package?
+          <span class="transform transition-transform duration-300">+</span>
+        </button>
+        <div class="px-6 py-4 faq-content hidden text-gray-500 bg-gray-50">
+          1-page HTML website with Google Business setup, basic SEO, and call & WhatsApp inquiry integration.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="w-full px-6 py-4 text-gray-800 font-medium flex justify-between items-center faq-btn">
+          Do you provide domain and hosting?
+          <span class="transform transition-transform duration-300">+</span>
+        </button>
+        <div class="px-6 py-4 faq-content hidden text-gray-500 bg-gray-50">
+          Domain and hosting are separate. We can guide you to choose the best options for your business.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="w-full px-6 py-4 text-gray-800 font-medium flex justify-between items-center faq-btn">
+          How long does setup take?
+          <span class="transform transition-transform duration-300">+</span>
+        </button>
+        <div class="px-6 py-4 faq-content hidden text-gray-500 bg-gray-50">
+          Typically, the setup is completed within 3-5 business days, depending on the package and details.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <button class="w-full px-6 py-4 text-gray-800 font-medium flex justify-between items-center faq-btn">
+          Can I upgrade to a larger website later?
+          <span class="transform transition-transform duration-300">+</span>
+        </button>
+        <div class="px-6 py-4 faq-content hidden text-gray-500 bg-gray-50">
+          Yes! You can upgrade anytime. Multi-page or custom websites are charged based on project scope.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  // FAQ Accordion
+  const faqButtons = document.querySelectorAll(".faq-btn");
+  faqButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const content = btn.nextElementSibling;
+      const plus = btn.querySelector("span");
+
+      if(content.classList.contains("hidden")) {
+        content.classList.remove("hidden");
+        plus.textContent = "-";
+      } else {
+        content.classList.add("hidden");
+        plus.textContent = "+";
+      }
+    });
+  });
+</script>
+
+
+<!-- ABOUT -->
+<section class="py-20 scroll-reveal">
+  <div class="max-w-4xl mx-auto px-6 text-center fade-up">
+    <h2 class="text-3xl font-bold mb-6">About Us</h2>
+    <p class="text-gray-700">
+     Habibi Digital Solution works with growing local businesses, established institutions, and professional organizations to build strong digital visibility and inquiry systems.
+We design structured solutions using websites, Google presence, and direct communication tools that help businesses attract and convert real customers.
+Our focus is on clarity, performance, and long-term reliability — not temporary trends or unnecessary complexity.
+Whether you are expanding or already established, we help your business stay competitive, discoverable, and reachable.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="relative py-20 scroll-reveal">
+  <div class="absolute inset-0 gradient-flow"></div>
+  <div class="relative max-w-4xl mx-auto text-center px-6">
+    <h2 class="text-4xl font-extrabold">Ready to Get More Inquiries?</h2>
+    <p class="mt-4">Free consultation available</p>
+    <a href="https://wa.me/91XXXXXXXXXX"
+       class="inline-block mt-6 px-8 py-4 bg-green-600 rounded-xl font-semibold text-white">
+      WhatsApp Now
+    </a>
+  </div>
+</section>
+
+<footer class="border-t border-gray-200 py-8 text-center text-gray-500">
+© 2026 Habibi Digital Solution
+</footer>
+
+<script>
+lucide.createIcons();
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("active");
+  });
+},{threshold:.2});
+
+document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
