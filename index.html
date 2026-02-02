@@ -78,6 +78,91 @@
   transform:translateY(0);
 }
 
+
+.review-image-section{
+  padding:80px 20px;
+  background:#f4f6f9;
+  text-align:center;
+}
+
+.review-title{
+  font-size:34px;
+  margin-bottom:50px;
+}
+
+.review-image-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr); /* 2 per row */
+  gap:30px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.review-image-grid img{
+  width:100%;
+  height:auto;
+  border-radius:14px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.12);
+  transition:0.3s ease;
+}
+
+.review-image-grid img:hover{
+  transform:scale(1.03);
+}
+
+
+
+
+/* Mobile */
+@media(max-width:768px){
+  .review-image-grid{
+    grid-template-columns:1fr; /* 1 per row on mobile */
+  }
+}
+
+.google-review-btn{
+  margin-top:50px;
+  text-align:center;
+  padding:0 20px;
+}
+
+.google-review-btn a{
+  display:inline-block;
+  padding:16px 28px;
+  background:#fbbf24;
+  color:#111;
+  font-weight:700;
+  text-decoration:none;
+  border-radius:10px;
+  font-size:16px;
+  letter-spacing:.5px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  transition:all .3s ease;
+  max-width:100%;
+  white-space:nowrap;
+}
+
+/* Hover */
+.google-review-btn a:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.25);
+  background:#f59e0b;
+}
+
+/* ✅ Mobile fix */
+@media(max-width:600px){
+  .google-review-btn a{
+    display:block;
+    width:100%;
+    white-space:normal;
+    font-size:10px;
+  }
+}
+
+
+
+
+
 </style>
 
   "url": "https://habibidigital.in",
@@ -100,7 +185,7 @@
 
     <!-- LOGO + BRAND -->
     <div class="flex items-center gap-2 h-full">
-      <img src="logo.png" alt="Logo" class="h-34 sm:h-18 md:h-24 w-auto">
+      <img src="logo_50kb.png" alt="Logo" class="h-34 sm:h-18 md:h-24 w-auto">
     </div>
 
     <!-- ACTION BUTTONS -->
@@ -566,52 +651,23 @@ setInterval(showNextMessage, 3000);
 
 
 <!-- SHOWCASE -->
-<section class="py-24 bg-gray-50 relative overflow-hidden">
-  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
 
-    <div class="w-full md:w-1/2 relative flex justify-center">
-      <div class="rounded-3xl overflow-hidden shadow-xl">
-        <div class="bg-gradient-to-br from-purple-700 via-blue-600 to-green-500 rounded-3xl p-0">
-          <div class="bg-white rounded-2xl overflow-hidden">
-            <img id="showcaseImage" src="images/school.png" class="w-full h-auto transition-all duration-700 object-cover" />
-          </div>
-        </div>
-      </div>
-    </div>
+<section class="review-image-section">
+  <h2 class="review-title">Real Reviews From Google</h2>
 
-    <div class="w-full md:w-1/2 text-gray-800">
-      <h2 id="showcaseTitle" class="text-3xl md:text-4xl font-bold mb-4">School Website Solution</h2>
-      <p id="showcaseText" class="text-gray-700 text-lg leading-relaxed">
-        Modern school websites designed to increase admissions and parent inquiries with WhatsApp & Call buttons.
-      </p>
-    </div>
+  <div class="review-image-grid">
+    <img src="images/reviews/review1.png" alt="Google Review 1">
+    <img src="images/reviews/review2.png" alt="Google Review 2">
+    <img src="images/reviews/review3.png" alt="Google Review 3">
+  </div>
 
+  <div class="google-review-btn">
+    <a href="https://www.google.com/search?kgmid=/g/11yxmhqz3m#lrd=0x0:0x0,1" target="_blank">
+      View More Reviews on Google
+    </a>
   </div>
 </section>
 
-<script>
-  const showcaseData = [
-    { img:"images/school.png", title:"School Website Solution", text:"Modern school websites designed to increase admissions and parent inquiries with WhatsApp & Call buttons."},
-    { img:"images/portfolio.png", title:"Portfolio Website", text:"High-converting portfolio websites."},
-    { img:"images/business.png", title:"Local Business Website", text:"Professional business websites with Google Maps, WhatsApp chat and call integration."}
-  ];
-
-  let index = 0;
-  const imgEl = document.getElementById("showcaseImage");
-  const titleEl = document.getElementById("showcaseTitle");
-  const textEl = document.getElementById("showcaseText");
-
-  setInterval(() => {
-    index = (index + 1) % showcaseData.length;
-    imgEl.style.opacity = titleEl.style.opacity = textEl.style.opacity = 0;
-    setTimeout(() => {
-      imgEl.src = showcaseData[index].img;
-      titleEl.textContent = showcaseData[index].title;
-      textEl.textContent = showcaseData[index].text;
-      imgEl.style.opacity = titleEl.style.opacity = textEl.style.opacity = 1;
-    }, 400);
-  }, 4000);
-</script>
 <!-- PROCESS / HOW IT WORKS -->
 <section class="py-20 px-6 bg-white scroll-reveal">
   <div class="max-w-6xl mx-auto text-center">
@@ -858,4 +914,3 @@ document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
 
 </body>
 </html>
-
