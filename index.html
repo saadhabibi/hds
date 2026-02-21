@@ -186,42 +186,203 @@
 <body class="bg-white text-gray-800">
 
 <!-- HEADER -->
-<header class="fixed top-0 w-full backdrop-blur-md z-50 border-b border-gray-200 bg-white/70">
-  <div class="max-w-7xl mx-auto px-9 md:px-6 py-2 md:py-3 flex justify-between items-center h-[60px]">
+<header class="fixed top-0 w-full backdrop-blur-md bg-white/80 border-b border-gray-200 z-50">
 
-    <!-- LOGO + BRAND -->
-    <div class="flex items-center gap-2 h-full">
-      <img src="habibidigitalsolution.png" alt="Logo" class="h-34 sm:h-18 md:h-24 w-auto">
+    <div class="max-w-7xl mx-auto px-9 md:px-6 py-2 md:py-3 flex justify-between items-center h-[60px]">
+    <!-- LOGO -->
+  <div class="flex items-center gap-2 h-full">
+      <img src="habibidigitalsolution.png" alt="Logo" class="h-14 sm:h-8 md:h-24 w-auto">
     </div>
 
-    <!-- ACTION BUTTONS -->
-    <div class="flex gap-2 md:gap-3 items-center h-full">
+    <!-- DESKTOP NAV -->
+    <nav class="hidden md:flex items-center gap-10 text-lg font-semibold text-gray-800">
 
-      <!-- FREE CONSULTATION -->
+      <!-- SERVICES DROPDOWN -->
+      <div class="relative group">
+        <button class="flex items-center gap-2 relative hover:text-blue-600 transition">
+          <i data-lucide="briefcase" class="w-5 h-5"></i>
+          Our Services
+          <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+        </button>
+
+        <div class="absolute left-0 top-full mt-3 w-64 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+
+          <a href="#" class="flex items-center gap-2 px-5 py-3 hover:bg-gray-100">
+            <i data-lucide="monitor" class="w-4 h-4"></i>
+            Website Development
+          </a>
+
+          <a href="#" class="flex items-center gap-2 px-5 py-3 hover:bg-gray-100">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            Google Business Profile
+          </a>
+
+          <a href="#" class="flex items-center gap-2 px-5 py-3 hover:bg-gray-100">
+            <i data-lucide="trending-up" class="w-4 h-4"></i>
+            SEO
+          </a>
+
+          <a href="#" class="flex items-center gap-2 px-5 py-3 hover:bg-gray-100">
+            <i data-lucide="megaphone" class="w-4 h-4"></i>
+            Marketing
+          </a>
+
+          <a href="#" class="flex items-center gap-2 px-5 py-3 hover:bg-gray-100">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+            Social Media Post
+          </a>
+
+        </div>
+      </div>
+
+      <!-- OTHER NAV LINKS -->
+      <a href="about.html" class="flex items-center gap-2 relative hover:text-blue-600 transition">
+        <i data-lucide="user" class="w-5 h-5"></i>
+        About Us
+        <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 transition-all duration-300 hover:w-full"></span>
+      </a>
+
+      <a href="#portfolio" class="flex items-center gap-2 relative hover:text-blue-600 transition">
+        <i data-lucide="image" class="w-5 h-5"></i>
+        Portfolio
+        <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 transition-all duration-300 hover:w-full"></span>
+      </a>
+
+      <a href="#blog" class="flex items-center gap-2 relative hover:text-blue-600 transition">
+        <i data-lucide="file-text" class="w-5 h-5"></i>
+        Blog
+        <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 transition-all duration-300 hover:w-full"></span>
+      </a>
+
+    </nav>
+
+    <!-- ACTION BUTTONS (Visible in Desktop + Mobile) -->
+    <div class="flex items-center gap-2">
+
+      <!-- Free Consultation -->
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpHUzhCNFl7wNdywo7I5iHI32KcW9z1lLr9ACF2cPpV-YV8Q/viewform"
-         class="px-3 md:px-4 py-2 text-xs md:text-sm rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition flex gap-1 md:gap-2 items-center text-white font-semibold shadow-md">
-        <i data-lucide="clipboard-list" class="w-4 h-4"></i>
-        <span class="hidden sm:inline">Free Consultation</span>
+         class="px-2 py-1 md:px-4 md:py-2 text-[11px] md:text-sm rounded-lg bg-purple-600 text-white font-semibold">
+         <span class="hidden sm:inline">Free Consultation</span>
+         <span class="sm:hidden">Consult</span>
       </a>
 
-      <!-- CALL -->
-      <a href="tel:+919458265093" 
-         class="p-2 md:px-4 md:py-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 flex items-center text-white">
-        <i data-lucide="phone" class="w-4 h-4"></i>
-        <span class="hidden md:inline ml-2">Call</span>
+      <!-- Call -->
+      <a href="tel:+919458265093"
+         class="px-2 py-1 md:px-4 md:py-2 text-[11px] md:text-sm rounded-lg bg-blue-600 text-white font-semibold">
+         <span class="hidden sm:inline">Call</span>
+         <span class="sm:hidden">📞</span>
       </a>
 
-      <!-- WHATSAPP -->
-      <a href="https://wa.me/919458265093?text=Hello%20Habibi%20Digital,%20I%20need%20help%20for%20my%20business" 
-         class="p-2 md:px-4 md:py-2 rounded-xl bg-green-600 flex items-center text-white">
-        <i data-lucide="message-circle" class="w-4 h-4"></i>
-        <span class="hidden md:inline ml-2">WhatsApp</span>
+      <!-- WhatsApp -->
+      <a href="https://wa.me/919458265093"
+         class="px-2 py-1 md:px-4 md:py-2 text-[11px] md:text-sm rounded-lg bg-green-600 text-white font-semibold">
+         <span class="hidden sm:inline">WhatsApp</span>
+         <span class="sm:hidden">💬</span>
       </a>
 
     </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button id="menu-btn" class="md:hidden text-3xl text-gray-800 ml-2">
+      ☰
+    </button>
 
   </div>
+
+  <!-- MOBILE NAVIGATION -->
+  <!-- MOBILE NAVIGATION -->
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t shadow-lg">
+  <div class="flex flex-col p-6 gap-5 text-base font-semibold text-gray-800">
+
+    <!-- SERVICES DROPDOWN MOBILE -->
+    <div>
+      <button id="mobile-service-btn" class="flex justify-between items-center w-full">
+        <span class="flex items-center gap-2">
+          <i data-lucide="briefcase" class="w-5 h-5"></i>
+          Our Services
+        </span>
+        ▼
+      </button>
+
+      <div id="mobile-service-menu" class="hidden flex flex-col mt-3 ml-6 text-sm font-medium gap-3">
+
+        <a href="#" class="flex items-center gap-2">
+          <i data-lucide="monitor" class="w-4 h-4"></i>
+          Website Development
+        </a>
+
+        <a href="#" class="flex items-center gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4"></i>
+          Google Business Profile
+        </a>
+
+        <a href="#" class="flex items-center gap-2">
+          <i data-lucide="trending-up" class="w-4 h-4"></i>
+          SEO
+        </a>
+
+        <a href="#" class="flex items-center gap-2">
+          <i data-lucide="megaphone" class="w-4 h-4"></i>
+          Marketing
+        </a>
+
+        <a href="#" class="flex items-center gap-2">
+          <i data-lucide="instagram" class="w-4 h-4"></i>
+          Social Media Post
+        </a>
+
+      </div>
+    </div>
+
+    <a href="#about" class="flex items-center gap-2">
+      <i data-lucide="user" class="w-5 h-5"></i>
+      About Us
+    </a>
+
+    <a href="#portfolio" class="flex items-center gap-2">
+      <i data-lucide="image" class="w-5 h-5"></i>
+      Portfolio
+    </a>
+
+    <a href="#blog" class="flex items-center gap-2">
+      <i data-lucide="file-text" class="w-5 h-5"></i>
+      Blog
+    </a>
+
+  </div>
+</div>
+
 </header>
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const serviceBtn = document.getElementById("mobile-service-btn");
+  const serviceMenu = document.getElementById("mobile-service-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+
+  serviceBtn.addEventListener("click", () => {
+    serviceMenu.classList.toggle("hidden");
+  });
+
+  lucide.createIcons();
+</script>
+<!-- SCRIPT -->
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+
+  lucide.createIcons();
+</script>
+
+
+
 
 
 
@@ -915,7 +1076,7 @@ document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
  "@type": "LocalBusiness",
  "name": "Habibi Digital Solution",
  "url": "https://yourdomain.com",
- "logo": "https://yourdomain.com/logo.png",
+ "logo": "https://habibidigital.in/habibidigitalsolution.png",
  "sameAs": ["https://www.google.com/maps"],
  "description": "We help local businesses get found on Google using websites and Google Business Profile setup."
 }
@@ -923,6 +1084,7 @@ document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
 
 </body>
 </html>
+
 
 
 
