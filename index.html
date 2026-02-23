@@ -176,9 +176,63 @@
 
 
 
+.stats-section{
+  padding:80px 5%;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
 
+.stats-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
 
+.stat-box{
+  flex:1;
+  min-width:180px;
+  text-align:center;
+  padding:30px 20px;
+  border-radius:18px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  transition: 0.3s ease;
+}
+
+.stat-box:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,255,255,0.15);
+}
+
+.stat-box h2{
+  font-size:46px;
+  font-weight:700;
+  background: linear-gradient(90deg,#00f5ff,#a855f7,#ff00cc);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:8px;
+}
+
+.stat-box p{
+  color:#e0e0e0;
+  font-size:14px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+@media(max-width:768px){
+  .stats-container{
+    flex-direction:column;
+  }
+}
 </style>
+
+
+
+
+
 
 
 </head>
@@ -592,6 +646,69 @@ setInterval(showNextMessage, 3000);
 
 <!-- MONTHLY PRICING SECTION -->
 
+<section class="stats-section">
+  <div class="stats-container">
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="20">0+</h2>
+      <p>Projects</p>
+    </div>
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="14">0+</h2>
+      <p>Happy Clients</p>
+    </div>
+
+
+    <div class="stat-box">
+      <h2 class="counter" data-target="4">0+</h2>
+      <p>Ongoing</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const counters = document.querySelectorAll(".counter");
+  let started = false;
+
+  function runCounter(counter){
+    const target = parseInt(counter.getAttribute("data-target"));
+    const duration = 1500; // total animation time (1.5s)
+    const startTime = performance.now();
+
+    function update(currentTime){
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const value = Math.floor(progress * target);
+
+      counter.innerText = value + "+";
+
+      if(progress < 1){
+        requestAnimationFrame(update);
+      } else {
+        counter.innerText = target + "+";
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  const observer = new IntersectionObserver((entries)=>{
+    if(entries[0].isIntersecting && !started){
+      counters.forEach(counter => runCounter(counter));
+      started = true;
+    }
+  }, {threshold:0.4});
+
+  observer.observe(document.querySelector(".stats-section"));
+
+});
+</script>
+
+
 
 <!-- WHY US -->
 
@@ -911,6 +1028,7 @@ document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
 
 </body>
 </html>
+
 
 
 
