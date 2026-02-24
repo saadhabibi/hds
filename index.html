@@ -880,7 +880,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 </script>
+<div class="chatbot-icon" onclick="toggleChat()">💬</div>
 
+<div class="chatbox" id="chatbox">
+  <div class="chat-header">
+    Habibi Digital Assistant
+    <span onclick="toggleChat()">✖</span>
+  </div>
+
+  <div class="chat-body" id="chatBody"></div>
+</div>
 <script>
 function selectOption(option){
 
@@ -1281,6 +1290,7 @@ document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
 
 </body>
 </html>
+
 
 
 
