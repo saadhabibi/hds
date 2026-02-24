@@ -371,60 +371,51 @@
   background:#1ebe5d;
 }
 
-
- /* ============================= */
-/* HABIBI DIGITAL CHATBOT STYLE  */
-/* ============================= */
-
-/* Floating Button */
-.chat-toggle {
+/*chatbot*/
+ .chat-toggle {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: #2563eb;
   color: #fff;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  z-index: 9999;
-  transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 999999;
+  transition: 0.3s;
 }
-
 .chat-toggle:hover {
   transform: scale(1.1);
 }
 
-
-/* Chatbox Container */
+/* Chatbox */
 .chatbox {
   position: fixed;
-  bottom: 85px;
+  bottom: 90px;
   right: 20px;
   width: 320px;
   max-height: 420px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 18px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.3);
   display: none;
   flex-direction: column;
   overflow: hidden;
   font-family: Arial, sans-serif;
-  z-index: 9999;
+  z-index: 999999;
   animation: slideUp 0.3s ease;
 }
 
-/* Slide Animation */
 @keyframes slideUp {
   from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
-
 
 /* Header */
 .chat-header {
@@ -434,10 +425,18 @@
   font-weight: 600;
   font-size: 15px;
   text-align: center;
+  position: relative;
 }
 
+.chat-close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
 
-/* Chat Body */
+/* Body */
 .chat-body {
   padding: 15px;
   height: 240px;
@@ -446,19 +445,9 @@
   background: #f9fafb;
 }
 
-/* Scrollbar Styling */
-.chat-body::-webkit-scrollbar {
-  width: 6px;
-}
-.chat-body::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
-}
-
-
-/* Bot Message */
+/* Message Box */
 .bot-msg {
-  background: #ffffff;
+  background: #fff;
   padding: 12px;
   border-radius: 12px;
   margin-bottom: 10px;
@@ -466,10 +455,8 @@
   line-height: 1.5;
 }
 
-
-/* Option Buttons */
+/* Buttons */
 .chat-options button {
-  display: block;
   width: 100%;
   margin-bottom: 8px;
   padding: 8px;
@@ -478,13 +465,11 @@
   background: #e5e7eb;
   cursor: pointer;
   font-size: 13px;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
-
 .chat-options button:hover {
   background: #d1d5db;
 }
-
 
 /* WhatsApp Button */
 .chat-whatsapp {
@@ -496,43 +481,20 @@
   border-radius: 8px;
   text-decoration: none;
   font-size: 13px;
-  transition: 0.3s ease;
 }
-
 .chat-whatsapp:hover {
   background: #1ebe5d;
 }
 
-
-/* Close Button */
-.chat-close {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  cursor: pointer;
-  font-size: 16px;
-  color: #fff;
-}
-
-
-/* Mobile Responsive */
-@media (max-width: 480px) {
-
+/* Mobile */
+@media(max-width:480px){
   .chatbox {
     width: 92%;
     right: 4%;
-    bottom: 75px;
-    max-height: 380px;
+    bottom: 80px;
   }
-
   .chat-body {
     height: 200px;
-  }
-
-  .chat-toggle {
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
   }
 }
 </style>
@@ -805,7 +767,146 @@ setInterval(showNextMessage, 3000);
     </div>
   </div>
 </section>
+<!-- Floating Button -->
+<div class="chat-toggle" onclick="toggleChat()">
+  💬
+</div>
 
+<!-- Chatbox -->
+<div class="chatbox" id="chatbox">
+
+  <div class="chat-header">
+    Habibi Digital Assistant
+    <span class="chat-close" onclick="toggleChat()">✖</span>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+
+    <div class="bot-msg">
+      👋 Hello! Welcome to <b>Habibi Digital Solution</b><br><br>
+      Aap kis service ke baare me jana chahte ho?
+    </div>
+
+    <div class="chat-options">
+      <button onclick="selectOption('website')">Website Development</button>
+      <button onclick="selectOption('gmb')">Google Business Profile</button>
+      <button onclick="selectOption('seo')">SEO Services</button>
+      <button onclick="selectOption('marketing')">Digital Marketing</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleChat(){
+  const chat = document.getElementById("chatbox");
+  chat.style.display = (chat.style.display === "flex") ? "none" : "flex";
+}
+
+function selectOption(option){
+  const chatBody = document.getElementById("chatBody");
+
+  let message = "";
+
+  if(option === 'website'){
+    message = `
+      <div class="bot-msg">
+      <b>Website Development 🖥️</b><br><br>
+      ✔ Professional Design<br>
+      ✔ Mobile Friendly<br>
+      ✔ Call & WhatsApp Buttons<br>
+      ✔ SEO Ready Structure<br><br>
+      Best for businesses wanting online presence & trust.
+      <br><br>
+      <a href="https://wa.me/919458265093?text=I%20want%20Website%20Development%20details"
+      target="_blank" class="chat-whatsapp">
+      Get Details on WhatsApp
+      </a>
+      </div>
+    `;
+  }
+
+  if(option === 'gmb'){
+    message = `
+      <div class="bot-msg">
+      <b>Google Business Profile 📍</b><br><br>
+      ✔ Profile Setup<br>
+      ✔ Maps Ranking Optimization<br>
+      ✔ Photos & Posts<br>
+      ✔ Call & Direction Setup<br><br>
+      Best for local businesses wanting more Google calls.
+      <br><br>
+      <a href="https://wa.me/919458265093?text=I%20need%20Google%20Business%20Profile%20help"
+      target="_blank" class="chat-whatsapp">
+      Get GMB Details on WhatsApp
+      </a>
+      </div>
+    `;
+  }
+
+  if(option === 'seo'){
+    message = `
+      <div class="bot-msg">
+      <b>SEO Services 🚀</b><br><br>
+      ✔ Keyword Optimization<br>
+      ✔ On-Page SEO<br>
+      ✔ Technical SEO<br>
+      ✔ Monthly Growth Strategy<br><br>
+      Best for long-term Google ranking improvement.
+      <br><br>
+      <a href="https://wa.me/919458265093?text=I%20want%20SEO%20service%20details"
+      target="_blank" class="chat-whatsapp">
+      Get SEO Details on WhatsApp
+      </a>
+      </div>
+    `;
+  }
+
+  if(option === 'marketing'){
+    message = `
+      <div class="bot-msg">
+      <b>Digital Marketing 📢</b><br><br>
+      ✔ Social Media Posts<br>
+      ✔ Reels Creation<br>
+      ✔ Content Writing<br>
+      ✔ Branding Strategy<br><br>
+      Best for regular online engagement & brand growth.
+      <br><br>
+      <a href="https://wa.me/919458265093?text=I%20need%20Digital%20Marketing%20service"
+      target="_blank" class="chat-whatsapp">
+      Get Marketing Details on WhatsApp
+      </a>
+      </div>
+    `;
+  }
+
+  chatBody.innerHTML += message;
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+</script>
+🎯 Ye Version Kya Karega?
+
+✅ Floating button always visible
+✅ Service selection based guidance
+✅ Soft WhatsApp redirect
+✅ Compact height
+✅ Mobile friendly
+✅ No navbar overlap
+✅ No Tailwind conflict
+
+Agar aap chaho next upgrade:
+
+Typing animation
+
+Auto greeting after 5 sec
+
+Smart recommendation logic
+
+Multi-step guided conversation
+
+Lead tracking system
+
+Batayein next level bana dein Habibi Digital ke liye? 🚀
 <!-- SERVICES -->
 <section id="services" class="py-20 px-6 max-w-6xl mx-auto scroll-reveal">
 
@@ -1045,97 +1146,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 </script>
-<div class="chatbot-icon" onclick="toggleChat()">💬</div>
 
-<div class="chatbox" id="chatbox">
-  <div class="chat-header">
-    Habibi Digital Assistant
-    <span onclick="toggleChat()">✖</span>
-  </div>
-
-  <div class="chat-body" id="chatBody"></div>
-</div>
-<script>
-function selectOption(option){
-
-  const chatBody = document.getElementById("chatBody");
-
-  if(option === 'website'){
-    chatBody.innerHTML += `
-      <div class="bot-msg">
-        <b>Website Development 🖥️</b><br><br>
-        ✔ 1-Page / Multi-Page Website<br>
-        ✔ Mobile Friendly Design<br>
-        ✔ Call & WhatsApp Buttons<br>
-        ✔ SEO Ready Structure<br><br>
-        Best for: Shops, Clinics, Institutes, Service Providers<br><br>
-        A website builds trust and converts visitors into real inquiries.
-        <br><br>
-        <a href="https://wa.me/919458265093?text=I%20want%20Website%20Development%20details"
-        target="_blank" class="chat-whatsapp">
-        Get Website Details on WhatsApp
-        </a>
-      </div>
-    `;
-  }
-
-  if(option === 'gmb'){
-    chatBody.innerHTML += `
-      <div class="bot-msg">
-        <b>Google Business Profile 📍</b><br><br>
-        ✔ Profile Setup & Verification<br>
-        ✔ Map Ranking Optimization<br>
-        ✔ Photos & Posts Setup<br>
-        ✔ Call & Direction Button Setup<br><br>
-        Best for: Local Businesses wanting more calls from Google Maps.
-        <br><br>
-        <a href="https://wa.me/919458265093?text=I%20need%20Google%20Business%20Profile%20help"
-        target="_blank" class="chat-whatsapp">
-        Get GMB Details on WhatsApp
-        </a>
-      </div>
-    `;
-  }
-
-  if(option === 'seo'){
-    chatBody.innerHTML += `
-      <div class="bot-msg">
-        <b>SEO (Search Engine Optimization) 🚀</b><br><br>
-        ✔ Keyword Optimization<br>
-        ✔ On-Page SEO<br>
-        ✔ Technical SEO<br>
-        ✔ Monthly Ranking Improvement<br><br>
-        Best for: Businesses who want long-term Google visibility.
-        <br><br>
-        <a href="https://wa.me/919458265093?text=I%20want%20SEO%20service%20details"
-        target="_blank" class="chat-whatsapp">
-        Get SEO Details on WhatsApp
-        </a>
-      </div>
-    `;
-  }
-
-  if(option === 'marketing'){
-    chatBody.innerHTML += `
-      <div class="bot-msg">
-        <b>Digital Marketing 📢</b><br><br>
-        ✔ Social Media Posts<br>
-        ✔ Reels Creation<br>
-        ✔ Content & Caption Writing<br>
-        ✔ Branding Strategy<br><br>
-        Best for: Businesses wanting regular online growth & engagement.
-        <br><br>
-        <a href="https://wa.me/919458265093?text=I%20need%20Digital%20Marketing%20service"
-        target="_blank" class="chat-whatsapp">
-        Get Marketing Details on WhatsApp
-        </a>
-      </div>
-    `;
-  }
-
-  chatBody.scrollTop = chatBody.scrollHeight;
-}
-</script>
 
 <!-- WHY US -->
 
@@ -1455,6 +1466,7 @@ document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
 
 </body>
 </html>
+
 
 
 
