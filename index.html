@@ -227,6 +227,102 @@
     flex-direction:column;
   }
 }
+
+
+ .monthly-plans {
+  padding: 80px 20px;
+  background: #f9fafc;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.plans {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.plan-card {
+  background: #fff;
+  padding: 30px;
+  width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+}
+
+.plan-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.plan-desc {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.plan-card ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+.popular {
+  border: 2px solid #007bff;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+}
 </style>
 
 
@@ -529,6 +625,9 @@ setInterval(showNextMessage, 3000);
       <p class="mt-5 text-sm text-gray-500">
         Best for shops, clinics, offices, coaching centers & local services.
       </p>
+     <a href="tel:+919458265093" class="btn call-btn">Call Now</a>
+          <a href="https://wa.me/919458265093" target="_blank" class="btn whatsapp-btn">WhatsApp</a>
+        
     </div>
 
     <!-- Service 2 (Main Offer) -->
@@ -554,6 +653,9 @@ setInterval(showNextMessage, 3000);
       <p class="mt-5 text-sm text-gray-500">
         Perfect if you want a complete online presence without tension.
       </p>
+     <a href="tel:+919458265093" class="btn call-btn">Call Now</a>
+          <a href="https://wa.me/919458265093" target="_blank" class="btn whatsapp-btn">WhatsApp</a>
+        
     </div>
 
     <!-- Service 3 -->
@@ -574,6 +676,9 @@ setInterval(showNextMessage, 3000);
       <p class="mt-5 text-sm text-gray-500">
         Only pay for what your business actually needs.
       </p>
+     <a href="tel:+919458265093" class="btn call-btn">Call Now</a>
+          <a href="https://wa.me/919458265093" target="_blank" class="btn whatsapp-btn">WhatsApp</a>
+        
     </div>
 
   </div>
@@ -590,55 +695,76 @@ setInterval(showNextMessage, 3000);
 
 
 <!-- MONTHLY SERVICES SECTION -->
-<section class="py-20 px-6 max-w-6xl mx-auto scroll-reveal">
-  <h2 class="text-3xl md:text-4xl font-bold text-center mb-14">
-    Monthly Growth Services
-  </h2>
+<section class="monthly-plans">
+  <div class="container">
+    <h2 class="section-title">Monthly Growth Plans</h2>
+    <p class="section-subtitle">
+      Consistent Visibility. More Leads. Real Business Growth.
+    </p>
 
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <div class="plans">
 
-    <div class="bg-white p-6 rounded-xl border border-gray-200 service-card">
-      <h3 class="font-semibold text-blue-600">Website SEO (Monthly)</h3>
-      <p class="text-gray-600 text-sm mt-3">
-        Continuous SEO optimization to improve your website ranking on Google.
-      </p>
+      <!-- Starter Plan -->
+      <div class="plan-card">
+        <h3>Starter Plan</h3>
+        <p class="plan-desc">Perfect for small businesses starting their online journey.</p>
+        <ul>
+          <li>✔ Website SEO (Up to 10 Keywords)</li>
+          <li>✔ Monthly On-Page Optimization</li>
+          <li>✔ Technical SEO Health Check</li>
+          <li>✔ Google Business Profile Optimization</li>
+          <li>✔ 4 Google Business Posts per Month</li>
+          <li>✔ Monthly Performance Report</li>
+        </ul>
+
+        <div class="button-group">
+          <a href="tel:+919458265093" class="btn call-btn">Call Now</a>
+          <a href="https://wa.me/919458265093" target="_blank" class="btn whatsapp-btn">WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Growth Plan -->
+      <div class="plan-card popular">
+        <span class="badge">Most Popular</span>
+        <h3>Growth Plan</h3>
+        <p class="plan-desc">Best for businesses that want consistent leads every month.</p>
+        <ul>
+          <li>✔ Website SEO (Up to 20 Keywords)</li>
+          <li>✔ On-Page + Off-Page SEO</li>
+          <li>✔ 8 Google Business Posts</li>
+          <li>✔ 12 Social Media Posts</li>
+          <li>✔ 2 Reels / Short Videos</li>
+          <li>✔ Content & Caption Writing</li>
+          <li>✔ Monthly Strategy Call</li>
+        </ul>
+
+        <div class="button-group">
+          <a href="tel:+919458265093" class="btn call-btn">Call Now</a>
+          <a href="https://wa.me/919458265093" target="_blank" class="btn whatsapp-btn">WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Authority Plan -->
+      <div class="plan-card">
+        <h3>Authority Plan</h3>
+        <p class="plan-desc">For businesses serious about dominating their local market.</p>
+        <ul>
+          <li>✔ Website SEO (30+ Keywords)</li>
+          <li>✔ Advanced Technical SEO</li>
+          <li>✔ Weekly Google Business Posts</li>
+          <li>✔ 16 Social Media Posts</li>
+          <li>✔ 4 Reels / Short Videos</li>
+          <li>✔ Competitor Analysis</li>
+          <li>✔ Dedicated Account Manager</li>
+        </ul>
+
+        <div class="button-group">
+          <a href="tel:+919458265093" class="btn call-btn">Call Now</a>
+          <a href="https://wa.me/919458265093" target="_blank" class="btn whatsapp-btn">WhatsApp</a>
+        </div>
+      </div>
+
     </div>
-
-    <div class="bg-white p-6 rounded-xl border border-gray-200 service-card">
-      <h3 class="font-semibold text-blue-600">Google Business SEO</h3>
-      <p class="text-gray-600 text-sm mt-3">
-        Regular optimization to improve your visibility on Google Search & Maps.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl border border-gray-200 service-card">
-      <h3 class="font-semibold text-blue-600">Google Business Posts</h3>
-      <p class="text-gray-600 text-sm mt-3">
-        Monthly posts to keep your profile active and engaging for customers.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl border border-gray-200 service-card">
-      <h3 class="font-semibold text-blue-600">Social Media Post Designs</h3>
-      <p class="text-gray-600 text-sm mt-3">
-        Creative post designs for Facebook & Instagram promotion.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl border border-gray-200 service-card">
-      <h3 class="font-semibold text-blue-600">Reel / Short Video Creation</h3>
-      <p class="text-gray-600 text-sm mt-3">
-        Engaging reels to promote your business on social platforms.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl border border-gray-200 service-card">
-      <h3 class="font-semibold text-blue-600">Content & Caption Writing</h3>
-      <p class="text-gray-600 text-sm mt-3">
-        Professional captions and content for posts and reels every month.
-      </p>
-    </div>
-
   </div>
 </section>
 
@@ -1028,6 +1154,7 @@ document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
 
 </body>
 </html>
+
 
 
 
