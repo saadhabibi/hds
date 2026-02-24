@@ -346,6 +346,30 @@
 .whatsapp-btn:hover {
   background: #1ebe5d;
 }
+
+
+ .bot-msg{
+  background:#f3f4f6;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+.chat-whatsapp{
+  display:inline-block;
+  margin-top:10px;
+  background:#25D366;
+  color:white;
+  padding:8px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:13px;
+}
+
+.chat-whatsapp:hover{
+  background:#1ebe5d;
+}
 </style>
 
 
@@ -857,7 +881,87 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
+<script>
+function selectOption(option){
 
+  const chatBody = document.getElementById("chatBody");
+
+  if(option === 'website'){
+    chatBody.innerHTML += `
+      <div class="bot-msg">
+        <b>Website Development 🖥️</b><br><br>
+        ✔ 1-Page / Multi-Page Website<br>
+        ✔ Mobile Friendly Design<br>
+        ✔ Call & WhatsApp Buttons<br>
+        ✔ SEO Ready Structure<br><br>
+        Best for: Shops, Clinics, Institutes, Service Providers<br><br>
+        A website builds trust and converts visitors into real inquiries.
+        <br><br>
+        <a href="https://wa.me/919458265093?text=I%20want%20Website%20Development%20details"
+        target="_blank" class="chat-whatsapp">
+        Get Website Details on WhatsApp
+        </a>
+      </div>
+    `;
+  }
+
+  if(option === 'gmb'){
+    chatBody.innerHTML += `
+      <div class="bot-msg">
+        <b>Google Business Profile 📍</b><br><br>
+        ✔ Profile Setup & Verification<br>
+        ✔ Map Ranking Optimization<br>
+        ✔ Photos & Posts Setup<br>
+        ✔ Call & Direction Button Setup<br><br>
+        Best for: Local Businesses wanting more calls from Google Maps.
+        <br><br>
+        <a href="https://wa.me/919458265093?text=I%20need%20Google%20Business%20Profile%20help"
+        target="_blank" class="chat-whatsapp">
+        Get GMB Details on WhatsApp
+        </a>
+      </div>
+    `;
+  }
+
+  if(option === 'seo'){
+    chatBody.innerHTML += `
+      <div class="bot-msg">
+        <b>SEO (Search Engine Optimization) 🚀</b><br><br>
+        ✔ Keyword Optimization<br>
+        ✔ On-Page SEO<br>
+        ✔ Technical SEO<br>
+        ✔ Monthly Ranking Improvement<br><br>
+        Best for: Businesses who want long-term Google visibility.
+        <br><br>
+        <a href="https://wa.me/919458265093?text=I%20want%20SEO%20service%20details"
+        target="_blank" class="chat-whatsapp">
+        Get SEO Details on WhatsApp
+        </a>
+      </div>
+    `;
+  }
+
+  if(option === 'marketing'){
+    chatBody.innerHTML += `
+      <div class="bot-msg">
+        <b>Digital Marketing 📢</b><br><br>
+        ✔ Social Media Posts<br>
+        ✔ Reels Creation<br>
+        ✔ Content & Caption Writing<br>
+        ✔ Branding Strategy<br><br>
+        Best for: Businesses wanting regular online growth & engagement.
+        <br><br>
+        <a href="https://wa.me/919458265093?text=I%20need%20Digital%20Marketing%20service"
+        target="_blank" class="chat-whatsapp">
+        Get Marketing Details on WhatsApp
+        </a>
+      </div>
+    `;
+  }
+
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+</script>
 
 <!-- WHY US -->
 
@@ -1177,6 +1281,7 @@ document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
 
 </body>
 </html>
+
 
 
 
