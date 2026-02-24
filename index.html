@@ -370,6 +370,171 @@
 .chat-whatsapp:hover{
   background:#1ebe5d;
 }
+
+
+ /* ============================= */
+/* HABIBI DIGITAL CHATBOT STYLE  */
+/* ============================= */
+
+/* Floating Button */
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2563eb;
+  color: #fff;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  z-index: 9999;
+  transition: 0.3s ease;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.1);
+}
+
+
+/* Chatbox Container */
+.chatbox {
+  position: fixed;
+  bottom: 85px;
+  right: 20px;
+  width: 320px;
+  max-height: 420px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  z-index: 9999;
+  animation: slideUp 0.3s ease;
+}
+
+/* Slide Animation */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* Header */
+.chat-header {
+  background: linear-gradient(90deg,#2563eb,#7c3aed);
+  color: white;
+  padding: 14px;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+}
+
+
+/* Chat Body */
+.chat-body {
+  padding: 15px;
+  height: 240px;
+  overflow-y: auto;
+  font-size: 14px;
+  background: #f9fafb;
+}
+
+/* Scrollbar Styling */
+.chat-body::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-body::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+
+/* Bot Message */
+.bot-msg {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  line-height: 1.5;
+}
+
+
+/* Option Buttons */
+.chat-options button {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.chat-options button:hover {
+  background: #d1d5db;
+}
+
+
+/* WhatsApp Button */
+.chat-whatsapp {
+  display: inline-block;
+  margin-top: 10px;
+  background: #25D366;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.chat-whatsapp:hover {
+  background: #1ebe5d;
+}
+
+
+/* Close Button */
+.chat-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+
+  .chatbox {
+    width: 92%;
+    right: 4%;
+    bottom: 75px;
+    max-height: 380px;
+  }
+
+  .chat-body {
+    height: 200px;
+  }
+
+  .chat-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+}
 </style>
 
 
@@ -1290,6 +1455,7 @@ document.querySelectorAll(".scroll-reveal").forEach(el=>observer.observe(el));
 
 </body>
 </html>
+
 
 
 
