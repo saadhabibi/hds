@@ -1,415 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Best Digital Marketing Agency in Agra | SEO & Website Development Company</title>
-  <meta name="description" content="Habibi Digital Solution is the best digital marketing agency in Agra offering SEO services, website development, social media marketing, Google Ads management, local SEO, and lead generation services for businesses in Agra." />
-  <meta name="keywords" content="best digital marketing agency in Agra, digital marketing company Agra, SEO company in Agra, website development company in Agra, social media marketing Agra, Google Ads agency Agra, local SEO services Agra, lead generation company Agra" />
-  <meta name="author" content="Habibi Digital Solution" />
-  <meta property="og:title" content="Portfolio | Habibi Digital Solution" />
-  <meta property="og:description" content="Professional SEO and website development projects delivered for local businesses." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="images/portfolio-cover.jpg" />
-  <link rel="canonical" href="https://www.habibidigital.in/portfolio" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="/favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Slider</title>
+
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://unpkg.com/lucide@latest"></script>
 
+<style>
 
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Habibi Digital Solution",
-    "url": "https://www.habibidigital.in",
-    "logo": "https://www.habibidigital.in/images/logo.png",
-    "sameAs": []
+body {
+  padding-top: 120px; /* adjust according to navbar height */
+    overflow-x: hidden; 
+}
+
+/* SECTION */
+.container {
+  padding: 40px 20px;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* SLIDER */
+.portfolio-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+/* TRACK */
+.slider-track {
+  display: flex;
+  gap: 15px;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+/* CARD */
+.card {
+  min-width: 240px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.card-content {
+  padding: 12px;
+}
+
+.card h3 {
+  font-size: 15px;
+  margin: 5px 0;
+  color: #222;
+}
+
+.card p {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* TAG */
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 6px;
+  background: #eef2ff;
+  color: #3b5bdb;
+}
+
+/* ANIMATION */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  </script>
-  <style>
-   .portfolio-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-    }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-    .card {
-      background:white;
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 15px 35px rgba(0,0,0,0.08);
-      transition:0.3s ease;
-    }
+/* HOVER = PAUSE */
+.portfolio-slider:hover .slider-track {
+  animation-play-state: paused;
+}
 
-    .card:hover { transform:translateY(-10px); }
+.case-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #3b5bdb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
 
-    .card img {
-      width:100%;
-      height:220px;
-      object-fit:cover;
-    }
+.case-link:hover {
+  color: #1c3faa;
+  transform: translateX(4px);
+}
 
-    .card-content { padding:25px; }
+</style>
 
-    .card h3 { font-size:20px; margin-bottom:10px; color:#4c1d95; }
-    .card p { font-size:14px; margin-bottom:15px; color:#555; }
-
-    .tag {
-      display:inline-block;
-      padding:6px 14px;
-      font-size:12px;
-      background:#ede9fe;
-      color:#4c1d95;
-      border-radius:25px;
-      margin:4px 6px 0 0;
-    }
-
-    /* 🔵🟣 CTA Gradient */
-    .cta {
-      margin-top:80px;
-      background: linear-gradient(to right, #2563eb, #7c3aed);
-      padding:60px 20px;
-      border-radius:20px;
-      text-align:center;
-      color:white;
-    }
-
-    .cta h2 { font-size:30px; margin-bottom:20px; }
-
-    .cta a {
-      display:inline-block;
-      padding:14px 35px;
-      background:white;
-      color:#4c1d95;
-      font-weight:600;
-      text-decoration:none;
-      border-radius:30px;
-      transition:0.3s;
-    }
-
-    .cta a:hover { background:#e0e7ff; }
-
-  </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
-<div id="topbar" class="w-full bg-white text-gray-800 text-sm fixed top-0 left-0 z-50 border-b border-gray-200 transition-transform duration-300">
-
-  <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-
-    <!-- LEFT -->
-    <div class="flex items-center gap-4 flex-wrap">
-
-      <a href="tel:+919458265093" class="flex items-center gap-2 hover:text-blue-600">
-        <i data-lucide="phone" class="w-5 h-5"></i>
-        <b><span class="hidden sm:inline">+91 9458265093</span></b>
-      </a>
-
-      <a href="mailto:habibidigital.in@gmail.com" class="flex items-center gap-2 hover:text-blue-600">
-        <i data-lucide="mail" class="w-5 h-5"></i>
-       <b> <span class="hidden sm:inline">habibidigital.in@gmail.com</span></b>
-      </a>
-
-    </div>
-
-    <!-- RIGHT -->
-<div class="flex items-center gap-5 text-xl">
-
-  <!-- X (Twitter) -->
-  <a href="https://x.com/habibidigital_" target="_blank">
-    <i class="fa-brands fa-x-twitter hover:text-black"></i>
-  </a>
-
-  <!-- Instagram -->
-  <a href="https://instagram.com/habibidigital.in" target="_blank">
-    <i class="fa-brands fa-instagram hover:text-pink-500"></i>
-  </a>
-
-  <!-- Facebook -->
-  <a href="https://facebook.com/habibidigitalsolution" target="_blank">
-    <i class="fa-brands fa-facebook hover:text-blue-600"></i>
-  </a>
-
-</div>
-
-  </div>
-</div>
-
-
-
-<!-- HEADER -->
-<header id="main-header" class="fixed top-[40px] w-full backdrop-blur-md bg-white/90 border-b border-gray-200 z-40 transition-all duration-300">
-
-  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-
-    <!-- LOGO -->
-    <div class="flex items-center gap-0 h-14">
-     <img src="habibidigitalsolution.png" 
-     alt="Habibi Digital Solution Logo"
-     class="h-24 sm:h-8 md:h-24 w-auto">
-    </div>
-    <!-- DESKTOP NAV -->
-    <nav class="hidden md:flex items-center gap-8 text-lg font-semibold text-gray-800">
-
-      <a href="/" class="group relative hover:text-blue-600">
-        Home
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-      <!-- SERVICES -->
-      <div class="relative group">
-        <button class="hover:text-blue-600">Our Services ⌄</button>
-
-        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
-          <div class="bg-white shadow-xl rounded-xl">
-
-            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Website Development</a>
-            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Google Business Profile</a>
-            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">SEO</a>
-            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Marketing</a>
-            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Social Media Post</a>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- COMPANY -->
-      <div class="relative group">
-        <button class="hover:text-blue-600">Company ⌄</button>
-
-        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
-          <div class="bg-white shadow-xl rounded-xl">
-
-            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Case Study</a>
-            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Our Story</a>
-            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Career</a>
-            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Media & Events</a>
-
-          </div>
-        </div>
-      </div>
-
-      <a href="about.html" class="group relative hover:text-blue-600">
-        About Us
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-      <a href="portfolio.html" class="group relative hover:text-blue-600">
-        Portfolio
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-      <a href="blog.html" class="group relative hover:text-blue-600">
-        Blog
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-        <a href="contact.html" class="group relative hover:text-blue-600">
-        Contact Us
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-    </nav>
-
-    <!-- MOBILE BTN -->
-    <button id="menu-btn" class="md:hidden text-3xl">☰</button>
-
-  </div>
-</header>
-
-
-<!-- MOBILE MENU -->
-<div id="mobile-menu" class="hidden fixed left-0 w-full bg-white shadow-lg z-30">
-
-  <div class="flex flex-col p-6 gap-5 text-base font-semibold text-gray-800">
-
-    <a href="/">Home</a>
-
-    <div>
-      <button id="mobile-service-btn" class="flex justify-between w-full">
-        Our Services ▼
-      </button>
-
-      <div id="mobile-service-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
-        <a href="#services">Website Development</a>
-        <a href="#services">Google Business Profile</a>
-        <a href="#services">SEO</a>
-        <a href="#services">Marketing</a>
-        <a href="#services">Social Media Post</a>
-      </div>
-    </div>
-
-    <div>
-      <button id="mobile-company-btn" class="flex justify-between w-full">
-        Company ▼
-      </button>
-
-      <div id="mobile-company-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
-        <a href="#">Case Study</a>
-        <a href="#">Our Story</a>
-        <a href="#">Career</a>
-        <a href="#">Media & Events</a>
-      </div>
-    </div>
-
-    <a href="about.html">About Us</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact Us</a>
-
-  </div>
-</div>
-
-
-<!-- SCRIPT -->
-<script>
-  let lastScroll = 0;
-
-  const topbar = document.getElementById("topbar");
-  const header = document.getElementById("main-header");
-
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  const serviceBtn = document.getElementById("mobile-service-btn");
-  const serviceMenu = document.getElementById("mobile-service-menu");
-
-  const companyBtn = document.getElementById("mobile-company-btn");
-  const companyMenu = document.getElementById("mobile-company-menu");
-
-  // SCROLL EFFECT
-  window.addEventListener("scroll", () => {
-    let currentScroll = window.pageYOffset;
-
-    if (currentScroll > lastScroll) {
-      topbar.style.transform = "translateY(-100%)";
-      header.style.top = "0px";
-      mobileMenu.style.top = "70px"; // mobile adjust
-    } else {
-      topbar.style.transform = "translateY(0)";
-      header.style.top = "40px";
-      mobileMenu.style.top = "110px"; // mobile adjust
-    }
-
-    lastScroll = currentScroll;
-  });
-
-  // MOBILE MENU
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-
-  serviceBtn.addEventListener("click", () => {
-    serviceMenu.classList.toggle("hidden");
-  });
-
-  companyBtn.addEventListener("click", () => {
-    companyMenu.classList.toggle("hidden");
-  });
-
-  lucide.createIcons();
-</script>
-
-
-
+<div id="navbar"></div>
 <section class="container">
-  <h2 class="section-title">Recent Success Projects</h2>
+ <div class="text-center mb-10">
 
-  <div class="portfolio-grid">
+  <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+    Recent <span class="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+      Success Projects
+    </span>
+  </h2>
 
-    <article class="card">
-      <img src="images/medical-clinic-seo.jpg" alt="Local medical clinic SEO ranking improvement project" loading="lazy">
-      <div class="card-content">
-        <h3>Local Medical Clinic SEO</h3>
-        <p>Improved Google Maps ranking and increased patient inquiries by 70% within 3 months through local SEO optimization.</p>
-        <span class="tag">Local SEO</span>
-        <span class="tag">Google Business Profile</span>
+  <p class="text-gray-500 mt-3 text-sm md:text-base">
+    Real results delivered for our clients - more leads, more calls, and more customers.
+  </p>
+
+</div>
+
+  <div class="portfolio-slider">
+    <div class="slider-track">
+
+      <!-- CARD 1 -->
+      <div class="card">
+        <img src="Desire Footwear logo design.png" alt="">
+        <div class="card-content">
+          <h3>Desire Footwear</h3>
+          <p>Website + SEO Optimization for brand visibility.</p>
+          <span class="tag">SEO</span>
+          <span class="tag">Website</span>
+           <a href="#" class="case-link">View Case Study →</a>
+        </div>
       </div>
-    </article>
 
-    <article class="card">
-      <img src="images/coaching-website-design.jpg" alt="Coaching institute responsive website development project" loading="lazy">
-      <div class="card-content">
-        <h3>Coaching Institute Website</h3>
-        <p>Designed fully responsive SEO-friendly website with WhatsApp integration and lead capture system.</p>
-        <span class="tag">Website Development</span>
-        <span class="tag">Lead Generation</span>
+      <!-- CARD 2 -->
+      <div class="card">
+        <img src="leoberry.jpg" alt="">
+        <div class="card-content">
+          <h3>LeoBerry</h3>
+          <p>Responsive website with lead generation system.</p>
+          <span class="tag">Development</span>
+          <span class="tag">Leads</span>
+           <a href="#" class="case-link">View Case Study →</a>
+        </div>
       </div>
-    </article>
 
-    <article class="card">
-      <img src="images/retail-social-media.jpg" alt="Retail shop social media marketing campaign results" loading="lazy">
-      <div class="card-content">
-        <h3>Retail Shop Marketing</h3>
-        <p>Executed monthly social media campaigns increasing local brand engagement and customer visits.</p>
-        <span class="tag">Social Media Marketing</span>
-        <span class="tag">Brand Growth</span>
+      <!-- CARD 3 -->
+      <div class="card">
+        <img src="b.png" alt="">
+        <div class="card-content">
+          <h3>Retail Marketing</h3>
+          <p>Social media campaigns for local engagement.</p>
+          <span class="tag">Marketing</span>
+          <span class="tag">Growth</span>
+           <a href="#" class="case-link">View Case Study →</a>
+        </div>
       </div>
-    </article>
 
-    <article class="card">
-      <img src="images/home-services-seo.jpg" alt="Home services business SEO keyword ranking improvement" loading="lazy">
-      <div class="card-content">
-        <h3>Home Services SEO Growth</h3>
-        <p>Ranked business on high-intent keywords and significantly improved call inquiries with on-page and technical SEO.</p>
-        <span class="tag">SEO Optimization</span>
-        <span class="tag">Conversion Boost</span>
+      <!-- CARD 4 -->
+      <div class="card">
+        <img src="h.png" alt="">
+        <div class="card-content">
+          <h3>Home Services SEO</h3>
+          <p>Ranked keywords & increased call inquiries.</p>
+          <span class="tag">SEO</span>
+          <span class="tag">Conversion</span>
+           <a href="#" class="case-link">View Case Study →</a>
+        </div>
       </div>
-    </article>
 
-  </div>
+      <!-- DUPLICATE FOR LOOP -->
+      <div class="card">
+        <img src="Desire Footwear logo design.png" alt="">
+        <div class="card-content">
+          <h3>Desire Footwear</h3>
+          <p>Website + SEO Optimization for brand visibility.</p>
+          <span class="tag">SEO</span>
+          <span class="tag">Website</span>
+           <a href="#" class="case-link">View Case Study →</a>
+        </div>
+      </div>
 
-  <div class="cta">
-    <h2>Ready to Grow Your Business Online?</h2>
-    <a href="https://wa.me/919458265093">Get Free Consultation</a>
+      <div class="card">
+        <img src="leoberry.jpg" alt="">
+        <div class="card-content">
+          <h3>LeoBerry</h3>
+          <p>Responsive website with lead generation system.</p>
+          <span class="tag">Development</span>
+          <span class="tag">Leads</span>
+           <a href="#" class="case-link">View Case Study →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="b.png" alt="">
+        <div class="card-content">
+          <h3>Retail Marketing</h3>
+          <p>Social media campaigns for local engagement.</p>
+          <span class="tag">Marketing</span>
+          <span class="tag">Growth</span>
+           <a href="#" class="case-link">View Case Study →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="h.png" alt="">
+        <div class="card-content">
+          <h3>Home Services SEO</h3>
+          <p>Ranked keywords & increased call inquiries.</p>
+          <span class="tag">SEO</span>
+          <span class="tag">Conversion</span>
+           <a href="#" class="case-link">View Case Study →</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 </section>
+<section class="relative w-full h-[500px] flex items-center justify-center text-center overflow-hidden">
 
-<footer class="border-t border-gray-200 py-10 !bg-slate-100">
+  <!-- BACKGROUND IMAGE -->
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1600&q=80" 
+     class="absolute w-full h-full object-cover" />
 
-  <div class="max-w-6xl mx-auto px-6 text-center text-gray-600 text-sm space-y-4">
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/60"></div>
 
-    <p class="font-semibold text-gray-800">
-      Habibi Digital Solution – Google Business Profile & Local Website Experts
+  <!-- CONTENT -->
+  <div class="relative z-10 max-w-3xl px-6">
+
+    <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+      Grow Your Business with <br>
+      <span class="text-blue-400">Result-Driven Marketing</span>
+    </h2>
+
+    <p class="text-gray-200 text-lg mb-8">
+      Get more leads, more calls, and more customers with our proven SEO & marketing strategies.
     </p>
 
-    <p>
-      Helping local businesses in India get more visibility on Google Maps,
-      Google Search, and build a strong digital presence.
-    </p>
+    <!-- BUTTONS -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
 
-    <div class="space-x-4">
-      <a href="#services" class="hover:text-blue-600">Services</a>
-      <a href="#pricing" class="hover:text-blue-600">Pricing</a>
-      <a href="#faq" class="hover:text-blue-600">FAQ</a>
-      <a href="#contact" class="hover:text-blue-600">Contact</a>
-     <a href="https://saadhabibi.github.io/saad/#projects" class="hover:text-blue-600">Portfolio</a>
-     <a href="blog.html" class="hover:text-blue-600">Blog</a>
+    <a href="tel:+919458265093"
+     class="px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition shadow-lg">
+    📞 Call for Free Consultation
+  </a>
+
+     <a href="https://wa.me/919458265093" target="_blank"
+   class="px-8 py-4 rounded-full bg-green-500 text-white font-semibold hover:bg-green-600 transition shadow-lg flex items-center justify-center gap-2">
+
+  <i class="fa-brands fa-whatsapp text-xl"></i>
+  Chat on WhatsApp
+
+</a>
     </div>
 
-    <p>
-      📍 India &nbsp; | &nbsp;
-      📞 <a href="tel:+919458265093" class="hover:text-blue-600">Call: +91 9458265093</a>
-      &nbsp; | &nbsp;
-      💬 <a href="https://wa.me/919458265093?text=Hello%20Habibi%20Digital,%20I%20need%20help%20for%20my%20business" class="hover:text-green-600">WhatsApp Chat</a>
-      &nbsp; | &nbsp;
-      ✉️ <a href="mailto:habibidigital.in@gmail.com" class="hover:text-blue-600">habibidigital.in@gmail.com</a>
-    </p>
-
-    <p class="text-xs text-gray-400">
-      Habibi Digital Solution. 
-    </p>
-
   </div>
-</footer>
+</section>
 
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
 
+    // ✅ AB JS yahan likho (after load)
+
+    let lastScroll = 0;
+
+    const topbar = document.getElementById("topbar");
+    const header = document.getElementById("main-header");
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    // SCROLL EFFECT
+    window.addEventListener("scroll", () => {
+      let currentScroll = window.pageYOffset;
+
+      if (currentScroll > lastScroll) {
+        if(topbar) topbar.style.transform = "translateY(-100%)";
+        if(header) header.style.top = "0px";
+        if(mobileMenu) mobileMenu.style.top = "70px";
+      } else {
+        if(topbar) topbar.style.transform = "translateY(0)";
+        if(header) header.style.top = "40px";
+        if(mobileMenu) mobileMenu.style.top = "110px";
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    // MOBILE MENU
+    if(menuBtn){
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+
+    lucide.createIcons();
+  });
+</script>
+<div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
 </body>
-
 </html>
+
