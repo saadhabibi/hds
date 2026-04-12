@@ -39,222 +39,7 @@
 
 </head>
 <body>
-<div id="topbar" class="w-full bg-white text-gray-800 text-sm fixed top-0 left-0 z-50 border-b border-gray-200 transition-transform duration-300">
-
-  <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-
-    <!-- LEFT -->
-    <div class="flex items-center gap-4 flex-wrap">
-
-      <a href="tel:+919458265093" class="flex items-center gap-2 hover:text-blue-600">
-        <i data-lucide="phone" class="w-5 h-5"></i>
-        <b><span class="hidden sm:inline">+91 9458265093</span></b>
-      </a>
-
-      <a href="mailto:habibidigital.in@gmail.com" class="flex items-center gap-2 hover:text-blue-600">
-        <i data-lucide="mail" class="w-5 h-5"></i>
-       <b> <span class="hidden sm:inline">habibidigital.in@gmail.com</span></b>
-      </a>
-
-    </div>
-
-    <!-- RIGHT -->
-<div class="flex items-center gap-5 text-xl">
-
-  <!-- X (Twitter) -->
-  <a href="https://x.com/habibidigital_" target="_blank">
-    <i class="fa-brands fa-x-twitter hover:text-black"></i>
-  </a>
-
-  <!-- Instagram -->
-  <a href="https://instagram.com/habibidigital.in" target="_blank">
-    <i class="fa-brands fa-instagram hover:text-pink-500"></i>
-  </a>
-
-  <!-- Facebook -->
-  <a href="https://facebook.com/habibidigitalsolution" target="_blank">
-    <i class="fa-brands fa-facebook hover:text-blue-600"></i>
-  </a>
-
-</div>
-
-  </div>
-</div>
-
-
-
-<!-- HEADER -->
-<header id="main-header" class="fixed top-[40px] w-full backdrop-blur-md bg-white/90 border-b border-gray-200 z-40 transition-all duration-300">
-
-  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-
-    <!-- LOGO -->
-    <div class="flex items-center gap-0 h-14">
-     <img src="habibidigitalsolution.png" 
-     alt="Habibi Digital Solution Logo"
-     class="h-24 sm:h-8 md:h-24 w-auto">
-    </div>
-    <!-- DESKTOP NAV -->
-    <nav class="hidden md:flex items-center gap-8 text-lg font-semibold text-gray-800">
-
-      <a href="/" class="group relative hover:text-blue-600">
-        Home
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-      <!-- SERVICES -->
-      <div class="relative group">
-        <button class="hover:text-blue-600">Our Services ⌄</button>
-
-        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
-          <div class="bg-white shadow-xl rounded-xl">
-
-            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Website Development</a>
-            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Google Business Profile</a>
-            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">SEO</a>
-            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Marketing</a>
-            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Social Media Post</a>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- COMPANY -->
-      <div class="relative group">
-        <button class="hover:text-blue-600">Company ⌄</button>
-
-        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
-          <div class="bg-white shadow-xl rounded-xl">
-
-            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Case Study</a>
-            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Our Story</a>
-            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Career</a>
-            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Media & Events</a>
-
-          </div>
-        </div>
-      </div>
-
-      <a href="about.html" class="group relative hover:text-blue-600">
-        About Us
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-      <a href="portfolio.html" class="group relative hover:text-blue-600">
-        Portfolio
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-      <a href="blog.html" class="group relative hover:text-blue-600">
-        Blog
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-        <a href="contact.html" class="group relative hover:text-blue-600">
-        Contact Us
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-    </nav>
-
-    <!-- MOBILE BTN -->
-    <button id="menu-btn" class="md:hidden text-3xl">☰</button>
-
-  </div>
-</header>
-
-
-<!-- MOBILE MENU -->
-<div id="mobile-menu" class="hidden fixed left-0 w-full bg-white shadow-lg z-30">
-
-  <div class="flex flex-col p-6 gap-5 text-base font-semibold text-gray-800">
-
-    <a href="/">Home</a>
-
-    <div>
-      <button id="mobile-service-btn" class="flex justify-between w-full">
-        Our Services ▼
-      </button>
-
-      <div id="mobile-service-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
-        <a href="#services">Website Development</a>
-        <a href="#services">Google Business Profile</a>
-        <a href="#services">SEO</a>
-        <a href="#services">Marketing</a>
-        <a href="#services">Social Media Post</a>
-      </div>
-    </div>
-
-    <div>
-      <button id="mobile-company-btn" class="flex justify-between w-full">
-        Company ▼
-      </button>
-
-      <div id="mobile-company-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
-        <a href="#">Case Study</a>
-        <a href="#">Our Story</a>
-        <a href="#">Career</a>
-        <a href="#">Media & Events</a>
-      </div>
-    </div>
-
-    <a href="about.html">About Us</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact Us</a>
-
-  </div>
-</div>
-
-
-<!-- SCRIPT -->
-<script>
-  let lastScroll = 0;
-
-  const topbar = document.getElementById("topbar");
-  const header = document.getElementById("main-header");
-
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  const serviceBtn = document.getElementById("mobile-service-btn");
-  const serviceMenu = document.getElementById("mobile-service-menu");
-
-  const companyBtn = document.getElementById("mobile-company-btn");
-  const companyMenu = document.getElementById("mobile-company-menu");
-
-  // SCROLL EFFECT
-  window.addEventListener("scroll", () => {
-    let currentScroll = window.pageYOffset;
-
-    if (currentScroll > lastScroll) {
-      topbar.style.transform = "translateY(-100%)";
-      header.style.top = "0px";
-      mobileMenu.style.top = "70px"; // mobile adjust
-    } else {
-      topbar.style.transform = "translateY(0)";
-      header.style.top = "40px";
-      mobileMenu.style.top = "110px"; // mobile adjust
-    }
-
-    lastScroll = currentScroll;
-  });
-
-  // MOBILE MENU
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-
-  serviceBtn.addEventListener("click", () => {
-    serviceMenu.classList.toggle("hidden");
-  });
-
-  companyBtn.addEventListener("click", () => {
-    companyMenu.classList.toggle("hidden");
-  });
-
-  lucide.createIcons();
-</script>
+<div id="navbar"></div>
 
 
   <div class="container">
@@ -281,44 +66,57 @@
 
   </div>
 
-  
-<footer class="border-t border-gray-200 py-10 !bg-slate-100">
 
-  <div class="max-w-6xl mx-auto px-6 text-center text-gray-600 text-sm space-y-4">
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
 
-    <p class="font-semibold text-gray-800">
-      Habibi Digital Solution – Google Business Profile & Local Website Experts
-    </p>
+    // ✅ AB JS yahan likho (after load)
 
-    <p>
-      Helping local businesses in India get more visibility on Google Maps,
-      Google Search, and build a strong digital presence.
-    </p>
+    let lastScroll = 0;
 
-    <div class="space-x-4">
-      <a href="#services" class="hover:text-blue-600">Services</a>
-      <a href="#pricing" class="hover:text-blue-600">Pricing</a>
-      <a href="#faq" class="hover:text-blue-600">FAQ</a>
-      <a href="#contact" class="hover:text-blue-600">Contact</a>
-     <a href="https://saadhabibi.github.io/saad/#projects" class="hover:text-blue-600">Portfolio</a>
-     <a href="blog.html" class="hover:text-blue-600">Blog</a>
-    </div>
+    const topbar = document.getElementById("topbar");
+    const header = document.getElementById("main-header");
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-    <p>
-      📍 India &nbsp; | &nbsp;
-      📞 <a href="tel:+919458265093" class="hover:text-blue-600">Call: +91 9458265093</a>
-      &nbsp; | &nbsp;
-      💬 <a href="https://wa.me/919458265093?text=Hello%20Habibi%20Digital,%20I%20need%20help%20for%20my%20business" class="hover:text-green-600">WhatsApp Chat</a>
-      &nbsp; | &nbsp;
-      ✉️ <a href="mailto:habibidigital.in@gmail.com" class="hover:text-blue-600">habibidigital.in@gmail.com</a>
-    </p>
+    // SCROLL EFFECT
+    window.addEventListener("scroll", () => {
+      let currentScroll = window.pageYOffset;
 
-    <p class="text-xs text-gray-400">
-      Habibi Digital Solution. 
-    </p>
+      if (currentScroll > lastScroll) {
+        if(topbar) topbar.style.transform = "translateY(-100%)";
+        if(header) header.style.top = "0px";
+        if(mobileMenu) mobileMenu.style.top = "70px";
+      } else {
+        if(topbar) topbar.style.transform = "translateY(0)";
+        if(header) header.style.top = "40px";
+        if(mobileMenu) mobileMenu.style.top = "110px";
+      }
 
-  </div>
-</footer>
+      lastScroll = currentScroll;
+    });
+
+    // MOBILE MENU
+    if(menuBtn){
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+
+    lucide.createIcons();
+  });
+</script>
+<div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
 
 </body>
 </html>
