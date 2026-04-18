@@ -75,7 +75,35 @@
   <span id="dynamic-text"></span>
 </p>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  const serviceBtn = document.getElementById("mobile-service-btn");
+  const serviceMenu = document.getElementById("mobile-service-menu");
+
+  const companyBtn = document.getElementById("mobile-company-btn");
+  const companyMenu = document.getElementById("mobile-company-menu");
+
+  // Mobile main menu
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Services dropdown
+  serviceBtn.addEventListener("click", () => {
+    serviceMenu.classList.toggle("hidden");
+  });
+
+  // Company dropdown
+  companyBtn.addEventListener("click", () => {
+    companyMenu.classList.toggle("hidden");
+  });
+
+});
+</script>
 <script>
 const messages = [
   "Get Found on Google & Start Getting Calls Today — Simple Setup for Local Businesses",
