@@ -527,3 +527,98 @@
         font-size: 26px;
       }
     }
+
+/* LOGO SECTION */
+.logo-section {
+  background: #FFFFFF;
+  padding: 60px 0;
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.logo-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.logo-section p {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* LOGO WRAPPER */
+.logo-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-track {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  width: max-content;
+  animation: logoScroll 25s linear infinite;
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+.logo-track img {
+  width: 140px;
+  height: auto;
+  opacity: 0.9;
+  transition: all 0.4s ease;
+}
+
+.logo-track img:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* LOGO ANIMATION */
+@keyframes logoScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* GRADIENT EDGES */
+.logo-wrapper::before,
+.logo-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logo-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.logo-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .logo-track {
+    gap: 30px;
+    animation: logoScroll 18s linear infinite;
+  }
+  .logo-track img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-track img {
+    width: 80px;
+  }
+}
