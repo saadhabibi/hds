@@ -16,114 +16,250 @@
   
 
 <style>
-
-body {
-  padding-top: 120px; /* adjust according to navbar height */
-    overflow-x: hidden; 
+ body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  margin: 0;
+  padding: 40px;
 }
-
-/* SECTION */
+/* CONTAINER */
 .container {
-  padding: 40px 20px;
-}
-
-.section-title {
-  font-size: 22px;
-  margin-bottom: 20px;
-  color: #222;
-}
-
-/* SLIDER */
-.portfolio-slider {
-  overflow: hidden;
-  position: relative;
-}
-
-/* TRACK */
-.slider-track {
   display: flex;
-  gap: 15px;
-  width: max-content;
-  animation: scroll 25s linear infinite;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* CARD */
 .card {
-  min-width: 240px;
-  background: #fff;
-  border-radius: 16px;
+  width: 300px;
+  height: 420px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-  transition: 0.3s;
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  cursor: pointer;
+  background: #000;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* HOVER EFFECT */
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
 }
 
 /* IMAGE */
 .card img {
   width: 100%;
-  height: 130px;
+  transition: transform 8s linear;
+}
+
+/* SCROLL EFFECT */
+.card:hover img {
+  transform: translateY(-45%);
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+}
+
+.overlay h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.overlay p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    height: 380px;
+  }
+}
+
+
+.portfolio {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+/* ITEM */
+.portfolio-item {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1100px;
+  margin: auto;
+  margin-bottom: 80px;
+}
+
+/* REVERSE */
+.portfolio-item.reverse {
+  flex-direction: row-reverse;
+}
+
+/* IMAGE */
+.portfolio-img {
+  flex: 1;
+}
+
+.portfolio-img img {
+  width: 100%;
+  border-radius: 12px;
   object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* CONTENT */
-.card-content {
-  padding: 12px;
+/* TEXT */
+.portfolio-text {
+  flex: 1;
 }
 
-.card h3 {
-  font-size: 15px;
-  margin: 5px 0;
+.portfolio-text h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
   color: #222;
 }
 
-.card p {
-  font-size: 12px;
-  color: #666;
+.portfolio-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* 📱 MOBILE */
+@media(max-width: 768px){
+  .portfolio-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .portfolio-item.reverse {
+    flex-direction: column;
+  }
+
+  .portfolio-text h2 {
+    font-size: 24px;
+  }
+}
+
+.web-intro {
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.web-intro h2 {
+  font-size: 1.8rem;
   margin-bottom: 8px;
+  color: #111;
 }
 
-/* TAG */
-.tag {
-  display: inline-block;
-  font-size: 10px;
-  padding: 4px 8px;
-  margin: 2px;
-  border-radius: 6px;
-  background: #eef2ff;
-  color: #3b5bdb;
+.web-intro p {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #555;
+  line-height: 1.4;
 }
 
-/* ANIMATION */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.features span {
+  font-size: 0.8rem;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .web-intro {
+    padding: 20px 10px;
   }
-  100% {
-    transform: translateX(-50%);
+
+  .web-intro h2 {
+    font-size: 1.4rem;
+  }
+
+  .web-intro p {
+    font-size: 0.85rem;
+  }
+
+  .features span {
+    font-size: 0.75rem;
+    padding: 4px 8px;
   }
 }
 
-/* HOVER = PAUSE */
-.portfolio-slider:hover .slider-track {
-  animation-play-state: paused;
+.marketing-intro {
+  padding: 30px 15px;
+  text-align: center;
 }
 
-.case-link {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 12px;
-  color: #3b5bdb;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+.marketing-intro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #111;
 }
 
-.case-link:hover {
-  color: #1c3faa;
-  transform: translateX(4px);
+.marketing-intro p {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.marketing-intro .features {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.marketing-intro .features span {
+  font-size: 0.8rem;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .marketing-intro {
+    padding: 20px 10px;
+  }
+
+  .marketing-intro h2 {
+    font-size: 1.4rem;
+  }
+
+  .marketing-intro p {
+    font-size: 0.85rem;
+  }
+
+  .marketing-intro .features span {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
 }
 
 </style>
@@ -133,128 +269,137 @@ body {
 
 <body>
 <div id="navbar"></div>
-<section class="container">
- <div class="text-center mb-10">
 
-  <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
-    Recent <span class="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-      Success Projects
-    </span>
-  </h2>
-
-  <p class="text-gray-500 mt-3 text-sm md:text-base">
-    Real results delivered for our clients - more leads, more calls, and more customers.
+     
+  
+<section class="web-intro">
+  <h2>Build Your Website</h2>
+  <p>
+    We create <strong>modern, fast & responsive websites</strong> 
+    that help your business grow online.
   </p>
 
+  <div class="features">
+    <span>Responsive</span>
+    <span>SEO Ready</span>
+    <span>Fast</span>
+  </div>
+</section>
+
+<div class="container">
+  <!-- CARD 1 -->
+  <div class="card">
+    <img src="i/dent.png" alt="">
+    <div class="overlay">
+      <h3>Business Website</h3>
+      <p>Modern corporate design</p>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card">
+    <img src="i/leob.png" alt="">
+    <div class="overlay">
+      <h3>E-commerce Store</h3>
+      <p>Clean product layout</p>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card">
+    <img src="i/kar.png" alt="">
+    <div class="overlay">
+      <h3>Portfolio Website</h3>
+      <p>Creative & minimal UI</p>
+    </div>
+  </div>
+
 </div>
+<section class="marketing-intro">
+  <h2>Grow Your Business Online</h2>
+  <p>
+    We optimize <strong>Social Media & Google My Business</strong> 
+    and run result-driven campaigns to boost your reach.
+  </p>
 
- <div class="portfolio-slider">
-    <div class="slider-track">
+  <div class="features">
+    <span>Social Media</span>
+    <span>GMB Optimization</span>
+    <span>Ad Campaigns</span>
+  </div>
+</section>
 
-      <!-- CARD 1 -->
-      <div class="card">
-        <img src="images/d.jpeg" alt="">
-        <div class="card-content">
-          <h3>Desire Footwear</h3>
-              <p>GMB & SEO for better local visibility and increased calls.</p>
-          <span class="tag">GMB</span>
-          <span class="tag">SEO</span>
-           <a href="#" class="case-link">View Case Study →</a>
-        </div>
-      </div>
+<section class="portfolio">
 
-      <!-- CARD 2 -->
-      <div class="card">
-        <img src="images/leoberry.png" alt="">
-        <div class="card-content">
-          <h3>LeoBerry</h3>
-            <p>Custom website development with SEO <br>to improve online presence and generate leads.</p>
-          <span class="tag">Development</span>
-          <span class="tag">Leads</span>
-           <a href="#" class="case-link">View Case Study →</a>
-        </div>
-      </div>
+  <!-- SCHOOL 1 -->
+  <div class="portfolio-item">
+    <div class="portfolio-img">
+      <img src="i/brn.png" alt="School Project" style="height: 300px;">
+    </div>
+    <div class="portfolio-text">
+      <h2>School Marketing Success</h2>
+      <p>
+        We handled the complete social media management of the school, including 
+        content creation, regular posting, and audience engagement to build trust among parents.
+      </p>
+      <p>
+        Along with this, we launched targeted ad campaigns to reach local parents. 
+        By optimizing creatives and audience targeting, we increased visibility and inquiries.
+      </p>
+      <p>
+        As a result, the school experienced a strong boost in admissions and 
+        consistent growth in student enrollments.
+      </p>
+    </div>
+  </div>
 
-      <!-- CARD 3 -->
-      <div class="card">
-        <img src="images/b.jpeg" alt="">
-        <div class="card-content">
-          <h3>BR School</h3>
-           <p>Social media marketing campaigns<br></b> to generate leads and increase admissions.</p>
-          <span class="tag">Socail Media Marketing</span>
-          <span class="tag">Leads</span>
-           <a href="#" class="case-link">View Case Study →</a>
-        </div>
-      </div>
+  <!-- SCHOOL 2 -->
+  <div class="portfolio-item reverse">
+    <div class="portfolio-img">
+      <img src="sr2 (1).jpeg" alt="School Project 2">
+    </div>
+    <div class="portfolio-text">
+      <h2>Admission Campaign Success</h2>
+      <p>
+        We launched a dedicated admission campaign focused on reaching parents 
+        actively searching for quality education.
+      </p>
+      <p>
+        Using targeted social media ads and smart audience segmentation, we promoted 
+        the school’s facilities, results, and environment to build credibility.
+      </p>
+      <p>
+        This campaign generated high-quality leads and directly contributed 
+        to a significant increase in student admissions within a short time.
+      </p>
+    </div>
+  </div>
 
-      <!-- CARD 4 -->
-      <div class="card">
-        <img src="images/h.jpeg" alt="">
-        <div class="card-content">
-            <h3>Hamdal Creativity</h3>
-         <p>Modern website design<br> to establish strong online presence and brand identity.</p>
-          <span class="tag">Website</span>
-          <span class="tag">Design</span>
-           <a href="#" class="case-link">View Case Study →</a>
-        </div>
-      </div>
-
-      <!-- DUPLICATE FOR LOOP -->
-       <div class="card">
-        <img src="images/d.jpeg" alt="">
-        <div class="card-content">
-          <h3>Desire Footwear</h3>
-              <p>GMB & SEO for better local visibility and increased calls.</p>
-          <span class="tag">GMB</span>
-          <span class="tag">SEO</span>
-           <a href="#" class="case-link">View Case Study →</a>
-        </div>
-      </div>
-
-      <!-- CARD 2 -->
-      <div class="card">
-        <img src="images/leoberry.jpg" alt="">
-        <div class="card-content">
-          <h3>LeoBerry</h3>
-            <p>Custom website development with SEO<br> to improve online presence and generate leads.</p>
-          <span class="tag">Development</span>
-          <span class="tag">Leads</span>
-           <a href="#" class="case-link">View Case Study →</a>
-        </div>
-      </div>
-
-      <!-- CARD 3 -->
-      <div class="card">
-        <img src="images/b.jpeg" alt="">
-        <div class="card-content">
-          <h3>BR School</h3>
-           <p>Social media marketing campaigns<br> to generate leads and increase admissions.</p>
-          <span class="tag">Socail Media Marketing</span>
-          <span class="tag">Leads</span>
-           <a href="#" class="case-link">View Case Study →</a>
-        </div>
-      </div>
-
-      <!-- CARD 4 -->
-      <div class="card">
-        <img src="images/h.jpeg" alt="">
-        <div class="card-content">
-            <h3>Hamdal Creativity</h3>
-         <p>Modern website design<br> to establish strong online presence and brand identity.</p>
-          <span class="tag">Website</span>
-          <span class="tag">Design</span>
-           <a href="#" class="case-link">View Case Study →</a>
-        </div>
-      </div>
-
-      <!-- CARD 5 -->
-     
-
+  <!-- SHOP -->
+  <div class="portfolio-item">
+    <div class="portfolio-img">
+      <img src="i/den (2).png" alt="Shop Project">
+    </div>
+    <div class="portfolio-text">
+      <h2>Local Shop Growth (GMB Optimization)</h2>
+      <p>
+        We created and optimized the Google My Business profile for the shop, 
+        ensuring accurate business details, proper category setup, and better visibility.
+      </p>
+      <p>
+        We also activated the direct call feature and optimized the listing 
+        for higher local search rankings.
+      </p>
+      <p>
+        This resulted in increased customer calls, improved local reach, 
+        and more walk-in customers.
+      </p>
     </div>
   </div>
 
 </section>
-     
+
+
 
 <section class="relative w-full h-[500px] flex items-center justify-center text-center overflow-hidden">
 
