@@ -334,24 +334,8 @@
   AOS.init({ duration: 800, once: true });
 </script>
 
-
-  
 <script>
-fetch("navbar.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-
-    // ✅ AB JS yahan likho (after load)
-
-    let lastScroll = 0;
-
-    const topbar = document.getElementById("topbar");
-    const header = document.getElementById("main-header");
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    // SCROLL EFFECT
+ 
     window.addEventListener("scroll", () => {
       let currentScroll = window.pageYOffset;
 
@@ -369,22 +353,18 @@ fetch("navbar.html")
     });
 
     // MOBILE MENU
-    if(menuBtn){
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-    }
+   document.addEventListener("DOMContentLoaded", function () {
 
-    lucide.createIcons();
-  });
-</script>
-<div id="footer"></div>
-<script>
-fetch("footer.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if(menuBtn && mobileMenu){
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
+
+});
 </script>
 </body>
 
