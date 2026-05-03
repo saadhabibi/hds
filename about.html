@@ -333,38 +333,52 @@
   lucide.createIcons();
   AOS.init({ duration: 800, once: true });
 </script>
-
 <script>
- 
-    window.addEventListener("scroll", () => {
-      let currentScroll = window.pageYOffset;
+let lastScroll = 0;
 
-      if (currentScroll > lastScroll) {
-        if(topbar) topbar.style.transform = "translateY(-100%)";
-        if(header) header.style.top = "0px";
-        if(mobileMenu) mobileMenu.style.top = "70px";
-      } else {
-        if(topbar) topbar.style.transform = "translateY(0)";
-        if(header) header.style.top = "40px";
-        if(mobileMenu) mobileMenu.style.top = "110px";
-      }
-
-      lastScroll = currentScroll;
-    });
-
-    // MOBILE MENU
-   document.addEventListener("DOMContentLoaded", function () {
+  const topbar = document.getElementById("topbar");
+  const header = document.getElementById("main-header");
 
   const menuBtn = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
 
-  if(menuBtn && mobileMenu){
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-  }
+  const serviceBtn = document.getElementById("mobile-service-btn");
+  const serviceMenu = document.getElementById("mobile-service-menu");
 
-});
+  const companyBtn = document.getElementById("mobile-company-btn");
+  const companyMenu = document.getElementById("mobile-company-menu");
+
+  // SCROLL EFFECT
+  window.addEventListener("scroll", () => {
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+      topbar.style.transform = "translateY(-100%)";
+      header.style.top = "0px";
+      mobileMenu.style.top = "70px"; // mobile adjust
+    } else {
+      topbar.style.transform = "translateY(0)";
+      header.style.top = "40px";
+      mobileMenu.style.top = "110px"; // mobile adjust
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // MOBILE MENU
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  serviceBtn.addEventListener("click", () => {
+    serviceMenu.classList.toggle("hidden");
+  });
+
+  companyBtn.addEventListener("click", () => {
+    companyMenu.classList.toggle("hidden");
+  });
+
+  lucide.createIcons();
 </script>
 </body>
 
