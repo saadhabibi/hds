@@ -196,7 +196,7 @@
       </button>
 
       <div id="mobile-company-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
-        <a href="#">Case Study</a>
+        
         <a href="#">Our Story</a>
         <a href="#">Career</a>
         <a href="#">Media & Events</a>
@@ -287,49 +287,55 @@
   </a>
 
 </section>
-
 <script>
-fetch("navbar.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
+  let lastScroll = 0;
 
-    // ✅ AB JS yahan likho (after load)
+  const topbar = document.getElementById("topbar");
+  const header = document.getElementById("main-header");
 
-    let lastScroll = 0;
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-    const topbar = document.getElementById("topbar");
-    const header = document.getElementById("main-header");
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
+  const serviceBtn = document.getElementById("mobile-service-btn");
+  const serviceMenu = document.getElementById("mobile-service-menu");
 
-    // SCROLL EFFECT
-    window.addEventListener("scroll", () => {
-      let currentScroll = window.pageYOffset;
+  const companyBtn = document.getElementById("mobile-company-btn");
+  const companyMenu = document.getElementById("mobile-company-menu");
 
-      if (currentScroll > lastScroll) {
-        if(topbar) topbar.style.transform = "translateY(-100%)";
-        if(header) header.style.top = "0px";
-        if(mobileMenu) mobileMenu.style.top = "70px";
-      } else {
-        if(topbar) topbar.style.transform = "translateY(0)";
-        if(header) header.style.top = "40px";
-        if(mobileMenu) mobileMenu.style.top = "110px";
-      }
+  // SCROLL EFFECT
+  window.addEventListener("scroll", () => {
+    let currentScroll = window.pageYOffset;
 
-      lastScroll = currentScroll;
-    });
-
-    // MOBILE MENU
-    if(menuBtn){
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
+    if (currentScroll > lastScroll) {
+      topbar.style.transform = "translateY(-100%)";
+      header.style.top = "0px";
+      mobileMenu.style.top = "70px"; // mobile adjust
+    } else {
+      topbar.style.transform = "translateY(0)";
+      header.style.top = "40px";
+      mobileMenu.style.top = "110px"; // mobile adjust
     }
 
-    lucide.createIcons();
+    lastScroll = currentScroll;
   });
+
+  // MOBILE MENU
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  serviceBtn.addEventListener("click", () => {
+    serviceMenu.classList.toggle("hidden");
+  });
+
+  companyBtn.addEventListener("click", () => {
+    companyMenu.classList.toggle("hidden");
+  });
+
+  lucide.createIcons();
 </script>
+
+
 <div id="footer"></div>
 <script>
 fetch("footer.html")
