@@ -609,46 +609,41 @@
 </section>
 
 <script>
-fetch("navbar.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
+let lastScroll = 0;
 
-    // ✅ AB JS yahan likho (after load)
+const topbar = document.getElementById("topbar");
+const header = document.getElementById("main-header");
+const menuBtn = document.getElementById("menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
 
-    let lastScroll = 0;
+// SCROLL EFFECT
+window.addEventListener("scroll", () => {
 
-    const topbar = document.getElementById("topbar");
-    const header = document.getElementById("main-header");
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
+  let currentScroll = window.pageYOffset;
 
-    // SCROLL EFFECT
-    window.addEventListener("scroll", () => {
-      let currentScroll = window.pageYOffset;
+  if (currentScroll > lastScroll) {
+    // DOWN SCROLL
+    topbar.style.transform = "translateY(-100%)";
+    header.style.top = "0px";
+    mobileMenu.style.top = "70px";
 
-      if (currentScroll > lastScroll) {
-        if(topbar) topbar.style.transform = "translateY(-100%)";
-        if(header) header.style.top = "0px";
-        if(mobileMenu) mobileMenu.style.top = "70px";
-      } else {
-        if(topbar) topbar.style.transform = "translateY(0)";
-        if(header) header.style.top = "40px";
-        if(mobileMenu) mobileMenu.style.top = "110px";
-      }
+  } else {
+    // UP SCROLL
+    topbar.style.transform = "translateY(0)";
+    header.style.top = "40px";
+    mobileMenu.style.top = "110px";
+  }
 
-      lastScroll = currentScroll;
-    });
+  lastScroll = currentScroll;
+});
 
-    // MOBILE MENU
-    if(menuBtn){
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-    }
+// MOBILE MENU
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
 
-    lucide.createIcons();
-  });
+// LUCIDE ICONS
+lucide.createIcons();
 </script>
 <div id="footer"></div>
 <script>
