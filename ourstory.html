@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story | Habibi Digital Solution – Local Business Digital Marketing India</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="description" content="Discover the story behind Habibi Digital Solution – how we started helping local and small businesses across India get more calls, WhatsApp inquiries, and real customers through Google Business Profile, local SEO, and website development." />
+  <meta name="keywords" content="Habibi Digital Solution story, digital marketing agency India, local SEO agency, Google Business Profile setup India, small business digital marketing" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Habibi Digital Solution" />
+  <link rel="canonical" href="https://habibidigital.in/our-story.html" />
+
+  <meta property="og:title" content="Our Story | Habibi Digital Solution" />
+  <meta property="og:description" content="We started with one mission: help local businesses in India get found online and generate real inquiries. Read our journey." />
+  <meta property="og:url" content="https://habibidigital.in/our-story.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.habibidigital.in/habibidigitalsolution.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --brand-primary: #7c3aed;
+      --brand-primary-light: #c4b5fd;
+      --brand-secondary: #2563eb;
+      --brand-secondary-light: #bfdbfe;
+      --brand-gradient: linear-gradient(135deg, #7c3aed, #2563eb);
+      --accent-violet: #a78bfa;
+      --accent-cyan: #38bdf8;
+      --brand-dark: #0f0f0f;
+      --brand-charcoal: #0f0c29;
+      --brand-grey: #6b7280;
+      --brand-light: #f5f3ff;
+      --brand-white: #ffffff;
+      --section-pad: clamp(50px, 8vw, 110px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--brand-light);
+      color: var(--brand-dark);
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      background: linear-gradient(145deg, #0f0c29 0%, #1e1b4b 40%, #1e3a8a 80%, #0f0c29 100%);
+      padding: 100px 5% 60px;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 180px;
+      background: linear-gradient(to bottom, transparent 0%, rgba(245,243,255,0.6) 60%, #f5f3ff 100%);
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .hero-bg-pattern {
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(124,58,237,0.25) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(56,189,248,0.15) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(37,99,235,0.18) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: absolute; inset: 0; opacity: 0.05;
+      background-image:
+        linear-gradient(rgba(167,139,250,0.6) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(167,139,250,0.6) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .float-orb {
+      position: absolute;
+      width: clamp(180px, 30vw, 380px);
+      height: clamp(180px, 30vw, 380px);
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(167,139,250,0.35), rgba(37,99,235,0.15) 60%, transparent 80%);
+      border: 1px solid rgba(167,139,250,0.2);
+      top: 10%; right: -40px;
+      z-index: 1;
+      will-change: transform;
+      animation: orbFloat 6s ease-in-out infinite;
+    }
+    .float-orb::before {
+      content: '';
+      position: absolute; inset: 20px; border-radius: 50%;
+      border: 1px dashed rgba(167,139,250,0.25);
+      animation: orbSpin 25s linear infinite;
+    }
+    .float-orb::after {
+      content: '';
+      position: absolute; inset: 50px; border-radius: 50%;
+      border: 1px dashed rgba(56,189,248,0.2);
+      animation: orbSpin 18s linear infinite reverse;
+    }
+    @keyframes orbFloat {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-24px) scale(1.02); }
+    }
+    @keyframes orbSpin { to { transform: rotate(360deg); } }
+
+    .geo-shape {
+      position: absolute; z-index: 1; opacity: 0;
+      animation: geoAppear 1s ease forwards;
+    }
+    .geo-shape.diamond {
+      width: 40px; height: 40px;
+      border: 2px solid rgba(167,139,250,0.4);
+      transform: rotate(45deg);
+      bottom: 30%; left: 5%;
+      animation-delay: 1.2s;
+    }
+    .geo-shape.triangle {
+      width: 0; height: 0;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-bottom: 28px solid rgba(56,189,248,0.25);
+      top: 25%; left: 10%;
+      animation-delay: 0.8s;
+    }
+    .geo-shape.ring {
+      width: 70px; height: 70px;
+      border-radius: 50%;
+      border: 3px solid rgba(124,58,237,0.3);
+      bottom: 25%; right: 8%;
+      animation-delay: 1s;
+    }
+    .geo-shape.dot-cluster {
+      display: grid; grid-template-columns: repeat(4,8px); gap: 5px;
+      top: 60%; left: 3%;
+      animation-delay: 1.4s;
+    }
+    .dot-cluster span {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: rgba(167,139,250,0.4); display: block;
+    }
+    @keyframes geoAppear { to { opacity: 1; } }
+
+    .hero-content {
+      text-align: center; position: relative; z-index: 2;
+      max-width: 820px; width: 100%;
+      padding-bottom: 120px;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(124,58,237,0.18);
+      border: 1px solid rgba(167,139,250,0.4);
+      color: var(--accent-violet);
+      font-size: clamp(0.68rem, 2vw, 0.78rem); font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 7px 18px; border-radius: 50px;
+      margin-bottom: 24px;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.7s ease forwards 0.2s;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 7vw, 5.2rem);
+      font-weight: 800; line-height: 1.15;
+      color: #fff; margin-bottom: 20px;
+      opacity: 0; transform: translateY(30px);
+      animation: fadeUp 0.8s ease forwards 0.4s;
+    }
+    .hero h1 em {
+      font-style: italic;
+      background: linear-gradient(90deg, #a78bfa, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+      color: rgba(255,255,255,0.65); line-height: 1.7;
+      max-width: 580px; margin: 0 auto 36px;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards 0.6s;
+      padding: 0 10px;
+    }
+    .hero-stats {
+      display: flex; justify-content: center; gap: clamp(20px, 5vw, 40px);
+      flex-wrap: wrap; margin-top: 40px;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards 0.8s;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 5vw, 2.8rem);
+      font-weight: 800;
+      background: linear-gradient(90deg, #a78bfa, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label { font-size: clamp(0.72rem, 1.8vw, 0.82rem); color: rgba(255,255,255,0.5); margin-top: 4px; }
+    .hero-scroll {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.4); font-size: 0.8rem;
+      opacity: 0; animation: fadeUp 0.8s ease forwards 1s;
+      margin-top: 48px;
+    }
+    .scroll-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent-violet);
+      animation: bounce 1.5s ease-in-out infinite;
+    }
+
+    /* ========== PARALLAX ========== */
+    .parallax-section { position: relative; overflow: hidden; }
+    .parallax-object {
+      position: absolute;
+      width: clamp(150px, 20vw, 300px);
+      height: clamp(150px, 20vw, 300px);
+      pointer-events: none; z-index: 0;
+      will-change: transform;
+    }
+    .parallax-object.left { left: -60px; }
+    .parallax-object.right { right: -60px; }
+    .parallax-cube { width: 100%; height: 100%; position: relative; }
+    .parallax-cube svg { width: 100%; height: 100%; opacity: 0.18; }
+
+    /* ========== SECTION SHARED ========== */
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--brand-primary); margin-bottom: 20px;
+    }
+    .section-eyebrow::before {
+      content: ''; display: block;
+      width: 28px; height: 2px;
+      background: var(--brand-gradient);
+    }
+
+    /* ========== ORIGIN ========== */
+    .section-origin {
+      padding: var(--section-pad) 5%;
+      background: #fff; position: relative;
+    }
+    .section-origin-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .origin-card {
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f0c29 100%);
+      border-radius: 24px; padding: clamp(28px, 5vw, 48px) clamp(24px, 4vw, 40px) clamp(60px, 8vw, 80px);
+      border: 1px solid rgba(124,58,237,0.3);
+      position: relative; overflow: hidden;
+    }
+    .origin-card::before {
+      content: '';
+      position: absolute; top: -2px; left: 30px; right: 30px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #7c3aed, #2563eb, transparent);
+      border-radius: 50%;
+    }
+    .origin-card-icon { font-size: 2.5rem; margin-bottom: 16px; display: block; }
+    .origin-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem); color: #fff; margin-bottom: 12px;
+    }
+    .origin-card p { color: rgba(255,255,255,0.6); line-height: 1.8; font-size: 0.92rem; margin-bottom: 10px; }
+    .origin-badge {
+      position: absolute; bottom: 18px; right: 24px;
+      background: var(--brand-gradient);
+      color: #fff; font-weight: 700; font-size: 0.82rem;
+      padding: 8px 18px; border-radius: 50px;
+      box-shadow: 0 8px 24px rgba(124,58,237,0.45);
+    }
+    .origin-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3.5vw, 3rem);
+      font-weight: 800; line-height: 1.2;
+      color: var(--brand-dark); margin-bottom: 20px;
+    }
+    .origin-text h2 span {
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .origin-text p { font-size: 1rem; line-height: 1.85; color: #4b5563; margin-bottom: 18px; }
+
+    /* ========== MISSION STRIP ========== */
+    .mission-strip {
+      background: linear-gradient(135deg, #0f0c29 0%, #1e1b4b 50%, #1e3a8a 100%);
+      padding: clamp(50px, 8vw, 80px) 5%;
+      position: relative; overflow: hidden;
+    }
+    .mission-strip::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(124,58,237,0.6), rgba(37,99,235,0.6), transparent);
+    }
+    .mission-strip::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(124,58,237,0.6), rgba(37,99,235,0.6), transparent);
+    }
+    .mission-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .mission-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 3vw, 2.2rem);
+      font-style: italic; font-weight: 600;
+      color: #fff; line-height: 1.5; margin-bottom: 20px;
+    }
+    .mission-quote span {
+      background: linear-gradient(90deg, #a78bfa, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .mission-attr { font-size: 0.85rem; color: rgba(255,255,255,0.45); letter-spacing: 1px; text-transform: uppercase; }
+
+    /* ========== JOURNEY TIMELINE ========== */
+    .section-journey { padding: var(--section-pad) 5%; background: #fff; position: relative; }
+    .section-header { text-align: center; max-width: 660px; margin: 0 auto 60px; padding: 0 10px; }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+      font-weight: 800; margin-top: 12px; margin-bottom: 14px;
+    }
+    .section-header p { color: var(--brand-grey); font-size: 0.95rem; line-height: 1.75; }
+
+    .timeline { max-width: 760px; margin: 0 auto; position: relative; padding: 0 16px; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 28px; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(180deg, #7c3aed, #2563eb, rgba(37,99,235,0.1));
+    }
+    .timeline-item {
+      display: flex; gap: 20px;
+      padding-left: 64px; margin-bottom: 48px;
+      position: relative;
+      opacity: 0; transform: translateX(-30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .timeline-item.visible { opacity: 1; transform: none; }
+    .timeline-dot {
+      position: absolute; left: 18px; top: 4px;
+      width: 20px; height: 20px;
+      background: var(--brand-gradient);
+      border-radius: 50%; border: 3px solid #fff;
+      box-shadow: 0 0 0 3px #7c3aed;
+      flex-shrink: 0;
+    }
+    .timeline-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem; font-weight: 700;
+      color: var(--brand-primary); letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 6px;
+    }
+    .timeline-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+    .timeline-item p { font-size: 0.88rem; color: var(--brand-grey); line-height: 1.75; }
+
+    /* ========== VALUES ========== */
+    .section-values { padding: var(--section-pad) 5%; background: var(--brand-light); position: relative; }
+    .values-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+    .value-card {
+      background: #fff;
+      border-radius: 20px; padding: clamp(24px, 4vw, 36px) clamp(20px, 3vw, 32px);
+      border: 1px solid rgba(124,58,237,0.1);
+      position: relative; overflow: hidden;
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s;
+    }
+    .value-card.visible { opacity: 1; transform: none; }
+    .value-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(124,58,237,0.14); }
+    .value-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: var(--brand-gradient);
+      transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease;
+    }
+    .value-card:hover::after { transform: scaleX(1); }
+    .value-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .value-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; }
+    .value-card p { font-size: 0.88rem; color: var(--brand-grey); line-height: 1.75; }
+
+    /* ========== NUMBERS SECTION ========== */
+    .section-numbers {
+      padding: var(--section-pad) 5%;
+      background: #fff; position: relative; overflow: hidden;
+    }
+    .numbers-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.06), transparent 60%);
+      pointer-events: none;
+    }
+    .numbers-grid {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 28px;
+    }
+    .number-item {
+      text-align: center;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .number-item.visible { opacity: 1; transform: none; }
+    .number-big {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1; margin-bottom: 10px;
+    }
+    .number-label { font-size: 0.88rem; color: var(--brand-grey); font-weight: 500; line-height: 1.5; }
+    .number-sub { font-size: 0.76rem; color: #9ca3af; margin-top: 4px; }
+
+    /* ========== SERVICES STRIP ========== */
+    .section-services { padding: var(--section-pad) 5%; background: var(--brand-light); position: relative; }
+    .services-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 18px; padding: clamp(22px, 4vw, 32px) clamp(18px, 3vw, 28px);
+      border: 1px solid rgba(124,58,237,0.08);
+      position: relative;
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s, border-color 0.3s;
+    }
+    .service-card.visible { opacity: 1; transform: none; }
+    .service-card:hover {
+      box-shadow: 0 12px 40px rgba(124,58,237,0.12);
+      border-color: rgba(124,58,237,0.25); transform: translateY(-4px);
+    }
+    .service-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem; font-weight: 700;
+      color: var(--brand-primary-light); margin-bottom: 12px; letter-spacing: 1px;
+    }
+    .service-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 10px; }
+    .service-card p { font-size: 0.85rem; color: var(--brand-grey); line-height: 1.7; }
+    .service-tag {
+      display: inline-block;
+      background: rgba(124,58,237,0.08);
+      color: var(--brand-primary);
+      font-size: 0.7rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 50px; margin-top: 12px;
+    }
+
+    /* ========== TEAM / FOUNDER SECTION ========== */
+    .section-team { padding: var(--section-pad) 5%; background: var(--brand-light); }
+
+    .founder-wrap {
+      max-width: 960px; margin: 0 auto;
+      display: grid; grid-template-columns: auto 1fr;
+      gap: clamp(30px, 5vw, 60px); align-items: center;
+    }
+
+    /* Founder Avatar — image circle */
+    .founder-avatar {
+      width: clamp(140px, 22vw, 200px);
+      height: clamp(140px, 22vw, 200px);
+      border-radius: 50%;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .founder-avatar img {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      display: block;
+      position: relative; z-index: 2;
+      border: 4px solid #fff;
+      box-shadow: 0 12px 40px rgba(124,58,237,0.35);
+    }
+    /* Gradient ring behind image */
+    .founder-avatar::before {
+      content: '';
+      position: absolute; inset: -4px; border-radius: 50%;
+      background: var(--brand-gradient);
+      z-index: 1;
+    }
+    /* Dashed spinning ring */
+    .founder-avatar::after {
+      content: '';
+      position: absolute;
+      inset: -10px; border-radius: 50%;
+      border: 2px dashed rgba(124,58,237,0.5);
+      animation: spin 20s linear infinite;
+      z-index: 0;
+    }
+
+    /* Fallback initials shown when image fails */
+    .founder-avatar .avatar-fallback {
+      position: absolute; inset: 4px; border-radius: 50%;
+      background: var(--brand-gradient);
+      display: flex; align-items: center; justify-content: center;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: #fff; font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      z-index: 1;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .founder-label {
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--brand-primary); margin-bottom: 8px;
+    }
+    .founder-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 800; margin-bottom: 4px;
+    }
+    .founder-title { font-size: 0.9rem; color: var(--brand-grey); margin-bottom: 18px; }
+    .founder-bio { font-size: 0.96rem; line-height: 1.85; color: #4b5563; margin-bottom: 22px; }
+    .founder-socials { display: flex; gap: 12px; flex-wrap: wrap; }
+    .social-link {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--brand-dark); text-decoration: none;
+      padding: 8px 16px; border-radius: 50px;
+      border: 1px solid rgba(124,58,237,0.2);
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .social-link:hover {
+      background: var(--brand-gradient);
+      color: #fff; border-color: transparent;
+    }
+
+    /* ========== WHY US ========== */
+    .section-whyus { padding: var(--section-pad) 5%; background: #fff; position: relative; }
+    .whyus-inner { max-width: 1100px; margin: 0 auto; }
+    .whyus-list { display: flex; flex-direction: column; gap: 18px; margin-top: 40px; }
+    .whyus-item {
+      display: flex; gap: 20px; align-items: flex-start;
+      background: var(--brand-light);
+      border-radius: 16px; padding: clamp(20px, 3vw, 28px) clamp(18px, 3vw, 32px);
+      border: 1px solid rgba(124,58,237,0.08);
+      opacity: 0; transform: translateX(-20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .whyus-item.visible { opacity: 1; transform: none; }
+    .whyus-item:hover { box-shadow: 0 8px 32px rgba(124,58,237,0.1); }
+    .whyus-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800;
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      flex-shrink: 0; line-height: 1; min-width: 38px;
+    }
+    .whyus-item h3 { font-size: 0.98rem; font-weight: 600; margin-bottom: 6px; }
+    .whyus-item p { font-size: 0.88rem; color: var(--brand-grey); line-height: 1.75; }
+
+    /* ========== TESTIMONIALS ========== */
+    .section-testimonials { padding: var(--section-pad) 5%; background: #fff; }
+    .testimonials-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .testi-card {
+      background: var(--brand-light);
+      border-radius: 20px; padding: clamp(24px, 4vw, 32px) clamp(20px, 3vw, 28px);
+      border: 1px solid rgba(124,58,237,0.1);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .testi-card.visible { opacity: 1; transform: none; }
+    .testi-stars { color: #f59e0b; font-size: 1rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .testi-text { font-size: 0.92rem; line-height: 1.8; color: #374151; margin-bottom: 18px; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--brand-gradient);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .testi-name { font-weight: 600; font-size: 0.88rem; }
+    .testi-role { font-size: 0.78rem; color: var(--brand-grey); }
+
+    /* ========== CTA ========== */
+    .section-cta {
+      padding: var(--section-pad) 5%;
+      background: linear-gradient(145deg, #0f0c29, #1e1b4b, #1e3a8a);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .section-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 30% 50%, rgba(124,58,237,0.2), transparent 50%),
+        radial-gradient(circle at 70% 50%, rgba(56,189,248,0.12), transparent 50%);
+    }
+    .cta-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+    .cta-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4.5vw, 3rem);
+      font-weight: 800; color: #fff; margin-bottom: 14px;
+    }
+    .cta-inner p { color: rgba(255,255,255,0.6); font-size: clamp(0.9rem, 2vw, 1.05rem); line-height: 1.7; margin-bottom: 32px; }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--brand-gradient); color: #fff;
+      padding: clamp(12px, 2vw, 14px) clamp(24px, 4vw, 32px);
+      border-radius: 50px; font-weight: 600; font-size: 0.92rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(124,58,237,0.45); }
+    .btn-ghost {
+      background: transparent; color: #fff;
+      padding: clamp(12px, 2vw, 14px) clamp(24px, 4vw, 32px);
+      border-radius: 50px; font-weight: 600; font-size: 0.92rem;
+      text-decoration: none; border: 1px solid rgba(167,139,250,0.4);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(124,58,237,0.15); border-color: rgba(167,139,250,0.7); }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    .value-card:nth-child(1) { transition-delay: 0.05s; }
+    .value-card:nth-child(2) { transition-delay: 0.15s; }
+    .value-card:nth-child(3) { transition-delay: 0.25s; }
+    .value-card:nth-child(4) { transition-delay: 0.35s; }
+    .timeline-item:nth-child(1) { transition-delay: 0.05s; }
+    .timeline-item:nth-child(2) { transition-delay: 0.15s; }
+    .timeline-item:nth-child(3) { transition-delay: 0.25s; }
+    .timeline-item:nth-child(4) { transition-delay: 0.35s; }
+    .timeline-item:nth-child(5) { transition-delay: 0.45s; }
+    .timeline-item:nth-child(6) { transition-delay: 0.55s; }
+    .service-card:nth-child(1) { transition-delay: 0.05s; }
+    .service-card:nth-child(2) { transition-delay: 0.12s; }
+    .service-card:nth-child(3) { transition-delay: 0.19s; }
+    .service-card:nth-child(4) { transition-delay: 0.26s; }
+    .service-card:nth-child(5) { transition-delay: 0.33s; }
+    .service-card:nth-child(6) { transition-delay: 0.40s; }
+    .number-item:nth-child(1) { transition-delay: 0.05s; }
+    .number-item:nth-child(2) { transition-delay: 0.15s; }
+    .number-item:nth-child(3) { transition-delay: 0.25s; }
+    .number-item:nth-child(4) { transition-delay: 0.35s; }
+    .number-item:nth-child(5) { transition-delay: 0.45s; }
+    .whyus-item:nth-child(1) { transition-delay: 0.05s; }
+    .whyus-item:nth-child(2) { transition-delay: 0.12s; }
+    .whyus-item:nth-child(3) { transition-delay: 0.19s; }
+    .whyus-item:nth-child(4) { transition-delay: 0.26s; }
+    .whyus-item:nth-child(5) { transition-delay: 0.33s; }
+    .testi-card:nth-child(1) { transition-delay: 0.05s; }
+    .testi-card:nth-child(2) { transition-delay: 0.15s; }
+    .testi-card:nth-child(3) { transition-delay: 0.25s; }
+
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+   
+    @media (max-width: 768px) {
+      .section-origin-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .parallax-object { display: none; }
+      .float-orb { width: 160px; height: 160px; right: -40px; top: 5%; }
+    }
+
+    @media (max-width: 680px) {
+      .founder-wrap {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+      .founder-avatar {
+        margin: 0 auto;
+        width: 160px; height: 160px;
+      }
+      .founder-socials { justify-content: center; }
+
+      .hero { padding: 80px 5% 40px; }
+      .hero-content { padding-bottom: 100px; }
+
+      .whyus-item { gap: 14px; }
+      .whyus-number { min-width: 30px; font-size: 1.5rem; }
+
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-ghost { width: 100%; max-width: 280px; justify-content: center; }
+
+      .timeline { padding: 0 8px; }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 1.9rem; }
+      .hero-stats { gap: 14px; }
+      .stat-num { font-size: 1.5rem; }
+      .stat-label { font-size: 0.68rem; }
+      .values-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<!-- HERO -->
+<div id="topbar" class="w-full bg-white text-gray-800 text-sm fixed top-0 left-0 z-50 border-b border-gray-200 transition-transform duration-300">
+
+  <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+
+    <!-- LEFT -->
+    <div class="flex items-center gap-4 flex-wrap">
+
+      <a href="tel:+919458265093" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+        <b><span class="hidden sm:inline">+91 9458265093</span></b>
+      </a>
+
+      <a href="mailto:habibidigital.in@gmail.com" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="mail" class="w-5 h-5"></i>
+       <b> <span class="hidden sm:inline">habibidigital.in@gmail.com</span></b>
+      </a>
+
+    </div>
+
+    <!-- RIGHT -->
+<div class="flex items-center gap-5 text-xl">
+
+  <!-- X (Twitter) -->
+  <a href="https://x.com/habibidigital_" target="_blank">
+    <i class="fa-brands fa-x-twitter hover:text-black"></i>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://instagram.com/habibidigital.in" target="_blank">
+    <i class="fa-brands fa-instagram hover:text-pink-500"></i>
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank">
+    <i class="fa-brands fa-facebook hover:text-blue-600"></i>
+  </a>
+
+</div>
+
+  </div>
+</div>
+
+
+
+<!-- HEADER -->
+<header id="main-header" class="fixed top-[40px] w-full backdrop-blur-md bg-white/90 border-b border-gray-200 z-40 transition-all duration-300">
+
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-0 h-14">
+     <img src="habibidigitalsolution.png" 
+     alt="Habibi Digital Solution Logo"
+     class="h-24 sm:h-8 md:h-24 w-auto">
+    </div>
+    <!-- DESKTOP NAV -->
+    <nav class="hidden md:flex items-center gap-8 text-lg font-semibold text-gray-800">
+
+      <a href="/" class="group relative hover:text-blue-600">
+        Home
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <!-- SERVICES -->
+      <div class="relative group">
+        <button class="hover:text-blue-600">Our Services ⌄</button>
+
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Website Development</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Google Business Profile</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">SEO</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Marketing</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Social Media Post</a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="relative group">
+        <button class="hover:text-blue-600">Company ⌄</button>
+
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+
+         
+            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Our Story</a>
+            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Career</a>
+            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Media & Events</a>
+
+          </div>
+        </div>
+      </div>
+
+      <a href="about.html" class="group relative hover:text-blue-600">
+        About Us
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <a href="portfolio.html" class="group relative hover:text-blue-600">
+        Portfolio
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <a href="blog.html" class="group relative hover:text-blue-600">
+        Blog
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+        <a href="contact.html" class="group relative hover:text-blue-600">
+        Contact Us
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+    </nav>
+
+    <!-- MOBILE BTN -->
+    <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+
+  </div>
+</header>
+
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="hidden fixed left-0 w-full bg-white shadow-lg z-30">
+
+  <div class="flex flex-col p-6 gap-5 text-base font-semibold text-gray-800">
+
+    <a href="/">Home</a>
+
+    <div>
+      <button id="mobile-service-btn" class="flex justify-between w-full">
+        Our Services ▼
+      </button>
+
+      <div id="mobile-service-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
+        <a href="#services">Website Development</a>
+        <a href="#services">Google Business Profile</a>
+        <a href="#services">SEO</a>
+        <a href="#services">Marketing</a>
+        <a href="#services">Social Media Post</a>
+      </div>
+    </div>
+
+    <div>
+      <button id="mobile-company-btn" class="flex justify-between w-full">
+        Company ▼
+      </button>
+
+      <div id="mobile-company-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
+        
+        <a href="#">Our Story</a>
+        <a href="#">Career</a>
+        <a href="#">Media & Events</a>
+      </div>
+    </div>
+
+    <a href="about.html">About Us</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact Us</a>
+
+  </div>
+</div>
+
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-grid"></div>
+    <div class="float-orb"></div>
+    <div class="geo-shape diamond"></div>
+    <div class="geo-shape triangle"></div>
+    <div class="geo-shape ring"></div>
+    <div class="geo-shape dot-cluster">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">Our Story</span>
+      <h1>Built for <em>Local Businesses.</em><br>Driven by Real Results.</h1>
+      <p class="hero-sub">Habibi Digital Solution was born from a simple belief — every local business in India deserves a strong digital presence, affordable marketing, and real customer inquiries that grow their revenue.</p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">200+</div>
+          <div class="stat-label">Businesses Served</div>
+        </div>
+       
+        <div class="stat-item">
+          <div class="stat-num">5★</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Cities Covered</div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <span>Scroll to explore</span>
+        <div class="scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section-origin parallax-section">
+    <div class="parallax-object right" id="parallaxOrb1" style="top: 50px;">
+      <div class="parallax-cube">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="150" r="140" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="8 8"/>
+          <circle cx="150" cy="150" r="100" fill="none" stroke="#2563eb" stroke-width="1" stroke-dasharray="4 6"/>
+          <circle cx="150" cy="150" r="60" fill="none" stroke="#a78bfa" stroke-width="1"/>
+          <circle cx="150" cy="150" r="8" fill="#7c3aed" opacity="0.6"/>
+          <line x1="150" y1="10" x2="150" y2="290" stroke="#7c3aed" stroke-width="0.5" opacity="0.3"/>
+          <line x1="10" y1="150" x2="290" y2="150" stroke="#2563eb" stroke-width="0.5" opacity="0.3"/>
+        </svg>
+      </div>
+    </div>
+    <div class="section-origin-inner">
+      <div class="origin-visual reveal">
+        <div class="origin-card">
+          <span class="origin-card-icon">🌱</span>
+          <h3>Where It All Began</h3>
+          <p>We saw hundreds of talented local business owners — doctors, shop owners, coaches, service providers — struggling to get found online. Not because their business wasn't good. But because they lacked the right digital setup.</p>
+          <p>Google Maps was empty. Websites were broken. WhatsApp numbers were hidden. We knew we had to fix this — affordably and effectively.</p>
+          <div class="origin-badge">📍 Agra, India</div>
+        </div>
+      </div>
+      <div class="origin-text reveal">
+        <span class="section-eyebrow">The Beginning</span>
+        <h2>A Problem Worth <span>Solving</span></h2>
+        <p>Habibi Digital Solution started with one observation: local businesses in India are incredible at what they do — but terrible at telling the internet about it. Google Maps was empty. Websites were broken. WhatsApp numbers were hidden.</p>
+        <p>We decided to fix that. Not with complicated funnels or expensive campaigns — but with clean, structured, affordable digital setups that actually drive calls and WhatsApp inquiries.</p>
+        <p>Today we work with shops, clinics, coaching centers, service providers and small brands across India — helping them get found, get contacted, and grow steadily month after month.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MISSION STRIP ===== -->
+  <div class="mission-strip">
+    <div class="mission-inner">
+      <p class="mission-quote">
+        "Our mission is simple — <span>help every local business in India</span> get the calls, WhatsApp messages and customers they deserve through honest, affordable digital marketing."
+      </p>
+      <p class="mission-attr">— Habibi Digital Solution, Agra</p>
+    </div>
+  </div>
+
+  <!-- ===== NUMBERS ===== -->
+  <section class="section-numbers parallax-section">
+    <div class="numbers-bg"></div>
+    <div class="section-header reveal">
+      <span class="section-eyebrow">The Impact</span>
+      <h2>Numbers That Speak</h2>
+      <p>Real results for real businesses — not just reports, but calls, inquiries, and customers.</p>
+    </div>
+    <div class="numbers-grid">
+      <div class="number-item"><div class="number-big">200+</div><div class="number-label">Local Businesses Served</div><div class="number-sub">Across India</div></div>
+      <div class="number-item"><div class="number-big">500+</div><div class="number-label">Google Rankings Achieved</div><div class="number-sub">Local Search Results</div></div>
+      <div class="number-item"><div class="number-big">10+</div><div class="number-label">Cities Covered</div><div class="number-sub">Expanding Every Month</div></div>
+      <div class="number-item"><div class="number-big">5★</div><div class="number-label">Average Client Rating</div><div class="number-sub">Google & Facebook</div></div>
+    </div>
+  </section>
+
+  <!-- ===== JOURNEY TIMELINE ===== -->
+  <section class="section-journey parallax-section">
+    <div class="parallax-object left" id="parallaxOrb2" style="top: 100px;">
+      <div class="parallax-cube">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="150,20 280,230 20,230" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.5"/>
+          <polygon points="150,60 240,210 60,210" fill="none" stroke="#2563eb" stroke-width="1" opacity="0.4"/>
+          <polygon points="150,100 200,190 100,190" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.6"/>
+          <circle cx="150" cy="148" r="6" fill="#7c3aed" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Our Journey</span>
+      <h2>How We Grew, Step by Step</h2>
+      <p>From helping the first local business get on Google Maps to building complete digital ecosystems — here's our story so far.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div><div class="timeline-year">The Idea</div><h3>Noticing the Gap</h3><p>We realized local businesses around us — restaurants, clinics, shops, coaching centers — had zero online presence. Most weren't even on Google Maps. Customers were searching but not finding them. We decided this had to change.</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div><div class="timeline-year">First Steps</div><h3>First Clients & First Google Rankings</h3><p>We started helping local businesses set up and optimize their Google Business Profile. Within weeks, phones started ringing. That was the moment we knew this worked — and that it could change thousands of businesses.</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div><div class="timeline-year">Growing</div><h3>Adding Websites & Local SEO</h3><p>We expanded into website development and local SEO — giving businesses a complete digital presence. More Google visibility, more calls, more WhatsApp inquiries for every client we worked with.</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div><div class="timeline-year">Scaling</div><h3>Monthly Growth Plans Launched</h3><p>We launched Starter, Growth and Authority monthly plans — so businesses could maintain and grow their digital presence consistently, without any guesswork or big upfront investments.</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div><div class="timeline-year">Expanding</div><h3>WhatsApp & Social Media Systems</h3><p>We added WhatsApp inquiry systems, social media management, and reputation building to our offerings — creating end-to-end digital solutions for local businesses at every stage of growth.</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div><div class="timeline-year">Today</div><h3>Serving Businesses Across India</h3><p>We now work with local businesses, professionals, and small brands across multiple cities in India — helping them stay discoverable, credible, and reachable 24/7, all year round.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section-services parallax-section">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">What We Do</span>
+      <h2>Our Core Services</h2>
+      <p>Everything a local business needs to dominate digital — under one roof, at prices that make sense for India.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-num">01</div><h3>Google Business Profile Setup & Optimization</h3><p>Complete GBP setup, category optimization, photo uploads, review management and regular updates to keep your profile ranking in local 3-pack results.</p><span class="service-tag">Most Popular</span></div>
+      <div class="service-card"><div class="service-num">02</div><h3>Local SEO</h3><p>On-page optimization, local citations, keyword targeting and content strategies that push your business to the top when local customers search for you.</p><span class="service-tag">High ROI</span></div>
+      <div class="service-card"><div class="service-num">03</div><h3>Website Development</h3><p>Fast, mobile-first websites designed to convert visitors into calls and WhatsApp inquiries — not just pretty designs but lead-generating machines.</p><span class="service-tag">Conversion Focused</span></div>
+      <div class="service-card"><div class="service-num">04</div><h3>WhatsApp Inquiry Systems</h3><p>Smart WhatsApp integration across your website, Google profile, and social pages — so every potential customer can reach you in one tap.</p><span class="service-tag">Instant Leads</span></div>
+      <div class="service-card"><div class="service-num">05</div><h3>Social Media Management</h3><p>Consistent social media presence on Instagram and Facebook that builds brand trust, community and keeps your business top-of-mind for local customers.</p><span class="service-tag">Brand Building</span></div>
+      <div class="service-card"><div class="service-num">06</div><h3>Online Reputation Management</h3><p>Review generation, response management and reputation strategies that build a 5-star presence across Google, Facebook and other platforms.</p><span class="service-tag">Trust Builder</span></div>
+    </div>
+  </section>
+
+  <!-- ===== VALUES ===== -->
+  <section class="section-values parallax-section">
+    <div class="parallax-object right" id="parallaxOrb3" style="top: 40px;">
+      <div class="parallax-cube">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <rect x="50" y="50" width="200" height="200" rx="8" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.4"/>
+          <rect x="80" y="80" width="140" height="140" rx="6" fill="none" stroke="#2563eb" stroke-width="1" opacity="0.4"/>
+          <rect x="110" y="110" width="80" height="80" rx="4" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.5"/>
+          <rect x="135" y="135" width="30" height="30" rx="2" fill="#7c3aed" opacity="0.25"/>
+        </svg>
+      </div>
+    </div>
+    <div style="max-width:1100px; margin: 0 auto;">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">What We Stand For</span>
+        <h2>Our Core Values</h2>
+        <p>These principles guide every project we take on and every client relationship we build.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card"><span class="value-icon">💡</span><h3>Clarity Over Complexity</h3><p>We believe in simple, structured digital setups — not confusing strategies or jargon. You understand exactly what we do, why we do it, and how it benefits your business.</p></div>
+        <div class="value-card"><span class="value-icon">🤝</span><h3>Honest & Transparent</h3><p>No fake guarantees. No inflated promises. We tell you what's achievable, set realistic timelines, and deliver exactly that — with full transparency on every step.</p></div>
+        <div class="value-card"><span class="value-icon">📍</span><h3>Local First Approach</h3><p>We deeply understand the Indian local business market. Our strategies are built for real local customers — people who search on Google, call directly, and walk through your door.</p></div>
+        <div class="value-card"><span class="value-icon">⚡</span><h3>Results That Matter</h3><p>We measure success by calls received, WhatsApp messages, and customers visiting your business — not just vanity metrics, impressions or confusing reports.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section class="section-whyus">
+    <div class="whyus-inner">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Why Choose Us</span>
+        <h2>What Makes Us Different</h2>
+        <p>There are many digital agencies. Here's why hundreds of local businesses across India chose Habibi Digital Solution.</p>
+      </div>
+      <div class="whyus-list">
+        <div class="whyus-item"><div class="whyus-number">01</div><div><h3>We Specialize in Local — Not General Digital Marketing</h3><p>Most agencies chase big brands. We focus exclusively on local and small businesses. This means every strategy, every tool, every plan we offer is built specifically for local customer acquisition — not corporate marketing.</p></div></div>
+        <div class="whyus-item"><div class="whyus-number">02</div><div><h3>Affordable Plans Built for Indian Business Realities</h3><p>We understand that a shop owner in Agra has a different budget than a multinational company. Our plans are priced fairly, deliver real value, and scale with your business — no locking you into expensive retainers you can't afford.</p></div></div>
+        <div class="whyus-item"><div class="whyus-number">03</div><div><h3>You Get Direct Access — No Middle Man, No Delays</h3><p>When you work with us, you talk directly to the person doing your work. No account managers passing messages. No 3-day delays for simple updates. Direct, fast, responsive communication always.</p></div></div>
+        <div class="whyus-item"><div class="whyus-number">04</div><div><h3>We Track Calls & WhatsApp — Not Just Website Traffic</h3><p>Vanity metrics don't pay bills. We focus on real business outcomes — how many people called, how many messaged on WhatsApp, how many visited because they found you on Google. That's what actually matters.</p></div></div>
+        <div class="whyus-item"><div class="whyus-number">05</div><div><h3>Proven Track Record Across Multiple Industries</h3><p>We've successfully helped clinics, coaching centers, restaurants, retail shops, service providers, real estate agents and more. Our experience across diverse local businesses means we know what works — and what doesn't.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section-testimonials">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Client Love</span>
+      <h2>What Our Clients Say</h2>
+      <p>Real words from real business owners who trusted us with their digital growth.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Within one month of working with Habibi Digital, my clinic started getting 15-20 new calls every week from Google. Before this, I had almost zero online presence. Highly recommend!"</p><div class="testi-author"><div class="testi-avatar">👨‍⚕️</div><div><div class="testi-name">Dr. Rahul Sharma</div><div class="testi-role">Clinic Owner, Agra</div></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"They set up my Google Business Profile properly, got me to the top of Maps, and built a website that actually converts visitors. My WhatsApp inquiries tripled in 6 weeks."</p><div class="testi-author"><div class="testi-avatar">👩‍💼</div><div><div class="testi-name">Priya Agarwal</div><div class="testi-role">Boutique Owner, Lucknow</div></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Very professional team. They understand local business challenges and deliver affordable, real results. My coaching center admissions increased 40% after our Google ranking improved."</p><div class="testi-author"><div class="testi-avatar">👨‍🏫</div><div><div class="testi-name">Amit Verma</div><div class="testi-role">Coaching Center, Delhi</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- ===== FOUNDER ===== -->
+  <section class="section-team">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">The Person Behind It</span>
+      <h2>Meet the Founder</h2>
+    </div>
+    <div class="founder-wrap">
+
+     
+      <div class="founder-avatar reveal">
+        <img
+          src="saadhabibi.jpg"
+          alt="Saad Habibi — Founder, Habibi Digital Solution"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+       
+        <div class="avatar-fallback" style="display:none;">SH</div>
+      </div>
+
+      <div class="reveal">
+        <div class="founder-label">Founder & Lead Strategist</div>
+        <h2 class="founder-name">Saad Habibi</h2>
+        <p class="founder-title">Google Business Profile Specialist · Local SEO Expert · Web Developer</p>
+        <p class="founder-bio">
+          Habibi Digital Solution was built with a deep passion for helping India's local businesses grow online. With hands-on expertise in Google Business Profile optimization, local SEO, website development, and WhatsApp inquiry systems — we have helped hundreds of businesses move from invisible to discoverable.<br><br>
+          Starting from Agra, we've expanded to serve businesses across multiple cities in India. Every client is treated as a partner. We don't just deliver a service — we build a digital foundation your business can grow on for years. Our approach is simple: understand your local market, implement the right digital strategy, and track results that actually matter to your business growth.
+        </p>
+        <div class="founder-socials">
+          <a class="social-link" href="https://instagram.com/habibidigital.in" target="_blank">📸 Instagram</a>
+          <a class="social-link" href="https://facebook.com/habibidigitalsolution" target="_blank">👍 Facebook</a>
+          <a class="social-link" href="https://x.com/habibidigital_" target="_blank">🐦 X / Twitter</a>
+          <a class="social-link" href="tel:+919458265093">📞 Call Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section-cta">
+    <div class="cta-inner">
+      <h2>Ready to Start Your Digital Journey?</h2>
+      <p>Whether you're a shop owner, doctor, coach, or service provider — we'll help you get found on Google, generate calls, and build a real customer base. Free consultation, no pressure, no commitment.</p>
+      <div class="cta-buttons">
+        <a class="btn-primary" href="https://wa.me/919458265093?text=Hello%20Habibi%20Digital,%20I%20read%20your%20story%20and%20want%20to%20know%20more">
+         <i class="fa-brands fa-whatsapp"></i>whatsapp now
+        </a>
+        <a class="btn-ghost" href="https://www.habibidigital.in/contact.html">
+          Get Free Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+<div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+  <script>
+    /* Intersection Observer */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(
+      '.timeline-item, .value-card, .reveal, .number-item, .service-card, .whyus-item, .testi-card'
+    ).forEach(el => observer.observe(el));
+
+    /* Parallax scroll */
+    const parallaxItems = [
+      { el: document.querySelector('.float-orb'), speed: 0.25 },
+      { el: document.getElementById('parallaxOrb1'), speed: 0.15 },
+      { el: document.getElementById('parallaxOrb2'), speed: 0.2 },
+      { el: document.getElementById('parallaxOrb3'), speed: 0.18 },
+    ];
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          parallaxItems.forEach(item => {
+            if (item.el) item.el.style.transform = `translateY(${scrollY * item.speed}px)`;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    /* Count up */
+    const countUp = (el, target, duration = 1600) => {
+      const start = Date.now();
+      const timer = setInterval(() => {
+        const elapsed = Date.now() - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(target * eased);
+        el.textContent = current + (el.dataset.suffix || '');
+        if (progress === 1) clearInterval(timer);
+      }, 16);
+    };
+    const numberObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bigEl = entry.target.querySelector('.number-big');
+          if (bigEl && !bigEl.dataset.animated) {
+            bigEl.dataset.animated = true;
+            const text = bigEl.textContent;
+            const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+            const suffix = text.replace(/[0-9.]/g, '');
+            if (!isNaN(num) && num > 0) {
+              bigEl.dataset.suffix = suffix;
+              bigEl.textContent = '0' + suffix;
+              countUp(bigEl, num);
+            }
+          }
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.number-item').forEach(el => numberObserver.observe(el));
+  </script>
+<!--nav-->
+<script>
+  lucide.createIcons();
+  AOS.init({ duration: 800, once: true });
+</script>
+<script>
+let lastScroll = 0;
+
+  const topbar = document.getElementById("topbar");
+  const header = document.getElementById("main-header");
+
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  const serviceBtn = document.getElementById("mobile-service-btn");
+  const serviceMenu = document.getElementById("mobile-service-menu");
+
+  const companyBtn = document.getElementById("mobile-company-btn");
+  const companyMenu = document.getElementById("mobile-company-menu");
+
+  // SCROLL EFFECT
+  window.addEventListener("scroll", () => {
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+      topbar.style.transform = "translateY(-100%)";
+      header.style.top = "0px";
+      mobileMenu.style.top = "70px"; // mobile adjust
+    } else {
+      topbar.style.transform = "translateY(0)";
+      header.style.top = "40px";
+      mobileMenu.style.top = "110px"; // mobile adjust
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // MOBILE MENU
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  serviceBtn.addEventListener("click", () => {
+    serviceMenu.classList.toggle("hidden");
+  });
+
+  companyBtn.addEventListener("click", () => {
+    companyMenu.classList.toggle("hidden");
+  });
+
+  lucide.createIcons();
+</script>
+</body>
+</html>
