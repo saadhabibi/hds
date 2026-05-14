@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Development Services | Habibi Digital Solution</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+  
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --purple-dark: #26215C;
+    --purple-mid: #534AB7;
+    --purple-light: #7F77DD;
+    --purple-pale: #EEEDFE;
+    --blue-dark: #042C53;
+    --blue-mid: #185FA5;
+    --blue-light: #378ADD;
+    --blue-pale: #E6F1FB;
+    --grad: linear-gradient(135deg, #534AB7 0%, #185FA5 60%, #378ADD 100%);
+    --grad-soft: linear-gradient(135deg, #EEEDFE 0%, #E6F1FB 100%);
+    --white: #ffffff;
+    --text: #1a1a2e;
+    --muted: #5a5a7a;
+    --border: rgba(83,74,183,0.15);
+    --card-bg: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #f8f7ff;
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    margin-top: 60px;
+    padding: 80px 5% 90px;
+    background: linear-gradient(160deg, #f0eefd 0%, #e8f3fd 60%, #f8f7ff 100%);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(83,74,183,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -80px; left: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(24,95,165,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--purple-pale); border: 1px solid rgba(83,74,183,0.2);
+    color: var(--purple-mid); font-size: 0.8rem; font-weight: 600;
+    padding: 6px 16px; border-radius: 50px; margin-bottom: 1.5rem;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .hero-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--purple-mid); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+  h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800; line-height: 1.15;
+    margin-bottom: 1.2rem;
+  }
+  h1 .gradient-text {
+    background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero-desc { font-size: 1.05rem; color: var(--muted); line-height: 1.75; margin-bottom: 2rem; font-weight: 400; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--grad); color: white; padding: 0.85rem 2rem;
+    border-radius: 50px; font-size: 0.95rem; font-weight: 600;
+    text-decoration: none; transition: all .3s; display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 8px 24px rgba(83,74,183,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(83,74,183,0.4); }
+  .btn-secondary {
+    background: white; color: var(--purple-mid);
+    border: 1.5px solid var(--purple-light); padding: 0.85rem 2rem;
+    border-radius: 50px; font-size: 0.95rem; font-weight: 600;
+    text-decoration: none; transition: all .3s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-secondary:hover { background: var(--purple-pale); transform: translateY(-2px); }
+  .hero-stats { display: flex; gap: 2rem; margin-top: 2.5rem; flex-wrap: wrap; }
+  .stat { text-align: left; }
+  .stat-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.8rem; font-weight: 800; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-label { font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+
+  /* Hero Visual - Website Screenshot Style */
+  .hero-visual {
+    background: white; border-radius: 20px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(83,74,183,0.2);
+    position: relative;
+  }
+  .browser-bar {
+    background: #f4f4f8; padding: 10px 14px;
+    display: flex; align-items: center; gap: 6px;
+    border-bottom: 1px solid #e8e8f0;
+  }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot.r { background: #ff6b6b; }
+  .dot.y { background: #ffd166; }
+  .dot.g { background: #06d6a0; }
+  .url-bar { flex: 1; background: white; border-radius: 6px; padding: 4px 10px; font-size: 0.72rem; color: var(--muted); margin-left: 8px; border: 1px solid #e0e0e8; }
+
+  /* Website Image Display */
+  .site-img-wrap {
+    width: 100%;
+    background: linear-gradient(135deg, #534AB7 0%, #185FA5 60%, #378ADD 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .site-img-wrap img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  /* Fallback mock if no image */
+  .site-preview { padding: 0; }
+  .site-header-mock {
+    background: var(--grad); padding: 18px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .mock-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; color: white; font-size: 0.9rem; }
+  .mock-nav { display: flex; gap: 12px; }
+  .mock-nav span { font-size: 0.65rem; color: rgba(255,255,255,0.8); }
+  .site-hero-mock { padding: 20px; background: linear-gradient(135deg, #f0eefd, #e8f3fd); }
+  .mock-headline { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 800; color: var(--purple-dark); margin-bottom: 6px; }
+  .mock-sub { font-size: 0.65rem; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
+  .mock-btn-row { display: flex; gap: 8px; }
+  .mock-btn { padding: 5px 14px; border-radius: 50px; font-size: 0.6rem; font-weight: 600; }
+  .mock-btn.p { background: var(--grad); color: white; }
+  .mock-btn.s { background: white; color: var(--purple-mid); border: 1px solid var(--purple-light); }
+  .site-cards-mock { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 12px 20px 20px; }
+  .mock-card { background: white; border-radius: 8px; padding: 10px; border: 1px solid var(--border); }
+  .mock-card-icon { width: 24px; height: 24px; border-radius: 6px; background: var(--grad); margin-bottom: 6px; }
+  .mock-card-title { font-size: 0.62rem; font-weight: 700; color: var(--purple-dark); margin-bottom: 3px; }
+  .mock-card-text { font-size: 0.55rem; color: var(--muted); line-height: 1.4; }
+
+  /* Floating badge on image */
+  .img-badge {
+    position: absolute; bottom: 14px; left: 14px;
+    background: white; border-radius: 12px;
+    padding: 8px 14px; display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    font-size: 0.75rem; font-weight: 600; color: var(--text);
+  }
+  .img-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #06d6a0; animation: pulse 2s infinite; }
+
+  /* ---- SECTION COMMONS ---- */
+  section { padding: 80px 5%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--grad-soft); border: 1px solid var(--border);
+    color: var(--purple-mid); font-size: 0.75rem; font-weight: 700;
+    padding: 5px 14px; border-radius: 50px; margin-bottom: 1rem;
+    letter-spacing: 0.8px; text-transform: uppercase;
+  }
+  h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .section-sub { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 600px; margin-bottom: 3rem; }
+
+  /* ---- SERVICES ---- */
+  .services-bg { background: white; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .service-card {
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 16px; padding: 2rem;
+    transition: all .3s; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: var(--grad); opacity: 0; transition: opacity .3s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(83,74,183,0.15); border-color: var(--purple-light); }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--grad-soft); border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem; font-size: 1.4rem;
+  }
+  .service-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { background: var(--purple-pale); color: var(--purple-mid); font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border-radius: 50px; }
+
+  /* ---- PROCESS ---- */
+  .process-bg { background: linear-gradient(160deg, #f0eefd 0%, #e8f3fd 100%); }
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; position: relative; }
+  .process-grid::before {
+    content: ''; position: absolute; top: 36px; left: 10%; right: 10%; height: 2px;
+    background: linear-gradient(90deg, var(--purple-mid), var(--blue-mid));
+    z-index: 0;
+  }
+  .process-step { text-align: center; padding: 1.5rem 1rem; position: relative; z-index: 1; }
+  .step-num {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--grad); color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.2rem; box-shadow: 0 8px 20px rgba(83,74,183,0.3);
+  }
+  .process-step h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+  /* ---- PACKAGES ---- */
+  .packages-bg { background: white; }
+  .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; align-items: start; }
+  .package-card {
+    background: white; border: 2px solid var(--border); border-radius: 20px;
+    padding: 2rem; transition: all .3s; position: relative;
+  }
+  .package-card.featured {
+    background: var(--grad); border-color: transparent;
+    box-shadow: 0 20px 50px rgba(83,74,183,0.35);
+    transform: scale(1.03);
+  }
+  .package-card:not(.featured):hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(83,74,183,0.12); }
+  .popular-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: #FFD700; color: #1a1a2e; font-size: 0.72rem; font-weight: 800;
+    padding: 5px 18px; border-radius: 50px; letter-spacing: 0.5px; white-space: nowrap;
+  }
+  .package-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; }
+  .package-card.featured .package-name { color: white; }
+  .package-desc { font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .package-card.featured .package-desc { color: rgba(255,255,255,0.8); }
+  .package-desc:not(.featured .package-desc) { color: var(--muted); }
+  .package-price { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 600; margin-bottom: 1.5rem; }
+  .package-card.featured .package-price { color: rgba(255,255,255,0.9); }
+  .package-price:not(.featured .package-price) { color: var(--purple-mid); }
+  .package-features { list-style: none; margin-bottom: 1.8rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .package-features li { font-size: 0.88rem; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+  .package-card.featured .package-features li { color: rgba(255,255,255,0.92); }
+  .package-features li::before { content: '✓'; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+  .package-card:not(.featured) .package-features li::before { color: var(--purple-mid); }
+  .package-card.featured .package-features li::before { color: #FFD700; }
+  .pkg-btn {
+    display: block; text-align: center; padding: 0.85rem;
+    border-radius: 50px; font-size: 0.9rem; font-weight: 700;
+    text-decoration: none; transition: all .3s;
+  }
+  .package-card:not(.featured) .pkg-btn { background: var(--grad); color: white; box-shadow: 0 6px 18px rgba(83,74,183,0.25); }
+  .package-card:not(.featured) .pkg-btn:hover { box-shadow: 0 10px 28px rgba(83,74,183,0.4); transform: translateY(-1px); }
+  .package-card.featured .pkg-btn { background: white; color: var(--purple-mid); }
+  .package-card.featured .pkg-btn:hover { background: #f0eefd; }
+
+  /* ---- TECH STACK ---- */
+  .tech-bg { background: linear-gradient(160deg, #f0eefd 0%, #e8f3fd 100%); }
+  .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; }
+  .tech-item {
+    background: white; border-radius: 14px; padding: 1.2rem 0.8rem;
+    text-align: center; border: 1.5px solid var(--border);
+    transition: all .3s;
+  }
+  .tech-item:hover { border-color: var(--purple-light); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(83,74,183,0.12); }
+  .tech-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+  .tech-name { font-size: 0.78rem; font-weight: 700; color: var(--text); }
+  .tech-type { font-size: 0.65rem; color: var(--muted); margin-top: 2px; }
+
+  /* ---- WHY US ---- */
+  .whyus-bg { background: white; }
+  .whyus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .why-card {
+    padding: 1.8rem; border-radius: 16px;
+    background: var(--grad-soft); border: 1.5px solid var(--border);
+    transition: all .3s;
+  }
+  .why-card:hover { box-shadow: 0 8px 24px rgba(83,74,183,0.12); transform: translateY(-3px); }
+  .why-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .why-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .why-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+  /* ---- FAQ ---- */
+  .faq-bg { background: linear-gradient(160deg, #f0eefd 0%, #e8f3fd 100%); }
+  .faq-wrap { max-width: 760px; margin: 0 auto; }
+  .faq-item { background: white; border-radius: 14px; border: 1.5px solid var(--border); margin-bottom: 1rem; overflow: hidden; }
+  .faq-q {
+    padding: 1.2rem 1.5rem; font-weight: 600; font-size: 0.95rem;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; transition: background .2s;
+  }
+  .faq-q:hover { background: var(--purple-pale); }
+  .faq-icon { width: 24px; height: 24px; border-radius: 50%; background: var(--grad); color: white; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; transition: transform .3s; }
+  .faq-a { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+  .faq-item.open .faq-a { max-height: 300px; padding: 0 1.5rem 1.2rem; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  /* ---- CTA ---- */
+  .cta-section {
+    background: var(--grad); padding: 80px 5%;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+    border-radius: 50%;
+  }
+  .cta-section h2 { color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.8rem, 3vw, 2.8rem); margin-bottom: 1rem; }
+  .cta-section p { color: rgba(255,255,255,0.85); font-size: 1rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .cta-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .cta-btn-white { background: white; color: var(--purple-mid); padding: 0.9rem 2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 700; text-decoration: none; transition: all .3s; display: inline-flex; align-items: center; gap: 8px; }
+  .cta-btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+  .cta-btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.6); padding: 0.9rem 2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 700; text-decoration: none; transition: all .3s; display: inline-flex; align-items: center; gap: 8px; }
+  .cta-btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .process-grid::before { display: none; }
+    .package-card.featured { transform: scale(1); }
+  }
+  @media (max-width: 600px) {
+    section { padding: 60px 5%; }
+    .hero-stats { gap: 1.5rem; }
+    .site-cards-mock { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<!-- HERO -->
+<div id="topbar" class="w-full bg-white text-gray-800 text-sm fixed top-0 left-0 z-50 border-b border-gray-200 transition-transform duration-300">
+
+  <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+
+    <!-- LEFT -->
+    <div class="flex items-center gap-4 flex-wrap">
+
+      <a href="tel:+919458265093" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+        <b><span class="hidden sm:inline">+91 9458265093</span></b>
+      </a>
+
+      <a href="mailto:habibidigital.in@gmail.com" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="mail" class="w-5 h-5"></i>
+       <b> <span class="hidden sm:inline">habibidigital.in@gmail.com</span></b>
+      </a>
+
+    </div>
+
+    <!-- RIGHT -->
+<div class="flex items-center gap-5 text-xl">
+
+  <!-- X (Twitter) -->
+  <a href="https://x.com/habibidigital_" target="_blank">
+    <i class="fa-brands fa-x-twitter hover:text-black"></i>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://instagram.com/habibidigital.in" target="_blank">
+    <i class="fa-brands fa-instagram hover:text-pink-500"></i>
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank">
+    <i class="fa-brands fa-facebook hover:text-blue-600"></i>
+  </a>
+
+</div>
+
+  </div>
+</div>
+
+
+
+<!-- HEADER -->
+<header id="main-header" class="fixed top-[40px] w-full backdrop-blur-md bg-white/90 border-b border-gray-200 z-40 transition-all duration-300">
+
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-0 h-14">
+     <img src="habibidigitalsolution.png" 
+     alt="Habibi Digital Solution Logo"
+     class="h-24 sm:h-8 md:h-24 w-auto">
+    </div>
+    <!-- DESKTOP NAV -->
+    <nav class="hidden md:flex items-center gap-8 text-lg font-semibold text-gray-800">
+
+      <a href="/" class="group relative hover:text-blue-600">
+        Home
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <!-- SERVICES -->
+      <div class="relative group">
+        <button class="hover:text-blue-600">Our Services ⌄</button>
+
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Website Development</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Google Business Profile</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">SEO</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Marketing</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Social Media Post</a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="relative group">
+        <button class="hover:text-blue-600">Company ⌄</button>
+
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+
+         
+            <a href="ourstory.html" class="block px-5 py-3 hover:bg-gray-100">Our Story</a>
+            <a href="habibi_digital_careers_page.html" class="block px-5 py-3 hover:bg-gray-100">Career</a>
+           
+
+          </div>
+        </div>
+      </div>
+
+      <a href="about.html" class="group relative hover:text-blue-600">
+        About Us
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <a href="portfolio.html" class="group relative hover:text-blue-600">
+        Portfolio
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <a href="blog.html" class="group relative hover:text-blue-600">
+        Blog
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+        <a href="contact.html" class="group relative hover:text-blue-600">
+        Contact Us
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+    </nav>
+
+    <!-- MOBILE BTN -->
+    <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+
+  </div>
+</header>
+
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="hidden fixed left-0 w-full bg-white shadow-lg z-30">
+
+  <div class="flex flex-col p-6 gap-5 text-base font-semibold text-gray-800">
+
+    <a href="/">Home</a>
+
+    <div>
+      <button id="mobile-service-btn" class="flex justify-between w-full">
+        Our Services ▼
+      </button>
+
+      <div id="mobile-service-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
+        <a href="#services">Website Development</a>
+        <a href="#services">Google Business Profile</a>
+        <a href="#services">SEO</a>
+        <a href="#services">Marketing</a>
+        <a href="#services">Social Media Post</a>
+      </div>
+    </div>
+
+    <div>
+      <button id="mobile-company-btn" class="flex justify-between w-full">
+        Company ▼
+      </button>
+
+      <div id="mobile-company-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
+        
+        <a href="ourstory.html">Our Story</a>
+        <a href="habibi_digital_careers_page.html">Career</a>
+      </div>
+    </div>
+
+    <a href="about.html">About Us</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact Us</a>
+
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span></span> Web Development Experts</div>
+      <h1>Build a Website That Actually <span class="gradient-text">Gets You Customers</span></h1>
+      <p class="hero-desc">We design and develop fast, mobile-friendly, SEO-optimized websites that help local businesses in India get more calls, WhatsApp inquiries, and real results — not just a pretty design.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/919458265093?text=Hello%20Habibi%20Digital,%20I%20need%20a%20website" class="btn-primary">💬 WhatsApp Us Now</a>
+        <a href="#packages" class="btn-secondary">View Packages →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">100+</div><div class="stat-label">Websites Built</div></div>
+        <div class="stat"><div class="stat-num">48hr</div><div class="stat-label">Avg. Delivery</div></div>
+        <div class="stat"><div class="stat-num">5★</div><div class="stat-label">Google Reviews</div></div>
+        <div class="stat"><div class="stat-num">1yr</div><div class="stat-label">Free Hosting</div></div>
+      </div>
+    </div>
+
+    <!-- Hero Visual: Website Screenshot with Browser Frame -->
+    <div class="hero-visual">
+      <div class="browser-bar">
+        <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+        <div class="url-bar">🔒 www.habibidigital.in</div>
+      </div>
+      <!-- Website screenshot image - replace src with your actual screenshot -->
+      <div class="site-img-wrap" style="position:relative;">
+        <img
+          src="https://www.habibidigital.in/og-image.jpg"
+          alt="Habibi Digital Solution Website Preview"
+          onerror="this.parentElement.innerHTML=getFallback()"
+          style="width:100%; display:block; min-height:300px; object-fit:cover;"
+        />
+        <div class="img-badge">
+          <div class="img-badge-dot"></div>
+          Live Website • habibidigital.in
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-bg">
+  <div class="section-inner">
+    <div class="section-label">What We Build</div>
+    <h2>Web Development <span class="g">Services We Offer</span></h2>
+    <p class="section-sub">From single-page landing sites to full multi-page business websites — we build everything your business needs to grow online.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏪</div>
+        <h3>Business Landing Page</h3>
+        <p>A single, powerful page that showcases your business, services, and contact options. Perfect for shops, clinics, coaches, and local services. Designed to generate calls and WhatsApp messages.</p>
+        <div class="service-tags"><span class="tag">1-Page</span><span class="tag">Mobile-First</span><span class="tag">Fast Delivery</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Multi-Page Business Website</h3>
+        <p>A complete website with Home, About, Services, Gallery, Testimonials, and Contact pages. Ideal for growing businesses, institutions, and companies wanting a strong digital presence.</p>
+        <div class="service-tags"><span class="tag">3-7 Pages</span><span class="tag">SEO Ready</span><span class="tag">Professional</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛒</div>
+        <h3>eCommerce Website</h3>
+        <p>Sell your products online with a complete store — product pages, cart, payments, and order management. Integrated with Indian payment gateways like Razorpay, Paytm, and UPI.</p>
+        <div class="service-tags"><span class="tag">Online Store</span><span class="tag">UPI / Razorpay</span><span class="tag">Inventory</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📅</div>
+        <h3>Booking & Appointment Sites</h3>
+        <p>For salons, clinics, tutors, consultants — let customers book appointments directly from your website. Reduce missed calls and manage your schedule effortlessly.</p>
+        <div class="service-tags"><span class="tag">Online Booking</span><span class="tag">Calendar Sync</span><span class="tag">Reminders</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎓</div>
+        <h3>Educational & Coaching Sites</h3>
+        <p>Coaching institutes, schools, and tutors get a website with course listing, fee details, admission forms, and inquiry capture. Build trust with students and parents online.</p>
+        <div class="service-tags"><span class="tag">Courses</span><span class="tag">Inquiry Form</span><span class="tag">Admissions</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Website Redesign & Repair</h3>
+        <p>Have an old or broken website? We redesign it to look modern, work on mobile, and load fast. We also fix bugs, update content, and improve your existing site's performance and SEO.</p>
+        <div class="service-tags"><span class="tag">Redesign</span><span class="tag">Speed Fix</span><span class="tag">Mobile Fix</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process-bg">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2>Our Simple <span class="g">4-Step Process</span></h2>
+    <p class="section-sub">We keep things simple and transparent — no confusion, no delays. Here's how we build your website from start to launch.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h3>Free Consultation</h3>
+        <p>We start with a WhatsApp or call to understand your business, goals, and what type of website you need. No obligation, 100% free.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h3>Design & Approval</h3>
+        <p>We share a design mockup or layout for your approval before building. You give feedback, we refine — your vision, our execution.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h3>Development & Testing</h3>
+        <p>We build your website with clean code, mobile responsiveness, fast speed, and all the features discussed. Fully tested before delivery.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h3>Launch & Support</h3>
+        <p>We launch your website on your domain. You get free 1-year hosting (in select plans) and 30 days of post-launch support from us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="packages-bg">
+  <div class="section-inner">
+    <div class="section-label">Pricing</div>
+    <h2>Simple & Transparent <span class="g">Website Packages</span></h2>
+    <p class="section-sub">No hidden charges. No confusing terms. Pick the plan that fits your business and we'll take care of everything else.</p>
+    <div class="packages-grid">
+      <div class="package-card">
+        <div class="package-name">Starter</div>
+        <div class="package-desc">For small businesses getting online for the first time</div>
+        <div class="package-price">⭐ Basic Listing Website</div>
+        <ul class="package-features">
+          <li>1-Page Professional Website</li>
+          <li>Mobile Responsive Design</li>
+          <li>Call & WhatsApp Buttons</li>
+          <li>Google Maps Integration</li>
+          <li>Basic SEO Setup</li>
+          <li>Contact / Inquiry Form</li>
+          <li>Domain Setup Assistance</li>
+          <li>3 Month Hosting Included</li>
+          <li>30-Day Support</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Hi,%20I%20am%20interested%20in%20the%20Starter%20website%20package" class="pkg-btn">Get Started →</a>
+      </div>
+
+      <div class="package-card featured">
+        <div class="popular-badge">🔥 Most Popular</div>
+        <div class="package-name">Growth</div>
+        <div class="package-desc">Complete online presence for serious businesses</div>
+        <div class="package-price">⚡ Full Business Website</div>
+        <ul class="package-features">
+          <li>3-5 Page Custom Website</li>
+          <li>Premium Mobile-First Design</li>
+          <li>WhatsApp & Call Integration</li>
+          <li>Lead Capture Form System</li>
+          <li>Full On-Page SEO Setup</li>
+          <li>Google Business Profile Setup</li>
+          <li>Social Media Links</li>
+          <li>1 Year Free Hosting</li>
+          <li>Speed & Performance Optimization</li>
+          <li>60-Day Priority Support</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Hi,%20I%20am%20interested%20in%20the%20Growth%20website%20package" class="pkg-btn">Get Started →</a>
+      </div>
+
+      <div class="package-card">
+        <div class="package-name">Custom / Enterprise</div>
+        <div class="package-desc">For advanced requirements — eCommerce, portals, bookings</div>
+        <div class="package-price">🏆 Tailored to Your Needs</div>
+        <ul class="package-features">
+          <li>Unlimited Pages</li>
+          <li>eCommerce / Booking System</li>
+          <li>Custom Features & Integrations</li>
+          <li>Payment Gateway (Razorpay/UPI)</li>
+          <li>Admin Dashboard</li>
+          <li>Advanced SEO Strategy</li>
+          <li>Blog / CMS System</li>
+          <li>1 Year Hosting + Maintenance</li>
+          <li>Dedicated Account Manager</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Hi,%20I%20need%20a%20custom%20website%20quote" class="pkg-btn">Get a Quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="tech" class="tech-bg">
+  <div class="section-inner">
+    <div class="section-label">Technologies</div>
+    <h2>The Tech Stack We <span class="g">Build With</span></h2>
+    <p class="section-sub">We use industry-standard, proven technologies to ensure your website is fast, secure, scalable, and easy to maintain.</p>
+    <div class="tech-grid">
+      <div class="tech-item"><div class="tech-icon">🌐</div><div class="tech-name">HTML5</div><div class="tech-type">Structure</div></div>
+      <div class="tech-item"><div class="tech-icon">🎨</div><div class="tech-name">CSS3</div><div class="tech-type">Styling</div></div>
+      <div class="tech-item"><div class="tech-icon">⚡</div><div class="tech-name">JavaScript</div><div class="tech-type">Interactivity</div></div>
+      <div class="tech-item"><div class="tech-icon">⚛️</div><div class="tech-name">React.js</div><div class="tech-type">Frontend</div></div>
+      <div class="tech-item"><div class="tech-icon">🟢</div><div class="tech-name">Node.js</div><div class="tech-type">Backend</div></div>
+      <div class="tech-item"><div class="tech-icon">🔷</div><div class="tech-name">WordPress</div><div class="tech-type">CMS</div></div>
+      <div class="tech-item"><div class="tech-icon">🛒</div><div class="tech-name">WooCommerce</div><div class="tech-type">eCommerce</div></div>
+      <div class="tech-item"><div class="tech-icon">🗄️</div><div class="tech-name">MySQL</div><div class="tech-type">Database</div></div>
+      <div class="tech-item"><div class="tech-icon">☁️</div><div class="tech-name">Cloud Hosting</div><div class="tech-type">Deployment</div></div>
+      <div class="tech-item"><div class="tech-icon">🔒</div><div class="tech-name">SSL / HTTPS</div><div class="tech-type">Security</div></div>
+      <div class="tech-item"><div class="tech-icon">📊</div><div class="tech-name">Google Analytics</div><div class="tech-type">Tracking</div></div>
+      <div class="tech-item"><div class="tech-icon">💳</div><div class="tech-name">Razorpay</div><div class="tech-type">Payments</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="whyus-bg">
+  <div class="section-inner">
+    <div class="section-label">Why Choose Us</div>
+    <h2>Why Local Businesses <span class="g">Trust Habibi Digital</span></h2>
+    <p class="section-sub">We're not just a web agency — we're a local partner that understands Indian business needs, speaks your language, and delivers what we promise.</p>
+    <div class="whyus-grid">
+      <div class="why-card"><div class="why-icon">🚀</div><h3>Fast 48-Hour Delivery</h3><p>For 1-page websites, we deliver within 48 hours. Multi-page websites are completed in 5-7 days. No unnecessary delays, no excuses.</p></div>
+      <div class="why-card"><div class="why-icon">💰</div><h3>Affordable for Indian Businesses</h3><p>We understand that budgets are tight for small businesses. Our pricing is honest, transparent, and designed for local Indian entrepreneurs.</p></div>
+      <div class="why-card"><div class="why-icon">📱</div><h3>Mobile-First Always</h3><p>Over 80% of your customers use mobile. Every website we build is perfectly optimized for smartphones — your site will look great on any screen.</p></div>
+      <div class="why-card"><div class="why-icon">🔍</div><h3>SEO Built-In From Day One</h3><p>We don't add SEO as an afterthought. Every website we build includes proper title tags, meta descriptions, schema markup, and fast loading speed.</p></div>
+      <div class="why-card"><div class="why-icon">💬</div><h3>Direct WhatsApp Support</h3><p>No support tickets, no waiting in queues. You get our direct WhatsApp number. Any question, any issue — we respond personally and fast.</p></div>
+      <div class="why-card"><div class="why-icon">⭐</div><h3>Proven Track Record</h3><p>We have real 5-star Google reviews from real clients. Our work speaks for itself — browse our portfolio and see what we've built for businesses like yours.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-bg">
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <h2>Frequently Asked <span class="g">Questions</span></h2>
+    <p class="section-sub">Common questions about our web development services. Still have doubts? Just WhatsApp us!</p>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How much does a website cost? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Our pricing depends on the type and size of the website. A basic 1-page landing website starts from an affordable price. Multi-page websites and eCommerce stores have custom pricing based on requirements. WhatsApp us for a free, no-obligation quote tailored to your business.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How long does it take to build a website? <div class="faq-icon">+</div></div>
+        <div class="faq-a">A 1-page landing website is typically ready within 24-48 hours. Multi-page business websites take 5-7 working days. eCommerce and custom websites take 10-15 days depending on features and content provided by the client.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you provide domain and hosting? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Yes! Our Growth plan includes 1 year of free hosting. We also assist with domain name registration and DNS setup. If you already have a domain or hosting, we can work with that too — no problem at all.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Will my website work on mobile phones? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Absolutely. Every website we build is 100% mobile-responsive. We test on multiple screen sizes including smartphones and tablets to ensure your website looks and works perfectly for all your visitors.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I update my website content myself? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Yes, if you choose a WordPress-based website, you'll be able to update text, images, and blog posts yourself without any coding knowledge. For HTML websites, simply send us the updated content on WhatsApp and we'll update it promptly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Will my website show up on Google? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Yes — we set up basic on-page SEO for every website we build, including meta titles, descriptions, heading structure, and Google Search Console submission. For stronger Google rankings, our monthly SEO plans can help you climb higher over time.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you build websites for all types of businesses? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Yes! We have built websites for shops, clinics, coaching centers, restaurants, salons, real estate agents, law firms, manufacturing companies, and many more. Whatever your business type, we can design a website that fits your needs perfectly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What happens after my website is launched? <div class="faq-icon">+</div></div>
+        <div class="faq-a">After launch, we provide 30-60 days of free support depending on your plan. You can request content changes, small tweaks, or technical fixes during this period. After that, we offer affordable monthly maintenance and SEO plans to keep your site growing.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div style="position: relative; z-index: 1;">
+    <h2>Ready to Build Your Dream Website?</h2>
+    <p>Get a free consultation today. We'll understand your business and suggest the best website solution — no pressure, no commitment.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/919458265093?text=Hello%20Habibi%20Digital,%20I%20want%20to%20discuss%20my%20website%20project" class="cta-btn-white">💬 WhatsApp for Free Quote</a>
+      <a href="tel:+919458265093" class="cta-btn-outline">📞 Call +91 94582 65093</a>
+    </div>
+  </div>
+</section>
+<div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+<script>
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+// Fallback mock if screenshot doesn't load
+function getFallback() {
+  return `<div style="padding:0;">
+    <div style="background:linear-gradient(135deg,#534AB7,#185FA5,#378ADD);padding:18px 20px;display:flex;justify-content:space-between;align-items:center;">
+      <div style="font-weight:800;color:white;font-size:0.9rem;">Habibi Digital</div>
+      <div style="display:flex;gap:12px;"><span style="font-size:0.65rem;color:rgba(255,255,255,0.8);">Home</span><span style="font-size:0.65rem;color:rgba(255,255,255,0.8);">Services</span><span style="font-size:0.65rem;color:rgba(255,255,255,0.8);">Contact</span></div>
+    </div>
+    <div style="padding:20px;background:linear-gradient(135deg,#f0eefd,#e8f3fd);">
+      <div style="font-weight:800;color:#26215C;font-size:0.95rem;margin-bottom:6px;">We Build Websites That Get You Customers</div>
+      <div style="font-size:0.65rem;color:#5a5a7a;margin-bottom:12px;line-height:1.5;">Fast. Mobile-friendly. SEO-optimized. Trusted by 100+ businesses across India.</div>
+      <div style="display:flex;gap:8px;">
+        <div style="padding:5px 14px;border-radius:50px;font-size:0.6rem;font-weight:600;background:linear-gradient(135deg,#534AB7,#378ADD);color:white;">💬 WhatsApp</div>
+        <div style="padding:5px 14px;border-radius:50px;font-size:0.6rem;font-weight:600;background:white;color:#534AB7;border:1px solid #7F77DD;">View Packages</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:12px 20px 20px;">
+      <div style="background:white;border-radius:8px;padding:10px;border:1px solid rgba(83,74,183,0.15);">
+        <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#534AB7,#378ADD);margin-bottom:6px;"></div>
+        <div style="font-size:0.62rem;font-weight:700;color:#26215C;margin-bottom:3px;">Landing Page</div>
+        <div style="font-size:0.55rem;color:#5a5a7a;line-height:1.4;">Fast 48hr delivery</div>
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px;border:1px solid rgba(83,74,183,0.15);">
+        <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#534AB7,#378ADD);margin-bottom:6px;"></div>
+        <div style="font-size:0.62rem;font-weight:700;color:#26215C;margin-bottom:3px;">Business Site</div>
+        <div style="font-size:0.55rem;color:#5a5a7a;line-height:1.4;">SEO optimized</div>
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px;border:1px solid rgba(83,74,183,0.15);">
+        <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#534AB7,#378ADD);margin-bottom:6px;"></div>
+        <div style="font-size:0.62rem;font-weight:700;color:#26215C;margin-bottom:3px;">eCommerce</div>
+        <div style="font-size:0.55rem;color:#5a5a7a;line-height:1.4;">UPI & Razorpay</div>
+      </div>
+    </div>
+    <div style="position:absolute;bottom:14px;left:14px;background:white;border-radius:12px;padding:8px 14px;display:flex;align-items:center;gap:8px;box-shadow:0 4px 16px rgba(0,0,0,0.12);font-size:0.75rem;font-weight:600;color:#1a1a2e;">
+      <div style="width:8px;height:8px;border-radius:50%;background:#06d6a0;"></div>
+      Live • habibidigital.in
+    </div>
+  </div>`;
+}
+</script>
+<script>
+  lucide.createIcons();
+  AOS.init({ duration: 800, once: true });
+</script>
+<script>
+let lastScroll = 0;
+
+  const topbar = document.getElementById("topbar");
+  const header = document.getElementById("main-header");
+
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  const serviceBtn = document.getElementById("mobile-service-btn");
+  const serviceMenu = document.getElementById("mobile-service-menu");
+
+  const companyBtn = document.getElementById("mobile-company-btn");
+  const companyMenu = document.getElementById("mobile-company-menu");
+
+  // SCROLL EFFECT
+  window.addEventListener("scroll", () => {
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+      topbar.style.transform = "translateY(-100%)";
+      header.style.top = "0px";
+      mobileMenu.style.top = "70px"; // mobile adjust
+    } else {
+      topbar.style.transform = "translateY(0)";
+      header.style.top = "40px";
+      mobileMenu.style.top = "110px"; // mobile adjust
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // MOBILE MENU
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  serviceBtn.addEventListener("click", () => {
+    serviceMenu.classList.toggle("hidden");
+  });
+
+  companyBtn.addEventListener("click", () => {
+    companyMenu.classList.toggle("hidden");
+  });
+
+  lucide.createIcons();
+</script>
+</body>
+</html>

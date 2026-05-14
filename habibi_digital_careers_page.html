@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career – Habibi Digital Solution</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:        #07080f;
+      --bg2:       #0d0f1a;
+      --bg3:       #131625;
+      --accent:    #7c6ef5;
+      --accent2:   #5b8df5;
+      --accent3:   #a78bfa;
+      --text:      #e8edf2;
+      --muted:     #7a82a8;
+      --border:    rgba(124,110,245,0.18);
+      --card-bg:   rgba(255,255,255,0.03);
+      --shadow:    0 8px 40px rgba(0,0,0,0.5);
+      --grad:      linear-gradient(135deg, #7c6ef5, #5b8df5);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none; opacity: 0.4;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; z-index: 1;
+      padding: 120px 5vw 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,110,245,0.13) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(124,110,245,0.1);
+      border: 1px solid var(--border);
+      color: var(--accent3);
+      font-size: 0.78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 100px;
+      margin-bottom: 28px;
+      animation: fadeUp .6s ease both;
+    }
+    .hero h1 {
+    font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 900; line-height: 1.1;
+      letter-spacing: -0.02em;
+      animation: fadeUp .7s .1s ease both;
+    }
+    .hero h1 span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p {
+      max-width: 540px; margin: 20px auto 0;
+      color: var(--muted); font-size: 1.05rem;
+      animation: fadeUp .7s .2s ease both;
+    }
+    .hero-scroll {
+      margin-top: 48px;
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--muted); font-size: 0.82rem;
+      animation: fadeUp .7s .35s ease both;
+    }
+    .scroll-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: linear-gradient(135deg, #7c6ef5, #5b8df5);
+      animation: pulse 1.8s infinite;
+    }
+
+    /* ── WHY JOIN ── */
+    .section { position: relative; z-index: 1; padding: 80px 5vw; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--accent3); margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700; letter-spacing: -0.01em;
+      margin-bottom: 48px;
+    }
+
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .perk-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: transform .25s, border-color .25s, background .25s;
+    }
+    .perk-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124,110,245,0.4);
+      background: rgba(124,110,245,0.06);
+    }
+    .perk-icon {
+      font-size: 1.8rem; margin-bottom: 14px;
+      display: block;
+    }
+    .perk-card h3 {
+      font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .perk-card p { color: var(--muted); font-size: 0.88rem; }
+
+    /* ── OPEN POSITIONS ── */
+    .positions-section { background: var(--bg2); }
+    .job-list { display: flex; flex-direction: column; gap: 16px; }
+
+    .job-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      flex-wrap: wrap;
+      transition: border-color .25s, background .25s, transform .25s;
+    }
+    .job-card:hover {
+      border-color: rgba(124,110,245,0.45);
+      background: rgba(124,110,245,0.05);
+      transform: translateY(-2px);
+    }
+    .job-info { flex: 1; min-width: 220px; }
+    .job-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem; font-weight: 700; margin-bottom: 10px;
+    }
+    .job-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: .04em;
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .tag-type { background: rgba(124,110,245,0.15); color: var(--accent3); }
+    .tag-mode { background: rgba(255,255,255,0.06); color: var(--muted); }
+    .tag-exp  { background: rgba(255,200,0,0.08); color: #e8c84a; }
+
+    .apply-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--grad);
+      color: #fff; font-weight: 700; font-size: 0.9rem;
+      padding: 12px 26px; border-radius: 100px;
+      text-decoration: none; white-space: nowrap;
+      transition: opacity .2s, transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(124,110,245,0.35);
+    }
+    .apply-btn:hover {
+      opacity: 0.88;
+      transform: scale(1.04);
+      box-shadow: 0 6px 28px rgba(124,110,245,0.5);
+    }
+    .apply-btn svg { width: 16px; height: 16px; }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      position: relative; z-index: 1;
+      margin: 0 5vw 80px;
+      background: linear-gradient(135deg, rgba(124,110,245,0.14), rgba(91,141,245,0.07));
+      border: 1px solid rgba(124,110,245,0.3);
+      border-radius: 24px;
+      padding: 60px 40px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,110,245,0.18), transparent 70%);
+    }
+    .cta-banner h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .cta-banner p { color: var(--muted); max-width: 440px; margin: 0 auto 28px; }
+    .cta-banner a.apply-btn { font-size: 1rem; padding: 14px 32px; color: #fff; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.6); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .job-card { padding: 22px 20px; }
+      .apply-btn { width: 100%; justify-content: center; }
+      .cta-banner { padding: 40px 24px; margin: 0 4vw 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div id="topbar" class="w-full bg-white text-gray-800 text-sm fixed top-0 left-0 z-50 border-b border-gray-200 transition-transform duration-300">
+
+  <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+
+    <!-- LEFT -->
+    <div class="flex items-center gap-4 flex-wrap">
+
+      <a href="tel:+919458265093" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+        <b><span class="hidden sm:inline">+91 9458265093</span></b>
+      </a>
+
+      <a href="mailto:habibidigital.in@gmail.com" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="mail" class="w-5 h-5"></i>
+       <b> <span class="hidden sm:inline">habibidigital.in@gmail.com</span></b>
+      </a>
+
+    </div>
+
+    <!-- RIGHT -->
+<div class="flex items-center gap-5 text-xl">
+
+  <!-- X (Twitter) -->
+  <a href="https://x.com/habibidigital_" target="_blank">
+    <i class="fa-brands fa-x-twitter hover:text-black"></i>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://instagram.com/habibidigital.in" target="_blank">
+    <i class="fa-brands fa-instagram hover:text-pink-500"></i>
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank">
+    <i class="fa-brands fa-facebook hover:text-blue-600"></i>
+  </a>
+
+</div>
+
+  </div>
+</div>
+
+
+
+<!-- HEADER -->
+<header id="main-header" class="fixed top-[40px] w-full backdrop-blur-md bg-white/90 border-b border-gray-200 z-40 transition-all duration-300">
+
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-0 h-14">
+     <img src="habibidigitalsolution.png" 
+     alt="Habibi Digital Solution Logo"
+     class="h-24 sm:h-8 md:h-24 w-auto">
+    </div>
+    <!-- DESKTOP NAV -->
+    <nav class="hidden md:flex items-center gap-8 text-lg font-semibold text-gray-800">
+
+      <a href="/" class="group relative hover:text-blue-600">
+        Home
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <!-- SERVICES -->
+      <div class="relative group">
+        <button class="hover:text-blue-600">Our Services ⌄</button>
+
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Website Development</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Google Business Profile</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">SEO</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Marketing</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Social Media Post</a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPANY -->
+      <div class="relative group">
+        <button class="hover:text-blue-600">Company ⌄</button>
+
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+
+         
+            <a href="ourstory.html" class="block px-5 py-3 hover:bg-gray-100">Our Story</a>
+            <a href="habibi_digital_careers_page.html" class="block px-5 py-3 hover:bg-gray-100">Career</a>
+            
+
+          </div>
+        </div>
+      </div>
+
+      <a href="about.html" class="group relative hover:text-blue-600">
+        About Us
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <a href="portfolio.html" class="group relative hover:text-blue-600">
+        Portfolio
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+      <a href="blog.html" class="group relative hover:text-blue-600">
+        Blog
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+        <a href="contact.html" class="group relative hover:text-blue-600">
+        Contact Us
+        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
+      </a>
+
+    </nav>
+
+    <!-- MOBILE BTN -->
+    <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+
+  </div>
+</header>
+
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="hidden fixed left-0 w-full bg-white shadow-lg z-30">
+
+  <div class="flex flex-col p-6 gap-5 text-base font-semibold text-gray-800">
+
+    <a href="/">Home</a>
+
+    <div>
+      <button id="mobile-service-btn" class="flex justify-between w-full">
+        Our Services ▼
+      </button>
+
+      <div id="mobile-service-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
+        <a href="#services">Website Development</a>
+        <a href="#services">Google Business Profile</a>
+        <a href="#services">SEO</a>
+        <a href="#services">Marketing</a>
+        <a href="#services">Social Media Post</a>
+      </div>
+    </div>
+
+    <div>
+      <button id="mobile-company-btn" class="flex justify-between w-full">
+        Company ▼
+      </button>
+
+      <div id="mobile-company-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
+        
+        <a href="ourstory.html">Our Story</a>
+        <a href="habibi_digital_careers_page.html">Career</a>
+      
+      </div>
+    </div>
+
+    <a href="about.html">About Us</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact Us</a>
+
+  </div>
+</div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-tag">
+      <span class="scroll-dot"></span>
+      We're Hiring
+    </div>
+    <h1>Grow With<br><span>Habibi Digital Solution</span></h1>
+    <p>Join a passionate team helping local businesses build their digital presence across India.</p>
+    <div class="hero-scroll">
+      <span class="scroll-dot"></span>
+      Scroll to see open positions
+    </div>
+  </section>
+
+  <!-- WHY JOIN US -->
+  <section class="section">
+    <div class="section-label">Why Join Us</div>
+    <div class="section-title">A Place to Learn,<br>Build & Grow</div>
+    <div class="perks-grid">
+      <div class="perk-card">
+        <span class="perk-icon">🚀</span>
+        <h3>Real Work, Real Impact</h3>
+        <p>Work on live projects for actual businesses. Your work will be seen — not stored in folders.</p>
+      </div>
+      <div class="perk-card">
+        <span class="perk-icon">🤝</span>
+        <h3>Collaborative Culture</h3>
+        <p>Small team, big collaboration. Everyone's voice counts and ideas are always welcome.</p>
+      </div>
+      <div class="perk-card">
+        <span class="perk-icon">📈</span>
+        <h3>Grow Fast</h3>
+        <p>We're growing quickly — which means opportunities for you to grow along with us.</p>
+      </div>
+      <div class="perk-card">
+        <span class="perk-icon">🏠</span>
+        <h3>Remote Friendly</h3>
+        <p>Work from wherever you're comfortable. We believe in flexibility and trust.</p>
+      </div>
+      <div class="perk-card">
+        <span class="perk-icon">🧠</span>
+        <h3>Skill Development</h3>
+        <p>Learn digital marketing, SEO, web development and more through hands-on experience.</p>
+      </div>
+      <div class="perk-card">
+        <span class="perk-icon">💬</span>
+        <h3>Transparent Communication</h3>
+        <p>No office politics. Direct, honest, and clear conversations — always.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN POSITIONS -->
+  <section class="section positions-section">
+    <div class="section-label">Open Positions</div>
+    <div class="section-title">Current Openings</div>
+    <div class="job-list">
+
+      <div class="job-card">
+        <div class="job-info">
+          <div class="job-title">SEO Executive</div>
+          <div class="job-tags">
+            <span class="tag tag-type">Full Time</span>
+            <span class="tag tag-mode">Remote</span>
+            <span class="tag tag-exp">0–2 Years</span>
+          </div>
+        </div>
+        <!-- Replace the href below with your actual Google Form link -->
+        <a class="apply-btn" href="https://forms.google.com/YOUR_FORM_LINK" target="_blank" rel="noopener">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <div class="job-title">Social Media Manager</div>
+          <div class="job-tags">
+            <span class="tag tag-type">Full Time</span>
+            <span class="tag tag-mode">Remote</span>
+            <span class="tag tag-exp">0–2 Years</span>
+          </div>
+        </div>
+        <a class="apply-btn" href="https://forms.google.com/YOUR_FORM_LINK" target="_blank" rel="noopener">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <div class="job-title">Web Developer (Frontend)</div>
+          <div class="job-tags">
+            <span class="tag tag-type">Freelance / Part-time</span>
+            <span class="tag tag-mode">Remote</span>
+            <span class="tag tag-exp">1–3 Years</span>
+          </div>
+        </div>
+        <a class="apply-btn" href="https://forms.google.com/YOUR_FORM_LINK" target="_blank" rel="noopener">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <div class="job-title">Content Writer (Hindi / English)</div>
+          <div class="job-tags">
+            <span class="tag tag-type">Freelance</span>
+            <span class="tag tag-mode">Remote</span>
+            <span class="tag tag-exp">Fresher OK</span>
+          </div>
+        </div>
+        <a class="apply-btn" href="https://forms.google.com/YOUR_FORM_LINK" target="_blank" rel="noopener">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <div class="job-title">Google Business Profile Specialist</div>
+          <div class="job-tags">
+            <span class="tag tag-type">Full Time</span>
+            <span class="tag tag-mode">Remote</span>
+            <span class="tag tag-exp">0–1 Year</span>
+          </div>
+        </div>
+        <a class="apply-btn" href="https://forms.google.com/YOUR_FORM_LINK" target="_blank" rel="noopener">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>Don't See Your Role?</h2>
+    <p>We're always looking for talented people. Send us a general application and we'll keep you in mind.</p>
+    <!-- Replace with your Google Form link -->
+    <a class="apply-btn" href="https://forms.google.com/YOUR_FORM_LINK" target="_blank" rel="noopener">
+      Send General Application
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+<script>
+  lucide.createIcons();
+  AOS.init({ duration: 800, once: true });
+</script>
+<script>
+let lastScroll = 0;
+
+  const topbar = document.getElementById("topbar");
+  const header = document.getElementById("main-header");
+
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  const serviceBtn = document.getElementById("mobile-service-btn");
+  const serviceMenu = document.getElementById("mobile-service-menu");
+
+  const companyBtn = document.getElementById("mobile-company-btn");
+  const companyMenu = document.getElementById("mobile-company-menu");
+
+  // SCROLL EFFECT
+  window.addEventListener("scroll", () => {
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+      topbar.style.transform = "translateY(-100%)";
+      header.style.top = "0px";
+      mobileMenu.style.top = "70px"; // mobile adjust
+    } else {
+      topbar.style.transform = "translateY(0)";
+      header.style.top = "40px";
+      mobileMenu.style.top = "110px"; // mobile adjust
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // MOBILE MENU
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  serviceBtn.addEventListener("click", () => {
+    serviceMenu.classList.toggle("hidden");
+  });
+
+  companyBtn.addEventListener("click", () => {
+    companyMenu.classList.toggle("hidden");
+  });
+
+  lucide.createIcons();
+</script>
+</body>
+</html>
