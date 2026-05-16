@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Media Services | Habibi Digital Solution</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="index.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --purple-dark: #26215C;
+    --purple-mid: #534AB7;
+    --purple-light: #7F77DD;
+    --purple-pale: #EEEDFE;
+    --blue-dark: #042C53;
+    --blue-mid: #185FA5;
+    --blue-light: #378ADD;
+    --blue-pale: #E6F1FB;
+    --grad: linear-gradient(135deg, #534AB7 0%, #185FA5 60%, #378ADD 100%);
+    --grad-soft: linear-gradient(135deg, #EEEDFE 0%, #E6F1FB 100%);
+    --white: #ffffff;
+    --text: #1a1a2e;
+    --muted: #5a5a7a;
+    --border: rgba(83,74,183,0.15);
+    --card-bg: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #f8f7ff;
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    margin-top: 60px;
+    padding: 80px 5% 90px;
+    background: linear-gradient(160deg, #f0eefd 0%, #e8f3fd 60%, #f8f7ff 100%);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(83,74,183,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -80px; left: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(24,95,165,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--purple-pale); border: 1px solid rgba(83,74,183,0.2);
+    color: var(--purple-mid); font-size: 0.8rem; font-weight: 600;
+    padding: 6px 16px; border-radius: 50px; margin-bottom: 1.5rem;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .hero-badge span { width: 6px; height: 6px; border-radius: 50%; background: var(--purple-mid); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+  h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800; line-height: 1.15;
+    margin-bottom: 1.2rem;
+  }
+  h1 .gradient-text {
+    background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero-desc { font-size: 1.05rem; color: var(--muted); line-height: 1.75; margin-bottom: 2rem; font-weight: 400; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--grad); color: white; padding: 0.85rem 2rem;
+    border-radius: 50px; font-size: 0.95rem; font-weight: 600;
+    text-decoration: none; transition: all .3s; display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 8px 24px rgba(83,74,183,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(83,74,183,0.4); }
+  .btn-secondary {
+    background: white; color: var(--purple-mid);
+    border: 1.5px solid var(--purple-light); padding: 0.85rem 2rem;
+    border-radius: 50px; font-size: 0.95rem; font-weight: 600;
+    text-decoration: none; transition: all .3s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-secondary:hover { background: var(--purple-pale); transform: translateY(-2px); }
+  .hero-stats { display: flex; gap: 2rem; margin-top: 2.5rem; flex-wrap: wrap; }
+  .stat { text-align: left; }
+  .stat-num { font-size: 1.8rem; font-weight: 800; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-label { font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+
+  /* ---- ANIMATED SOCIAL VISUAL ---- */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+  }
+
+  /* Phone mockup */
+  .phone-mockup {
+    width: 220px;
+    background: #1a1a2e;
+    border-radius: 36px;
+    padding: 12px 8px;
+    box-shadow: 0 30px 80px rgba(83,74,183,0.35), 0 0 0 2px rgba(255,255,255,0.08);
+    position: relative;
+    z-index: 3;
+    flex-shrink: 0;
+    animation: floatPhone 4s ease-in-out infinite;
+  }
+  @keyframes floatPhone { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+
+  .phone-notch {
+    width: 60px; height: 10px; background: #0d0d1a;
+    border-radius: 10px; margin: 0 auto 10px;
+  }
+  .phone-screen {
+    background: white; border-radius: 24px; overflow: hidden;
+  }
+  /* Instagram-style feed */
+  .insta-header {
+    padding: 10px 12px 8px;
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .insta-avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--grad);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; font-weight: 800; color: white;
+  }
+  .insta-name { font-size: 0.65rem; font-weight: 700; color: #1a1a2e; }
+  .insta-handle { font-size: 0.55rem; color: #999; }
+  .insta-post-img {
+    width: 100%; aspect-ratio: 1;
+    background: var(--grad);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .post-content-text {
+    color: white; font-size: 0.55rem; font-weight: 700; text-align: center; padding: 10px;
+    line-height: 1.5;
+  }
+  .insta-actions { padding: 8px 12px 4px; display: flex; gap: 10px; }
+  .insta-actions i { font-size: 0.9rem; color: #333; }
+  .insta-likes { padding: 0 12px; font-size: 0.6rem; font-weight: 700; color: #1a1a2e; }
+  .insta-caption { padding: 4px 12px 10px; font-size: 0.58rem; color: #555; line-height: 1.5; }
+
+  /* Animated post cycling */
+  .post-slide { display: none; }
+  .post-slide.active { display: block; animation: fadeInPost 0.6s ease; }
+  @keyframes fadeInPost { from{opacity:0;transform:scale(0.97)} to{opacity:1;transform:scale(1)} }
+
+  /* Floating platform icons around phone */
+  .floating-icon {
+    position: absolute;
+    width: 52px; height: 52px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    animation: floatIcon 3s ease-in-out infinite;
+    z-index: 2;
+  }
+  .fi-insta { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); top: 10%; left: -20px; animation-delay: 0s; }
+  .fi-fb { background: #1877F2; top: 40%; left: -40px; animation-delay: 0.5s; }
+  .fi-yt { background: #FF0000; bottom: 15%; left: -10px; animation-delay: 1s; }
+  .fi-wa { background: #25D366; top: 10%; right: -20px; animation-delay: 0.3s; }
+  .fi-li { background: #0A66C2; top: 40%; right: -40px; animation-delay: 0.8s; }
+  .fi-x { background: #000; bottom: 15%; right: -10px; animation-delay: 1.3s; }
+
+  @keyframes floatIcon {
+    0%,100%{ transform: translateY(0) rotate(0deg); }
+    33%{ transform: translateY(-8px) rotate(3deg); }
+    66%{ transform: translateY(4px) rotate(-2deg); }
+  }
+
+  /* Floating stats badges */
+  .stat-badge {
+    position: absolute;
+    background: white; border-radius: 12px;
+    padding: 8px 14px; display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    font-size: 0.72rem; font-weight: 700; color: var(--text);
+    z-index: 4; white-space: nowrap;
+    animation: floatBadge 3.5s ease-in-out infinite;
+  }
+  .stat-badge.top { top: -10px; right: 50px; animation-delay: 0.4s; }
+  .stat-badge.bot { bottom: -10px; left: 30px; animation-delay: 1s; }
+  .badge-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .badge-dot.green { background: #06d6a0; animation: pulse 2s infinite; }
+  .badge-dot.pink { background: #f72585; animation: pulse 2s infinite; }
+  @keyframes floatBadge { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+  /* ---- SECTION COMMONS ---- */
+  section { padding: 80px 5%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--grad-soft); border: 1px solid var(--border);
+    color: var(--purple-mid); font-size: 0.75rem; font-weight: 700;
+    padding: 5px 14px; border-radius: 50px; margin-bottom: 1rem;
+    letter-spacing: 0.8px; text-transform: uppercase;
+  }
+  h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .section-sub { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 600px; margin-bottom: 3rem; }
+
+  /* ---- SERVICES ---- */
+  .services-bg { background: white; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .service-card {
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 16px; padding: 2rem;
+    transition: all .3s; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: var(--grad); opacity: 0; transition: opacity .3s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(83,74,183,0.15); border-color: var(--purple-light); }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--grad-soft); border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem; font-size: 1.4rem;
+  }
+  .service-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { background: var(--purple-pale); color: var(--purple-mid); font-size: 0.72rem; font-weight: 600; padding: 4px 10px; border-radius: 50px; }
+
+  /* ---- PLATFORMS ---- */
+  .platforms-bg { background: linear-gradient(160deg, #f0eefd 0%, #e8f3fd 100%); }
+  .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+  .platform-card {
+    background: white; border-radius: 16px; padding: 1.5rem 1rem;
+    text-align: center; border: 1.5px solid var(--border);
+    transition: all .3s; cursor: default;
+  }
+  .platform-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(83,74,183,0.15); border-color: var(--purple-light); }
+  .platform-icon-wrap {
+    width: 56px; height: 56px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 0.8rem; font-size: 1.6rem;
+    transition: transform .3s;
+  }
+  .platform-card:hover .platform-icon-wrap { transform: scale(1.1) rotate(-5deg); }
+  .platform-name { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .platform-desc { font-size: 0.72rem; color: var(--muted); }
+
+  /* ---- PROCESS ---- */
+  .process-bg { background: white; }
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; position: relative; }
+  .process-grid::before {
+    content: ''; position: absolute; top: 36px; left: 10%; right: 10%; height: 2px;
+    background: linear-gradient(90deg, var(--purple-mid), var(--blue-mid));
+    z-index: 0;
+  }
+  .process-step { text-align: center; padding: 1.5rem 1rem; position: relative; z-index: 1; }
+  .step-num {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--grad); color: white;
+    font-size: 1.5rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.2rem; box-shadow: 0 8px 20px rgba(83,74,183,0.3);
+  }
+  .process-step h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+  /* ---- PACKAGES ---- */
+  .packages-bg { background: linear-gradient(160deg, #f0eefd 0%, #e8f3fd 100%); }
+  .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; align-items: start; }
+  .package-card {
+    background: white; border: 2px solid var(--border); border-radius: 20px;
+    padding: 2rem; transition: all .3s; position: relative;
+  }
+  .package-card.featured {
+    background: var(--grad); border-color: transparent;
+    box-shadow: 0 20px 50px rgba(83,74,183,0.35);
+    transform: scale(1.03);
+  }
+  .package-card:not(.featured):hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(83,74,183,0.12); }
+  .popular-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: #FFD700; color: #1a1a2e; font-size: 0.72rem; font-weight: 800;
+    padding: 5px 18px; border-radius: 50px; letter-spacing: 0.5px; white-space: nowrap;
+  }
+  .package-name { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; }
+  .package-card.featured .package-name { color: white; }
+  .package-desc { font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .package-card.featured .package-desc { color: rgba(255,255,255,0.8); }
+  .package-desc:not(.featured .package-desc) { color: var(--muted); }
+  .package-price { font-size: 0.8rem; font-weight: 600; margin-bottom: 1.5rem; }
+  .package-card.featured .package-price { color: rgba(255,255,255,0.9); }
+  .package-price:not(.featured .package-price) { color: var(--purple-mid); }
+  .package-features { list-style: none; margin-bottom: 1.8rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .package-features li { font-size: 0.88rem; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+  .package-card.featured .package-features li { color: rgba(255,255,255,0.92); }
+  .package-features li::before { content: '✓'; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+  .package-card:not(.featured) .package-features li::before { color: var(--purple-mid); }
+  .package-card.featured .package-features li::before { color: #FFD700; }
+  .pkg-btn {
+    display: block; text-align: center; padding: 0.85rem;
+    border-radius: 50px; font-size: 0.9rem; font-weight: 700;
+    text-decoration: none; transition: all .3s;
+  }
+  .package-card:not(.featured) .pkg-btn { background: var(--grad); color: white; box-shadow: 0 6px 18px rgba(83,74,183,0.25); }
+  .package-card:not(.featured) .pkg-btn:hover { box-shadow: 0 10px 28px rgba(83,74,183,0.4); transform: translateY(-1px); }
+  .package-card.featured .pkg-btn { background: white; color: var(--purple-mid); }
+  .package-card.featured .pkg-btn:hover { background: #f0eefd; }
+
+  /* ---- WHY US ---- */
+  .whyus-bg { background: white; }
+  .whyus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .why-card {
+    padding: 1.8rem; border-radius: 16px;
+    background: var(--grad-soft); border: 1.5px solid var(--border);
+    transition: all .3s;
+  }
+  .why-card:hover { box-shadow: 0 8px 24px rgba(83,74,183,0.12); transform: translateY(-3px); }
+  .why-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .why-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .why-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+  /* ---- FAQ ---- */
+  .faq-bg { background: linear-gradient(160deg, #f0eefd 0%, #e8f3fd 100%); }
+  .faq-wrap { max-width: 760px; margin: 0 auto; }
+  .faq-item { background: white; border-radius: 14px; border: 1.5px solid var(--border); margin-bottom: 1rem; overflow: hidden; }
+  .faq-q {
+    padding: 1.2rem 1.5rem; font-weight: 600; font-size: 0.95rem;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; transition: background .2s;
+  }
+  .faq-q:hover { background: var(--purple-pale); }
+  .faq-icon { width: 24px; height: 24px; border-radius: 50%; background: var(--grad); color: white; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; transition: transform .3s; }
+  .faq-a { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+  .faq-item.open .faq-a { max-height: 300px; padding: 0 1.5rem 1.2rem; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  /* ---- CTA ---- */
+  .cta-section {
+    background: var(--grad); padding: 80px 5%;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: ''; position: absolute; top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+    border-radius: 50%;
+  }
+  .cta-section h2 { color: white; font-size: clamp(1.8rem, 3vw, 2.8rem); margin-bottom: 1rem; }
+  .cta-section p { color: rgba(255,255,255,0.85); font-size: 1rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .cta-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .cta-btn-white { background: white; color: var(--purple-mid); padding: 0.9rem 2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 700; text-decoration: none; transition: all .3s; display: inline-flex; align-items: center; gap: 8px; }
+  .cta-btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+  .cta-btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.6); padding: 0.9rem 2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 700; text-decoration: none; transition: all .3s; display: inline-flex; align-items: center; gap: 8px; }
+  .cta-btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .process-grid::before { display: none; }
+    .package-card.featured { transform: scale(1); }
+    .hero-visual { min-height: 320px; }
+    .floating-icon { display: none; }
+    .stat-badge { display: none; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 60px 5%; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div id="topbar" class="w-full bg-white text-gray-800 text-sm fixed top-0 left-0 z-50 border-b border-gray-200 transition-transform duration-300">
+  <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-4 flex-wrap">
+      <a href="tel:+919458265093" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+        <b><span class="hidden sm:inline">+91 9458265093</span></b>
+      </a>
+      <a href="mailto:habibidigital.in@gmail.com" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="mail" class="w-5 h-5"></i>
+        <b><span class="hidden sm:inline">habibidigital.in@gmail.com</span></b>
+      </a>
+    </div>
+    <div class="flex items-center gap-5 text-xl">
+      <a href="https://x.com/habibidigital_" target="_blank"><i class="fa-brands fa-x-twitter hover:text-black"></i></a>
+      <a href="https://instagram.com/habibidigital.in" target="_blank"><i class="fa-brands fa-instagram hover:text-pink-500"></i></a>
+      <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank"><i class="fa-brands fa-facebook hover:text-blue-600"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="main-header" class="fixed top-[40px] w-full backdrop-blur-md bg-white/90 border-b border-gray-200 z-40 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-0 h-14">
+      <img src="habibidigitalsolution.png" alt="Habibi Digital Solution Logo" class="h-24 sm:h-8 md:h-24 w-auto">
+    </div>
+    <nav class="hidden md:flex items-center gap-8 text-lg font-semibold text-gray-800">
+      <a href="/" class="group relative hover:text-blue-600">Home<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <div class="relative group">
+        <button class="hover:text-blue-600">Our Services ⌄</button>
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+            <a href="webdev.html" class="block px-5 py-3 hover:bg-gray-100">Website Development</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Google Business Profile</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">SEO</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Marketing</a>
+            <a href="social-media.html" class="block px-5 py-3 hover:bg-gray-100 font-bold text-purple-600">Social Media Post</a>
+          </div>
+        </div>
+      </div>
+      <div class="relative group">
+        <button class="hover:text-blue-600">Company ⌄</button>
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+            <a href="ourstory.html" class="block px-5 py-3 hover:bg-gray-100">Our Story</a>
+            <a href="habibi_digital_careers_page.html" class="block px-5 py-3 hover:bg-gray-100">Career</a>
+          </div>
+        </div>
+      </div>
+      <a href="about.html" class="group relative hover:text-blue-600">About Us<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="portfolio.html" class="group relative hover:text-blue-600">Portfolio<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="blog.html" class="group relative hover:text-blue-600">Blog<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="contact.html" class="group relative hover:text-blue-600">Contact Us<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+    </nav>
+    <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="hidden fixed left-0 w-full bg-white shadow-lg z-30">
+  <div class="flex flex-col p-6 gap-5 text-base font-semibold text-gray-800">
+    <a href="/">Home</a>
+    <div>
+      <button id="mobile-service-btn" class="flex justify-between w-full">Our Services ▼</button>
+      <div id="mobile-service-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
+        <a href="webdev.html">Website Development</a>
+        <a href="#services">Google Business Profile</a>
+        <a href="#services">SEO</a>
+        <a href="#services">Marketing</a>
+        <a href="social-media.html">Social Media Post</a>
+      </div>
+    </div>
+    <div>
+      <button id="mobile-company-btn" class="flex justify-between w-full">Company ▼</button>
+      <div id="mobile-company-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
+        <a href="ourstory.html">Our Story</a>
+        <a href="habibi_digital_careers_page.html">Career</a>
+      </div>
+    </div>
+    <a href="about.html">About Us</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span></span> Social Media Experts</div>
+      <h1>Posts That <span class="gradient-text">Stop the Scroll</span> & Grow Your Brand</h1>
+      <p class="hero-desc">We create professional, eye-catching social media posts for your Instagram, Facebook, and more — so your business always looks active, credible, and ready to attract customers.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/919458265093?text=Hello%20Habibi%20Digital,%20I%20need%20social%20media%20posts" class="btn-primary">💬 WhatsApp Us Now</a>
+        <a href="#packages" class="btn-secondary">View Packages →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Posts Created</div></div>
+        <div class="stat"><div class="stat-num">48hr</div><div class="stat-label">Turnaround</div></div>
+        <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Platforms</div></div>
+        <div class="stat"><div class="stat-num">5★</div><div class="stat-label">Client Rating</div></div>
+      </div>
+    </div>
+
+    <!-- Animated Social Visual -->
+    <div class="hero-visual">
+      <!-- Floating platform icons -->
+      <div class="floating-icon fi-insta"><i class="fa-brands fa-instagram" style="color:white;font-size:1.5rem;"></i></div>
+      <div class="floating-icon fi-fb"><i class="fa-brands fa-facebook-f" style="color:white;font-size:1.4rem;"></i></div>
+      <div class="floating-icon fi-yt"><i class="fa-brands fa-youtube" style="color:white;font-size:1.3rem;"></i></div>
+      <div class="floating-icon fi-wa"><i class="fa-brands fa-whatsapp" style="color:white;font-size:1.5rem;"></i></div>
+      <div class="floating-icon fi-li"><i class="fa-brands fa-linkedin-in" style="color:white;font-size:1.4rem;"></i></div>
+      <div class="floating-icon fi-x"><i class="fa-brands fa-x-twitter" style="color:white;font-size:1.3rem;"></i></div>
+
+      <!-- Stat badges -->
+      <div class="stat-badge top">
+        <div class="badge-dot pink"></div>
+        +2.4K Likes Today
+      </div>
+      <div class="stat-badge bot">
+        <div class="badge-dot green"></div>
+        Post Published ✓
+      </div>
+
+      <!-- Phone mockup -->
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <!-- Post 1: Promo -->
+          <div class="post-slide active" id="post1">
+            <div class="insta-header">
+              <div class="insta-avatar">HD</div>
+              <div>
+                <div class="insta-name">habibidigital.in</div>
+                <div class="insta-handle">Sponsored</div>
+              </div>
+            </div>
+            <div class="insta-post-img" style="background:linear-gradient(135deg,#534AB7,#378ADD);">
+              <div class="post-content-text">
+                🚀 Grow Your<br>Business Online<br><span style="font-size:0.45rem;opacity:0.8;">Professional Web & Social Media</span>
+              </div>
+            </div>
+            <div class="insta-actions">
+              <span style="font-size:0.85rem;">❤️</span>
+              <span style="font-size:0.85rem;">💬</span>
+              <span style="font-size:0.85rem;">📤</span>
+            </div>
+            <div class="insta-likes">1,284 likes</div>
+            <div class="insta-caption"><b>habibidigital.in</b> We build websites that get you customers 💼</div>
+          </div>
+          <!-- Post 2: Offer -->
+          <div class="post-slide" id="post2">
+            <div class="insta-header">
+              <div class="insta-avatar" style="background:linear-gradient(135deg,#f09433,#bc1888);">HD</div>
+              <div>
+                <div class="insta-name">habibidigital.in</div>
+                <div class="insta-handle">2 hours ago</div>
+              </div>
+            </div>
+            <div class="insta-post-img" style="background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);">
+              <div class="post-content-text">
+                🎉 Special Offer!<br>Website in 48hrs<br><span style="font-size:0.45rem;opacity:0.85;">Limited Time Only</span>
+              </div>
+            </div>
+            <div class="insta-actions">
+              <span style="font-size:0.85rem;">❤️</span>
+              <span style="font-size:0.85rem;">💬</span>
+              <span style="font-size:0.85rem;">📤</span>
+            </div>
+            <div class="insta-likes">876 likes</div>
+            <div class="insta-caption"><b>habibidigital.in</b> Limited offer — DM us now! 🔥</div>
+          </div>
+          <!-- Post 3: Tip -->
+          <div class="post-slide" id="post3">
+            <div class="insta-header">
+              <div class="insta-avatar" style="background:linear-gradient(135deg,#185FA5,#06d6a0);">HD</div>
+              <div>
+                <div class="insta-name">habibidigital.in</div>
+                <div class="insta-handle">Yesterday</div>
+              </div>
+            </div>
+            <div class="insta-post-img" style="background:linear-gradient(135deg,#042C53,#185FA5);">
+              <div class="post-content-text">
+                💡 Did You Know?<br>80% customers<br>search online first<br><span style="font-size:0.45rem;opacity:0.8;">Be visible. Be found.</span>
+              </div>
+            </div>
+            <div class="insta-actions">
+              <span style="font-size:0.85rem;">❤️</span>
+              <span style="font-size:0.85rem;">💬</span>
+              <span style="font-size:0.85rem;">📤</span>
+            </div>
+            <div class="insta-likes">2,103 likes</div>
+            <div class="insta-caption"><b>habibidigital.in</b> Get your business online today 📱</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-bg">
+  <div class="section-inner">
+    <div class="section-label">What We Create</div>
+    <h2>Social Media <span class="g">Services We Offer</span></h2>
+    <p class="section-sub">From daily posts to full monthly calendars — we create content that makes your business look professional and keeps your audience engaged.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🖼️</div>
+        <h3>Social Media Post Design</h3>
+        <p>Professional, branded graphic posts for Instagram, Facebook, and WhatsApp. Festival posts, offer posts, product highlights — all designed to match your brand identity and grab attention.</p>
+        <div class="service-tags"><span class="tag">Instagram</span><span class="tag">Facebook</span><span class="tag">WhatsApp</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📅</div>
+        <h3>Monthly Content Calendar</h3>
+        <p>We plan and schedule your entire month's social media content in advance. You get a ready-to-post calendar with the right mix of promotional, informational, and engagement posts.</p>
+        <div class="service-tags"><span class="tag">30 Posts</span><span class="tag">Scheduled</span><span class="tag">Planned</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎬</div>
+        <h3>Reels & Short Video Posts</h3>
+        <p>Short-form video content (Reels, Stories) that boosts your reach organically. We create engaging video posts with text overlays, music, and branding that get shared and saved.</p>
+        <div class="service-tags"><span class="tag">Reels</span><span class="tag">Stories</span><span class="tag">Video</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎊</div>
+        <h3>Festival & Occasion Posts</h3>
+        <p>Never miss a festive opportunity! We design branded Diwali, Eid, Republic Day, and all major festival posts with your logo and brand colors — keeps your audience connected year-round.</p>
+        <div class="service-tags"><span class="tag">Festivals</span><span class="tag">Branded</span><span class="tag">Occasions</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📣</div>
+        <h3>Promotional Offer Posts</h3>
+        <p>Eye-catching sale announcements, discount offers, and new product launch posts. Designed to create urgency and drive customers to call, visit, or WhatsApp you immediately.</p>
+        <div class="service-tags"><span class="tag">Offers</span><span class="tag">Sales</span><span class="tag">Launches</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Handle Setup & Branding</h3>
+        <p>We set up your Instagram and Facebook business pages professionally — profile picture, bio, highlights, and cover image all optimized so your brand looks credible from day one.</p>
+        <div class="service-tags"><span class="tag">Profile Setup</span><span class="tag">Bio</span><span class="tag">Branding</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS -->
+<section class="platforms-bg">
+  <div class="section-inner">
+    <div class="section-label">Platforms</div>
+    <h2>We Work On All <span class="g">Major Platforms</span></h2>
+    <p class="section-sub">Wherever your customers are, we'll make sure your business looks great and stays active.</p>
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div class="platform-icon-wrap" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#bc1888);">
+          <i class="fa-brands fa-instagram" style="color:white;font-size:1.6rem;"></i>
+        </div>
+        <div class="platform-name">Instagram</div>
+        <div class="platform-desc">Posts, Reels & Stories</div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon-wrap" style="background:#1877F2;">
+          <i class="fa-brands fa-facebook-f" style="color:white;font-size:1.5rem;"></i>
+        </div>
+        <div class="platform-name">Facebook</div>
+        <div class="platform-desc">Page Posts & Ads</div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon-wrap" style="background:#25D366;">
+          <i class="fa-brands fa-whatsapp" style="color:white;font-size:1.6rem;"></i>
+        </div>
+        <div class="platform-name">WhatsApp</div>
+        <div class="platform-desc">Status & Broadcast</div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon-wrap" style="background:#FF0000;">
+          <i class="fa-brands fa-youtube" style="color:white;font-size:1.4rem;"></i>
+        </div>
+        <div class="platform-name">YouTube</div>
+        <div class="platform-desc">Thumbnails & Shorts</div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon-wrap" style="background:#0A66C2;">
+          <i class="fa-brands fa-linkedin-in" style="color:white;font-size:1.5rem;"></i>
+        </div>
+        <div class="platform-name">LinkedIn</div>
+        <div class="platform-desc">Business Posts</div>
+      </div>
+      <div class="platform-card">
+        <div class="platform-icon-wrap" style="background:#000;">
+          <i class="fa-brands fa-x-twitter" style="color:white;font-size:1.4rem;"></i>
+        </div>
+        <div class="platform-name">X (Twitter)</div>
+        <div class="platform-desc">Post Graphics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process-bg">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2>Our Simple <span class="g">4-Step Process</span></h2>
+    <p class="section-sub">We keep the process smooth and fast — you focus on your business, we handle the content creation.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h3>Share Your Details</h3>
+        <p>Tell us your business name, logo, brand colors, and what you want to post. WhatsApp us everything — it takes 5 minutes.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h3>We Plan the Content</h3>
+        <p>We create a content plan with post ideas, captions, and a posting schedule designed for your target audience.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h3>Design & Approval</h3>
+        <p>We design your posts and share them with you for review. You request any changes — we revise until you're happy.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h3>Deliver & Post</h3>
+        <p>Final posts are delivered to your WhatsApp. You can post yourself or we can manage your account directly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="packages-bg">
+  <div class="section-inner">
+    <div class="section-label">Pricing</div>
+    <h2>Simple & Transparent <span class="g">Social Media Packages</span></h2>
+    <p class="section-sub">No hidden charges. No confusion. Pick what fits your business and we'll handle the rest.</p>
+    <div class="packages-grid">
+      <div class="package-card">
+        <div class="package-name">Basic</div>
+        <div class="package-desc">For businesses just getting started on social media</div>
+        <div class="package-price">📱 10 Posts / Month</div>
+        <ul class="package-features">
+          <li>10 Branded Graphic Posts</li>
+          <li>Instagram & Facebook Sizes</li>
+          <li>Logo & Brand Colors Applied</li>
+          <li>Captions Included</li>
+          <li>Festival / Occasion Posts</li>
+          <li>WhatsApp Delivery</li>
+          <li>2 Revisions per Post</li>
+          <li>48hr Turnaround</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Hi,%20I%20am%20interested%20in%20the%20Basic%20social%20media%20package" class="pkg-btn">Get Started →</a>
+      </div>
+
+      <div class="package-card featured">
+        <div class="popular-badge">🔥 Most Popular</div>
+        <div class="package-name">Growth</div>
+        <div class="package-desc">Complete monthly content for consistent brand presence</div>
+        <div class="package-price">⚡ 20 Posts + 4 Reels / Month</div>
+        <ul class="package-features">
+          <li>20 Premium Graphic Posts</li>
+          <li>4 Short Reels / Video Posts</li>
+          <li>All Major Platform Sizes</li>
+          <li>Festival & Offer Posts Included</li>
+          <li>SEO-Friendly Captions + Hashtags</li>
+          <li>Monthly Content Calendar</li>
+          <li>WhatsApp Status Versions</li>
+          <li>Priority WhatsApp Support</li>
+          <li>Unlimited Revisions</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Hi,%20I%20am%20interested%20in%20the%20Growth%20social%20media%20package" class="pkg-btn">Get Started →</a>
+      </div>
+
+      <div class="package-card">
+        <div class="package-name">Handle Setup</div>
+        <div class="package-desc">New to social media? Let us set everything up professionally</div>
+        <div class="package-price">🏆 One-Time Setup</div>
+        <ul class="package-features">
+          <li>Instagram Business Page Setup</li>
+          <li>Facebook Business Page Setup</li>
+          <li>Professional Bio Writing</li>
+          <li>Profile & Cover Photo Design</li>
+          <li>Highlight Covers (Instagram)</li>
+          <li>Link-in-Bio Setup</li>
+          <li>Basic Brand Kit Applied</li>
+          <li>Delivery in 24 Hours</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Hi,%20I%20need%20social%20media%20handle%20setup%20for%20my%20business" class="pkg-btn">Get a Quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="whyus-bg">
+  <div class="section-inner">
+    <div class="section-label">Why Choose Us</div>
+    <h2>Why Businesses Choose <span class="g">Habibi Digital</span></h2>
+    <p class="section-sub">We understand local Indian businesses — your language, your customers, your goals. That's what makes us different.</p>
+    <div class="whyus-grid">
+      <div class="why-card"><div class="why-icon">🎨</div><h3>100% Custom Designed</h3><p>We never use cheap templates. Every post is designed from scratch with your brand colors, logo, and style — so your business looks unique and professional.</p></div>
+      <div class="why-card"><div class="why-icon">⚡</div><h3>Fast 48hr Delivery</h3><p>Send us the brief today, get your posts within 48 hours. No long waiting periods — we understand that businesses need to move fast on social media.</p></div>
+      <div class="why-card"><div class="why-icon">💬</div><h3>WhatsApp-First Service</h3><p>Everything is done on WhatsApp — briefing, design sharing, feedback, and delivery. No complicated portals or software — just simple, direct communication.</p></div>
+      <div class="why-card"><div class="why-icon">🇮🇳</div><h3>Designed for India</h3><p>We know Indian festivals, local sentiments, and what works for Indian audiences. Our posts feel native, relevant, and relatable to your local customers.</p></div>
+      <div class="why-card"><div class="why-icon">✏️</div><h3>Captions & Hashtags Included</h3><p>Every post comes with a ready-to-use caption written in your brand's tone plus relevant hashtags — saving you the time and effort of writing them yourself.</p></div>
+      <div class="why-card"><div class="why-icon">💰</div><h3>Affordable for Small Businesses</h3><p>Our packages are priced keeping small businesses in mind. You get agency-level design quality at a fraction of the cost — honest pricing, no hidden charges.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-bg">
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <h2>Frequently Asked <span class="g">Questions</span></h2>
+    <p class="section-sub">Common questions about our social media services. Still confused? Just WhatsApp us!</p>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What information do I need to share with you? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Just send us your business name, logo (if you have one), brand colors, and a brief about what your business does. If you have specific offers or products to promote, share those too. We'll handle everything from there.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you manage our social media accounts too? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Our main service is creating and designing the posts, which we deliver to you via WhatsApp. If you want us to post directly on your account, we can do that too — just mention it when you enquire and we'll include it in the plan.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How many revisions can I request per post? <div class="faq-icon">+</div></div>
+        <div class="faq-a">The Basic plan includes 2 revisions per post. The Growth plan includes unlimited revisions — we keep refining until you're fully satisfied with the design.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What formats and sizes do you deliver posts in? <div class="faq-icon">+</div></div>
+        <div class="faq-a">We deliver posts in all standard social media sizes — Instagram Square (1:1), Portrait (4:5), Story (9:16), Facebook Post, and WhatsApp Status sizes. All delivered as high-quality PNG or MP4 files.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you create posts in Hindi or regional languages? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Yes! We create posts in Hindi and English, and can accommodate Hinglish content too. If you need posts in other regional languages, let us know and we'll see how we can help based on your requirements.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I request urgent or same-day posts? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Yes, we can do urgent posts for occasions, flash sales, or last-minute announcements. WhatsApp us with your requirement and timeline and we'll do our best to deliver as quickly as possible.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div style="position: relative; z-index: 1;">
+    <h2>Ready to Make Your Business Look Amazing Online?</h2>
+    <p>Get professionally designed social media posts starting today. WhatsApp us and we'll send you samples and pricing in minutes.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/919458265093?text=Hello%20Habibi%20Digital,%20I%20want%20to%20discuss%20social%20media%20posts%20for%20my%20business" class="cta-btn-white">💬 WhatsApp for Free Sample</a>
+      <a href="tel:+919458265093" class="cta-btn-outline">📞 Call +91 94582 65093</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => { document.getElementById("footer").innerHTML = data; });
+</script>
+
+<script>
+// FAQ toggle
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+// Post cycling animation
+const posts = ['post1', 'post2', 'post3'];
+let currentPost = 0;
+setInterval(() => {
+  document.getElementById(posts[currentPost]).classList.remove('active');
+  currentPost = (currentPost + 1) % posts.length;
+  document.getElementById(posts[currentPost]).classList.add('active');
+}, 2800);
+
+// Header scroll
+let lastScroll = 0;
+const topbar = document.getElementById("topbar");
+const header = document.getElementById("main-header");
+const menuBtn = document.getElementById("menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const serviceBtn = document.getElementById("mobile-service-btn");
+const serviceMenu = document.getElementById("mobile-service-menu");
+const companyBtn = document.getElementById("mobile-company-btn");
+const companyMenu = document.getElementById("mobile-company-menu");
+
+window.addEventListener("scroll", () => {
+  let currentScroll = window.pageYOffset;
+  if (currentScroll > lastScroll) {
+    topbar.style.transform = "translateY(-100%)";
+    header.style.top = "0px";
+    mobileMenu.style.top = "70px";
+  } else {
+    topbar.style.transform = "translateY(0)";
+    header.style.top = "40px";
+    mobileMenu.style.top = "110px";
+  }
+  lastScroll = currentScroll;
+});
+
+menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+serviceBtn.addEventListener("click", () => serviceMenu.classList.toggle("hidden"));
+companyBtn.addEventListener("click", () => companyMenu.classList.toggle("hidden"));
+</script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Services India | Habibi Digital Solution</title>
+<meta name="description" content="Professional SEO services for Indian businesses. Get on page 1 of Google. Local SEO, On-Page SEO, Technical SEO — all in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --purple-dark: #26215C;
+  --purple-mid: #534AB7;
+  --purple-light: #7F77DD;
+  --purple-pale: #EEEDFE;
+  --blue-dark: #042C53;
+  --blue-mid: #185FA5;
+  --blue-light: #378ADD;
+  --blue-pale: #E6F1FB;
+  --green: #06d6a0;
+  --gold: #FFD700;
+  --grad: linear-gradient(135deg, #534AB7 0%, #185FA5 60%, #378ADD 100%);
+  --grad-soft: linear-gradient(135deg, #EEEDFE 0%, #E6F1FB 100%);
+  --white: #ffffff;
+  --text: #1a1a2e;
+  --muted: #5a5a7a;
+  --border: rgba(83,74,183,0.15);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #f8f7ff;
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ========== TOPBAR ========== */
+.topbar {
+  background: white;
+  border-bottom: 1px solid #e8e8f0;
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  transition: transform 0.3s;
+}
+.topbar a { color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 6px; font-weight: 600; }
+.topbar a:hover { color: var(--blue-mid); }
+.topbar-social { display: flex; gap: 14px; font-size: 1.1rem; }
+.topbar-social a { color: var(--muted); }
+.topbar-social a:hover { color: var(--purple-mid); }
+
+/* ========== HEADER ========== */
+.site-header {
+  position: fixed;
+  top: 40px; left: 0; right: 0;
+  z-index: 99;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e8e8f0;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  transition: top 0.3s;
+}
+.logo { font-size: 1.4rem; font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--grad); transition: width 0.3s; }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta { background: var(--grad); color: white !important; padding: 8px 20px; border-radius: 50px; font-size: 0.88rem !important; }
+.nav-cta::after { display: none !important; }
+.hamburger { display: none; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: var(--text); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .topbar-left span { display: none; }
+  .topbar { flex-wrap: wrap; gap: 6px; }
+}
+
+/* ========== MOBILE MENU ========== */
+.mobile-menu {
+  position: fixed;
+  top: 110px; left: 0; right: 0;
+  background: white;
+  z-index: 98;
+  padding: 1.5rem 5%;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 1rem; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f8; }
+
+/* ========== HERO ========== */
+.hero {
+  margin-top: 110px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 5% 100px;
+  background: linear-gradient(160deg, #0c0b1e 0%, #131046 40%, #0a1e3a 100%);
+}
+
+/* Animated grid bg */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(83,74,183,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(83,74,183,0.15) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 20s linear infinite;
+}
+@keyframes gridMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(60px); }
+}
+
+/* Orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: orbFloat 8s ease-in-out infinite;
+}
+.orb-1 { width: 400px; height: 400px; background: rgba(83,74,183,0.35); top: -100px; right: -100px; animation-delay: 0s; }
+.orb-2 { width: 300px; height: 300px; background: rgba(24,95,165,0.3); bottom: -80px; left: -80px; animation-delay: -3s; }
+.orb-3 { width: 200px; height: 200px; background: rgba(55,138,221,0.25); top: 50%; right: 20%; animation-delay: -5s; }
+@keyframes orbFloat {
+  0%,100% { transform: translate(0,0) scale(1); }
+  50% { transform: translate(20px,-20px) scale(1.05); }
+}
+
+.hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 2; }
+
+/* Badge */
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(83,74,183,0.2);
+  border: 1px solid rgba(127,119,221,0.4);
+  color: #a8a4f0; font-size: 0.78rem; font-weight: 700;
+  padding: 7px 18px; border-radius: 50px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px; text-transform: uppercase;
+  animation: fadeSlideDown 0.8s ease both;
+}
+.badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+
+.hero h1 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 1.2rem;
+  animation: fadeSlideUp 0.9s 0.2s ease both;
+}
+.grad-text { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-desc {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  animation: fadeSlideUp 0.9s 0.35s ease both;
+}
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeSlideUp 0.9s 0.5s ease both; }
+.btn-primary {
+  background: var(--grad); color: white; padding: 0.9rem 2rem;
+  border-radius: 50px; font-size: 0.95rem; font-weight: 700;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  box-shadow: 0 8px 30px rgba(83,74,183,0.5);
+  transition: all 0.3s; position: relative; overflow: hidden;
+}
+.btn-primary::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(83,74,183,0.6); }
+.btn-primary:hover::before { opacity: 1; }
+.btn-outline {
+  background: transparent; color: white;
+  border: 2px solid rgba(255,255,255,0.35);
+  padding: 0.9rem 2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 700;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.3s;
+}
+.btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); transform: translateY(-3px); }
+
+.hero-stats { display: flex; gap: 2rem; margin-top: 2.5rem; flex-wrap: wrap; animation: fadeSlideUp 0.9s 0.65s ease both; }
+.stat-num { font-size: 2rem; font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); font-weight: 500; margin-top: 2px; }
+
+/* Hero Right: Google SERP mockup */
+.hero-right { animation: fadeSlideLeft 1s 0.4s ease both; }
+.serp-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+.serp-header {
+  background: rgba(255,255,255,0.07);
+  padding: 12px 16px;
+  display: flex; align-items: center; gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.serp-dots { display: flex; gap: 5px; }
+.serp-dot { width: 9px; height: 9px; border-radius: 50%; }
+.serp-dot.r { background: #ff6b6b; } .serp-dot.y { background: #ffd166; } .serp-dot.g { background: #06d6a0; }
+.serp-url { flex: 1; background: rgba(255,255,255,0.1); border-radius: 6px; padding: 4px 10px; font-size: 0.72rem; color: rgba(255,255,255,0.6); }
+.serp-body { padding: 16px; }
+.serp-label { font-size: 0.68rem; color: rgba(255,255,255,0.4); margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase; }
+.serp-result {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s;
+  animation: resultSlide 0.6s ease both;
+}
+.serp-result:nth-child(2) { animation-delay: 0.2s; }
+.serp-result:nth-child(3) { animation-delay: 0.4s; }
+.serp-result:nth-child(4) { animation-delay: 0.6s; }
+.serp-result.top {
+  border-color: rgba(83,74,183,0.6);
+  background: rgba(83,74,183,0.15);
+}
+@keyframes resultSlide { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+.serp-rank { font-size: 0.65rem; font-weight: 800; color: var(--purple-light); margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+.serp-rank.gold { color: var(--gold); }
+.serp-title { font-size: 0.82rem; font-weight: 700; color: #6fa3f8; margin-bottom: 3px; }
+.serp-result.top .serp-title { color: #a8a4f0; }
+.serp-snippet { font-size: 0.68rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+.rank-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: rgba(6,214,160,0.15); border: 1px solid rgba(6,214,160,0.3);
+  color: var(--green); padding: 2px 8px; border-radius: 50px; font-size: 0.62rem; font-weight: 700;
+}
+
+/* Floating metric cards */
+.metric-float {
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex; align-items: center; gap: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  font-size: 0.78rem; font-weight: 700; color: var(--text);
+  animation: floatUpDown 4s ease-in-out infinite;
+  z-index: 3;
+}
+.metric-float-1 { bottom: -20px; left: -30px; animation-delay: 0s; }
+.metric-float-2 { top: -20px; right: -30px; animation-delay: -2s; }
+.metric-val { font-size: 1.1rem; font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+@keyframes floatUpDown { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+.hero-right-wrap { position: relative; }
+
+@keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeSlideLeft { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+
+/* ========== SECTION COMMONS ========== */
+section { padding: 90px 5%; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--grad-soft); border: 1px solid var(--border);
+  color: var(--purple-mid); font-size: 0.72rem; font-weight: 800;
+  padding: 5px 16px; border-radius: 50px; margin-bottom: 1rem;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.section-label::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--purple-mid); }
+h2 { font-size: clamp(1.7rem, 3.2vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 1rem; }
+h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.section-sub { font-size: 1rem; color: var(--muted); line-height: 1.8; max-width: 640px; margin-bottom: 3rem; }
+
+/* ========== HOW SEO WORKS ========== */
+.how-bg { background: white; }
+
+.seo-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.seo-flow::before {
+  content: '';
+  position: absolute;
+  left: 35px;
+  top: 36px;
+  bottom: 36px;
+  width: 3px;
+  background: linear-gradient(180deg, var(--purple-mid), var(--blue-mid), var(--green));
+  border-radius: 2px;
+}
+
+.seo-step {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  gap: 2rem;
+  padding: 2rem 0;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease;
+}
+.seo-step.visible { opacity: 1; transform: translateX(0); }
+
+.step-icon-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.step-icon {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--grad);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 8px 24px rgba(83,74,183,0.3);
+  position: relative; z-index: 1;
+  flex-shrink: 0;
+}
+
+.step-content {
+  padding-top: 8px;
+}
+.step-content h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+.step-content p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+
+/* Mini demo inside each step */
+.step-demo {
+  background: var(--grad-soft);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-size: 0.85rem;
+}
+.step-demo-title { font-weight: 700; color: var(--purple-dark); margin-bottom: 0.5rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.code-line {
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  background: rgba(83,74,183,0.08);
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin: 3px 0;
+  color: var(--purple-dark);
+  border-left: 3px solid var(--purple-mid);
+}
+.code-line .tag { color: var(--blue-mid); }
+.code-line .val { color: #e87c3e; }
+
+.before-after {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+.ba-box { border-radius: 8px; padding: 10px; font-size: 0.78rem; }
+.ba-box.before { background: rgba(255,100,100,0.08); border: 1px solid rgba(255,100,100,0.2); }
+.ba-box.after { background: rgba(6,214,160,0.08); border: 1px solid rgba(6,214,160,0.2); }
+.ba-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.ba-box.before .ba-label { color: #ff6b6b; }
+.ba-box.after .ba-label { color: var(--green); }
+.speed-bar-wrap { margin-top: 6px; }
+.speed-bar-label { font-size: 0.7rem; color: var(--muted); margin-bottom: 3px; }
+.speed-bar { height: 8px; border-radius: 50px; background: #e8e8f0; overflow: hidden; margin-bottom: 6px; }
+.speed-fill { height: 100%; border-radius: 50px; transition: width 1.5s ease; }
+.speed-fill.slow { background: #ff6b6b; width: 0; }
+.speed-fill.fast { background: var(--green); width: 0; }
+.speed-fill.slow.animate { width: 75%; }
+.speed-fill.fast.animate { width: 95%; }
+
+.keyword-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.kw-chip {
+  padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 600;
+  display: flex; align-items: center; gap: 5px;
+}
+.kw-chip.high { background: rgba(6,214,160,0.12); border: 1px solid rgba(6,214,160,0.3); color: #048a66; }
+.kw-chip.mid { background: rgba(83,74,183,0.1); border: 1px solid rgba(83,74,183,0.2); color: var(--purple-mid); }
+.kw-chip.low { background: rgba(255,165,0,0.1); border: 1px solid rgba(255,165,0,0.25); color: #b87800; }
+
+.link-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.link-item {
+  font-size: 0.72rem; color: #4a6fa5; text-decoration: underline;
+  background: rgba(24,95,165,0.06); border: 1px solid rgba(24,95,165,0.15);
+  border-radius: 6px; padding: 3px 10px;
+}
+
+/* ========== SEO SERVICES ========== */
+.services-bg { background: linear-gradient(160deg, #f0eefd 0%, #e8f3fd 100%); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.service-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1.5px solid var(--border);
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.service-card.visible { opacity: 1; transform: translateY(0); }
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--grad);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+  transform-origin: left;
+}
+.service-card:hover { transform: translateY(-8px) !important; box-shadow: 0 20px 50px rgba(83,74,183,0.18); border-color: var(--purple-light); }
+.service-card:hover::after { transform: scaleX(1); }
+.service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.service-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.6rem; }
+.service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.2rem; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { background: var(--purple-pale); color: var(--purple-mid); font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 50px; }
+
+/* ========== RANKING COUNTER ========== */
+.counter-bg { background: var(--grad); padding: 70px 5%; }
+.counter-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
+.counter-item {}
+.counter-num { font-size: 3rem; font-weight: 900; color: white; font-variant-numeric: tabular-nums; }
+.counter-num span { display: inline-block; }
+.counter-label { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-top: 4px; font-weight: 500; }
+
+/* ========== PACKAGES ========== */
+.packages-bg { background: white; }
+.packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; align-items: start; }
+.pack-card {
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: 24px;
+  padding: 2rem;
+  transition: all 0.4s;
+  position: relative;
+  opacity: 0; transform: scale(0.95);
+}
+.pack-card.visible { opacity: 1; transform: scale(1); }
+.pack-card.featured {
+  background: var(--grad);
+  border-color: transparent;
+  box-shadow: 0 24px 60px rgba(83,74,183,0.4);
+  transform: scale(1.04);
+}
+.pack-card.featured.visible { transform: scale(1.04); }
+.pack-card:not(.featured):hover { transform: translateY(-6px) !important; box-shadow: 0 16px 40px rgba(83,74,183,0.15); }
+.popular-badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--gold); color: #1a1a2e;
+  font-size: 0.7rem; font-weight: 900;
+  padding: 5px 18px; border-radius: 50px; white-space: nowrap; letter-spacing: 0.5px;
+}
+.pack-name { font-size: 1.3rem; font-weight: 900; margin-bottom: 0.3rem; }
+.pack-card.featured .pack-name { color: white; }
+.pack-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; }
+.pack-card.featured .pack-desc { color: rgba(255,255,255,0.8); }
+.pack-price { font-size: 0.82rem; font-weight: 700; color: var(--purple-mid); margin-bottom: 1.5rem; }
+.pack-card.featured .pack-price { color: rgba(255,255,255,0.9); }
+.pack-features { list-style: none; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.pack-features li { font-size: 0.88rem; display: flex; align-items: flex-start; gap: 10px; }
+.pack-features li::before { content: '✓'; font-weight: 900; color: var(--purple-mid); flex-shrink: 0; margin-top: 1px; }
+.pack-card.featured .pack-features li { color: rgba(255,255,255,0.9); }
+.pack-card.featured .pack-features li::before { color: var(--gold); }
+.pack-btn {
+  display: block; text-align: center; padding: 0.9rem;
+  border-radius: 50px; font-size: 0.9rem; font-weight: 800;
+  text-decoration: none; transition: all 0.3s;
+}
+.pack-card:not(.featured) .pack-btn { background: var(--grad); color: white; box-shadow: 0 6px 20px rgba(83,74,183,0.3); }
+.pack-card:not(.featured) .pack-btn:hover { box-shadow: 0 12px 30px rgba(83,74,183,0.45); transform: translateY(-2px); }
+.pack-card.featured .pack-btn { background: white; color: var(--purple-mid); }
+.pack-card.featured .pack-btn:hover { background: #f0eefd; }
+
+/* ========== WHY SEO ========== */
+.whyseo-bg { background: linear-gradient(160deg, #f0eefd 0%, #e8f3fd 100%); }
+.whyseo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.whyseo-img { position: relative; }
+.phone-mock {
+  background: #1a1a2e;
+  border-radius: 32px;
+  padding: 12px;
+  box-shadow: 0 30px 80px rgba(83,74,183,0.4);
+  max-width: 280px;
+  margin: 0 auto;
+  animation: phoneFloat 6s ease-in-out infinite;
+}
+@keyframes phoneFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+.phone-screen { background: white; border-radius: 22px; overflow: hidden; }
+.phone-status { background: #f4f4f8; padding: 8px 12px; font-size: 0.6rem; color: var(--muted); display: flex; justify-content: space-between; }
+.google-bar { padding: 8px 10px; border-bottom: 1px solid #f0f0f8; }
+.google-input { background: #f4f4f8; border-radius: 50px; padding: 6px 12px; font-size: 0.68rem; color: var(--text); display: flex; align-items: center; gap: 6px; }
+.phone-results { padding: 8px 10px; }
+.ph-result { padding: 8px 0; border-bottom: 1px solid #f8f8fc; }
+.ph-result:last-child { border-bottom: none; }
+.ph-url { font-size: 0.58rem; color: #188038; margin-bottom: 2px; }
+.ph-title { font-size: 0.7rem; color: #1a0dab; font-weight: 600; margin-bottom: 2px; }
+.ph-title.yours { color: #534AB7; font-weight: 800; }
+.ph-snippet { font-size: 0.6rem; color: var(--muted); line-height: 1.4; }
+.pos1-badge {
+  position: absolute; top: 30px; right: -20px;
+  background: var(--green); color: white;
+  font-size: 0.7rem; font-weight: 800;
+  padding: 6px 14px; border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(6,214,160,0.4);
+  animation: pulse 2s infinite;
+}
+
+.whyseo-points { display: flex; flex-direction: column; gap: 1.5rem; }
+.why-point {
+  display: flex; align-items: flex-start; gap: 1rem;
+  opacity: 0; transform: translateX(30px);
+  transition: all 0.5s ease;
+}
+.why-point.visible { opacity: 1; transform: translateX(0); }
+.why-icon-box {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--grad-soft);
+  border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.why-point h4 { font-size: 1rem; font-weight: 800; margin-bottom: 0.3rem; }
+.why-point p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+/* ========== FAQ ========== */
+.faq-bg { background: white; }
+.faq-wrap { max-width: 800px; margin: 0 auto; }
+.faq-item {
+  background: #fafaf f;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.faq-item:hover { border-color: var(--purple-light); }
+.faq-q {
+  padding: 1.2rem 1.5rem;
+  font-weight: 700; font-size: 0.95rem;
+  display: flex; justify-content: space-between; align-items: center;
+  cursor: pointer; gap: 1rem;
+}
+.faq-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--grad); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0;
+  transition: transform 0.35s;
+}
+.faq-a {
+  padding: 0 1.5rem;
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s;
+  font-size: 0.9rem; color: var(--muted); line-height: 1.8;
+}
+.faq-item.open .faq-a { max-height: 400px; padding: 0 1.5rem 1.3rem; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-item.open { border-color: var(--purple-light); box-shadow: 0 4px 16px rgba(83,74,183,0.1); }
+
+/* ========== CTA ========== */
+.cta-section {
+  background: var(--grad);
+  padding: 90px 5%;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+  border-radius: 50%;
+}
+.cta-section::after {
+  content: '';
+  position: absolute; bottom: -80px; left: -80px;
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+  border-radius: 50%;
+}
+.cta-inner { position: relative; z-index: 1; }
+.cta-section h2 { color: white; font-size: clamp(1.8rem, 3.5vw, 3rem); margin-bottom: 1rem; }
+.cta-section p { color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.8; max-width: 520px; margin: 0 auto 2rem; }
+.cta-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.cta-white { background: white; color: var(--purple-mid); padding: 0.95rem 2.2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+.cta-white:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+.cta-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); padding: 0.95rem 2.2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+.cta-outline:hover { border-color: white; background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+
+/* ========== SCROLL ANIMATIONS ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .whyseo-grid { grid-template-columns: 1fr; }
+  .pack-card.featured { transform: scale(1); }
+  .pack-card.featured.visible { transform: scale(1); }
+  .before-after { grid-template-columns: 1fr; }
+  .metric-float-1, .metric-float-2 { display: none; }
+}
+@media (max-width: 600px) {
+  section { padding: 60px 5%; }
+  .seo-step { grid-template-columns: 58px 1fr; gap: 1.2rem; }
+  .step-icon { width: 54px; height: 54px; font-size: 1.4rem; }
+  .seo-flow::before { left: 27px; }
+  .hero-stats { gap: 1.5rem; }
+  .topbar { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar" id="topbar">
+  <div class="topbar-left" style="display:flex;gap:1.2rem;flex-wrap:wrap;">
+    <a href="tel:+919458265093"><i class="fas fa-phone" style="color:var(--purple-mid)"></i> <span>+91 9458265093</span></a>
+    <a href="mailto:habibidigital.in@gmail.com"><i class="fas fa-envelope" style="color:var(--purple-mid)"></i> <span>habibidigital.in@gmail.com</span></a>
+  </div>
+  <div class="topbar-social">
+    <a href="https://x.com/habibidigital_" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://instagram.com/habibidigital.in" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="main-header">
+  <div class="logo">Habibi Digital</div>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how-seo-works">SEO Kaise Kaam Karta Hai</a></li>
+    <li><a href="#packages">Pricing</a></li>
+    <li><a href="https://wa.me/919458265093?text=SEO%20ke%20baare%20mein%20jaanna%20chahta%20hoon" class="nav-cta">💬 WhatsApp</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger">☰</button>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/">Home</a>
+  <a href="#services">SEO Services</a>
+  <a href="#how-seo-works">SEO Kaise Kaam Karta Hai</a>
+  <a href="#packages">Pricing</a>
+  <a href="contact.html">Contact Us</a>
+  <a href="https://wa.me/919458265093" style="color:var(--purple-mid);">💬 WhatsApp Us</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><div class="badge-dot"></div> Google Page 1 Specialists</div>
+      <h1>SEO Jo Aapki Website Ko <span class="grad-text">Google #1 Pe</span> Laaye</h1>
+      <p class="hero-desc">Habibi Digital ka proven SEO strategy aapki website ko Google ke top results mein laata hai — aur real customers laata hai. Sirf traffic nahi, results.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/919458265093?text=SEO%20audit%20chahiye%20meri%20website%20ka" class="btn-primary">🔍 Free SEO Audit Lein</a>
+        <a href="#packages" class="btn-outline">Packages Dekhein →</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">500+</div><div class="stat-label">Keywords Ranked</div></div>
+        <div><div class="stat-num">3x</div><div class="stat-label">Avg Traffic Growth</div></div>
+        <div><div class="stat-num">90+</div><div class="stat-label">Clients Helped</div></div>
+        <div><div class="stat-num">6mo</div><div class="stat-label">Avg to Page 1</div></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-right-wrap">
+        <!-- Floating badges -->
+        <div class="metric-float metric-float-1">
+          <div style="font-size:1.4rem;">📈</div>
+          <div>
+            <div class="metric-val">+287%</div>
+            <div style="font-size:0.68rem;color:var(--muted);">Organic Traffic</div>
+          </div>
+        </div>
+        <div class="metric-float metric-float-2">
+          <div style="font-size:1.4rem;">🏆</div>
+          <div>
+            <div class="metric-val">#1</div>
+            <div style="font-size:0.68rem;color:var(--muted);">Google Ranking</div>
+          </div>
+        </div>
+
+        <!-- SERP Mockup -->
+        <div class="serp-card">
+          <div class="serp-header">
+            <div class="serp-dots">
+              <div class="serp-dot r"></div>
+              <div class="serp-dot y"></div>
+              <div class="serp-dot g"></div>
+            </div>
+            <div class="serp-url">🔍 "best salon in agra" — Google</div>
+          </div>
+          <div class="serp-body">
+            <div class="serp-label">Google Search Results</div>
+
+            <div class="serp-result top">
+              <div class="serp-rank gold">🥇 Position 1 <span class="rank-badge">✓ SEO Done</span></div>
+              <div class="serp-title">Glamour Studio Agra | Best Hair Salon Near You</div>
+              <div class="serp-snippet">Top-rated salon in Agra with expert stylists. Book appointment today. ⭐4.9 · 320 reviews · Open Now</div>
+            </div>
+
+            <div class="serp-result">
+              <div class="serp-rank" style="color:rgba(255,255,255,0.4);">#2 Position</div>
+              <div class="serp-title">Agra Beauty Hub — Ladies Salon</div>
+              <div class="serp-snippet">Professional beauty services in Agra. Bridal packages available. Call now.</div>
+            </div>
+
+            <div class="serp-result">
+              <div class="serp-rank" style="color:rgba(255,255,255,0.3);">#3 Position</div>
+              <div class="serp-title">City Salon & Spa Agra</div>
+              <div class="serp-snippet">Affordable salon services in Agra. Hair, skin, nails and more.</div>
+            </div>
+
+            <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.08);font-size:0.72rem;color:rgba(255,255,255,0.35);text-align:center;">
+              Pages 2–10 ke baaki results pehle page se zyada traffic kabhi nahi paate 😔
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW SEO WORKS -->
+<section id="how-seo-works" class="how-bg">
+  <div class="section-inner">
+    <div class="section-label reveal">SEO Explained Simply</div>
+    <h2 class="reveal">SEO Kaise Kaam Kerta Hai — <span class="g">Step by Step</span></h2>
+    <p class="section-sub reveal">Jab koi Google pe kuch dhundta hai, toh Google decide karta hai kaun si website pehle dikhani hai. SEO ka kaam hai aapki website ko us "first" position pe laana.</p>
+
+    <div class="seo-flow">
+
+      <!-- Step 1 -->
+      <div class="seo-step">
+        <div class="step-icon-wrap">
+          <div class="step-icon">🕷️</div>
+        </div>
+        <div class="step-content">
+          <h3>Step 1: Google Crawling — Google Aapki Website Padhta Hai</h3>
+          <p>Google ke "bots" (crawlers) internet pe ghoomte rehte hain aur har website ko padh ke samajhte hain — jaise koi librarian books ko scan karta hai. Agar aapki website properly bani hai, toh Google use aasaani se padh sakta hai.</p>
+          <div class="step-demo">
+            <div class="step-demo-title">🤖 Googlebot Kya Padhta Hai</div>
+            <div class="code-line"><span class="tag">&lt;title&gt;</span> <span class="val">Best Dentist in Agra | Dr. Ahmed Dental Clinic</span> <span class="tag">&lt;/title&gt;</span></div>
+            <div class="code-line"><span class="tag">&lt;meta description&gt;</span> <span class="val">"Agra mein trusted dentist. Free checkup..."</span></div>
+            <div class="code-line"><span class="tag">&lt;h1&gt;</span> <span class="val">Agra ka Sabse Bharosemand Dental Clinic</span> <span class="tag">&lt;/h1&gt;</span></div>
+            <div style="margin-top:8px;font-size:0.72rem;color:var(--muted);">✅ Agar ye sab sahi likha ho, Google samjhega aapki website kiske baare mein hai</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="seo-step">
+        <div class="step-icon-wrap">
+          <div class="step-icon">🔑</div>
+        </div>
+        <div class="step-content">
+          <h3>Step 2: Keyword Research — Log Kya Dhundhte Hain</h3>
+          <p>Hum pehle research karte hain ki aapke potential customers Google pe exactly kya type karte hain. Yahi "keywords" hain. Sahi keywords target karna sabse zaroori step hai — galat keywords pe rank karne ka koi fayda nahi.</p>
+          <div class="step-demo">
+            <div class="step-demo-title">🎯 Keyword Volume Analysis (Example)</div>
+            <div class="keyword-chips">
+              <span class="kw-chip high">🔥 "best salon agra" — 2,400/mo</span>
+              <span class="kw-chip high">🔥 "hair salon near me agra" — 1,800/mo</span>
+              <span class="kw-chip mid">⚡ "bridal makeup agra" — 900/mo</span>
+              <span class="kw-chip mid">⚡ "mens salon agra" — 720/mo</span>
+              <span class="kw-chip low">📌 "nail art agra" — 320/mo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="seo-step">
+        <div class="step-icon-wrap">
+          <div class="step-icon">📝</div>
+        </div>
+        <div class="step-content">
+          <h3>Step 3: On-Page SEO — Aapka Content Optimize Karna</h3>
+          <p>Aapki website ke har page ko sahi se "optimize" karte hain — Title Tags, Meta Descriptions, Headings, Image Alt Text, aur URL structure. Ye sab Google ko batata hai ki aapka page kis topic ke baare mein hai aur kitna relevant hai.</p>
+          <div class="step-demo">
+            <div class="step-demo-title">✏️ Before vs After On-Page SEO</div>
+            <div class="before-after">
+              <div class="ba-box before">
+                <div class="ba-label">❌ Before</div>
+                <div style="font-size:0.72rem;line-height:1.6;color:#5a5a7a;">
+                  <div><b>Title:</b> Welcome to Our Website</div>
+                  <div><b>H1:</b> Home</div>
+                  <div><b>Meta:</b> (Empty)</div>
+                </div>
+              </div>
+              <div class="ba-box after">
+                <div class="ba-label">✅ After</div>
+                <div style="font-size:0.72rem;line-height:1.6;color:#5a5a7a;">
+                  <div><b>Title:</b> Best Salon Agra | Glamour Studio</div>
+                  <div><b>H1:</b> Agra ka #1 Beauty Salon</div>
+                  <div><b>Meta:</b> "Book appointment today..."</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="seo-step">
+        <div class="step-icon-wrap">
+          <div class="step-icon">⚡</div>
+        </div>
+        <div class="step-content">
+          <h3>Step 4: Technical SEO — Website Ki Speed & Health</h3>
+          <p>Google slow websites ko rank nahi karta. Hum aapki website ki loading speed badhate hain, mobile pe sahi karte hain, SSL certificate lagate hain, aur sitemap Google ko submit karte hain. Technical health seedha ranking pe affect karta hai.</p>
+          <div class="step-demo">
+            <div class="step-demo-title">🚀 Website Speed Score</div>
+            <div class="speed-bar-wrap">
+              <div class="speed-bar-label">Pehle (Slow): 4.2 second load time</div>
+              <div class="speed-bar"><div class="speed-fill slow" id="speed-slow"></div></div>
+              <div class="speed-bar-label">Hamare Baad (Fast): 1.1 second load time</div>
+              <div class="speed-bar"><div class="speed-fill fast" id="speed-fast"></div></div>
+            </div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:8px;">⚡ 53% users website chhod dete hain agar 3 seconds se zyada lag jaaye</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="seo-step">
+        <div class="step-icon-wrap">
+          <div class="step-icon">🔗</div>
+        </div>
+        <div class="step-content">
+          <h3>Step 5: Link Building — Aapki Authority Badhana</h3>
+          <p>Google un websites ko zyada trust karta hai jinhe doosri reputable websites link karti hain. Hum aapke liye quality "backlinks" banate hain — local directories, industry websites, aur guest posts ke through. Zyada backlinks = zyada authority = higher ranking.</p>
+          <div class="step-demo">
+            <div class="step-demo-title">🔗 Quality Backlinks (Examples)</div>
+            <div class="link-grid">
+              <span class="link-item">justdial.com</span>
+              <span class="link-item">sulekha.com</span>
+              <span class="link-item">indiamart.com</span>
+              <span class="link-item">google.com/maps</span>
+              <span class="link-item">yelp.com</span>
+              <span class="link-item">local blog posts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="seo-step">
+        <div class="step-icon-wrap">
+          <div class="step-icon">📍</div>
+        </div>
+        <div class="step-content">
+          <h3>Step 6: Local SEO — Aapke Shehar Mein #1 Bano</h3>
+          <p>"Near me" aur city-based searches ke liye Local SEO sabse powerful hai. Google Business Profile setup, local citations, aur customer reviews — ye sab milke aapki business ko local searches mein top pe laate hain. Specially aapke area mein customers laaने ke liye.</p>
+          <div class="step-demo">
+            <div class="step-demo-title">📍 Local SEO Checklist</div>
+            <div style="display:flex;flex-direction:column;gap:4px;">
+              <div class="code-line">✅ Google Business Profile — Verified & Optimized</div>
+              <div class="code-line">✅ NAP Consistency (Name, Address, Phone)</div>
+              <div class="code-line">✅ 50+ Customer Reviews Management</div>
+              <div class="code-line">✅ Local Schema Markup Added</div>
+              <div class="code-line">✅ City + Service Keywords Targeted</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="seo-step">
+        <div class="step-icon-wrap">
+          <div class="step-icon">📊</div>
+        </div>
+        <div class="step-content">
+          <h3>Step 7: Monthly Reporting — Results Track Karna</h3>
+          <p>Hum har month aapko detailed report dete hain — kaun se keywords rank hue, kitna traffic aaya, kaun se pages best perform kar rahe hain. Transparency hamare saath kaam karne ka sabse bada benefit hai.</p>
+          <div class="step-demo">
+            <div class="step-demo-title">📊 Monthly SEO Report (Sample)</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+              <div style="background:rgba(6,214,160,0.1);border:1px solid rgba(6,214,160,0.25);border-radius:8px;padding:8px;text-align:center;">
+                <div style="font-size:1.2rem;font-weight:900;color:#048a66;">↑47</div>
+                <div style="font-size:0.65rem;color:var(--muted);">Keywords Improved</div>
+              </div>
+              <div style="background:rgba(83,74,183,0.08);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center;">
+                <div style="font-size:1.2rem;font-weight:900;color:var(--purple-mid);">+182%</div>
+                <div style="font-size:0.65rem;color:var(--muted);">Traffic Growth</div>
+              </div>
+              <div style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.3);border-radius:8px;padding:8px;text-align:center;">
+                <div style="font-size:1.2rem;font-weight:900;color:#b87800;">12</div>
+                <div style="font-size:0.65rem;color:var(--muted);">Page 1 Rankings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SEO SERVICES -->
+<section id="services" class="services-bg">
+  <div class="section-inner">
+    <div class="section-label reveal">Our SEO Services</div>
+    <h2 class="reveal">Complete SEO <span class="g">Solutions Hamare Saath</span></h2>
+    <p class="section-sub reveal">Ek hi jagah se poori SEO strategy — Local se lekar Technical tak, sab covered hai.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📍</div>
+        <h3>Local SEO</h3>
+        <p>"Near me" aur city-specific searches ke liye optimize karte hain. Google Maps aur local pack mein aapki business top pe aayegi. Restaurants, clinics, salons, aur local businesses ke liye best.</p>
+        <div class="service-tags"><span class="tag">Google Maps</span><span class="tag">Local Pack</span><span class="tag">Near Me</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📝</div>
+        <h3>On-Page SEO</h3>
+        <p>Title tags, meta descriptions, headings, content structure, image optimization — har page ko properly optimize karte hain taaki Google samjhe aapka page kis baare mein hai aur use rank kare.</p>
+        <div class="service-tags"><span class="tag">Meta Tags</span><span class="tag">Content SEO</span><span class="tag">Schema</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Technical SEO</h3>
+        <p>Website speed, mobile-friendliness, crawlability, XML sitemap, robots.txt, Core Web Vitals — sab technical issues fix karte hain jo Google ranking ko affect karte hain.</p>
+        <div class="service-tags"><span class="tag">Speed Fix</span><span class="tag">Core Web Vitals</span><span class="tag">Crawl Fix</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔗</div>
+        <h3>Link Building</h3>
+        <p>Quality backlinks se aapki website ki domain authority badhate hain. Sirf genuine, relevant websites se links — koi spam nahi, koi black-hat tactics nahi. Long-term sustainable growth.</p>
+        <div class="service-tags"><span class="tag">Quality Links</span><span class="tag">Domain Authority</span><span class="tag">Guest Posts</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛍️</div>
+        <h3>eCommerce SEO</h3>
+        <p>Online store ke products Google pe rank karwate hain. Product pages, category pages, aur shopping-intent keywords target karte hain. WooCommerce aur Shopify mein expertise.</p>
+        <div class="service-tags"><span class="tag">Product SEO</span><span class="tag">Shopping Intent</span><span class="tag">Category Pages</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>SEO Audit & Strategy</h3>
+        <p>Aapki website ka complete SEO health check karte hain — issues identify karte hain, competitor analysis karte hain, aur ek roadmap dete hain jo step-by-step follow karke aap page 1 pe aa sako.</p>
+        <div class="service-tags"><span class="tag">Free Audit</span><span class="tag">Competitor Analysis</span><span class="tag">Roadmap</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTER SECTION -->
+<div class="counter-bg reveal">
+  <div class="counter-inner">
+    <div class="counter-item">
+      <div class="counter-num" data-target="500">0<span>+</span></div>
+      <div class="counter-label">Keywords Ranked on Page 1</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-num" data-target="90">0<span>+</span></div>
+      <div class="counter-label">Businesses Helped</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-num" data-target="3">0<span>x</span></div>
+      <div class="counter-label">Average Traffic Growth</div>
+    </div>
+    <div class="counter-item">
+      <div class="counter-num" data-target="6">0<span> mo</span></div>
+      <div class="counter-label">Avg Time to Page 1</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY SEO -->
+<section class="whyseo-bg">
+  <div class="section-inner">
+    <div class="section-label reveal">Why SEO Matters</div>
+    <h2 class="reveal">Bina SEO Ke Aapki Website <span class="g">Jungle Mein Khoya Ped Hai</span></h2>
+    <div class="whyseo-grid">
+      <div class="whyseo-img reveal">
+        <div style="position:relative;">
+          <div class="pos1-badge">#1 on Google ✓</div>
+          <div class="phone-mock">
+            <div class="phone-screen">
+              <div class="phone-status"><span>9:41</span><span>📶 4G 🔋</span></div>
+              <div class="google-bar">
+                <div class="google-input"><span style="color:var(--blue-mid);">G</span> best dentist in agra 🔍</div>
+              </div>
+              <div class="phone-results">
+                <div class="ph-result">
+                  <div class="ph-url">habibidigital.in › dr-ahmed-dental ▾</div>
+                  <div class="ph-title yours">Dr. Ahmed Dental Clinic Agra | Book Appointment</div>
+                  <div class="ph-snippet">Agra ka trusted dentist. Free first checkup. Open today ⭐4.9</div>
+                </div>
+                <div class="ph-result">
+                  <div class="ph-url">competitor1.com ▾</div>
+                  <div class="ph-title">Agra Dental Center — Dentist Near You</div>
+                  <div class="ph-snippet">Professional dental services in Agra. Call now for appointment.</div>
+                </div>
+                <div class="ph-result">
+                  <div class="ph-url">competitor2.com ▾</div>
+                  <div class="ph-title">City Dental Clinic Agra</div>
+                  <div class="ph-snippet">Affordable dental care in Agra with experienced dentists.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="whyseo-points">
+        <div class="why-point">
+          <div class="why-icon-box">📈</div>
+          <div>
+            <h4>75% Users Page 1 Se Aage Nahi Jaate</h4>
+            <p>Agar aapki website Google ke page 2 pe hai, practically invisible hai. 75% se zyada traffic sirf page 1 ke results pe click karta hai — especially top 3 results.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon-box">💰</div>
+          <div>
+            <h4>Ads Se Zyada Sustainable Hai SEO</h4>
+            <p>Google Ads mein aapko har click ke paise dene padte hain. SEO ek investment hai jo long-term results deta hai — ads band karo traffic band, SEO banda rahega.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon-box">🎯</div>
+          <div>
+            <h4>Ready-to-Buy Customers Milte Hain</h4>
+            <p>Jo log Google pe "best dentist in agra" search karte hain, woh actually dentist dhundh rahe hain. SEO se sirf wahi log aate hain jo aapka product/service chahte hain.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-icon-box">🏆</div>
+          <div>
+            <h4>Competitors Se Pehle Rank Karo</h4>
+            <p>Agar aap SEO nahi karte, aapke competitors karte hain — aur woh customers le jaate hain. Jitna pehle start karein, utna better position milta hai Google pe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="packages-bg">
+  <div class="section-inner">
+    <div class="section-label reveal">SEO Pricing</div>
+    <h2 class="reveal">Transparent <span class="g">Monthly SEO Plans</span></h2>
+    <p class="section-sub reveal">Koi hidden charges nahi. Koi confusing terms nahi. Simple monthly plans jo real results dete hain.</p>
+    <div class="packages-grid">
+      <div class="pack-card">
+        <div class="pack-name">Starter SEO</div>
+        <div class="pack-desc">Local business joh Google pe visible hona chahti hai pehli baar</div>
+        <div class="pack-price">⭐ Best for Local Businesses</div>
+        <ul class="pack-features">
+          <li>5 Keywords Targeted</li>
+          <li>Full Website SEO Audit</li>
+          <li>On-Page Optimization</li>
+          <li>Google Business Profile Setup</li>
+          <li>Google Search Console Setup</li>
+          <li>Monthly Ranking Report</li>
+          <li>3 Month Minimum Commitment</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Starter%20SEO%20plan%20ke%20baare%20mein%20jaanna%20chahta%20hoon" class="pack-btn">Start Karo →</a>
+      </div>
+
+      <div class="pack-card featured">
+        <div class="popular-badge">🔥 Sabse Popular</div>
+        <div class="pack-name">Growth SEO</div>
+        <div class="pack-desc">Serious businesses jo Google pe dominant presence chahti hai</div>
+        <div class="pack-price">⚡ Full SEO Strategy</div>
+        <ul class="pack-features">
+          <li>15 Keywords Targeted</li>
+          <li>Complete Technical SEO Fix</li>
+          <li>On-Page + Off-Page SEO</li>
+          <li>Local SEO + Google Maps</li>
+          <li>Monthly Backlink Building</li>
+          <li>Competitor Analysis</li>
+          <li>Content Optimization</li>
+          <li>Bi-Weekly Progress Reports</li>
+          <li>WhatsApp Priority Support</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Growth%20SEO%20plan%20ke%20baare%20mein%20jaanna%20chahta%20hoon" class="pack-btn">Start Karo →</a>
+      </div>
+
+      <div class="pack-card">
+        <div class="pack-name">Enterprise SEO</div>
+        <div class="pack-desc">eCommerce aur large businesses ke liye aggressive growth</div>
+        <div class="pack-price">🏆 Custom Strategy</div>
+        <ul class="pack-features">
+          <li>50+ Keywords Targeted</li>
+          <li>Complete Technical Overhaul</li>
+          <li>eCommerce / Product SEO</li>
+          <li>Advanced Link Building</li>
+          <li>Content Marketing Strategy</li>
+          <li>Schema & Structured Data</li>
+          <li>Weekly Reports & Calls</li>
+          <li>Dedicated Account Manager</li>
+          <li>Full Analytics Dashboard</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Enterprise%20SEO%20quote%20chahiye" class="pack-btn">Quote Lein →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-bg">
+  <div class="section-inner">
+    <div class="section-label reveal">FAQ</div>
+    <h2 class="reveal">Aksar Pooche Jane Wale <span class="g">Sawaal</span></h2>
+    <p class="section-sub reveal">SEO ke baare mein koi bhi sawaal ho? Hum samjhaenge — plain Hindi mein!</p>
+    <div class="faq-wrap">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">SEO se results aane mein kitna time lagta hai? <div class="faq-icon">+</div></div>
+        <div class="faq-a">SEO ek long-term investment hai — generally 3-6 mahine mein aapko pehle results dikhtey hain. Local SEO thoda jaldi kaam karta hai (2-3 mahine). Koi bhi jo "1 hafte mein #1 ranking" ka promise kare, woh jhooth bol raha hai. Hamare saath transparent timeline milti hai.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">SEO aur Google Ads mein kya fark hai? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Google Ads mein aap har click ke paise dete ho — jaise rent. Jab paisa band, traffic band. SEO mein ek baar rank ho gaye, toh free organic traffic milta rehta hai — jaise property buy karna. Dono milke use karna ideal hai, lekin SEO long-term mein zyada cost-effective hai.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Kya SEO sirf English websites ke liye hai? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Bilkul nahi! Hum Hindi aur regional language websites ka bhi SEO karte hain. Agra, Mathura, Lucknow, Delhi — local Indian searches ke liye Hindi keywords bhi target karte hain. "दंत चिकित्सक आगरा" jaise searches ke liye bhi rank kara sakte hain.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Kya aap guarantee dete ho Google #1 ranking ki? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Koi bhi honest SEO agency 100% #1 ranking guarantee nahi de sakti — kyunki Google ka algorithm unke haath mein nahi hai. Jo guarantee dete hain woh ya toh jhooth bolte hain ya black-hat techniques use karte hain jo baad mein penalty le aati hai. Hum guarantee dete hain — honest work, transparent reporting, aur measurable improvement.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Meri existing website ka SEO ho sakta hai? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Haan, bilkul! Aapki existing website ka hum pehle free audit karte hain — kya sahi hai, kya galat hai, kya missing hai. Phir uske hisaab se optimization plan banate hain. Website rebuild ki zaroorat sirf tabhi padti hai jab bahut hi purani ya technically kharab ho.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Monthly SEO plan mein exactly kya kaam hota hai? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Har mahine kaam hota hai: keyword ranking track karna, new content optimize karna, technical issues fix karna, backlinks build karna, Google Business Profile update karna, aur end mein detailed report dena. Kabhi bhi hamare kaam ke baare mein sawaal pooch sakte ho WhatsApp pe.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Aaj Hi Free SEO Audit Lein</h2>
+    <p>Hum aapki website ko analyse karenge aur batayenge ki Google pe rank karne ke liye exactly kya karna hai — bilkul free, koi commitment nahi.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/919458265093?text=Free%20SEO%20audit%20chahiye%20meri%20website%20ka" class="cta-white">🔍 Free SEO Audit Lein</a>
+      <a href="tel:+919458265093" class="cta-outline">📞 Call +91 94582 65093</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER PLACEHOLDER -->
+<div id="footer"></div>
+<script>
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => { document.getElementById("footer").innerHTML = data; })
+  .catch(() => {
+    document.getElementById("footer").innerHTML = `
+      <footer style="background:#1a1a2e;color:rgba(255,255,255,0.6);text-align:center;padding:2rem 5%;font-size:0.85rem;">
+        <p>© 2025 Habibi Digital Solution. All rights reserved.</p>
+        <p style="margin-top:0.5rem;">📞 +91 9458265093 | ✉️ habibidigital.in@gmail.com</p>
+      </footer>
+    `;
+  });
+</script>
+
+<script>
+// ===== Topbar + Header scroll hide =====
+let lastScroll = 0;
+const topbar = document.getElementById('topbar');
+const header = document.getElementById('main-header');
+window.addEventListener('scroll', () => {
+  const current = window.pageYOffset;
+  if (current > lastScroll && current > 80) {
+    topbar.style.transform = 'translateY(-100%)';
+    header.style.top = '0px';
+  } else {
+    topbar.style.transform = 'translateY(0)';
+    header.style.top = '40px';
+  }
+  lastScroll = current;
+});
+
+// ===== Mobile menu =====
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobile-menu').classList.toggle('open');
+});
+
+// ===== FAQ Toggle =====
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ===== Smooth scroll =====
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+// ===== Intersection Observer for animations =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal, .seo-step, .service-card, .pack-card, .why-point').forEach(el => {
+  observer.observe(el);
+});
+
+// Stagger service cards
+document.querySelectorAll('.service-card').forEach((card, i) => {
+  card.style.transitionDelay = `${i * 0.1}s`;
+});
+
+// Stagger pack cards
+document.querySelectorAll('.pack-card').forEach((card, i) => {
+  card.style.transitionDelay = `${i * 0.15}s`;
+});
+
+// Stagger seo steps
+document.querySelectorAll('.seo-step').forEach((step, i) => {
+  step.style.transitionDelay = `${i * 0.1}s`;
+});
+
+// Stagger why points
+document.querySelectorAll('.why-point').forEach((pt, i) => {
+  pt.style.transitionDelay = `${i * 0.12}s`;
+});
+
+// ===== Speed bar animation =====
+const speedObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.getElementById('speed-slow').classList.add('animate');
+      document.getElementById('speed-fast').classList.add('animate');
+    }
+  });
+}, { threshold: 0.5 });
+const speedEl = document.getElementById('speed-slow');
+if (speedEl) speedObs.observe(speedEl);
+
+// ===== Counter animation =====
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.querySelectorAll('.counter-num').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        const suffix = el.querySelector('span').textContent;
+        let current = 0;
+        const increment = target / 60;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          el.innerHTML = Math.floor(current) + `<span>${suffix}</span>`;
+        }, 25);
+      });
+      counterObs.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+const counterEl = document.querySelector('.counter-bg');
+if (counterEl) counterObs.observe(counterEl);
+</script>
+</body>
+</html>
