@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Marketing Services | Habibi Digital Solution</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --purple-dark: #26215C;
+  --purple-mid: #534AB7;
+  --purple-light: #7F77DD;
+  --purple-pale: #EEEDFE;
+  --blue-dark: #042C53;
+  --blue-mid: #185FA5;
+  --blue-light: #378ADD;
+  --blue-pale: #E6F1FB;
+  --grad: linear-gradient(135deg, #534AB7 0%, #185FA5 60%, #378ADD 100%);
+  --grad-soft: linear-gradient(135deg, #EEEDFE 0%, #E6F1FB 100%);
+  --orange: #FF6B2B;
+  --green: #06d6a0;
+  --white: #ffffff;
+  --text: #1a1a2e;
+  --muted: #5a5a7a;
+  --border: rgba(83,74,183,0.15);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:#f8f7ff;
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* ========= TOPBAR ========= */
+.topbar{
+  width:100%;background:white;color:#333;font-size:0.85rem;
+  position:fixed;top:0;left:0;z-index:60;border-bottom:1px solid #e8e8f0;
+  transition:transform .3s;
+}
+.topbar-inner{
+  max-width:1200px;margin:0 auto;padding:10px 24px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+}
+.topbar a{display:flex;align-items:center;gap:6px;color:#333;text-decoration:none;font-weight:600;}
+.topbar a:hover{color:#534AB7;}
+.topbar-socials{display:flex;gap:16px;font-size:1.1rem;}
+.topbar-socials a{color:#555;}
+.topbar-socials a:hover{color:#534AB7;}
+
+/* ========= HEADER ========= */
+.main-header{
+  position:fixed;top:42px;left:0;width:100%;
+  background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid #e8e8f0;z-index:50;transition:all .3s;
+}
+.header-inner{
+  max-width:1200px;margin:0 auto;padding:12px 24px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo img{height:60px;width:auto;}
+nav.desk-nav{display:flex;gap:28px;align-items:center;}
+nav.desk-nav a{
+  font-size:0.95rem;font-weight:600;color:#333;text-decoration:none;
+  position:relative;padding-bottom:2px;
+}
+nav.desk-nav a::after{
+  content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
+  background:var(--grad);transition:width .3s;
+}
+nav.desk-nav a:hover::after{width:100%;}
+nav.desk-nav a:hover{color:#534AB7;}
+.nav-dropdown{position:relative;}
+.nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown-btn{
+  font-size:0.95rem;font-weight:600;color:#333;background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;gap:4px;font-family:inherit;
+}
+.dropdown-btn:hover{color:#534AB7;}
+.dropdown-menu{
+  position:absolute;top:calc(100% + 10px);left:0;min-width:220px;
+  background:white;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.12);
+  padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:all .25s;z-index:100;
+}
+.dropdown-menu a{
+  display:block;padding:10px 16px;color:#333;font-size:0.88rem;font-weight:500;
+  border-radius:8px;text-decoration:none;transition:background .2s;
+}
+.dropdown-menu a:hover{background:#f0eefd;color:#534AB7;}
+.menu-btn{display:none;font-size:1.6rem;background:none;border:none;cursor:pointer;}
+
+/* ========= MOBILE MENU ========= */
+.mobile-menu{
+  display:none;position:fixed;top:110px;left:0;width:100%;
+  background:white;z-index:40;box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+.mobile-menu.open{display:block;}
+.mobile-menu-inner{padding:20px 24px;display:flex;flex-direction:column;gap:14px;}
+.mobile-menu-inner a{font-size:1rem;font-weight:600;color:#333;text-decoration:none;}
+.mobile-menu-inner a:hover{color:#534AB7;}
+.mob-sub{display:none;flex-direction:column;gap:8px;margin-left:16px;margin-top:6px;}
+.mob-sub.open{display:flex;}
+.mob-sub a{font-size:0.9rem;font-weight:500;}
+.mob-toggle{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:1rem;font-weight:600;cursor:pointer;
+}
+
+/* ========= HERO ========= */
+.hero{
+  margin-top:100px;
+  padding:90px 5% 100px;
+  background:linear-gradient(160deg,#f0eefd 0%,#e8f3fd 60%,#f8f7ff 100%);
+  position:relative;overflow:hidden;
+}
+.hero-blob1{
+  position:absolute;top:-120px;right:-100px;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(83,74,183,0.13) 0%,transparent 70%);
+  border-radius:50%;animation:blobFloat 8s ease-in-out infinite;
+}
+.hero-blob2{
+  position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;
+  background:radial-gradient(circle,rgba(24,95,165,0.1) 0%,transparent 70%);
+  border-radius:50%;animation:blobFloat 10s ease-in-out infinite reverse;
+}
+@keyframes blobFloat{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
+
+.hero-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+  position:relative;z-index:1;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--purple-pale);border:1px solid rgba(83,74,183,0.2);
+  color:var(--purple-mid);font-size:0.78rem;font-weight:700;
+  padding:6px 16px;border-radius:50px;margin-bottom:1.5rem;
+  letter-spacing:0.6px;text-transform:uppercase;
+}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--purple-mid);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.4);}}
+
+h1.hero-title{
+  font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:1.2rem;
+}
+h1.hero-title .g{
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-desc{font-size:1.05rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--grad);color:white;padding:0.85rem 2rem;border-radius:50px;
+  font-size:0.95rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  box-shadow:0 8px 24px rgba(83,74,183,0.32);transition:all .3s;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(83,74,183,0.42);}
+.btn-secondary{
+  background:white;color:var(--purple-mid);border:2px solid var(--purple-light);
+  padding:0.85rem 2rem;border-radius:50px;font-size:0.95rem;font-weight:700;
+  text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;
+}
+.btn-secondary:hover{background:var(--purple-pale);transform:translateY(-3px);}
+.hero-stats{display:flex;gap:2rem;margin-top:2.5rem;flex-wrap:wrap;}
+.stat-num{
+  font-size:1.9rem;font-weight:800;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  line-height:1;
+}
+.stat-label{font-size:0.78rem;color:var(--muted);font-weight:600;margin-top:3px;}
+
+/* Hero Visual Card */
+.hero-visual{
+  background:white;border-radius:20px;border:1px solid var(--border);
+  overflow:hidden;box-shadow:0 20px 60px rgba(83,74,183,0.2);
+  animation:cardFloat 6s ease-in-out infinite;
+}
+@keyframes cardFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.hv-header{
+  background:var(--grad);padding:16px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.hv-title{color:white;font-weight:800;font-size:0.9rem;}
+.hv-icon{width:32px;height:32px;background:rgba(255,255,255,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;}
+.hv-body{padding:20px;}
+.metric-row{display:flex;gap:10px;margin-bottom:14px;}
+.metric-box{
+  flex:1;background:var(--grad-soft);border-radius:12px;padding:12px;
+  border:1px solid var(--border);text-align:center;
+}
+.metric-val{font-size:1.1rem;font-weight:800;color:var(--purple-dark);}
+.metric-lbl{font-size:0.62rem;color:var(--muted);margin-top:2px;}
+.chart-area{background:var(--grad-soft);border-radius:12px;padding:14px;margin-bottom:12px;border:1px solid var(--border);}
+.chart-label{font-size:0.7rem;font-weight:700;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;}
+.bars{display:flex;align-items:flex-end;gap:5px;height:60px;}
+.bar{
+  flex:1;border-radius:4px 4px 0 0;
+  background:var(--grad);opacity:0.4;transition:all 1s ease;
+  animation:barGrow 1.5s ease forwards;
+}
+.bar:nth-child(1){height:40%;animation-delay:.1s;}
+.bar:nth-child(2){height:55%;animation-delay:.2s;}
+.bar:nth-child(3){height:70%;animation-delay:.3s;}
+.bar:nth-child(4){height:60%;animation-delay:.4s;}
+.bar:nth-child(5){height:85%;animation-delay:.5s;}
+.bar:nth-child(6){height:100%;animation-delay:.6s;opacity:0.9;}
+@keyframes barGrow{from{transform:scaleY(0);transform-origin:bottom;}to{transform:scaleY(1);}}
+.live-badge{
+  display:flex;align-items:center;gap:8px;padding:10px 14px;
+  background:#f0fdf8;border:1px solid rgba(6,214,160,0.3);border-radius:10px;
+  font-size:0.78rem;font-weight:600;color:#065f46;
+}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
+
+/* ========= SECTION COMMONS ========= */
+section{padding:80px 5%;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-label{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--grad-soft);border:1px solid var(--border);
+  color:var(--purple-mid);font-size:0.75rem;font-weight:700;
+  padding:5px 14px;border-radius:50px;margin-bottom:1rem;
+  letter-spacing:0.8px;text-transform:uppercase;
+}
+h2.sec-title{
+  font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;line-height:1.2;margin-bottom:1rem;
+}
+h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.section-sub{font-size:1rem;color:var(--muted);line-height:1.8;max-width:600px;margin-bottom:3rem;}
+
+/* ========= SERVICES ========= */
+.services-bg{background:white;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
+.service-card{
+  background:white;border:1.5px solid var(--border);border-radius:18px;padding:2rem;
+  position:relative;overflow:hidden;transition:all .35s;cursor:default;
+}
+.service-card::after{
+  content:'';position:absolute;inset:0;background:var(--grad);opacity:0;
+  transition:opacity .35s;z-index:0;border-radius:18px;
+}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(83,74,183,0.18);}
+.service-card:hover::after{opacity:0.04;}
+.service-card:hover .service-icon{background:var(--grad);color:white;}
+.service-card > *{position:relative;z-index:1;}
+.sc-top{display:flex;align-items:center;gap:14px;margin-bottom:1rem;}
+.service-icon{
+  width:52px;height:52px;border-radius:14px;background:var(--grad-soft);
+  border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;transition:all .3s;flex-shrink:0;
+}
+.service-card h3{font-size:1.05rem;font-weight:700;}
+.service-card p{font-size:0.88rem;color:var(--muted);line-height:1.75;margin-bottom:1.2rem;}
+.service-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{
+  background:var(--purple-pale);color:var(--purple-mid);
+  font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:50px;
+}
+.service-card:hover .tag{background:rgba(83,74,183,0.1);}
+
+/* ========= RESULTS COUNTER ========= */
+.results-bg{background:var(--grad);padding:60px 5%;}
+.results-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;text-align:center;}
+.result-item{}
+.result-num{font-size:2.8rem;font-weight:800;color:white;line-height:1;}
+.result-label{font-size:0.85rem;color:rgba(255,255,255,0.8);font-weight:500;margin-top:6px;}
+
+/* ========= PROCESS ========= */
+.process-bg{background:linear-gradient(160deg,#f0eefd,#e8f3fd);}
+.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;position:relative;}
+.process-grid::before{
+  content:'';position:absolute;top:36px;left:12%;right:12%;height:2px;
+  background:linear-gradient(90deg,var(--purple-mid),var(--blue-mid));z-index:0;
+}
+.process-step{text-align:center;padding:1.5rem 1rem;position:relative;z-index:1;}
+.step-num{
+  width:72px;height:72px;border-radius:50%;background:var(--grad);color:white;
+  font-size:1.5rem;font-weight:800;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.2rem;box-shadow:0 8px 20px rgba(83,74,183,0.3);
+  transition:transform .3s;
+}
+.process-step:hover .step-num{transform:scale(1.1);}
+.process-step h3{font-size:0.95rem;font-weight:700;margin-bottom:0.5rem;}
+.process-step p{font-size:0.82rem;color:var(--muted);line-height:1.65;}
+
+/* ========= PACKAGES ========= */
+.packages-bg{background:white;}
+.packages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;align-items:start;}
+.package-card{
+  background:white;border:2px solid var(--border);border-radius:22px;
+  padding:2.2rem;transition:all .3s;position:relative;
+}
+.package-card.featured{
+  background:var(--grad);border-color:transparent;
+  box-shadow:0 24px 60px rgba(83,74,183,0.38);transform:scale(1.04);
+}
+.package-card:not(.featured):hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(83,74,183,0.14);}
+.popular-badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:#FFD700;color:#1a1a2e;font-size:0.72rem;font-weight:800;
+  padding:5px 18px;border-radius:50px;white-space:nowrap;
+}
+.package-name{font-size:1.25rem;font-weight:800;margin-bottom:0.3rem;}
+.package-card.featured .package-name{color:white;}
+.package-desc{font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem;}
+.package-card.featured .package-desc{color:rgba(255,255,255,0.82);}
+.package-tier{
+  font-size:0.8rem;font-weight:700;color:var(--purple-mid);margin-bottom:1.5rem;
+  display:inline-block;background:var(--purple-pale);padding:4px 12px;border-radius:50px;
+}
+.package-card.featured .package-tier{background:rgba(255,255,255,0.2);color:white;}
+.pkg-features{list-style:none;margin-bottom:2rem;display:flex;flex-direction:column;gap:0.75rem;}
+.pkg-features li{font-size:0.88rem;display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
+.pkg-features li::before{content:'✓';font-weight:800;flex-shrink:0;margin-top:1px;}
+.package-card:not(.featured) .pkg-features li::before{color:var(--purple-mid);}
+.package-card.featured .pkg-features li{color:rgba(255,255,255,0.92);}
+.package-card.featured .pkg-features li::before{color:#FFD700;}
+.pkg-btn{
+  display:block;text-align:center;padding:0.9rem;border-radius:50px;
+  font-size:0.92rem;font-weight:700;text-decoration:none;transition:all .3s;
+}
+.package-card:not(.featured) .pkg-btn{background:var(--grad);color:white;box-shadow:0 6px 18px rgba(83,74,183,0.28);}
+.package-card:not(.featured) .pkg-btn:hover{box-shadow:0 10px 28px rgba(83,74,183,0.42);transform:translateY(-2px);}
+.package-card.featured .pkg-btn{background:white;color:var(--purple-mid);}
+.package-card.featured .pkg-btn:hover{background:#f0eefd;}
+
+/* ========= WHY US ========= */
+.whyus-bg{background:linear-gradient(160deg,#f0eefd,#e8f3fd);}
+.whyus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;}
+.why-card{
+  padding:1.8rem;border-radius:18px;background:white;border:1.5px solid var(--border);
+  transition:all .3s;
+}
+.why-card:hover{box-shadow:0 10px 28px rgba(83,74,183,0.14);transform:translateY(-4px);}
+.why-icon{font-size:2.2rem;margin-bottom:1rem;}
+.why-card h3{font-size:1rem;font-weight:700;margin-bottom:0.5rem;}
+.why-card p{font-size:0.87rem;color:var(--muted);line-height:1.75;}
+
+/* ========= CHANNELS ========= */
+.channels-bg{background:white;}
+.channels-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;}
+.channel-item{
+  background:var(--grad-soft);border:1.5px solid var(--border);border-radius:14px;
+  padding:1.4rem 1rem;text-align:center;transition:all .3s;
+}
+.channel-item:hover{transform:translateY(-4px);border-color:var(--purple-light);box-shadow:0 8px 20px rgba(83,74,183,0.14);}
+.ch-icon{font-size:1.8rem;margin-bottom:0.5rem;}
+.ch-name{font-size:0.78rem;font-weight:700;color:var(--text);}
+
+/* ========= FAQ ========= */
+.faq-bg{background:white;}
+.faq-wrap{max-width:760px;margin:0 auto;}
+.faq-item{background:var(--grad-soft);border-radius:16px;border:1.5px solid var(--border);margin-bottom:1rem;overflow:hidden;transition:all .3s;}
+.faq-item.open{background:white;border-color:var(--purple-light);box-shadow:0 4px 16px rgba(83,74,183,0.1);}
+.faq-q{
+  padding:1.2rem 1.5rem;font-weight:700;font-size:0.95rem;
+  display:flex;justify-content:space-between;align-items:center;
+  cursor:pointer;
+}
+.faq-icon{
+  width:26px;height:26px;border-radius:50%;background:var(--grad);color:white;
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;
+  transition:transform .3s;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{
+  padding:0 1.5rem;max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .4s;
+  font-size:0.88rem;color:var(--muted);line-height:1.8;
+}
+.faq-item.open .faq-a{max-height:300px;padding:0 1.5rem 1.2rem;}
+
+/* ========= CTA ========= */
+.cta-section{
+  background:var(--grad);padding:90px 5%;text-align:center;position:relative;overflow:hidden;
+}
+.cta-blob1{
+  position:absolute;top:-60px;right:-60px;width:280px;height:280px;
+  background:radial-gradient(circle,rgba(255,255,255,0.12),transparent 70%);border-radius:50%;
+}
+.cta-blob2{
+  position:absolute;bottom:-60px;left:-40px;width:220px;height:220px;
+  background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%);border-radius:50%;
+}
+.cta-section h2{color:white;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;margin-bottom:1rem;position:relative;z-index:1;}
+.cta-section p{color:rgba(255,255,255,0.85);font-size:1rem;max-width:500px;margin:0 auto 2rem;line-height:1.8;position:relative;z-index:1;}
+.cta-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;z-index:1;}
+.cta-btn-white{
+  background:white;color:var(--purple-mid);padding:0.95rem 2.2rem;border-radius:50px;
+  font-size:0.95rem;font-weight:700;text-decoration:none;transition:all .3s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.cta-btn-white:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.2);}
+.cta-btn-outline{
+  background:transparent;color:white;border:2px solid rgba(255,255,255,0.6);
+  padding:0.95rem 2.2rem;border-radius:50px;font-size:0.95rem;font-weight:700;
+  text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;
+}
+.cta-btn-outline:hover{border-color:white;background:rgba(255,255,255,0.1);transform:translateY(-3px);}
+
+/* ========= ANIMATIONS ========= */
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.fade-in-left{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in-left.visible{opacity:1;transform:translateX(0);}
+.fade-in-right{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in-right.visible{opacity:1;transform:translateX(0);}
+
+/* stagger children */
+.stagger > *{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.stagger.visible > *:nth-child(1){opacity:1;transform:none;transition-delay:.05s;}
+.stagger.visible > *:nth-child(2){opacity:1;transform:none;transition-delay:.15s;}
+.stagger.visible > *:nth-child(3){opacity:1;transform:none;transition-delay:.25s;}
+.stagger.visible > *:nth-child(4){opacity:1;transform:none;transition-delay:.35s;}
+.stagger.visible > *:nth-child(5){opacity:1;transform:none;transition-delay:.45s;}
+.stagger.visible > *:nth-child(6){opacity:1;transform:none;transition-delay:.55s;}
+.stagger.visible > *:nth-child(7){opacity:1;transform:none;transition-delay:.65s;}
+.stagger.visible > *:nth-child(8){opacity:1;transform:none;transition-delay:.75s;}
+
+/* number counter */
+.count-num{display:inline-block;}
+
+/* ========= RESPONSIVE ========= */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem;}
+  nav.desk-nav{display:none;}
+  .menu-btn{display:block;}
+  .process-grid::before{display:none;}
+  .package-card.featured{transform:scale(1);}
+}
+@media(max-width:600px){
+  section{padding:60px 5%;}
+  .hero-stats{gap:1.5rem;}
+  .hero-btns{flex-direction:column;}
+  .topbar-inner{flex-direction:column;gap:6px;padding:8px 16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <a href="tel:+919458265093">
+        <i class="fa-solid fa-phone" style="font-size:0.9rem;"></i>
+        <b>+91 9458265093</b>
+      </a>
+      <a href="mailto:habibidigital.in@gmail.com">
+        <i class="fa-solid fa-envelope" style="font-size:0.9rem;"></i>
+        <b class="hidden-mobile">habibidigital.in@gmail.com</b>
+      </a>
+    </div>
+    <div class="topbar-socials">
+      <a href="https://x.com/habibidigital_" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://instagram.com/habibidigital.in" target="_blank" style="color:#E1306C;"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank" style="color:#1877F2;"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="main-header" id="main-header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="habibidigitalsolution.png" alt="Habibi Digital Solution">
+    </div>
+    <nav class="desk-nav">
+      <a href="/">Home</a>
+      <div class="nav-dropdown">
+        <button class="dropdown-btn">Our Services ⌄</button>
+        <div class="dropdown-menu">
+          <a href="webdev.html">Website Development</a>
+          <a href="#">Google Business Profile</a>
+          <a href="#">SEO</a>
+          <a href="marketing.html">Marketing</a>
+          <a href="#">Social Media Post</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="dropdown-btn">Company ⌄</button>
+        <div class="dropdown-menu">
+          <a href="ourstory.html">Our Story</a>
+          <a href="habibi_digital_careers_page.html">Career</a>
+        </div>
+      </div>
+      <a href="about.html">About Us</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn">☰</button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-inner">
+    <a href="/">Home</a>
+    <div>
+      <div class="mob-toggle" onclick="toggleMob('mob-svc')">Our Services <span>▼</span></div>
+      <div class="mob-sub" id="mob-svc">
+        <a href="webdev.html">Website Development</a>
+        <a href="#">Google Business Profile</a>
+        <a href="#">SEO</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="#">Social Media Post</a>
+      </div>
+    </div>
+    <div>
+      <div class="mob-toggle" onclick="toggleMob('mob-co')">Company <span>▼</span></div>
+      <div class="mob-sub" id="mob-co">
+        <a href="ourstory.html">Our Story</a>
+        <a href="habibi_digital_careers_page.html">Career</a>
+      </div>
+    </div>
+    <a href="about.html">About Us</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</div>
+
+<!-- ========= HERO ========= -->
+<section class="hero">
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-inner">
+    <div class="fade-in-left">
+      <div class="hero-badge"><div class="badge-dot"></div> Digital Marketing Experts</div>
+      <h1 class="hero-title">Marketing That Actually <span class="g">Grows Your Business</span></h1>
+      <p class="hero-desc">Hamare saath apna brand online grow karein — Google Ads, Social Media, SEO aur Content se real customers laayen aur apna revenue badhaayen.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/919458265093?text=Hello%20Habibi%20Digital,%20I%20need%20digital%20marketing%20help" class="btn-primary">💬 Free Consultation</a>
+        <a href="#packages" class="btn-secondary">View Packages →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Campaigns Run</div></div>
+        <div class="stat"><div class="stat-num">3x</div><div class="stat-label">Avg ROI</div></div>
+        <div class="stat"><div class="stat-num">10K+</div><div class="stat-label">Leads Generated</div></div>
+        <div class="stat"><div class="stat-num">5★</div><div class="stat-label">Google Reviews</div></div>
+      </div>
+    </div>
+
+    <!-- Hero Visual -->
+    <div class="hero-visual fade-in-right">
+      <div class="hv-header">
+        <div class="hv-title">📊 Campaign Dashboard</div>
+        <div class="hv-icon">🚀</div>
+      </div>
+      <div class="hv-body">
+        <div class="metric-row">
+          <div class="metric-box">
+            <div class="metric-val">2,847</div>
+            <div class="metric-lbl">Reach Today</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">342</div>
+            <div class="metric-lbl">Clicks</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">38</div>
+            <div class="metric-lbl">Leads</div>
+          </div>
+        </div>
+        <div class="chart-area">
+          <div class="chart-label">Weekly Performance</div>
+          <div class="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+        <div class="live-badge">
+          <div class="live-dot"></div>
+          Campaign Running — Live Results Updating
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= SERVICES ========= -->
+<section id="services" class="services-bg">
+  <div class="section-inner">
+    <div class="section-label fade-in">Kya Offer Karte Hain</div>
+    <h2 class="sec-title fade-in">Marketing <span class="g">Services We Offer</span></h2>
+    <p class="section-sub fade-in">Hamar services specifically Indian local businesses ke liye design ki gayi hain — affordable, result-oriented aur transparent.</p>
+    <div class="services-grid stagger">
+
+      <div class="service-card">
+        <div class="sc-top">
+          <div class="service-icon">📢</div>
+          <h3>Social Media Marketing</h3>
+        </div>
+        <p>Facebook, Instagram aur WhatsApp pe targeted campaigns run karen. Apne local area mein brand awareness badhaayen aur directly customers tak pahunchen.</p>
+        <div class="service-tags"><span class="tag">Facebook Ads</span><span class="tag">Instagram Ads</span><span class="tag">WhatsApp</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top">
+          <div class="service-icon">🔍</div>
+          <h3>Google Ads (PPC)</h3>
+        </div>
+        <p>Jab bhi koi aapke products ya services Google pe search kare, aapka ad sabse upar aaye. Pay only when someone clicks — no wastage of budget.</p>
+        <div class="service-tags"><span class="tag">Search Ads</span><span class="tag">Display Ads</span><span class="tag">Remarketing</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top">
+          <div class="service-icon">📈</div>
+          <h3>SEO — Search Engine Optimization</h3>
+        </div>
+        <p>Google pe organically top rank karo bina ads ke. Long-term strategy jo aapki website pe free traffic laata hai aur business ko sustainable growth deta hai.</p>
+        <div class="service-tags"><span class="tag">On-Page SEO</span><span class="tag">Local SEO</span><span class="tag">Backlinks</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top">
+          <div class="service-icon">📍</div>
+          <h3>Google Business Profile</h3>
+        </div>
+        <p>Local searches mein apna business dikhao. Google Maps pe aana, reviews manage karna, aur "near me" searches se customers attract karna — sab hum handle karte hain.</p>
+        <div class="service-tags"><span class="tag">GMB Setup</span><span class="tag">Maps Listing</span><span class="tag">Reviews</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top">
+          <div class="service-icon">✍️</div>
+          <h3>Content Marketing</h3>
+        </div>
+        <p>Blogs, articles, aur video scripts se apne audience ko educate karo. Quality content jo trust build kare, SEO improve kare, aur customers ko convert kare.</p>
+        <div class="service-tags"><span class="tag">Blog Writing</span><span class="tag">Video Scripts</span><span class="tag">Copywriting</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top">
+          <div class="service-icon">🎨</div>
+          <h3>Social Media Posts & Design</h3>
+        </div>
+        <p>Professional, on-brand social media posts jo aapki pages ko active aur engaging rakhte hain. Monthly content calendar ke saath consistent presence banao.</p>
+        <div class="service-tags"><span class="tag">Canva Designs</span><span class="tag">Reels Scripts</span><span class="tag">Captions</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top">
+          <div class="service-icon">📧</div>
+          <h3>WhatsApp & Email Marketing</h3>
+        </div>
+        <p>Existing customers ko repeat orders ke liye engage karo. WhatsApp broadcasts aur email campaigns se offers, updates, aur reminders bhejo effectively.</p>
+        <div class="service-tags"><span class="tag">WhatsApp Bulk</span><span class="tag">Email Campaigns</span><span class="tag">Automation</span></div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top">
+          <div class="service-icon">📊</div>
+          <h3>Analytics & Reporting</h3>
+        </div>
+        <p>Har campaign ka detailed monthly report — reach, clicks, leads, conversions. Apna marketing budget kahan ja raha hai yeh clearly samjho aur smarter decisions lo.</p>
+        <div class="service-tags"><span class="tag">Monthly Reports</span><span class="tag">ROI Tracking</span><span class="tag">Insights</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========= RESULT COUNTERS ========= -->
+<section class="results-bg" id="results">
+  <div class="results-inner stagger">
+    <div class="result-item">
+      <div class="result-num" data-target="500">0</div><div style="font-size:2rem;font-weight:800;color:white;">+</div>
+      <div class="result-label">Campaigns Successfully Run</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num" data-target="10000">0</div><div style="font-size:2rem;font-weight:800;color:white;">+</div>
+      <div class="result-label">Leads Generated for Clients</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num" data-target="3">0</div><div style="font-size:2rem;font-weight:800;color:white;">x</div>
+      <div class="result-label">Average ROI for Clients</div>
+    </div>
+    <div class="result-item">
+      <div class="result-num" data-target="100">0</div><div style="font-size:2rem;font-weight:800;color:white;">+</div>
+      <div class="result-label">Happy Businesses Served</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= CHANNELS ========= -->
+<section class="channels-bg">
+  <div class="section-inner">
+    <div class="section-label fade-in">Platforms</div>
+    <h2 class="sec-title fade-in">Platforms We <span class="g">Market On</span></h2>
+    <p class="section-sub fade-in">Aapke customers jo platforms use karte hain, hum wahan pe aapka brand dikhate hain.</p>
+    <div class="channels-grid stagger">
+      <div class="channel-item"><div class="ch-icon">📘</div><div class="ch-name">Facebook</div></div>
+      <div class="channel-item"><div class="ch-icon">📸</div><div class="ch-name">Instagram</div></div>
+      <div class="channel-item"><div class="ch-icon">🔍</div><div class="ch-name">Google</div></div>
+      <div class="channel-item"><div class="ch-icon">📍</div><div class="ch-name">Google Maps</div></div>
+      <div class="channel-item"><div class="ch-icon">💬</div><div class="ch-name">WhatsApp</div></div>
+      <div class="channel-item"><div class="ch-icon">▶️</div><div class="ch-name">YouTube</div></div>
+      <div class="channel-item"><div class="ch-icon">🎵</div><div class="ch-name">LinkedIn</div></div>
+      <div class="channel-item"><div class="ch-icon">✉️</div><div class="ch-name">Email</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= PROCESS ========= -->
+<section id="process" class="process-bg">
+  <div class="section-inner">
+    <div class="section-label fade-in">How It Works</div>
+    <h2 class="sec-title fade-in">Hamare Simple <span class="g">5-Step Process</span></h2>
+    <p class="section-sub fade-in">No confusion. No delays. Bas results.</p>
+    <div class="process-grid stagger">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h3>Free Consultation</h3>
+        <p>Aapka business, goals, aur target audience samjhte hain. WhatsApp ya call pe bilkul free.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h3>Strategy Plan</h3>
+        <p>Aapke liye customized marketing plan taiyaar karte hain — channels, budget aur expected results ke saath.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h3>Setup & Launch</h3>
+        <p>Ads, pages, profiles — sab setup karke campaign launch karte hain professionally.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h3>Optimize Daily</h3>
+        <p>Campaign ko daily monitor aur optimize karte hain taaki aapka budget waste na ho.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">5</div>
+        <h3>Monthly Reports</h3>
+        <p>Har mahine detailed report dete hain — results, insights aur next month ka plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= PACKAGES ========= -->
+<section id="packages" class="packages-bg">
+  <div class="section-inner">
+    <div class="section-label fade-in">Pricing</div>
+    <h2 class="sec-title fade-in">Transparent <span class="g">Marketing Packages</span></h2>
+    <p class="section-sub fade-in">Koi hidden charges nahi. Koi confusing terms nahi. Apne budget ke hisaab se plan chuno.</p>
+    <div class="packages-grid stagger">
+
+      <div class="package-card">
+        <div class="package-name">Starter</div>
+        <div class="package-desc">Chhote businesses ke liye online presence banana</div>
+        <div class="package-tier">📱 Social Media Only</div>
+        <ul class="pkg-features">
+          <li>Facebook & Instagram Page Management</li>
+          <li>12 Posts Per Month (Design + Caption)</li>
+          <li>Basic Facebook Ads Setup</li>
+          <li>Google Business Profile Optimization</li>
+          <li>Monthly Performance Report</li>
+          <li>WhatsApp Support</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Hi,%20I%20am%20interested%20in%20Starter%20Marketing%20Package" class="pkg-btn">Get Started →</a>
+      </div>
+
+      <div class="package-card featured">
+        <div class="popular-badge">🔥 Most Popular</div>
+        <div class="package-name">Growth</div>
+        <div class="package-desc">Complete digital marketing for serious businesses</div>
+        <div class="package-tier">⚡ Full Digital Marketing</div>
+        <ul class="pkg-features">
+          <li>Facebook + Instagram + Google Ads</li>
+          <li>20 Posts Per Month (Premium Design)</li>
+          <li>Google Ads Campaign Management</li>
+          <li>SEO — On-Page Optimization</li>
+          <li>Google Business Profile Full Setup</li>
+          <li>WhatsApp Marketing Campaign</li>
+          <li>Lead Generation Strategy</li>
+          <li>Weekly Progress Updates</li>
+          <li>Detailed Monthly Report + Insights</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Hi,%20I%20am%20interested%20in%20Growth%20Marketing%20Package" class="pkg-btn">Get Started →</a>
+      </div>
+
+      <div class="package-card">
+        <div class="package-name">Enterprise</div>
+        <div class="package-desc">Large scale campaigns for established businesses</div>
+        <div class="package-tier">🏆 Custom Strategy</div>
+        <ul class="pkg-features">
+          <li>All Platforms — Full Management</li>
+          <li>Unlimited Content Creation</li>
+          <li>Advanced Google & Meta Ads</li>
+          <li>Full SEO Strategy + Backlinks</li>
+          <li>YouTube / Video Marketing</li>
+          <li>Email + WhatsApp Automation</li>
+          <li>Dedicated Account Manager</li>
+          <li>Weekly Reports + Strategy Calls</li>
+        </ul>
+        <a href="https://wa.me/919458265093?text=Hi,%20I%20need%20a%20custom%20marketing%20quote" class="pkg-btn">Get a Quote →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========= WHY US ========= -->
+<section class="whyus-bg">
+  <div class="section-inner">
+    <div class="section-label fade-in">Why Choose Us</div>
+    <h2 class="sec-title fade-in">Why Local Businesses <span class="g">Trust Habibi Digital</span></h2>
+    <p class="section-sub fade-in">Hum sirf agency nahi hain — aapke business ke partner hain jo aapki language samjhte hain aur real results deliver karte hain.</p>
+    <div class="whyus-grid stagger">
+      <div class="why-card"><div class="why-icon">🎯</div><h3>100% Result Focused</h3><p>Hum vanity metrics (likes, followers) pe focus nahi karte. Asli leads, calls, aur sales — yahi hamari priority hai har campaign mein.</p></div>
+      <div class="why-card"><div class="why-icon">💰</div><h3>India ke Budget Mein</h3><p>Hamare plans specifically Indian SMBs ke liye affordable hain. Koi overseas pricing nahi — aapke budget mein best results.</p></div>
+      <div class="why-card"><div class="why-icon">📊</div><h3>Transparent Reporting</h3><p>Har rupee kahan gaya — monthly report mein clearly dikhate hain. Koi hidden fees, koi confusion. Puri transparency.</p></div>
+      <div class="why-card"><div class="why-icon">🤝</div><h3>Direct WhatsApp Support</h3><p>Koi support ticket nahi, koi queue nahi. Seedha WhatsApp pe baat karo. Hum personally respond karte hain — fast.</p></div>
+      <div class="why-card"><div class="why-icon">🏠</div><h3>Local Market Expertise</h3><p>Agra aur UP ke market ko hum deeply samjhte hain. Local consumers ka behavior, trends, aur season — sab hisaab mein laate hain.</p></div>
+      <div class="why-card"><div class="why-icon">⭐</div><h3>Proven Track Record</h3><p>100+ businesses ke liye campaigns run kar chuke hain. Real 5-star Google reviews se hum pe trust karo — results dikhate hain.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= FAQ ========= -->
+<section id="faq" class="faq-bg">
+  <div class="section-inner">
+    <div class="section-label fade-in">FAQ</div>
+    <h2 class="sec-title fade-in">Aksar Pooche Jane Wale <span class="g">Sawaal</span></h2>
+    <p class="section-sub fade-in">Marketing ke baare mein common doubts clear karte hain. Aur bhi poochna ho toh WhatsApp karo!</p>
+    <div class="faq-wrap">
+
+      <div class="faq-item fade-in">
+        <div class="faq-q" onclick="toggleFaq(this)">Digital marketing mein kitna budget chahiye? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Minimum budget ₹5,000/month se shuru ho sakta hai. Ideally, Google/Facebook Ads ke liye ₹10,000–₹25,000/month ka ad spend plus hamaari management fee — yeh combination best results deta hai local businesses ke liye. WhatsApp pe baat karke aapke business ke liye exact budget suggest karenge.</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q" onclick="toggleFaq(this)">Kab tak results dikhne lagte hain? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Google aur Facebook Ads se pehle week mein hi leads aana shuru ho sakti hain. SEO typically 2-4 mahine mein results deta hai. Social media growth 1-2 mahine mein visible hoti hai. Hum realistic expectations set karte hain — koi jhoothe waade nahi dete.</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q" onclick="toggleFaq(this)">Kya aap ads ka budget bhi manage karte ho? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Haan! Hamaari management fee alag hoti hai, aur aapka ad budget directly Facebook/Google ko jaata hai — humare account mein nahi. Poori transparency ke saath hum aapke budget ko optimize karte hain taaki maximum ROI mile.</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q" onclick="toggleFaq(this)">Kya monthly contract hota hai ya lock-in period? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Hamaare plans monthly hain — koi long-term lock-in nahi. Agar aap satisfied nahi hain toh 30 days notice dekar band kar sakte ho. Lekin hamare results dekhte hue clients typically 6-12 mahine se zyaada rehte hain.</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q" onclick="toggleFaq(this)">Kya mere paas website hona zaroori hai? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Nahi, hum website ke bina bhi marketing kar sakte hain — Google Business Profile aur social media se leads generate ho sakti hain. Lekin ek website hone se conversions kaafi zyaada ho jaate hain. Zaroorat pade toh hum website bhi banate hain!</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q" onclick="toggleFaq(this)">Kaunse businesses ke liye digital marketing best hai? <div class="faq-icon">+</div></div>
+        <div class="faq-a">Doctors, clinics, restaurants, clothing shops, real estate, coaching centers, beauty salons, hardware stores, marriage halls — basically har local business ke liye digital marketing kaam karta hai. Agar aapke customers phone aur internet use karte hain, toh digital marketing aapke liye hai.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========= CTA ========= -->
+<section class="cta-section">
+  <div class="cta-blob1"></div>
+  <div class="cta-blob2"></div>
+  <h2>Ready to Grow Your Business Online?</h2>
+  <p>Aaj hi free consultation lo. Hum aapke business ko samjhenge aur best marketing plan suggest karenge — bilkul free, koi commitment nahi.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/919458265093?text=Hello%20Habibi%20Digital,%20I%20want%20to%20discuss%20digital%20marketing%20for%20my%20business" class="cta-btn-white">💬 WhatsApp for Free Quote</a>
+    <a href="tel:+919458265093" class="cta-btn-outline">📞 Call +91 94582 65093</a>
+  </div>
+</section>
+
+<div id="footer"></div>
+
+<script>
+// Load footer
+fetch("footer.html").then(r=>r.text()).then(d=>{document.getElementById("footer").innerHTML=d;}).catch(()=>{});
+
+// Topbar hide on scroll down
+let lastScroll=0;
+const topbar=document.getElementById("topbar");
+const header=document.getElementById("main-header");
+window.addEventListener("scroll",()=>{
+  const cs=window.pageYOffset;
+  if(cs>lastScroll&&cs>80){
+    topbar.style.transform="translateY(-100%)";
+    header.style.top="0";
+  }else{
+    topbar.style.transform="translateY(0)";
+    header.style.top="42px";
+  }
+  lastScroll=cs;
+});
+
+// Mobile menu
+document.getElementById("menu-btn").addEventListener("click",()=>{
+  document.getElementById("mobile-menu").classList.toggle("open");
+});
+function toggleMob(id){
+  document.getElementById(id).classList.toggle("open");
+}
+
+// FAQ toggle
+function toggleFaq(el){
+  const item=el.closest(".faq-item");
+  const isOpen=item.classList.contains("open");
+  document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));
+  if(!isOpen) item.classList.add("open");
+}
+
+// Intersection Observer for animations
+const observerOpts={threshold:0.12,rootMargin:"0px 0px -40px 0px"};
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("visible");
+      observer.unobserve(e.target);
+    }
+  });
+},observerOpts);
+
+document.querySelectorAll(".fade-in,.fade-in-left,.fade-in-right,.stagger").forEach(el=>observer.observe(el));
+
+// Counter animation
+function animateCounter(el,target,duration=2000){
+  let start=0;
+  const step=target/60;
+  const interval=setInterval(()=>{
+    start+=step;
+    if(start>=target){start=target;clearInterval(interval);}
+    el.textContent=Math.floor(start).toLocaleString("en-IN");
+  },duration/60);
+}
+
+const resultObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const nums=e.target.querySelectorAll("[data-target]");
+      nums.forEach(n=>animateCounter(n,parseInt(n.dataset.target)));
+      resultObserver.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+
+const resultSec=document.getElementById("results");
+if(resultSec) resultObserver.observe(resultSec);
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener("click",e=>{
+    const t=document.querySelector(a.getAttribute("href"));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"});}
+  });
+});
+</script>
+
+</body>
+</html>
