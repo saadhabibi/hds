@@ -8,6 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="index.css">
 <style>
 :root {
   --purple-dark: #26215C;
@@ -38,84 +42,9 @@ body{
   overflow-x:hidden;
 }
 
-/* ========= TOPBAR ========= */
-.topbar{
-  width:100%;background:white;color:#333;font-size:0.85rem;
-  position:fixed;top:0;left:0;z-index:60;border-bottom:1px solid #e8e8f0;
-  transition:transform .3s;
-}
-.topbar-inner{
-  max-width:1200px;margin:0 auto;padding:10px 24px;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
-}
-.topbar a{display:flex;align-items:center;gap:6px;color:#333;text-decoration:none;font-weight:600;}
-.topbar a:hover{color:#534AB7;}
-.topbar-socials{display:flex;gap:16px;font-size:1.1rem;}
-.topbar-socials a{color:#555;}
-.topbar-socials a:hover{color:#534AB7;}
-
-/* ========= HEADER ========= */
-.main-header{
-  position:fixed;top:42px;left:0;width:100%;
-  background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);
-  border-bottom:1px solid #e8e8f0;z-index:50;transition:all .3s;
-}
-.header-inner{
-  max-width:1200px;margin:0 auto;padding:12px 24px;
-  display:flex;justify-content:space-between;align-items:center;
-}
-.logo img{height:60px;width:auto;}
-nav.desk-nav{display:flex;gap:28px;align-items:center;}
-nav.desk-nav a{
-  font-size:0.95rem;font-weight:600;color:#333;text-decoration:none;
-  position:relative;padding-bottom:2px;
-}
-nav.desk-nav a::after{
-  content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
-  background:var(--grad);transition:width .3s;
-}
-nav.desk-nav a:hover::after{width:100%;}
-nav.desk-nav a:hover{color:#534AB7;}
-.nav-dropdown{position:relative;}
-.nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
-.dropdown-btn{
-  font-size:0.95rem;font-weight:600;color:#333;background:none;border:none;cursor:pointer;
-  display:flex;align-items:center;gap:4px;font-family:inherit;
-}
-.dropdown-btn:hover{color:#534AB7;}
-.dropdown-menu{
-  position:absolute;top:calc(100% + 10px);left:0;min-width:220px;
-  background:white;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.12);
-  padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);
-  transition:all .25s;z-index:100;
-}
-.dropdown-menu a{
-  display:block;padding:10px 16px;color:#333;font-size:0.88rem;font-weight:500;
-  border-radius:8px;text-decoration:none;transition:background .2s;
-}
-.dropdown-menu a:hover{background:#f0eefd;color:#534AB7;}
-.menu-btn{display:none;font-size:1.6rem;background:none;border:none;cursor:pointer;}
-
-/* ========= MOBILE MENU ========= */
-.mobile-menu{
-  display:none;position:fixed;top:110px;left:0;width:100%;
-  background:white;z-index:40;box-shadow:0 8px 20px rgba(0,0,0,0.1);
-}
-.mobile-menu.open{display:block;}
-.mobile-menu-inner{padding:20px 24px;display:flex;flex-direction:column;gap:14px;}
-.mobile-menu-inner a{font-size:1rem;font-weight:600;color:#333;text-decoration:none;}
-.mobile-menu-inner a:hover{color:#534AB7;}
-.mob-sub{display:none;flex-direction:column;gap:8px;margin-left:16px;margin-top:6px;}
-.mob-sub.open{display:flex;}
-.mob-sub a{font-size:0.9rem;font-weight:500;}
-.mob-toggle{
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:1rem;font-weight:600;cursor:pointer;
-}
-
 /* ========= HERO ========= */
 .hero{
-  margin-top:100px;
+  margin-top:110px;
   padding:90px 5% 100px;
   background:linear-gradient(160deg,#f0eefd 0%,#e8f3fd 60%,#f8f7ff 100%);
   position:relative;overflow:hidden;
@@ -267,7 +196,6 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
 /* ========= RESULTS COUNTER ========= */
 .results-bg{background:var(--grad);padding:60px 5%;}
 .results-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;text-align:center;}
-.result-item{}
 .result-num{font-size:2.8rem;font-weight:800;color:white;line-height:1;}
 .result-label{font-size:0.85rem;color:rgba(255,255,255,0.8);font-weight:500;margin-top:6px;}
 
@@ -412,7 +340,6 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
 .fade-in-right{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s ease;}
 .fade-in-right.visible{opacity:1;transform:translateX(0);}
 
-/* stagger children */
 .stagger > *{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
 .stagger.visible > *:nth-child(1){opacity:1;transform:none;transition-delay:.05s;}
 .stagger.visible > *:nth-child(2){opacity:1;transform:none;transition-delay:.15s;}
@@ -423,14 +350,11 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
 .stagger.visible > *:nth-child(7){opacity:1;transform:none;transition-delay:.65s;}
 .stagger.visible > *:nth-child(8){opacity:1;transform:none;transition-delay:.75s;}
 
-/* number counter */
 .count-num{display:inline-block;}
 
 /* ========= RESPONSIVE ========= */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:3rem;}
-  nav.desk-nav{display:none;}
-  .menu-btn{display:block;}
   .process-grid::before{display:none;}
   .package-card.featured{transform:scale(1);}
 }
@@ -438,74 +362,77 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
   section{padding:60px 5%;}
   .hero-stats{gap:1.5rem;}
   .hero-btns{flex-direction:column;}
-  .topbar-inner{flex-direction:column;gap:6px;padding:8px 16px;}
 }
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar" id="topbar">
-  <div class="topbar-inner">
-    <div style="display:flex;gap:20px;flex-wrap:wrap;">
-      <a href="tel:+919458265093">
-        <i class="fa-solid fa-phone" style="font-size:0.9rem;"></i>
-        <b>+91 9458265093</b>
+<!-- ========== TOPBAR (GMB style) ========== -->
+<div id="topbar" class="w-full bg-white text-gray-800 text-sm fixed top-0 left-0 z-50 border-b border-gray-200 transition-transform duration-300">
+  <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-4 flex-wrap">
+      <a href="tel:+919458265093" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+        <b><span class="hidden sm:inline">+91 9458265093</span></b>
       </a>
-      <a href="mailto:habibidigital.in@gmail.com">
-        <i class="fa-solid fa-envelope" style="font-size:0.9rem;"></i>
-        <b class="hidden-mobile">habibidigital.in@gmail.com</b>
+      <a href="mailto:habibidigital.in@gmail.com" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="mail" class="w-5 h-5"></i>
+        <b><span class="hidden sm:inline">habibidigital.in@gmail.com</span></b>
       </a>
     </div>
-    <div class="topbar-socials">
-      <a href="https://x.com/habibidigital_" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="https://instagram.com/habibidigital.in" target="_blank" style="color:#E1306C;"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank" style="color:#1877F2;"><i class="fa-brands fa-facebook"></i></a>
+    <div class="flex items-center gap-5 text-xl">
+      <a href="https://x.com/habibidigital_" target="_blank"><i class="fa-brands fa-x-twitter hover:text-black"></i></a>
+      <a href="https://instagram.com/habibidigital.in" target="_blank"><i class="fa-brands fa-instagram hover:text-pink-500"></i></a>
+      <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank"><i class="fa-brands fa-facebook hover:text-blue-600"></i></a>
     </div>
   </div>
 </div>
 
-<!-- HEADER -->
-<header class="main-header" id="main-header">
-  <div class="header-inner">
-    <div class="logo">
-      <img src="habibidigitalsolution.png" alt="Habibi Digital Solution">
+<!-- ========== HEADER (GMB style) ========== -->
+<header id="main-header" class="fixed top-[40px] w-full backdrop-blur-md bg-white/90 border-b border-gray-200 z-40 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-0 h-14">
+      <img src="habibidigitalsolution.png" alt="Habibi Digital Solution Logo" class="h-24 sm:h-8 md:h-24 w-auto">
     </div>
-    <nav class="desk-nav">
-      <a href="/">Home</a>
-      <div class="nav-dropdown">
-        <button class="dropdown-btn">Our Services ⌄</button>
-        <div class="dropdown-menu">
-          <a href="webdev.html">Website Development</a>
-          <a href="#">Google Business Profile</a>
-          <a href="#">SEO</a>
-          <a href="marketing.html">Marketing</a>
-          <a href="#">Social Media Post</a>
+    <nav class="hidden md:flex items-center gap-8 text-lg font-semibold text-gray-800">
+      <a href="/" class="group relative hover:text-blue-600">Home<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <div class="relative group">
+        <button class="hover:text-blue-600">Our Services ⌄</button>
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+            <a href="webdev.html" class="block px-5 py-3 hover:bg-gray-100">Website Development</a>
+            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Google Business Profile</a>
+            <a href="#" class="block px-5 py-3 hover:bg-gray-100">SEO</a>
+            <a href="marketing.html" class="block px-5 py-3 hover:bg-gray-100">Marketing</a>
+            <a href="#" class="block px-5 py-3 hover:bg-gray-100">Social Media Post</a>
+          </div>
         </div>
       </div>
-      <div class="nav-dropdown">
-        <button class="dropdown-btn">Company ⌄</button>
-        <div class="dropdown-menu">
-          <a href="ourstory.html">Our Story</a>
-          <a href="habibi_digital_careers_page.html">Career</a>
+      <div class="relative group">
+        <button class="hover:text-blue-600">Company ⌄</button>
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+            <a href="ourstory.html" class="block px-5 py-3 hover:bg-gray-100">Our Story</a>
+            <a href="habibi_digital_careers_page.html" class="block px-5 py-3 hover:bg-gray-100">Career</a>
+          </div>
         </div>
       </div>
-      <a href="about.html">About Us</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact Us</a>
+      <a href="about.html" class="group relative hover:text-blue-600">About Us<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="portfolio.html" class="group relative hover:text-blue-600">Portfolio<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="blog.html" class="group relative hover:text-blue-600">Blog<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="contact.html" class="group relative hover:text-blue-600">Contact Us<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
     </nav>
-    <button class="menu-btn" id="menu-btn">☰</button>
+    <button id="menu-btn" class="md:hidden text-3xl">☰</button>
   </div>
 </header>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobile-menu">
-  <div class="mobile-menu-inner">
+<!-- ========== MOBILE MENU (GMB style) ========== -->
+<div id="mobile-menu" class="hidden fixed left-0 w-full bg-white shadow-lg z-30" style="top:110px;">
+  <div class="flex flex-col p-6 gap-5 text-base font-semibold text-gray-800">
     <a href="/">Home</a>
     <div>
-      <div class="mob-toggle" onclick="toggleMob('mob-svc')">Our Services <span>▼</span></div>
-      <div class="mob-sub" id="mob-svc">
+      <button id="mobile-service-btn" class="flex justify-between w-full">Our Services ▼</button>
+      <div id="mobile-service-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
         <a href="webdev.html">Website Development</a>
         <a href="#">Google Business Profile</a>
         <a href="#">SEO</a>
@@ -514,8 +441,8 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
       </div>
     </div>
     <div>
-      <div class="mob-toggle" onclick="toggleMob('mob-co')">Company <span>▼</span></div>
-      <div class="mob-sub" id="mob-co">
+      <button id="mobile-company-btn" class="flex justify-between w-full">Company ▼</button>
+      <div id="mobile-company-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
         <a href="ourstory.html">Our Story</a>
         <a href="habibi_digital_careers_page.html">Career</a>
       </div>
@@ -548,7 +475,6 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
       </div>
     </div>
 
-    <!-- Hero Visual -->
     <div class="hero-visual fade-in-right">
       <div class="hv-header">
         <div class="hv-title">📊 Campaign Dashboard</div>
@@ -556,28 +482,15 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
       </div>
       <div class="hv-body">
         <div class="metric-row">
-          <div class="metric-box">
-            <div class="metric-val">2,847</div>
-            <div class="metric-lbl">Reach Today</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-val">342</div>
-            <div class="metric-lbl">Clicks</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-val">38</div>
-            <div class="metric-lbl">Leads</div>
-          </div>
+          <div class="metric-box"><div class="metric-val">2,847</div><div class="metric-lbl">Reach Today</div></div>
+          <div class="metric-box"><div class="metric-val">342</div><div class="metric-lbl">Clicks</div></div>
+          <div class="metric-box"><div class="metric-val">38</div><div class="metric-lbl">Leads</div></div>
         </div>
         <div class="chart-area">
           <div class="chart-label">Weekly Performance</div>
           <div class="bars">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
           </div>
         </div>
         <div class="live-badge">
@@ -596,79 +509,46 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
     <h2 class="sec-title fade-in">Marketing <span class="g">Services We Offer</span></h2>
     <p class="section-sub fade-in">Hamar services specifically Indian local businesses ke liye design ki gayi hain — affordable, result-oriented aur transparent.</p>
     <div class="services-grid stagger">
-
       <div class="service-card">
-        <div class="sc-top">
-          <div class="service-icon">📢</div>
-          <h3>Social Media Marketing</h3>
-        </div>
+        <div class="sc-top"><div class="service-icon">📢</div><h3>Social Media Marketing</h3></div>
         <p>Facebook, Instagram aur WhatsApp pe targeted campaigns run karen. Apne local area mein brand awareness badhaayen aur directly customers tak pahunchen.</p>
         <div class="service-tags"><span class="tag">Facebook Ads</span><span class="tag">Instagram Ads</span><span class="tag">WhatsApp</span></div>
       </div>
-
       <div class="service-card">
-        <div class="sc-top">
-          <div class="service-icon">🔍</div>
-          <h3>Google Ads (PPC)</h3>
-        </div>
+        <div class="sc-top"><div class="service-icon">🔍</div><h3>Google Ads (PPC)</h3></div>
         <p>Jab bhi koi aapke products ya services Google pe search kare, aapka ad sabse upar aaye. Pay only when someone clicks — no wastage of budget.</p>
         <div class="service-tags"><span class="tag">Search Ads</span><span class="tag">Display Ads</span><span class="tag">Remarketing</span></div>
       </div>
-
       <div class="service-card">
-        <div class="sc-top">
-          <div class="service-icon">📈</div>
-          <h3>SEO — Search Engine Optimization</h3>
-        </div>
-        <p>Google pe organically top rank karo bina ads ke. Long-term strategy jo aapki website pe free traffic laata hai aur business ko sustainable growth deta hai.</p>
+        <div class="sc-top"><div class="service-icon">📈</div><h3>SEO — Search Engine Optimization</h3></div>
+        <p>Google pe organically top rank karo bina ads ke. Long-term strategy jo aapki website pe free traffic laata hai aur sustainable growth deta hai.</p>
         <div class="service-tags"><span class="tag">On-Page SEO</span><span class="tag">Local SEO</span><span class="tag">Backlinks</span></div>
       </div>
-
       <div class="service-card">
-        <div class="sc-top">
-          <div class="service-icon">📍</div>
-          <h3>Google Business Profile</h3>
-        </div>
+        <div class="sc-top"><div class="service-icon">📍</div><h3>Google Business Profile</h3></div>
         <p>Local searches mein apna business dikhao. Google Maps pe aana, reviews manage karna, aur "near me" searches se customers attract karna — sab hum handle karte hain.</p>
         <div class="service-tags"><span class="tag">GMB Setup</span><span class="tag">Maps Listing</span><span class="tag">Reviews</span></div>
       </div>
-
       <div class="service-card">
-        <div class="sc-top">
-          <div class="service-icon">✍️</div>
-          <h3>Content Marketing</h3>
-        </div>
+        <div class="sc-top"><div class="service-icon">✍️</div><h3>Content Marketing</h3></div>
         <p>Blogs, articles, aur video scripts se apne audience ko educate karo. Quality content jo trust build kare, SEO improve kare, aur customers ko convert kare.</p>
         <div class="service-tags"><span class="tag">Blog Writing</span><span class="tag">Video Scripts</span><span class="tag">Copywriting</span></div>
       </div>
-
       <div class="service-card">
-        <div class="sc-top">
-          <div class="service-icon">🎨</div>
-          <h3>Social Media Posts & Design</h3>
-        </div>
+        <div class="sc-top"><div class="service-icon">🎨</div><h3>Social Media Posts & Design</h3></div>
         <p>Professional, on-brand social media posts jo aapki pages ko active aur engaging rakhte hain. Monthly content calendar ke saath consistent presence banao.</p>
         <div class="service-tags"><span class="tag">Canva Designs</span><span class="tag">Reels Scripts</span><span class="tag">Captions</span></div>
       </div>
-
       <div class="service-card">
-        <div class="sc-top">
-          <div class="service-icon">📧</div>
-          <h3>WhatsApp & Email Marketing</h3>
-        </div>
+        <div class="sc-top"><div class="service-icon">📧</div><h3>WhatsApp & Email Marketing</h3></div>
         <p>Existing customers ko repeat orders ke liye engage karo. WhatsApp broadcasts aur email campaigns se offers, updates, aur reminders bhejo effectively.</p>
         <div class="service-tags"><span class="tag">WhatsApp Bulk</span><span class="tag">Email Campaigns</span><span class="tag">Automation</span></div>
       </div>
-
       <div class="service-card">
-        <div class="sc-top">
-          <div class="service-icon">📊</div>
-          <h3>Analytics & Reporting</h3>
-        </div>
+        <div class="sc-top"><div class="service-icon">📊</div><h3>Analytics & Reporting</h3></div>
         <p>Har campaign ka detailed monthly report — reach, clicks, leads, conversions. Apna marketing budget kahan ja raha hai yeh clearly samjho aur smarter decisions lo.</p>
         <div class="service-tags"><span class="tag">Monthly Reports</span><span class="tag">ROI Tracking</span><span class="tag">Insights</span></div>
       </div>
-
     </div>
   </div>
 </section>
@@ -757,7 +637,6 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
     <h2 class="sec-title fade-in">Transparent <span class="g">Marketing Packages</span></h2>
     <p class="section-sub fade-in">Koi hidden charges nahi. Koi confusing terms nahi. Apne budget ke hisaab se plan chuno.</p>
     <div class="packages-grid stagger">
-
       <div class="package-card">
         <div class="package-name">Starter</div>
         <div class="package-desc">Chhote businesses ke liye online presence banana</div>
@@ -772,7 +651,6 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
         </ul>
         <a href="https://wa.me/919458265093?text=Hi,%20I%20am%20interested%20in%20Starter%20Marketing%20Package" class="pkg-btn">Get Started →</a>
       </div>
-
       <div class="package-card featured">
         <div class="popular-badge">🔥 Most Popular</div>
         <div class="package-name">Growth</div>
@@ -791,7 +669,6 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
         </ul>
         <a href="https://wa.me/919458265093?text=Hi,%20I%20am%20interested%20in%20Growth%20Marketing%20Package" class="pkg-btn">Get Started →</a>
       </div>
-
       <div class="package-card">
         <div class="package-name">Enterprise</div>
         <div class="package-desc">Large scale campaigns for established businesses</div>
@@ -808,7 +685,6 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
         </ul>
         <a href="https://wa.me/919458265093?text=Hi,%20I%20need%20a%20custom%20marketing%20quote" class="pkg-btn">Get a Quote →</a>
       </div>
-
     </div>
   </div>
 </section>
@@ -820,7 +696,7 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
     <h2 class="sec-title fade-in">Why Local Businesses <span class="g">Trust Habibi Digital</span></h2>
     <p class="section-sub fade-in">Hum sirf agency nahi hain — aapke business ke partner hain jo aapki language samjhte hain aur real results deliver karte hain.</p>
     <div class="whyus-grid stagger">
-      <div class="why-card"><div class="why-icon">🎯</div><h3>100% Result Focused</h3><p>Hum vanity metrics (likes, followers) pe focus nahi karte. Asli leads, calls, aur sales — yahi hamari priority hai har campaign mein.</p></div>
+      <div class="why-card"><div class="why-icon">🎯</div><h3>100% Result Focused</h3><p>Hum vanity metrics pe focus nahi karte. Asli leads, calls, aur sales — yahi hamari priority hai har campaign mein.</p></div>
       <div class="why-card"><div class="why-icon">💰</div><h3>India ke Budget Mein</h3><p>Hamare plans specifically Indian SMBs ke liye affordable hain. Koi overseas pricing nahi — aapke budget mein best results.</p></div>
       <div class="why-card"><div class="why-icon">📊</div><h3>Transparent Reporting</h3><p>Har rupee kahan gaya — monthly report mein clearly dikhate hain. Koi hidden fees, koi confusion. Puri transparency.</p></div>
       <div class="why-card"><div class="why-icon">🤝</div><h3>Direct WhatsApp Support</h3><p>Koi support ticket nahi, koi queue nahi. Seedha WhatsApp pe baat karo. Hum personally respond karte hain — fast.</p></div>
@@ -837,37 +713,30 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
     <h2 class="sec-title fade-in">Aksar Pooche Jane Wale <span class="g">Sawaal</span></h2>
     <p class="section-sub fade-in">Marketing ke baare mein common doubts clear karte hain. Aur bhi poochna ho toh WhatsApp karo!</p>
     <div class="faq-wrap">
-
       <div class="faq-item fade-in">
         <div class="faq-q" onclick="toggleFaq(this)">Digital marketing mein kitna budget chahiye? <div class="faq-icon">+</div></div>
-        <div class="faq-a">Minimum budget ₹5,000/month se shuru ho sakta hai. Ideally, Google/Facebook Ads ke liye ₹10,000–₹25,000/month ka ad spend plus hamaari management fee — yeh combination best results deta hai local businesses ke liye. WhatsApp pe baat karke aapke business ke liye exact budget suggest karenge.</div>
+        <div class="faq-a">Minimum budget ₹5,000/month se shuru ho sakta hai. Ideally, Google/Facebook Ads ke liye ₹10,000–₹25,000/month ka ad spend plus hamaari management fee — yeh combination best results deta hai local businesses ke liye.</div>
       </div>
-
       <div class="faq-item fade-in">
         <div class="faq-q" onclick="toggleFaq(this)">Kab tak results dikhne lagte hain? <div class="faq-icon">+</div></div>
-        <div class="faq-a">Google aur Facebook Ads se pehle week mein hi leads aana shuru ho sakti hain. SEO typically 2-4 mahine mein results deta hai. Social media growth 1-2 mahine mein visible hoti hai. Hum realistic expectations set karte hain — koi jhoothe waade nahi dete.</div>
+        <div class="faq-a">Google aur Facebook Ads se pehle week mein hi leads aana shuru ho sakti hain. SEO typically 2-4 mahine mein results deta hai. Social media growth 1-2 mahine mein visible hoti hai. Hum realistic expectations set karte hain.</div>
       </div>
-
       <div class="faq-item fade-in">
         <div class="faq-q" onclick="toggleFaq(this)">Kya aap ads ka budget bhi manage karte ho? <div class="faq-icon">+</div></div>
         <div class="faq-a">Haan! Hamaari management fee alag hoti hai, aur aapka ad budget directly Facebook/Google ko jaata hai — humare account mein nahi. Poori transparency ke saath hum aapke budget ko optimize karte hain taaki maximum ROI mile.</div>
       </div>
-
       <div class="faq-item fade-in">
         <div class="faq-q" onclick="toggleFaq(this)">Kya monthly contract hota hai ya lock-in period? <div class="faq-icon">+</div></div>
         <div class="faq-a">Hamaare plans monthly hain — koi long-term lock-in nahi. Agar aap satisfied nahi hain toh 30 days notice dekar band kar sakte ho. Lekin hamare results dekhte hue clients typically 6-12 mahine se zyaada rehte hain.</div>
       </div>
-
       <div class="faq-item fade-in">
         <div class="faq-q" onclick="toggleFaq(this)">Kya mere paas website hona zaroori hai? <div class="faq-icon">+</div></div>
         <div class="faq-a">Nahi, hum website ke bina bhi marketing kar sakte hain — Google Business Profile aur social media se leads generate ho sakti hain. Lekin ek website hone se conversions kaafi zyaada ho jaate hain. Zaroorat pade toh hum website bhi banate hain!</div>
       </div>
-
       <div class="faq-item fade-in">
         <div class="faq-q" onclick="toggleFaq(this)">Kaunse businesses ke liye digital marketing best hai? <div class="faq-icon">+</div></div>
-        <div class="faq-a">Doctors, clinics, restaurants, clothing shops, real estate, coaching centers, beauty salons, hardware stores, marriage halls — basically har local business ke liye digital marketing kaam karta hai. Agar aapke customers phone aur internet use karte hain, toh digital marketing aapke liye hai.</div>
+        <div class="faq-a">Doctors, clinics, restaurants, clothing shops, real estate, coaching centers, beauty salons, hardware stores, marriage halls — basically har local business ke liye digital marketing kaam karta hai.</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -887,86 +756,86 @@ h2.sec-title .g{background:var(--grad);-webkit-background-clip:text;-webkit-text
 <div id="footer"></div>
 
 <script>
-// Load footer
 fetch("footer.html").then(r=>r.text()).then(d=>{document.getElementById("footer").innerHTML=d;}).catch(()=>{});
 
-// Topbar hide on scroll down
-let lastScroll=0;
-const topbar=document.getElementById("topbar");
-const header=document.getElementById("main-header");
-window.addEventListener("scroll",()=>{
-  const cs=window.pageYOffset;
-  if(cs>lastScroll&&cs>80){
-    topbar.style.transform="translateY(-100%)";
-    header.style.top="0";
-  }else{
-    topbar.style.transform="translateY(0)";
-    header.style.top="42px";
+// Scroll behaviour
+let lastScroll = 0;
+const topbar = document.getElementById("topbar");
+const header = document.getElementById("main-header");
+const mobileMenu = document.getElementById("mobile-menu");
+
+window.addEventListener("scroll", () => {
+  const cs = window.pageYOffset;
+  if (cs > lastScroll && cs > 80) {
+    topbar.style.transform = "translateY(-100%)";
+    header.style.top = "0px";
+    mobileMenu.style.top = "70px";
+  } else {
+    topbar.style.transform = "translateY(0)";
+    header.style.top = "40px";
+    mobileMenu.style.top = "110px";
   }
-  lastScroll=cs;
+  lastScroll = cs;
 });
 
 // Mobile menu
-document.getElementById("menu-btn").addEventListener("click",()=>{
-  document.getElementById("mobile-menu").classList.toggle("open");
+document.getElementById("menu-btn").addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
 });
-function toggleMob(id){
-  document.getElementById(id).classList.toggle("open");
-}
+document.getElementById("mobile-service-btn").addEventListener("click", () => {
+  document.getElementById("mobile-service-menu").classList.toggle("hidden");
+});
+document.getElementById("mobile-company-btn").addEventListener("click", () => {
+  document.getElementById("mobile-company-menu").classList.toggle("hidden");
+});
 
 // FAQ toggle
-function toggleFaq(el){
-  const item=el.closest(".faq-item");
-  const isOpen=item.classList.contains("open");
-  document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));
-  if(!isOpen) item.classList.add("open");
+function toggleFaq(el) {
+  const item = el.closest(".faq-item");
+  const isOpen = item.classList.contains("open");
+  document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("open"));
+  if (!isOpen) item.classList.add("open");
 }
 
-// Intersection Observer for animations
-const observerOpts={threshold:0.12,rootMargin:"0px 0px -40px 0px"};
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add("visible");
-      observer.unobserve(e.target);
-    }
+// Intersection Observer
+const observerOpts = {threshold: 0.12, rootMargin: "0px 0px -40px 0px"};
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); }
   });
-},observerOpts);
-
-document.querySelectorAll(".fade-in,.fade-in-left,.fade-in-right,.stagger").forEach(el=>observer.observe(el));
+}, observerOpts);
+document.querySelectorAll(".fade-in,.fade-in-left,.fade-in-right,.stagger").forEach(el => observer.observe(el));
 
 // Counter animation
-function animateCounter(el,target,duration=2000){
-  let start=0;
-  const step=target/60;
-  const interval=setInterval(()=>{
-    start+=step;
-    if(start>=target){start=target;clearInterval(interval);}
-    el.textContent=Math.floor(start).toLocaleString("en-IN");
-  },duration/60);
+function animateCounter(el, target, duration=2000) {
+  let start = 0;
+  const step = target / 60;
+  const interval = setInterval(() => {
+    start += step;
+    if (start >= target) { start = target; clearInterval(interval); }
+    el.textContent = Math.floor(start).toLocaleString("en-IN");
+  }, duration / 60);
 }
-
-const resultObserver=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      const nums=e.target.querySelectorAll("[data-target]");
-      nums.forEach(n=>animateCounter(n,parseInt(n.dataset.target)));
+const resultObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll("[data-target]").forEach(n => animateCounter(n, parseInt(n.dataset.target)));
       resultObserver.unobserve(e.target);
     }
   });
-},{threshold:0.3});
+}, {threshold: 0.3});
+const resultSec = document.getElementById("results");
+if (resultSec) resultObserver.observe(resultSec);
 
-const resultSec=document.getElementById("results");
-if(resultSec) resultObserver.observe(resultSec);
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener("click",e=>{
-    const t=document.querySelector(a.getAttribute("href"));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"});}
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener("click", e => {
+    const t = document.querySelector(a.getAttribute("href"));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior: "smooth"}); }
   });
 });
 </script>
 
+<script>lucide.createIcons();</script>
 </body>
 </html>
