@@ -7,8 +7,12 @@
 <meta name="description" content="Professional SEO services for Indian businesses. Get on page 1 of Google. Local SEO, On-Page SEO, Technical SEO — all in one place.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="index.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
 :root {
   --purple-dark: #26215C;
@@ -30,81 +34,13 @@
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
-
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background: #f8f7ff;
   color: var(--text);
   overflow-x: hidden;
 }
-
-/* ========== TOPBAR ========== */
-.topbar {
-  background: white;
-  border-bottom: 1px solid #e8e8f0;
-  padding: 10px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.82rem;
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  transition: transform 0.3s;
-}
-.topbar a { color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 6px; font-weight: 600; }
-.topbar a:hover { color: var(--blue-mid); }
-.topbar-social { display: flex; gap: 14px; font-size: 1.1rem; }
-.topbar-social a { color: var(--muted); }
-.topbar-social a:hover { color: var(--purple-mid); }
-
-/* ========== HEADER ========== */
-.site-header {
-  position: fixed;
-  top: 40px; left: 0; right: 0;
-  z-index: 99;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid #e8e8f0;
-  padding: 0 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-  transition: top 0.3s;
-}
-.logo { font-size: 1.4rem; font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; position: relative; }
-.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--grad); transition: width 0.3s; }
-.nav-links a:hover::after { width: 100%; }
-.nav-cta { background: var(--grad); color: white !important; padding: 8px 20px; border-radius: 50px; font-size: 0.88rem !important; }
-.nav-cta::after { display: none !important; }
-.hamburger { display: none; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: var(--text); }
-
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: block; }
-  .topbar-left span { display: none; }
-  .topbar { flex-wrap: wrap; gap: 6px; }
-}
-
-/* ========== MOBILE MENU ========== */
-.mobile-menu {
-  position: fixed;
-  top: 110px; left: 0; right: 0;
-  background: white;
-  z-index: 98;
-  padding: 1.5rem 5%;
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 1rem; padding: 0.5rem 0; border-bottom: 1px solid #f0f0f8; }
 
 /* ========== HERO ========== */
 .hero {
@@ -118,7 +54,6 @@ body {
   background: linear-gradient(160deg, #0c0b1e 0%, #131046 40%, #0a1e3a 100%);
 }
 
-/* Animated grid bg */
 .hero-grid {
   position: absolute;
   inset: 0;
@@ -133,7 +68,6 @@ body {
   100% { transform: translateY(60px); }
 }
 
-/* Orbs */
 .orb {
   position: absolute;
   border-radius: 50%;
@@ -150,7 +84,6 @@ body {
 
 .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 2; }
 
-/* Badge */
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(83,74,183,0.2);
@@ -208,7 +141,6 @@ body {
 .stat-num { font-size: 2rem; font-weight: 900; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); font-weight: 500; margin-top: 2px; }
 
-/* Hero Right: Google SERP mockup */
 .hero-right { animation: fadeSlideLeft 1s 0.4s ease both; }
 .serp-card {
   background: rgba(255,255,255,0.05);
@@ -257,7 +189,6 @@ body {
   color: var(--green); padding: 2px 8px; border-radius: 50px; font-size: 0.62rem; font-weight: 700;
 }
 
-/* Floating metric cards */
 .metric-float {
   position: absolute;
   background: white;
@@ -343,13 +274,10 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
   flex-shrink: 0;
 }
 
-.step-content {
-  padding-top: 8px;
-}
+.step-content { padding-top: 8px; }
 .step-content h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem; }
 .step-content p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
 
-/* Mini demo inside each step */
 .step-demo {
   background: var(--grad-soft);
   border: 1.5px solid var(--border);
@@ -441,7 +369,6 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
 /* ========== RANKING COUNTER ========== */
 .counter-bg { background: var(--grad); padding: 70px 5%; }
 .counter-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
-.counter-item {}
 .counter-num { font-size: 3rem; font-weight: 900; color: white; font-variant-numeric: tabular-nums; }
 .counter-num span { display: inline-block; }
 .counter-label { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-top: 4px; font-weight: 500; }
@@ -549,7 +476,7 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
 .faq-bg { background: white; }
 .faq-wrap { max-width: 800px; margin: 0 auto; }
 .faq-item {
-  background: #fafaf f;
+  background: #fafaff;
   border: 1.5px solid var(--border);
   border-radius: 14px;
   margin-bottom: 1rem;
@@ -633,46 +560,96 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
   .step-icon { width: 54px; height: 54px; font-size: 1.4rem; }
   .seo-flow::before { left: 27px; }
   .hero-stats { gap: 1.5rem; }
-  .topbar { flex-direction: column; align-items: flex-start; gap: 4px; }
 }
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar" id="topbar">
-  <div class="topbar-left" style="display:flex;gap:1.2rem;flex-wrap:wrap;">
-    <a href="tel:+919458265093"><i class="fas fa-phone" style="color:var(--purple-mid)"></i> <span>+91 9458265093</span></a>
-    <a href="mailto:habibidigital.in@gmail.com"><i class="fas fa-envelope" style="color:var(--purple-mid)"></i> <span>habibidigital.in@gmail.com</span></a>
-  </div>
-  <div class="topbar-social">
-    <a href="https://x.com/habibidigital_" target="_blank"><i class="fab fa-x-twitter"></i></a>
-    <a href="https://instagram.com/habibidigital.in" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank"><i class="fab fa-facebook"></i></a>
+<!-- ========== TOPBAR (GMB style) ========== -->
+<div id="topbar" class="w-full bg-white text-gray-800 text-sm fixed top-0 left-0 z-50 border-b border-gray-200 transition-transform duration-300">
+  <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-4 flex-wrap">
+      <a href="tel:+919458265093" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+        <b><span class="hidden sm:inline">+91 9458265093</span></b>
+      </a>
+      <a href="mailto:habibidigital.in@gmail.com" class="flex items-center gap-2 hover:text-blue-600">
+        <i data-lucide="mail" class="w-5 h-5"></i>
+        <b><span class="hidden sm:inline">habibidigital.in@gmail.com</span></b>
+      </a>
+    </div>
+    <div class="flex items-center gap-5 text-xl">
+      <a href="https://x.com/habibidigital_" target="_blank"><i class="fa-brands fa-x-twitter hover:text-black"></i></a>
+      <a href="https://instagram.com/habibidigital.in" target="_blank"><i class="fa-brands fa-instagram hover:text-pink-500"></i></a>
+      <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank"><i class="fa-brands fa-facebook hover:text-blue-600"></i></a>
+    </div>
   </div>
 </div>
 
-<!-- HEADER -->
-<header class="site-header" id="main-header">
-  <div class="logo">Habibi Digital</div>
-  <ul class="nav-links">
-    <li><a href="/">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#how-seo-works">SEO Kaise Kaam Karta Hai</a></li>
-    <li><a href="#packages">Pricing</a></li>
-    <li><a href="https://wa.me/919458265093?text=SEO%20ke%20baare%20mein%20jaanna%20chahta%20hoon" class="nav-cta">💬 WhatsApp</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger">☰</button>
+<!-- ========== HEADER (GMB style) ========== -->
+<header id="main-header" class="fixed top-[40px] w-full backdrop-blur-md bg-white/90 border-b border-gray-200 z-40 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-0 h-14">
+      <img src="habibidigitalsolution.png" alt="Habibi Digital Solution Logo" class="h-24 sm:h-8 md:h-24 w-auto">
+    </div>
+    <nav class="hidden md:flex items-center gap-8 text-lg font-semibold text-gray-800">
+      <a href="/" class="group relative hover:text-blue-600">Home<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <div class="relative group">
+        <button class="hover:text-blue-600">Our Services ⌄</button>
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Website Development</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Google Business Profile</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">SEO</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Marketing</a>
+            <a href="#services" class="block px-5 py-3 hover:bg-gray-100">Social Media Post</a>
+          </div>
+        </div>
+      </div>
+      <div class="relative group">
+        <button class="hover:text-blue-600">Company ⌄</button>
+        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
+          <div class="bg-white shadow-xl rounded-xl">
+            <a href="ourstory.html" class="block px-5 py-3 hover:bg-gray-100">Our Story</a>
+            <a href="habibi_digital_careers_page.html" class="block px-5 py-3 hover:bg-gray-100">Career</a>
+          </div>
+        </div>
+      </div>
+      <a href="about.html" class="group relative hover:text-blue-600">About Us<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="portfolio.html" class="group relative hover:text-blue-600">Portfolio<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="blog.html" class="group relative hover:text-blue-600">Blog<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="contact.html" class="group relative hover:text-blue-600">Contact Us<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+    </nav>
+    <button id="menu-btn" class="md:hidden text-3xl">☰</button>
+  </div>
 </header>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobile-menu">
-  <a href="/">Home</a>
-  <a href="#services">SEO Services</a>
-  <a href="#how-seo-works">SEO Kaise Kaam Karta Hai</a>
-  <a href="#packages">Pricing</a>
-  <a href="contact.html">Contact Us</a>
-  <a href="https://wa.me/919458265093" style="color:var(--purple-mid);">💬 WhatsApp Us</a>
+<!-- ========== MOBILE MENU (GMB style) ========== -->
+<div id="mobile-menu" class="hidden fixed left-0 w-full bg-white shadow-lg z-30" style="top:110px;">
+  <div class="flex flex-col p-6 gap-5 text-base font-semibold text-gray-800">
+    <a href="/">Home</a>
+    <div>
+      <button id="mobile-service-btn" class="flex justify-between w-full">Our Services ▼</button>
+      <div id="mobile-service-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
+        <a href="#services">Website Development</a>
+        <a href="#services">Google Business Profile</a>
+        <a href="#services">SEO</a>
+        <a href="#services">Marketing</a>
+        <a href="#services">Social Media Post</a>
+      </div>
+    </div>
+    <div>
+      <button id="mobile-company-btn" class="flex justify-between w-full">Company ▼</button>
+      <div id="mobile-company-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
+        <a href="ourstory.html">Our Story</a>
+        <a href="habibi_digital_careers_page.html">Career</a>
+      </div>
+    </div>
+    <a href="about.html">About Us</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -701,7 +678,6 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
 
     <div class="hero-right">
       <div class="hero-right-wrap">
-        <!-- Floating badges -->
         <div class="metric-float metric-float-1">
           <div style="font-size:1.4rem;">📈</div>
           <div>
@@ -717,7 +693,6 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
           </div>
         </div>
 
-        <!-- SERP Mockup -->
         <div class="serp-card">
           <div class="serp-header">
             <div class="serp-dots">
@@ -729,25 +704,21 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
           </div>
           <div class="serp-body">
             <div class="serp-label">Google Search Results</div>
-
             <div class="serp-result top">
               <div class="serp-rank gold">🥇 Position 1 <span class="rank-badge">✓ SEO Done</span></div>
               <div class="serp-title">Glamour Studio Agra | Best Hair Salon Near You</div>
               <div class="serp-snippet">Top-rated salon in Agra with expert stylists. Book appointment today. ⭐4.9 · 320 reviews · Open Now</div>
             </div>
-
             <div class="serp-result">
               <div class="serp-rank" style="color:rgba(255,255,255,0.4);">#2 Position</div>
               <div class="serp-title">Agra Beauty Hub — Ladies Salon</div>
               <div class="serp-snippet">Professional beauty services in Agra. Bridal packages available. Call now.</div>
             </div>
-
             <div class="serp-result">
               <div class="serp-rank" style="color:rgba(255,255,255,0.3);">#3 Position</div>
               <div class="serp-title">City Salon & Spa Agra</div>
               <div class="serp-snippet">Affordable salon services in Agra. Hair, skin, nails and more.</div>
             </div>
-
             <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.08);font-size:0.72rem;color:rgba(255,255,255,0.35);text-align:center;">
               Pages 2–10 ke baaki results pehle page se zyada traffic kabhi nahi paate 😔
             </div>
@@ -766,12 +737,8 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
     <p class="section-sub reveal">Jab koi Google pe kuch dhundta hai, toh Google decide karta hai kaun si website pehle dikhani hai. SEO ka kaam hai aapki website ko us "first" position pe laana.</p>
 
     <div class="seo-flow">
-
-      <!-- Step 1 -->
       <div class="seo-step">
-        <div class="step-icon-wrap">
-          <div class="step-icon">🕷️</div>
-        </div>
+        <div class="step-icon-wrap"><div class="step-icon">🕷️</div></div>
         <div class="step-content">
           <h3>Step 1: Google Crawling — Google Aapki Website Padhta Hai</h3>
           <p>Google ke "bots" (crawlers) internet pe ghoomte rehte hain aur har website ko padh ke samajhte hain — jaise koi librarian books ko scan karta hai. Agar aapki website properly bani hai, toh Google use aasaani se padh sakta hai.</p>
@@ -785,11 +752,8 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
         </div>
       </div>
 
-      <!-- Step 2 -->
       <div class="seo-step">
-        <div class="step-icon-wrap">
-          <div class="step-icon">🔑</div>
-        </div>
+        <div class="step-icon-wrap"><div class="step-icon">🔑</div></div>
         <div class="step-content">
           <h3>Step 2: Keyword Research — Log Kya Dhundhte Hain</h3>
           <p>Hum pehle research karte hain ki aapke potential customers Google pe exactly kya type karte hain. Yahi "keywords" hain. Sahi keywords target karna sabse zaroori step hai — galat keywords pe rank karne ka koi fayda nahi.</p>
@@ -806,11 +770,8 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
         </div>
       </div>
 
-      <!-- Step 3 -->
       <div class="seo-step">
-        <div class="step-icon-wrap">
-          <div class="step-icon">📝</div>
-        </div>
+        <div class="step-icon-wrap"><div class="step-icon">📝</div></div>
         <div class="step-content">
           <h3>Step 3: On-Page SEO — Aapka Content Optimize Karna</h3>
           <p>Aapki website ke har page ko sahi se "optimize" karte hain — Title Tags, Meta Descriptions, Headings, Image Alt Text, aur URL structure. Ye sab Google ko batata hai ki aapka page kis topic ke baare mein hai aur kitna relevant hai.</p>
@@ -838,11 +799,8 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
         </div>
       </div>
 
-      <!-- Step 4 -->
       <div class="seo-step">
-        <div class="step-icon-wrap">
-          <div class="step-icon">⚡</div>
-        </div>
+        <div class="step-icon-wrap"><div class="step-icon">⚡</div></div>
         <div class="step-content">
           <h3>Step 4: Technical SEO — Website Ki Speed & Health</h3>
           <p>Google slow websites ko rank nahi karta. Hum aapki website ki loading speed badhate hain, mobile pe sahi karte hain, SSL certificate lagate hain, aur sitemap Google ko submit karte hain. Technical health seedha ranking pe affect karta hai.</p>
@@ -859,11 +817,8 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
         </div>
       </div>
 
-      <!-- Step 5 -->
       <div class="seo-step">
-        <div class="step-icon-wrap">
-          <div class="step-icon">🔗</div>
-        </div>
+        <div class="step-icon-wrap"><div class="step-icon">🔗</div></div>
         <div class="step-content">
           <h3>Step 5: Link Building — Aapki Authority Badhana</h3>
           <p>Google un websites ko zyada trust karta hai jinhe doosri reputable websites link karti hain. Hum aapke liye quality "backlinks" banate hain — local directories, industry websites, aur guest posts ke through. Zyada backlinks = zyada authority = higher ranking.</p>
@@ -881,14 +836,11 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
         </div>
       </div>
 
-      <!-- Step 6 -->
       <div class="seo-step">
-        <div class="step-icon-wrap">
-          <div class="step-icon">📍</div>
-        </div>
+        <div class="step-icon-wrap"><div class="step-icon">📍</div></div>
         <div class="step-content">
           <h3>Step 6: Local SEO — Aapke Shehar Mein #1 Bano</h3>
-          <p>"Near me" aur city-based searches ke liye Local SEO sabse powerful hai. Google Business Profile setup, local citations, aur customer reviews — ye sab milke aapki business ko local searches mein top pe laate hain. Specially aapke area mein customers laaने ke liye.</p>
+          <p>"Near me" aur city-based searches ke liye Local SEO sabse powerful hai. Google Business Profile setup, local citations, aur customer reviews — ye sab milke aapki business ko local searches mein top pe laate hain.</p>
           <div class="step-demo">
             <div class="step-demo-title">📍 Local SEO Checklist</div>
             <div style="display:flex;flex-direction:column;gap:4px;">
@@ -902,11 +854,8 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
         </div>
       </div>
 
-      <!-- Step 7 -->
       <div class="seo-step">
-        <div class="step-icon-wrap">
-          <div class="step-icon">📊</div>
-        </div>
+        <div class="step-icon-wrap"><div class="step-icon">📊</div></div>
         <div class="step-content">
           <h3>Step 7: Monthly Reporting — Results Track Karna</h3>
           <p>Hum har month aapko detailed report dete hain — kaun se keywords rank hue, kitna traffic aaya, kaun se pages best perform kar rahe hain. Transparency hamare saath kaam karne ka sabse bada benefit hai.</p>
@@ -929,7 +878,6 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -944,37 +892,37 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
       <div class="service-card">
         <div class="service-icon">📍</div>
         <h3>Local SEO</h3>
-        <p>"Near me" aur city-specific searches ke liye optimize karte hain. Google Maps aur local pack mein aapki business top pe aayegi. Restaurants, clinics, salons, aur local businesses ke liye best.</p>
+        <p>"Near me" aur city-specific searches ke liye optimize karte hain. Google Maps aur local pack mein aapki business top pe aayegi.</p>
         <div class="service-tags"><span class="tag">Google Maps</span><span class="tag">Local Pack</span><span class="tag">Near Me</span></div>
       </div>
       <div class="service-card">
         <div class="service-icon">📝</div>
         <h3>On-Page SEO</h3>
-        <p>Title tags, meta descriptions, headings, content structure, image optimization — har page ko properly optimize karte hain taaki Google samjhe aapka page kis baare mein hai aur use rank kare.</p>
+        <p>Title tags, meta descriptions, headings, content structure, image optimization — har page ko properly optimize karte hain.</p>
         <div class="service-tags"><span class="tag">Meta Tags</span><span class="tag">Content SEO</span><span class="tag">Schema</span></div>
       </div>
       <div class="service-card">
         <div class="service-icon">⚙️</div>
         <h3>Technical SEO</h3>
-        <p>Website speed, mobile-friendliness, crawlability, XML sitemap, robots.txt, Core Web Vitals — sab technical issues fix karte hain jo Google ranking ko affect karte hain.</p>
+        <p>Website speed, mobile-friendliness, crawlability, XML sitemap, robots.txt, Core Web Vitals — sab technical issues fix karte hain.</p>
         <div class="service-tags"><span class="tag">Speed Fix</span><span class="tag">Core Web Vitals</span><span class="tag">Crawl Fix</span></div>
       </div>
       <div class="service-card">
         <div class="service-icon">🔗</div>
         <h3>Link Building</h3>
-        <p>Quality backlinks se aapki website ki domain authority badhate hain. Sirf genuine, relevant websites se links — koi spam nahi, koi black-hat tactics nahi. Long-term sustainable growth.</p>
+        <p>Quality backlinks se aapki website ki domain authority badhate hain. Sirf genuine, relevant websites se links — koi spam nahi.</p>
         <div class="service-tags"><span class="tag">Quality Links</span><span class="tag">Domain Authority</span><span class="tag">Guest Posts</span></div>
       </div>
       <div class="service-card">
         <div class="service-icon">🛍️</div>
         <h3>eCommerce SEO</h3>
-        <p>Online store ke products Google pe rank karwate hain. Product pages, category pages, aur shopping-intent keywords target karte hain. WooCommerce aur Shopify mein expertise.</p>
+        <p>Online store ke products Google pe rank karwate hain. Product pages, category pages, aur shopping-intent keywords target karte hain.</p>
         <div class="service-tags"><span class="tag">Product SEO</span><span class="tag">Shopping Intent</span><span class="tag">Category Pages</span></div>
       </div>
       <div class="service-card">
         <div class="service-icon">📊</div>
         <h3>SEO Audit & Strategy</h3>
-        <p>Aapki website ka complete SEO health check karte hain — issues identify karte hain, competitor analysis karte hain, aur ek roadmap dete hain jo step-by-step follow karke aap page 1 pe aa sako.</p>
+        <p>Aapki website ka complete SEO health check karte hain — issues identify karte hain, competitor analysis, aur step-by-step roadmap.</p>
         <div class="service-tags"><span class="tag">Free Audit</span><span class="tag">Competitor Analysis</span><span class="tag">Roadmap</span></div>
       </div>
     </div>
@@ -1045,28 +993,28 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
           <div class="why-icon-box">📈</div>
           <div>
             <h4>75% Users Page 1 Se Aage Nahi Jaate</h4>
-            <p>Agar aapki website Google ke page 2 pe hai, practically invisible hai. 75% se zyada traffic sirf page 1 ke results pe click karta hai — especially top 3 results.</p>
+            <p>Agar aapki website Google ke page 2 pe hai, practically invisible hai. 75% se zyada traffic sirf page 1 ke results pe click karta hai.</p>
           </div>
         </div>
         <div class="why-point">
           <div class="why-icon-box">💰</div>
           <div>
             <h4>Ads Se Zyada Sustainable Hai SEO</h4>
-            <p>Google Ads mein aapko har click ke paise dene padte hain. SEO ek investment hai jo long-term results deta hai — ads band karo traffic band, SEO banda rahega.</p>
+            <p>Google Ads mein aapko har click ke paise dene padte hain. SEO ek investment hai jo long-term results deta hai.</p>
           </div>
         </div>
         <div class="why-point">
           <div class="why-icon-box">🎯</div>
           <div>
             <h4>Ready-to-Buy Customers Milte Hain</h4>
-            <p>Jo log Google pe "best dentist in agra" search karte hain, woh actually dentist dhundh rahe hain. SEO se sirf wahi log aate hain jo aapka product/service chahte hain.</p>
+            <p>Jo log Google pe "best dentist in agra" search karte hain, woh actually dentist dhundh rahe hain. SEO se sirf wahi log aate hain.</p>
           </div>
         </div>
         <div class="why-point">
           <div class="why-icon-box">🏆</div>
           <div>
             <h4>Competitors Se Pehle Rank Karo</h4>
-            <p>Agar aap SEO nahi karte, aapke competitors karte hain — aur woh customers le jaate hain. Jitna pehle start karein, utna better position milta hai Google pe.</p>
+            <p>Agar aap SEO nahi karte, aapke competitors karte hain — aur woh customers le jaate hain. Jitna pehle start karein, utna better.</p>
           </div>
         </div>
       </div>
@@ -1144,37 +1092,30 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
     <h2 class="reveal">Aksar Pooche Jane Wale <span class="g">Sawaal</span></h2>
     <p class="section-sub reveal">SEO ke baare mein koi bhi sawaal ho? Hum samjhaenge — plain Hindi mein!</p>
     <div class="faq-wrap">
-
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">SEO se results aane mein kitna time lagta hai? <div class="faq-icon">+</div></div>
-        <div class="faq-a">SEO ek long-term investment hai — generally 3-6 mahine mein aapko pehle results dikhtey hain. Local SEO thoda jaldi kaam karta hai (2-3 mahine). Koi bhi jo "1 hafte mein #1 ranking" ka promise kare, woh jhooth bol raha hai. Hamare saath transparent timeline milti hai.</div>
+        <div class="faq-a">SEO ek long-term investment hai — generally 3-6 mahine mein aapko pehle results dikhtey hain. Local SEO thoda jaldi kaam karta hai (2-3 mahine). Koi bhi jo "1 hafte mein #1 ranking" ka promise kare, woh jhooth bol raha hai.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">SEO aur Google Ads mein kya fark hai? <div class="faq-icon">+</div></div>
-        <div class="faq-a">Google Ads mein aap har click ke paise dete ho — jaise rent. Jab paisa band, traffic band. SEO mein ek baar rank ho gaye, toh free organic traffic milta rehta hai — jaise property buy karna. Dono milke use karna ideal hai, lekin SEO long-term mein zyada cost-effective hai.</div>
+        <div class="faq-a">Google Ads mein aap har click ke paise dete ho — jaise rent. Jab paisa band, traffic band. SEO mein ek baar rank ho gaye, toh free organic traffic milta rehta hai — jaise property buy karna. Dono milke use karna ideal hai.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Kya SEO sirf English websites ke liye hai? <div class="faq-icon">+</div></div>
-        <div class="faq-a">Bilkul nahi! Hum Hindi aur regional language websites ka bhi SEO karte hain. Agra, Mathura, Lucknow, Delhi — local Indian searches ke liye Hindi keywords bhi target karte hain. "दंत चिकित्सक आगरा" jaise searches ke liye bhi rank kara sakte hain.</div>
+        <div class="faq-a">Bilkul nahi! Hum Hindi aur regional language websites ka bhi SEO karte hain. "दंत चिकित्सक आगरा" jaise searches ke liye bhi rank kara sakte hain.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Kya aap guarantee dete ho Google #1 ranking ki? <div class="faq-icon">+</div></div>
-        <div class="faq-a">Koi bhi honest SEO agency 100% #1 ranking guarantee nahi de sakti — kyunki Google ka algorithm unke haath mein nahi hai. Jo guarantee dete hain woh ya toh jhooth bolte hain ya black-hat techniques use karte hain jo baad mein penalty le aati hai. Hum guarantee dete hain — honest work, transparent reporting, aur measurable improvement.</div>
+        <div class="faq-a">Koi bhi honest SEO agency 100% #1 ranking guarantee nahi de sakti — kyunki Google ka algorithm unke haath mein nahi hai. Hum guarantee dete hain — honest work, transparent reporting, aur measurable improvement.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Meri existing website ka SEO ho sakta hai? <div class="faq-icon">+</div></div>
-        <div class="faq-a">Haan, bilkul! Aapki existing website ka hum pehle free audit karte hain — kya sahi hai, kya galat hai, kya missing hai. Phir uske hisaab se optimization plan banate hain. Website rebuild ki zaroorat sirf tabhi padti hai jab bahut hi purani ya technically kharab ho.</div>
+        <div class="faq-a">Haan, bilkul! Aapki existing website ka hum pehle free audit karte hain — kya sahi hai, kya galat hai, kya missing hai. Phir uske hisaab se optimization plan banate hain.</div>
       </div>
-
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Monthly SEO plan mein exactly kya kaam hota hai? <div class="faq-icon">+</div></div>
-        <div class="faq-a">Har mahine kaam hota hai: keyword ranking track karna, new content optimize karna, technical issues fix karna, backlinks build karna, Google Business Profile update karna, aur end mein detailed report dena. Kabhi bhi hamare kaam ke baare mein sawaal pooch sakte ho WhatsApp pe.</div>
+        <div class="faq-a">Har mahine kaam hota hai: keyword ranking track karna, new content optimize karna, technical issues fix karna, backlinks build karna, Google Business Profile update karna, aur end mein detailed report dena.</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1191,7 +1132,7 @@ h2 .g { background: var(--grad); -webkit-background-clip: text; -webkit-text-fil
   </div>
 </section>
 
-<!-- FOOTER PLACEHOLDER -->
+<!-- FOOTER -->
 <div id="footer"></div>
 <script>
 fetch("footer.html")
@@ -1208,26 +1149,39 @@ fetch("footer.html")
 </script>
 
 <script>
-// ===== Topbar + Header scroll hide =====
+// ===== Scroll behaviour for topbar + header =====
 let lastScroll = 0;
 const topbar = document.getElementById('topbar');
 const header = document.getElementById('main-header');
+const mobileMenu = document.getElementById('mobile-menu');
+
 window.addEventListener('scroll', () => {
   const current = window.pageYOffset;
   if (current > lastScroll && current > 80) {
     topbar.style.transform = 'translateY(-100%)';
     header.style.top = '0px';
+    mobileMenu.style.top = '70px';
   } else {
     topbar.style.transform = 'translateY(0)';
     header.style.top = '40px';
+    mobileMenu.style.top = '110px';
   }
   lastScroll = current;
 });
 
 // ===== Mobile menu =====
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('mobile-menu').classList.toggle('open');
+const menuBtn = document.getElementById('menu-btn');
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
 });
+
+const serviceBtn = document.getElementById('mobile-service-btn');
+const serviceMenu = document.getElementById('mobile-service-menu');
+serviceBtn.addEventListener('click', () => { serviceMenu.classList.toggle('hidden'); });
+
+const companyBtn = document.getElementById('mobile-company-btn');
+const companyMenu = document.getElementById('mobile-company-menu');
+companyBtn.addEventListener('click', () => { companyMenu.classList.toggle('hidden'); });
 
 // ===== FAQ Toggle =====
 function toggleFaq(el) {
@@ -1245,12 +1199,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ===== Intersection Observer for animations =====
+// ===== Intersection Observer =====
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.15 });
 
@@ -1258,25 +1210,10 @@ document.querySelectorAll('.reveal, .seo-step, .service-card, .pack-card, .why-p
   observer.observe(el);
 });
 
-// Stagger service cards
-document.querySelectorAll('.service-card').forEach((card, i) => {
-  card.style.transitionDelay = `${i * 0.1}s`;
-});
-
-// Stagger pack cards
-document.querySelectorAll('.pack-card').forEach((card, i) => {
-  card.style.transitionDelay = `${i * 0.15}s`;
-});
-
-// Stagger seo steps
-document.querySelectorAll('.seo-step').forEach((step, i) => {
-  step.style.transitionDelay = `${i * 0.1}s`;
-});
-
-// Stagger why points
-document.querySelectorAll('.why-point').forEach((pt, i) => {
-  pt.style.transitionDelay = `${i * 0.12}s`;
-});
+document.querySelectorAll('.service-card').forEach((card, i) => { card.style.transitionDelay = `${i * 0.1}s`; });
+document.querySelectorAll('.pack-card').forEach((card, i) => { card.style.transitionDelay = `${i * 0.15}s`; });
+document.querySelectorAll('.seo-step').forEach((step, i) => { step.style.transitionDelay = `${i * 0.1}s`; });
+document.querySelectorAll('.why-point').forEach((pt, i) => { pt.style.transitionDelay = `${i * 0.12}s`; });
 
 // ===== Speed bar animation =====
 const speedObs = new IntersectionObserver((entries) => {
@@ -1301,10 +1238,7 @@ const counterObs = new IntersectionObserver((entries) => {
         const increment = target / 60;
         const timer = setInterval(() => {
           current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
+          if (current >= target) { current = target; clearInterval(timer); }
           el.innerHTML = Math.floor(current) + `<span>${suffix}</span>`;
         }, 25);
       });
@@ -1314,6 +1248,12 @@ const counterObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 const counterEl = document.querySelector('.counter-bg');
 if (counterEl) counterObs.observe(counterEl);
+</script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  lucide.createIcons();
+  AOS.init({ duration: 800, once: true });
 </script>
 </body>
 </html>
