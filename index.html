@@ -1248,6 +1248,62 @@ document.addEventListener("DOMContentLoaded", function(){
     </div>
   </div>
 </section>
+  <!--certificates-->
+ 
+
+<div class="cert-section">
+  <div class="slider-wrap">
+    <button class="arrow arrow-left hidden" id="certLeft" onclick="certSlide(-1)" aria-label="Previous">&#8249;</button>
+    <div class="cert-track-outer">
+      <div class="cert-track" id="certTrack">
+        <div class="cert-frame" onclick="certOpen('i/cert1.png')">
+          <img src="i/cert1.png" alt="Digital Marketing Certificate">
+        </div>
+        <div class="cert-frame" onclick="certOpen('i/cert2.png')">
+          <img src="i/cert2.png" alt="Google Ads Certificate">
+        </div>
+        <div class="cert-frame" onclick="certOpen('i/cert3.png')">
+          <img src="i/cert3.png" alt="Google Analytics Certificate">
+        </div>
+      </div>
+    </div>
+    <button class="arrow arrow-right" id="certRight" onclick="certSlide(1)" aria-label="Next">&#8250;</button>
+  </div>
+  <div class="cert-dots" id="certDots">
+    <div class="cert-dot active" onclick="certGo(0)"></div>
+    <div class="cert-dot" onclick="certGo(1)"></div>
+    <div class="cert-dot" onclick="certGo(2)"></div>
+  </div>
+</div>
+
+<div class="cert-overlay" id="certOverlay" onclick="certClose()">
+  <div class="cert-modal" onclick="event.stopPropagation()">
+    <div class="cert-close" onclick="certClose()">&#10005;</div>
+    <img id="certModalImg" src="" alt="Certificate">
+  </div>
+</div>
+
+<script>
+var cCur=0,cTotal=3;
+function cVis(){return window.innerWidth<=520?1:3;}
+function certUpdate(){
+  var vis=cVis();
+  var max=cTotal-vis;
+  cCur=Math.max(0,Math.min(cCur,max));
+  var frame=document.querySelector('.cert-frame');
+  var gap=14;
+  var w=frame.offsetWidth+gap;
+  document.getElementById('certTrack').style.transform='translateX(-'+(cCur*w)+'px)';
+  document.getElementById('certLeft').classList.toggle('hidden',cCur===0);
+  document.getElementById('certRight').classList.toggle('hidden',cCur>=max);
+  document.querySelectorAll('.cert-dot').forEach(function(d,i){d.classList.toggle('active',i===cCur);});
+}
+function certSlide(dir){cCur+=dir;certUpdate();}
+function certGo(i){cCur=i;certUpdate();}
+function certOpen(src){document.getElementById('certModalImg').src=src;document.getElementById('certOverlay').classList.add('active');document.body.style.overflow='hidden';}
+function certClose(){document.getElementById('certOverlay').classList.remove('active');document.body.style.overflow='';}
+window.addEventListener('resize',certUpdate);
+</script>
 <!--review-->
  
 <section class="reviews-section">
