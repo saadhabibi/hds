@@ -935,5 +935,34 @@
   }
 
 
-/* ── ABOUT ── */
+/* ── certificate ── */
+ <style>
+*{box-sizing:border-box;}
+.cert-section{padding:20px 0;position:relative;max-width:1000px;margin:0 auto;}
+.slider-wrap{position:relative;padding:0 20px;}
+.cert-track-outer{overflow:hidden;border-radius:12px;}
+.cert-track{display:flex;gap:14px;transition:transform 0.35s cubic-bezier(.4,0,.2,1);will-change:transform;}
+.cert-frame{flex:0 0 calc(33.33% - 10px);border-radius:10px;overflow:hidden;cursor:pointer;border:2.5px solid transparent;transition:border-color 0.2s,transform 0.2s;}
+.cert-frame:nth-child(1){border-color:#4285F4;}
+.cert-frame:nth-child(2){border-color:#FBBC05;}
+.cert-frame:nth-child(3){border-color:#34A853;}
+.cert-frame:hover{transform:translateY(-2px);}
+.cert-frame img{width:100%;height:auto;display:block;}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:1px solid #e0e0e0;border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;color:#444;font-size:18px;transition:background 0.15s,box-shadow 0.15s;box-shadow:0 1px 4px rgba(0,0,0,0.10);}
+.arrow:hover{background:#f5f5f5;box-shadow:0 2px 8px rgba(0,0,0,0.15);}
+.arrow-left{left:0;}
+.arrow-right{right:0;}
+.arrow.hidden{opacity:0;pointer-events:none;}
+.cert-dots{display:flex;justify-content:center;gap:6px;margin-top:14px;}
+.cert-dot{width:7px;height:7px;border-radius:50%;background:#ddd;transition:background 0.2s;cursor:pointer;}
+.cert-dot.active{background:#4285F4;}
+.cert-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;}
+.cert-overlay.active{display:flex;}
+.cert-modal{position:relative;max-width:700px;width:92%;}
+.cert-modal img{width:100%;border-radius:10px;}
+.cert-close{position:absolute;top:-13px;right:-13px;background:#fff;border:1px solid #ddd;border-radius:50%;width:30px;height:30px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#333;}
+@media(max-width:520px){
+  .cert-frame{flex:0 0 100%;}
+}
+</style>
 
