@@ -568,9 +568,9 @@
 }
 
 .logo-track img {
-  height: 60px;         
+  height: 70px;         
   width: auto;          
-  max-width: 140px;       
+  max-width: 160px;       
   object-fit: contain;    
   flex-shrink: 0;
 }
