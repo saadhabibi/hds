@@ -3,410 +3,658 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Slider</title>
- <link rel="canonical" href="https://www.habibidigital.in/portfolio" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Our Work | Habibi Digital Solution – Portfolio</title>
+<link rel="canonical" href="https://www.habibidigital.in/portfolio" />
 <link rel="icon" type="image/png" href="/favicon.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://unpkg.com/lucide@latest"></script>
-  
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
 
 <style>
- body {
- 
-  background: #f3f4f6;
-
- 
-}
-/* CONTAINER */
-.container {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
- margin-top:5px;
-}
-
-/* CARD */
-.card {
-  width: 300px;
-  height: 420px;
-  overflow: hidden;
-  border-radius: 18px;
-  position: relative;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-  cursor: pointer;
-  background: #000;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* HOVER EFFECT */
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
-}
-
-/* IMAGE */
-.card img {
-  width: 100%;
-  transition: transform 8s linear;
-}
-
-/* SCROLL EFFECT */
-.card:hover img {
-  transform: translateY(-50%);
-}
-
-/* OVERLAY */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-  color: #fff;
-}
-
-.overlay h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.overlay p {
-  margin: 5px 0 0;
-  font-size: 13px;
-  opacity: 0.8;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .card {
-    width: 90%;
-    height: 380px;
+  :root {
+    --bg: #ffffff;
+    --bg2: #f6f5ff;
+    --card-bg: #ffffff;
+    --card-bg2: #f0eeff;
+    --purple: #6C3EF4;
+    --blue: #3B82F6;
+    --grad: linear-gradient(135deg, #6C3EF4 0%, #3B82F6 100%);
+    --grad-light: linear-gradient(135deg, rgba(108,62,244,0.08) 0%, rgba(59,130,246,0.08) 100%);
+    --text: #1a1a2e;
+    --text2: #4a4a6a;
+    --grey: #8888aa;
+    --border: rgba(108,62,244,0.15);
+    --shadow: 0 4px 24px rgba(108,62,244,0.1);
   }
-}
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
-.portfolio {
-  padding: 80px 20px;
-  background: #f9f9f9;
-}
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 
-/* ITEM */
-.portfolio-item {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  max-width: 1100px;
-  margin: auto;
-  margin-bottom: 80px;
-}
+  .grad-text {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-/* REVERSE */
-.portfolio-item.reverse {
-  flex-direction: row-reverse;
-}
-
-/* IMAGE */
-.portfolio-img {
-  flex: 1;
-}
-
-.portfolio-img img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* TEXT */
-.portfolio-text {
-  flex: 1;
-}
-
-.portfolio-text h2 {
-  font-size: 32px;
-  margin-bottom: 15px;
-  color: #222;
-}
-
-.portfolio-text p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 10px;
-}
-
-/* 📱 MOBILE */
-@media(max-width: 768px){
-  .portfolio-item {
-    flex-direction: column;
+  .port-hero {
+    padding: 200px 24px 100px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f6f5ff 0%, #fff 100%);
+  }
+  .port-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(108,62,244,0.1) 0%, rgba(59,130,246,0.06) 40%, transparent 70%);
+    pointer-events: none;
+  }
+  .port-hero .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--purple);
+    border: 1.5px solid rgba(108,62,244,0.3);
+    padding: 7px 18px 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+    background: rgba(108,62,244,0.05);
+  }
+  .port-hero .eyebrow i { width: 14px; height: 14px; }
+  .port-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--text);
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+  .port-hero h1 em {
+    font-style: normal;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .port-hero p {
+    color: var(--text2);
+    font-size: 17px;
+    max-width: 520px;
+    margin: 0 auto 40px;
+  }
+  .stat-row {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .stat-item {
+    text-align: center;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 26px;
+    min-width: 130px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .stat-item:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(108,62,244,0.18); }
+  .stat-item i {
+    width: 22px; height: 22px;
+    color: var(--purple);
+    margin-bottom: 8px;
+  }
+  .stat-item .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    display: block;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-item .lbl { font-size: 12px; color: var(--grey); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+
+  .filter-section { padding: 40px 24px 20px; text-align: center; background: #fff; }
+  .filter-tabs { display: inline-flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .ftab {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 22px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1.5px solid rgba(108,62,244,0.2);
+    color: var(--text2);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .ftab i { width: 15px; height: 15px; }
+  .ftab:hover { border-color: var(--purple); color: var(--purple); }
+  .ftab.active {
+    background: var(--grad);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(108,62,244,0.3);
   }
 
-  .portfolio-item.reverse {
+  .empty-state {
+    display: none;
+    text-align: center;
+    padding: 70px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .empty-state.show { display: block; }
+  .empty-state i { width: 44px; height: 44px; color: var(--purple); opacity: 0.5; margin-bottom: 16px; }
+  .empty-state h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text); margin-bottom: 8px; }
+  .empty-state p { color: var(--grey); font-size: 14px; }
+
+  .section-label {
+    max-width: 1100px;
+    margin: 60px auto 0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label i { width: 18px; height: 18px; color: var(--purple); flex-shrink: 0; }
+  .section-label span {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .section-label hr { flex: 1; border: none; border-top: 1.5px solid var(--border); }
+
+  .scroll-cards {
+    max-width: 1100px;
+    margin: 32px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+  }
+  .scroll-cards.two-cards {
+    grid-template-columns: repeat(2, minmax(0, 380px));
+    justify-content: center;
+  }
+  .scard {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    position: relative;
+    height: 440px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow);
+  }
+  .scard:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(108,62,244,0.18); }
+  .scard-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 28px 22px;
+    background: linear-gradient(to top, rgba(26,26,46,0.92) 0%, transparent 100%);
+  }
+  .scard-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: #c4b5fd;
+    margin-bottom: 8px;
+  }
+  .scard-tag i { width: 12px; height: 12px; }
+  .scard-overlay h3 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .scard-overlay p { font-size: 13px; color: rgba(255,255,255,0.65); }
+  .scard-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 10px; font-size: 12px; font-weight: 700;
+    color: #a78bfa; text-decoration: none; letter-spacing: 0.5px;
+  }
+  .scard-link:hover { color: #c4b5fd; text-decoration: underline; }
+  .scard-link i { width: 11px; height: 11px; }
+
+  .scard-split {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    cursor: default;
+  }
+  .scard-split .split-img {
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+  }
+  .scard-split .split-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 6s linear;
+    transform: translateY(0);
+  }
+  .scard-split:hover .split-img img {
+    transform: translateY(calc(-1 * var(--scroll-distance, 35%)));
+  }
+  .scard-split .split-body {
+    padding: 20px 22px 22px;
+    background: #fff;
+    flex: 1;
+    display: flex;
     flex-direction: column;
   }
-
-  .portfolio-text h2 {
-    font-size: 24px;
+  .scard-split .split-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 8px;
   }
-}
-
-.web-intro {
-  padding: 30px 15px;
-  text-align: center;
-}
-
-.web-intro h2 {
-  font-size: 1.8rem;
-  margin-bottom: 8px;
-  color: #111;
-}
-
-.web-intro p {
-  font-size: 0.95rem;
-  margin-bottom: 12px;
-  color: #555;
-  line-height: 1.4;
-}
-
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.features span {
-  font-size: 0.8rem;
-  color: #333;
-  border: 1px solid #ddd;
-  padding: 5px 10px;
-  border-radius: 12px;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .web-intro {
-    padding: 20px 10px;
+  .scard-split .split-tag i { width: 12px; height: 12px; }
+  .scard-split .split-body h3 { font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .scard-split .split-body p { font-size: 13px; color: var(--text2); margin-bottom: 16px; flex: 1; }
+  .scard-split .split-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-size: 12px; font-weight: 700;
+    color: #fff; text-decoration: none; letter-spacing: 0.5px;
+    background: var(--grad);
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(108,62,244,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
+  .scard-split .split-link:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(108,62,244,0.35); }
+  .scard-split .split-link i { width: 13px; height: 13px; }
 
-  .web-intro h2 {
-    font-size: 1.4rem;
+  .scard-slideshow { overflow: hidden; }
+  .scard-slideshow .slideshow-imgs {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
   }
-
-  .web-intro p {
-    font-size: 0.85rem;
+  .scard-slideshow .slide-img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
   }
+  .scard-slideshow .slide-img.active { opacity: 1; }
 
-  .features span {
-    font-size: 0.75rem;
-    padding: 4px 8px;
+  .scard-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
-}
+  .scard-video .video-badge {
+    position: absolute;
+    top: 14px; right: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(26,26,46,0.75);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+  }
+  .scard-video .video-badge i { width: 12px; height: 12px; }
 
-.marketing-intro {
-  padding: 30px 15px;
-  text-align: center;
-}
-
-.marketing-intro h2 {
-  font-size: 1.8rem;
-  margin-bottom: 8px;
-  color: #111;
-}
-
-.marketing-intro p {
-  font-size: 0.95rem;
-  margin-bottom: 12px;
-  color: #555;
-  line-height: 1.4;
-}
-
-.marketing-intro .features {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.marketing-intro .features span {
-  font-size: 0.8rem;
-  color: #333;
-  border: 1px solid #ddd;
-  padding: 5px 10px;
-  border-radius: 12px;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .marketing-intro {
-    padding: 20px 10px;
+  .showcase-video-wrap {
+    max-width: 1100px;
+    margin: 32px auto 0;
+    padding: 0 24px;
+  }
+  .showcase-video {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1.5px solid var(--border);
+    background: #000;
+  }
+  .showcase-video video {
+    width: 100%;
+    height: 480px;
+    display: block;
+    object-fit: cover;
+  }
+  @media(max-width: 640px) {
+    .showcase-video video { height: 240px; }
   }
 
-  .marketing-intro h2 {
-    font-size: 1.4rem;
+  .cases { max-width: 1100px; margin: 60px auto; padding: 0 24px; display: flex; flex-direction: column; gap: 80px; }
+
+  .case { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .case.rev { direction: rtl; }
+  .case.rev > * { direction: ltr; }
+
+  .case-media { position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
+  .case-media img { width: 100%; display: block; border-radius: 18px; transition: transform 0.5s ease; }
+  .case-media:hover img { transform: scale(1.03); }
+  .case-media video { width: 100%; height: 400px; display: block; border-radius: 18px; object-fit: cover; }
+  .case-badge {
+    position: absolute; top: 16px; left: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--grad);
+    color: #fff;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(108,62,244,0.3);
+  }
+  .case-badge i { width: 12px; height: 12px; }
+
+  .case-body .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 14px;
+  }
+  .case-body .eyebrow i { width: 13px; height: 13px; }
+  .case-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700; color: var(--text);
+    line-height: 1.25; margin-bottom: 20px;
+  }
+  .case-body p { font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 14px; }
+
+  .results { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+  .rpill {
+    background: var(--grad-light);
+    border: 1.5px solid rgba(108,62,244,0.2);
+    border-radius: 12px;
+    padding: 12px 18px;
+    text-align: center;
+    min-width: 92px;
+  }
+  .rpill i {
+    width: 18px; height: 18px;
+    color: var(--purple);
+    margin-bottom: 4px;
+  }
+  .rpill .rnum {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700;
+    background: var(--grad);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    line-height: 1; margin-bottom: 3px;
+  }
+  .rpill .rlbl { font-size: 10.5px; color: var(--grey); letter-spacing: 0.5px; text-transform: uppercase; }
+
+  .services-used { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+  .stag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px; padding: 6px 13px;
+    border: 1.5px solid rgba(108,62,244,0.2);
+    border-radius: 999px; color: var(--purple); font-weight: 500;
+    background: rgba(108,62,244,0.04);
+  }
+  .stag i { width: 11px; height: 11px; }
+
+  .testi-section {
+    background: linear-gradient(135deg, #f6f5ff 0%, #eff6ff 100%);
+    border-top: 1.5px solid var(--border);
+    border-bottom: 1.5px solid var(--border);
+    padding: 70px 24px;
+    margin: 80px 0;
+  }
+  .testi-inner { max-width: 1100px; margin: auto; }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
+  .tcard {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+  .tcard:hover { transform: translateY(-4px); }
+  .tcard .quote-icon {
+    position: absolute;
+    top: 22px; right: 22px;
+    width: 28px; height: 28px;
+    color: rgba(108,62,244,0.12);
+  }
+  .tcard .stars { display: flex; gap: 2px; margin-bottom: 14px; }
+  .tcard .stars i { width: 14px; height: 14px; color: #facc15; fill: #facc15; }
+  .tcard blockquote { font-size: 14px; color: var(--text2); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
+  .tcard .tauthor { display: flex; align-items: center; gap: 12px; }
+  .tcard .tavatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--grad);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700; color: #fff;
+    flex-shrink: 0;
+  }
+  .tcard .tname { font-size: 13px; font-weight: 700; color: var(--text); }
+  .tcard .tbiz { font-size: 11px; color: var(--grey); }
+
+  .port-cta {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 64px 40px;
+    text-align: center;
+    background: var(--grad);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(108,62,244,0.3);
+  }
+  .port-cta::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .port-cta::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 280px; height: 280px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .port-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700; color: #fff;
+    margin-bottom: 14px; position: relative; z-index: 1;
+  }
+  .port-cta h2 em { font-style: normal; color: #d4c0ff; }
+  .port-cta p { color: rgba(255,255,255,0.85); font-size: 16px; margin-bottom: 32px; position: relative; z-index: 1; }
+  .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+  .btn-gold {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 32px;
+    background: #fff; color: var(--purple);
+    font-weight: 700; font-size: 14px;
+    border-radius: 999px; text-decoration: none;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  .btn-gold i { width: 16px; height: 16px; }
+  .btn-gold:hover { background: #f0ebff; transform: translateY(-2px); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 32px;
+    border: 2px solid rgba(255,255,255,0.5);
+    color: #fff; font-weight: 600; font-size: 14px;
+    border-radius: 999px; text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+  .sec-head { text-align: center; margin-bottom: 8px; }
+  .sec-head .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 12px;
+  }
+  .sec-head .eyebrow i { width: 13px; height: 13px; }
+  .sec-head h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700; color: var(--text); line-height: 1.2;
+  }
+  .sec-head p { color: var(--text2); font-size: 15px; margin-top: 10px; }
+
+  @media(max-width: 980px) {
+    .scroll-cards { grid-template-columns: 1fr 1fr; }
+  }
+  @media(max-width: 900px) {
+    .case { grid-template-columns: 1fr; gap: 28px; }
+    .case.rev { direction: ltr; }
+    .case-media img { height: 280px !important; }
+    .testi-grid { grid-template-columns: 1fr; }
+  }
+  @media(max-width: 640px) {
+    .port-hero { padding: 170px 18px 70px; }
+    .scroll-cards { grid-template-columns: 1fr; padding: 0 18px; }
+    .scroll-cards.two-cards { grid-template-columns: 1fr; }
+    .scard { height: 380px; }
+    .scard-split { height: auto; }
+    .stat-row { gap: 12px; }
+    .stat-item { padding: 14px 16px; min-width: 100px; }
+    .stat-item .num { font-size: 1.6rem; }
+    .filter-tabs { gap: 6px; }
+    .ftab { padding: 8px 16px; font-size: 12px; }
+    .cases { gap: 50px; margin: 40px auto; }
+    .section-label { margin-top: 40px; padding: 0 18px; }
+    .port-cta { padding: 40px 22px; margin: 50px auto; }
+    .cta-btns { flex-direction: column; width: 100%; }
+    .cta-btns a { justify-content: center; }
+    .results { gap: 8px; }
+    .rpill { padding: 10px 14px; min-width: 80px; }
+  }
+  @media(max-width: 380px) {
+    .stat-row { gap: 8px; }
+    .stat-item { padding: 12px 10px; min-width: 84px; }
   }
 
-  .marketing-intro p {
-    font-size: 0.85rem;
-  }
-
-  .marketing-intro .features span {
-    font-size: 0.75rem;
-    padding: 4px 8px;
-  }
-}
-
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 </style>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
 <div id="topbar" class="w-full bg-white text-gray-800 text-sm fixed top-0 left-0 z-50 border-b border-gray-200 transition-transform duration-300">
-
   <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-
-    <!-- LEFT -->
     <div class="flex items-center gap-4 flex-wrap">
-
       <a href="tel:+919458265093" class="flex items-center gap-2 hover:text-blue-600">
         <i data-lucide="phone" class="w-5 h-5"></i>
         <b><span class="hidden sm:inline">+91 9458265093</span></b>
       </a>
-
       <a href="mailto:habibidigital.in@gmail.com" class="flex items-center gap-2 hover:text-blue-600">
         <i data-lucide="mail" class="w-5 h-5"></i>
-       <b> <span class="hidden sm:inline">habibidigital.in@gmail.com</span></b>
+        <b><span class="hidden sm:inline">habibidigital.in@gmail.com</span></b>
       </a>
-
     </div>
-
-    <!-- RIGHT -->
-<div class="flex items-center gap-5 text-xl">
-
-  <!-- X (Twitter) -->
-  <a href="https://x.com/habibidigital_" target="_blank">
-    <i class="fa-brands fa-x-twitter hover:text-black"></i>
-  </a>
-
-  <!-- Instagram -->
-  <a href="https://instagram.com/habibidigital.in" target="_blank">
-    <i class="fa-brands fa-instagram hover:text-pink-500"></i>
-  </a>
-
-  <!-- Facebook -->
-  <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank">
-    <i class="fa-brands fa-facebook hover:text-blue-600"></i>
-  </a>
-
-</div>
-
+    <div class="flex items-center gap-5 text-xl">
+      <a href="https://x.com/habibidigital_" target="_blank"><i class="fa-brands fa-x-twitter hover:text-black"></i></a>
+      <a href="https://instagram.com/habibidigital.in" target="_blank"><i class="fa-brands fa-instagram hover:text-pink-500"></i></a>
+      <a href="https://www.facebook.com/share/1Jxm6ayTm6/" target="_blank"><i class="fa-brands fa-facebook hover:text-blue-600"></i></a>
+    </div>
   </div>
 </div>
 
-
-
-<!-- HEADER -->
 <header id="main-header" class="fixed top-[40px] w-full backdrop-blur-md bg-white/90 border-b border-gray-200 z-40 transition-all duration-300">
-
   <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-
-    <!-- LOGO -->
     <div class="flex items-center gap-0 h-14">
-     <img src="habibidigitalsolution.png" 
-     alt="Habibi Digital Solution Logo"
-     class="h-24 sm:h-8 md:h-24 w-auto">
+      <a href="/"><img src="habibidigitalsolution.png" alt="Habibi Digital Solution Logo" class="h-24 sm:h-8 md:h-24 w-auto"></a>
     </div>
-    <!-- DESKTOP NAV -->
     <nav class="hidden md:flex items-center gap-8 text-lg font-semibold text-gray-800">
-
-      <a href="/" class="group relative hover:text-blue-600">
-        Home
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-      <!-- SERVICES -->
+      <a href="/" class="group relative hover:text-blue-600">Home<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
       <div class="relative group">
         <button class="hover:text-blue-600">Our Services ⌄</button>
-
         <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
           <div class="bg-white shadow-xl rounded-xl">
-
             <a href="webdevelopment.html" class="block px-5 py-3 hover:bg-gray-100">Website Development</a>
             <a href="gmb.html" class="block px-5 py-3 hover:bg-gray-100">Google Business Profile</a>
             <a href="seo.html" class="block px-5 py-3 hover:bg-gray-100">SEO</a>
             <a href="marketing.html" class="block px-5 py-3 hover:bg-gray-100">Marketing</a>
             <a href="social.html" class="block px-5 py-3 hover:bg-gray-100">Social Media Post</a>
-
           </div>
         </div>
       </div>
-
-      <!-- COMPANY -->
       <div class="relative group">
         <button class="hover:text-blue-600">Company ⌄</button>
-
         <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300">
           <div class="bg-white shadow-xl rounded-xl">
-
-          
             <a href="ourstory.html" class="block px-5 py-3 hover:bg-gray-100">Our Story</a>
             <a href="habibi_digital_careers_page.html" class="block px-5 py-3 hover:bg-gray-100">Career</a>
-       
-
           </div>
         </div>
       </div>
-
-      <a href="about.html" class="group relative hover:text-blue-600">
-        About Us
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-      <a href="portfolio.html" class="group relative hover:text-blue-600">
-        Portfolio
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-      <a href="blog.html" class="group relative hover:text-blue-600">
-        Blog
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
-        <a href="contact.html" class="group relative hover:text-blue-600">
-        Contact Us
-        <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span>
-      </a>
-
+      <a href="about.html" class="group relative hover:text-blue-600">About Us<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="portfolio.html" class="group relative hover:text-blue-600">Portfolio<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="blog.html" class="group relative hover:text-blue-600">Blog<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
+      <a href="contact.html" class="group relative hover:text-blue-600">Contact Us<span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full"></span></a>
     </nav>
-
-    <!-- MOBILE BTN -->
     <button id="menu-btn" class="md:hidden text-3xl">☰</button>
-
   </div>
 </header>
 
-
-<!-- MOBILE MENU -->
-<div id="mobile-menu" class="hidden fixed left-0 w-full bg-white shadow-lg z-30">
-
+<div id="mobile-menu" class="hidden fixed left-0 w-full bg-white shadow-lg z-30" style="top:110px;">
   <div class="flex flex-col p-6 gap-5 text-base font-semibold text-gray-800">
-
     <a href="/">Home</a>
-
     <div>
-      <button id="mobile-service-btn" class="flex justify-between w-full">
-        Our Services ▼
-      </button>
-
+      <button id="mobile-service-btn" class="flex justify-between w-full">Our Services ▼</button>
       <div id="mobile-service-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
         <a href="webdevelopment.html">Website Development</a>
         <a href="gmb.html">Google Business Profile</a>
@@ -415,251 +663,467 @@
         <a href="social.html">Social Media Post</a>
       </div>
     </div>
-
     <div>
-      <button id="mobile-company-btn" class="flex justify-between w-full">
-        Company ▼
-      </button>
-
+      <button id="mobile-company-btn" class="flex justify-between w-full">Company ▼</button>
       <div id="mobile-company-menu" class="hidden flex flex-col mt-2 ml-4 gap-2 text-sm">
-       
         <a href="ourstory.html">Our Story</a>
         <a href="habibi_digital_careers_page.html">Career</a>
-      
       </div>
     </div>
-
     <a href="about.html">About Us</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact Us</a>
-
   </div>
 </div>
 
-
-
-     
-  
-<section class="web-intro" style="margin-top:80px;">
-  <h2>Build Your Website</h2>
-  <p>
-    We create <strong>modern, fast & responsive websites</strong> 
-    that help your business grow online.
-  </p>
-
-  <div class="features">
-    <span>Responsive</span>
-    <span>SEO Ready</span>
-    <span>Fast</span>
+<section class="port-hero">
+  <span class="eyebrow"><i data-lucide="sparkles"></i>Our Work</span>
+  <h1>Real Results for<br><em>Real Businesses</em></h1>
+  <p>Websites, GMB, SEO, and Marketing — on every project, we've helped businesses win more calls and customers.</p>
+  <div class="stat-row">
+    <div class="stat-item">
+      <i data-lucide="layout-template"></i>
+      <span class="num" data-target="20">0</span>
+      <span class="lbl">Projects Delivered</span>
+    </div>
+    <div class="stat-item">
+      <i data-lucide="smile"></i>
+      <span class="num" data-target="15">0</span>
+      <span class="lbl">Happy Clients</span>
+    </div>
+    <div class="stat-item">
+      <i data-lucide="map-pin"></i>
+      <span class="num" data-target="3">0</span>
+      <span class="lbl">Cities Served</span>
+    </div>
+    <div class="stat-item">
+      <i data-lucide="shield-check"></i>
+      <span class="num" data-target="100">0</span>
+      <span class="lbl">% Honest Work</span>
+    </div>
   </div>
 </section>
 
-<div class="container">
-  <!-- CARD 1 -->
-  <div class="card">
-    <img src="i/dent.png" alt="">
-    <div class="overlay">
-      <h3>Dentist Website</h3>
-      <p>Clinic booking & modern design</p>
+<div class="filter-section">
+  <div class="filter-tabs">
+    <button class="ftab active" data-filter="all"><i data-lucide="layout-grid"></i>All Work</button>
+    <button class="ftab" data-filter="website"><i data-lucide="globe"></i>Websites</button>
+    <button class="ftab" data-filter="gmb"><i data-lucide="map-pin"></i>GMB / SEO</button>
+    <button class="ftab" data-filter="marketing"><i data-lucide="megaphone"></i>Marketing</button>
+    <button class="ftab" data-filter="social"><i data-lucide="share-2"></i>Social Media</button>
+  </div>
+</div>
+
+<div class="empty-state" id="empty-state">
+  <i data-lucide="search-x"></i>
+  <h3>New work for this category is coming soon</h3>
+  <p>We'll be adding new projects here shortly — take a look at our other work in the meantime.</p>
+</div>
+
+<div class="section-label reveal" data-cat="website">
+  <i data-lucide="globe"></i>
+  <span>Website Projects</span>
+  <hr>
+</div>
+
+<div class="scroll-cards two-cards" data-cat="website">
+
+  <div class="scard scard-split reveal">
+    <div class="split-img">
+      <img src="i/srpses.png" alt="Shri Ram Public School Shiksha Samiti Website">
+    </div>
+    <div class="split-body">
+      <span class="split-tag"><i data-lucide="code"></i>Website Development</span>
+      <h3>Shri Ram Public School Shiksha Samiti</h3>
+      <p>Fully responsive, modern multi-page school website — built and customized exactly as per the client's requirements</p>
+      <a href="#" target="_blank" class="split-link">
+        Visit Website <i data-lucide="arrow-up-right"></i>
+      </a>
     </div>
   </div>
 
-  <!-- CARD 2 -->
-  <div class="card">
-    <img src="i/sc.png" alt="">
-    <div class="overlay">
-      <h3>Shoe shocase site </h3>
-      <p>Responsive and modern <a href="https://leoberryshoes.com/" style="color:white;">visit us</a></p>
+  <div class="scard scard-split reveal">
+    <div class="split-img">
+      <img src="i/leob.png" alt="LeoBerry Shoes Website">
     </div>
-  </div>
-
-  <!-- CARD 3 -->
-  <div class="card">
-    <img src="i/kar.png" alt="">
-    <div class="overlay">
-      <h3>Handcraft Website</h3>
-      <p>Creative & minimal UI</p>
+    <div class="split-body">
+      <span class="split-tag"><i data-lucide="code"></i>Website Development</span>
+      <h3>LeoBerry Shoes</h3>
+      <p>Luxury dark-theme shoe showcase with mobile-first design</p>
+      <a href="https://leoberryshoes.com/" target="_blank" class="split-link">
+        Visit Website <i data-lucide="arrow-up-right"></i>
+      </a>
     </div>
   </div>
 
 </div>
 
+<div class="section-label reveal" style="margin-top:70px;" data-cat="website">
+  <i data-lucide="play-circle"></i>
+  <span>Website in Action</span>
+  <hr>
+</div>
 
-<section class="portfolio">
-<section class="marketing-intro">
-  <h2>Grow Your Business Online</h2>
-  <p>
-    We optimize <strong>Social Media & Google My Business</strong> 
-    and run result-driven campaigns to boost your reach.
-  </p>
-
-  <div class="features">
-    <span>Social Media</span>
-    <span>GMB Optimization</span>
-    <span>Ad Campaigns</span>
+<div class="showcase-video-wrap reveal" data-cat="website">
+  <div class="showcase-video">
+    <video
+      src="i/website-showcase.mp4"
+      poster="i/sc.png"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata">
+    </video>
+    <span class="case-badge"><i data-lucide="video"></i>Live Website Walkthrough</span>
   </div>
-</section>
-  <!-- SCHOOL 1 -->
-  <div class="portfolio-item">
-    <div class="portfolio-img">
-      <img src="i/brn.png" alt="School Project" style="height: 300px;">
-    </div>
-    <div class="portfolio-text">
-      <h2>School Marketing Success</h2>
-      <p>
-        We handled the complete social media management of the school, including 
-        content creation, regular posting, and audience engagement to build trust among parents.
-      </p>
-      <p>
-        Along with this, we launched targeted ad campaigns to reach local parents. 
-        By optimizing creatives and audience targeting, we increased visibility and inquiries.
-      </p>
-      <p>
-        As a result, the school experienced a strong boost in admissions and 
-        consistent growth in student enrollments.
-      </p>
-    </div>
-  </div>
+</div>
 
-  <!-- SCHOOL 2 -->
-  <div class="portfolio-item reverse">
-    <div class="portfolio-img">
-      <img src="i/sr2 (1).jpeg" alt="School Project 2">
-    </div>
-    <div class="portfolio-text">
-      <h2>Admission Campaign Success</h2>
-      <p>
-        We launched a dedicated admission campaign focused on reaching parents 
-        actively searching for quality education.
-      </p>
-      <p>
-        Using targeted social media ads and smart audience segmentation, we promoted 
-        the school’s facilities, results, and environment to build credibility.
-      </p>
-      <p>
-        This campaign generated high-quality leads and directly contributed 
-        to a significant increase in student admissions within a short time.
-      </p>
-    </div>
-  </div>
+<div class="section-label reveal" style="margin-top:80px;" data-cat="all-cases">
+  <i data-lucide="bar-chart-3"></i>
+  <span>Case Studies</span>
+  <hr>
+</div>
 
-  <!-- SHOP -->
-  <div class="portfolio-item">
-    <div class="portfolio-img">
-      <img src="i/gmb.png
-       " alt="Shop Project">
+<div class="cases">
+
+  <div class="case reveal" data-cat="website">
+    <div class="case-media">
+      <video
+        src="i/leoberry-demo.mp4"
+        poster="i/sc.png"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata">
+      </video>
+      <span class="case-badge"><i data-lucide="video"></i>Website Demo Video</span>
     </div>
-    <div class="portfolio-text">
-      <h2>Local Shop Growth (GMB Optimization)</h2>
-      <p>
-        We created and optimized the Google My Business profile for the shop, 
-        ensuring accurate business details, proper category setup, and better visibility.
-      </p>
-      <p>
-        We also activated the direct call feature and optimized the listing 
-        for higher local search rankings.
-      </p>
-      <p>
-        This resulted in increased customer calls, improved local reach, 
-        and more walk-in customers.
-      </p>
+    <div class="case-body">
+      <span class="eyebrow"><i data-lucide="bookmark"></i>Case Study 01 · LeoBerry Shoes, Agra</span>
+      <h2>Taking a Shoe Business Online — Sales Inquiries Started Rolling In</h2>
+      <p>LeoBerry Shoes had no online presence at all. Customers only came in through walk-ins. We built a full luxury website for them — dark theme, mobile-first, with a WhatsApp CTA built around the product showcase.</p>
+      <p>After launch, the business started receiving direct WhatsApp inquiries and began showing up on Google.</p>
+      <div class="results">
+        <div class="rpill"><i data-lucide="check-circle-2"></i><span class="rnum">Live</span><span class="rlbl">Website Live</span></div>
+        <div class="rpill"><i data-lucide="message-circle"></i><span class="rnum">WA</span><span class="rlbl">WhatsApp Leads</span></div>
+        <div class="rpill"><i data-lucide="smartphone"></i><span class="rnum">100%</span><span class="rlbl">Mobile First</span></div>
+      </div>
+      <div class="services-used">
+        <span class="stag"><i data-lucide="code"></i>Website Development</span>
+        <span class="stag"><i data-lucide="smartphone"></i>Mobile Design</span>
+        <span class="stag"><i data-lucide="message-circle"></i>WhatsApp CTA</span>
+        <span class="stag"><i data-lucide="search"></i>SEO Setup</span>
+      </div>
+      <a href="https://leoberryshoes.com/" target="_blank" class="scard-link" style="margin-top:20px;font-size:13px;">
+        View Live Website <i data-lucide="arrow-up-right"></i>
+      </a>
     </div>
   </div>
 
-</section>
-
-
-
-<section class="relative w-full h-[500px] flex items-center justify-center text-center overflow-hidden">
-
-  <!-- BACKGROUND IMAGE -->
-<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1600&q=80" 
-     class="absolute w-full h-full object-cover" />
-
-  <!-- DARK OVERLAY -->
-  <div class="absolute inset-0 bg-black/60"></div>
-
-  <!-- CONTENT -->
-  <div class="relative z-10 max-w-3xl px-6">
-
-    <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-      Grow Your Business with <br>
-      <span class="text-blue-400">Result-Driven Marketing</span>
-    </h2>
-
-    <p class="text-gray-200 text-lg mb-8">
-      Get more leads, more calls, and more customers with our proven SEO & marketing strategies.
-    </p>
-
-    <!-- BUTTONS -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-
-    <a href="tel:+919458265093"
-     class="px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition shadow-lg">
-    📞 Call for Free Consultation
-  </a>
-
-     <a href="https://wa.me/919458265093" target="_blank"
-   class="px-8 py-4 rounded-full bg-green-500 text-white font-semibold hover:bg-green-600 transition shadow-lg flex items-center justify-center gap-2">
-
-  <i class="fa-brands fa-whatsapp text-xl"></i>
-  Chat on WhatsApp
-
-</a>
+  <div class="case rev reveal" data-cat="marketing">
+    <div class="case-media">
+      <img src="i/brn.png" alt="School Marketing Case Study" style="height:400px;object-fit:cover;">
+      <span class="case-badge"><i data-lucide="megaphone"></i>Marketing</span>
     </div>
-
+    <div class="case-body">
+      <span class="eyebrow"><i data-lucide="bookmark"></i>Case Study 02 · School, Agra</span>
+      <h2>Tripling a School's Reach During Admission Season</h2>
+      <p>We handled complete social media management for the school — content creation, regular posting, and building engagement with the parent audience. We built trust and grew reach among local parents.</p>
+      <p>We also ran targeted ad campaigns that converted directly into admissions, optimizing both the creative and the audience.</p>
+      <div class="results">
+        <div class="rpill"><i data-lucide="trending-up"></i><span class="rnum">3x</span><span class="rlbl">Reach Increase</span></div>
+        <div class="rpill"><i data-lucide="users"></i><span class="rnum">↑</span><span class="rlbl">Admissions</span></div>
+        <div class="rpill"><i data-lucide="megaphone"></i><span class="rnum">Ads</span><span class="rlbl">Ads Run</span></div>
+      </div>
+      <div class="services-used">
+        <span class="stag"><i data-lucide="share-2"></i>Social Media Management</span>
+        <span class="stag"><i data-lucide="target"></i>Ad Campaigns</span>
+        <span class="stag"><i data-lucide="pen-tool"></i>Content Creation</span>
+      </div>
+    </div>
   </div>
-</section>
+
+  <div class="case reveal" data-cat="marketing">
+    <div class="case-media">
+      <img src="i/sr2 (1).jpeg" alt="Admission Campaign" style="height:400px;object-fit:cover;">
+      <span class="case-badge"><i data-lucide="target"></i>Ad Campaign</span>
+    </div>
+    <div class="case-body">
+      <span class="eyebrow"><i data-lucide="bookmark"></i>Case Study 03 · Admission Campaign</span>
+      <h2>Generating High-Quality Leads Through Smart Targeting</h2>
+      <p>We targeted parents actively searching for quality education. We promoted the school's facilities, results, and environment — building credibility through social ads.</p>
+      <p>The campaign generated high-quality leads and led to a significant rise in admissions within a short time.</p>
+      <div class="results">
+        <div class="rpill"><i data-lucide="badge-check"></i><span class="rnum">HQ</span><span class="rlbl">Quality Leads</span></div>
+        <div class="rpill"><i data-lucide="trending-up"></i><span class="rnum">↑↑</span><span class="rlbl">Admissions</span></div>
+        <div class="rpill"><i data-lucide="zap"></i><span class="rnum">Fast</span><span class="rlbl">Results</span></div>
+      </div>
+      <div class="services-used">
+        <span class="stag"><i data-lucide="facebook"></i>Facebook Ads</span>
+        <span class="stag"><i data-lucide="users"></i>Audience Targeting</span>
+        <span class="stag"><i data-lucide="filter"></i>Lead Generation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="case rev reveal" data-cat="gmb">
+    <div class="case-media">
+      <img src="i/den (2).png" alt="GMB Optimization" style="height:400px;object-fit:cover;">
+      <span class="case-badge"><i data-lucide="map-pin"></i>GMB Optimization</span>
+    </div>
+    <div class="case-body">
+      <span class="eyebrow"><i data-lucide="bookmark"></i>Case Study 04 · Local Shop, Agra</span>
+      <h2>Ranking Higher on Google — Direct Calls Started Coming In</h2>
+      <p>We created and optimized the shop's Google My Business profile — accurate details, the correct category, and improved ranking for local search.</p>
+      <p>We activated the direct call feature and optimized the listing for higher rankings. The result — both customer calls and walk-ins increased.</p>
+      <div class="results">
+        <div class="rpill"><i data-lucide="phone-call"></i><span class="rnum">Calls</span><span class="rlbl">Direct Calls</span></div>
+        <div class="rpill"><i data-lucide="trending-up"></i><span class="rnum">↑</span><span class="rlbl">Local Ranking</span></div>
+        <div class="rpill"><i data-lucide="footprints"></i><span class="rnum">↑</span><span class="rlbl">More Walk-ins</span></div>
+      </div>
+      <div class="services-used">
+        <span class="stag"><i data-lucide="map-pin"></i>GMB Setup</span>
+        <span class="stag"><i data-lucide="search"></i>Local SEO</span>
+        <span class="stag"><i data-lucide="settings"></i>Profile Optimization</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="testi-section reveal">
+  <div class="testi-inner">
+    <div class="sec-head">
+      <span class="eyebrow"><i data-lucide="heart"></i>Client Reviews</span>
+      <h2>What Our Clients Say</h2>
+      <p>Real businesses, real results, real feedback</p>
+    </div>
+    <div class="testi-grid">
+
+      <div class="tcard">
+        <i data-lucide="quote" class="quote-icon"></i>
+        <div class="stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <blockquote>"As soon as the LeoBerry website went live, we started getting WhatsApp inquiries within the first week itself. Saad's work and understanding of the business are both excellent."</blockquote>
+        <div class="tauthor">
+          <div class="tavatar">L</div>
+          <div>
+            <div class="tname">LeoBerry Shoes</div>
+            <div class="tbiz">Footwear Business, Agra</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <i data-lucide="quote" class="quote-icon"></i>
+        <div class="stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <blockquote>"The campaign they ran for our school's admissions genuinely delivered results. We reached parents, and inquiries started coming in. Highly recommended."</blockquote>
+        <div class="tauthor">
+          <div class="tavatar">S</div>
+          <div>
+            <div class="tname">School Management</div>
+            <div class="tbiz">Educational Institute, Agra</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <i data-lucide="quote" class="quote-icon"></i>
+        <div class="stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <blockquote>"We simply weren't showing up on Google before. Habibi Digital optimized our GMB profile, and now we get calls directly. It's made a huge difference."</blockquote>
+        <div class="tauthor">
+          <div class="tavatar">R</div>
+          <div>
+            <div class="tname">Local Shop Owner</div>
+            <div class="tbiz">Retail Business, Agra</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div style="padding:0 24px 100px; max-width:900px; margin:0 auto;">
+  <div class="port-cta reveal">
+    <h2>Your Business Could Be <em>Next</em></h2>
+    <p>Call now for a free consultation, or message us on WhatsApp — no commitment, just an honest conversation.</p>
+    <div class="cta-btns">
+      <a href="tel:+919458265093" class="btn-gold"><i data-lucide="phone"></i> Call Now — Free Consult</a>
+      <a href="https://wa.me/919458265093" target="_blank" class="btn-outline"><i class="fa-brands fa-whatsapp"></i> Message on WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
 
 <script>
-let lastScroll = 0;
+lucide.createIcons();
 
+let lastScroll = 0;
 const topbar = document.getElementById("topbar");
 const header = document.getElementById("main-header");
-const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
 
-// SCROLL EFFECT
 window.addEventListener("scroll", () => {
-
-  let currentScroll = window.pageYOffset;
-
-  if (currentScroll > lastScroll) {
-    // DOWN SCROLL
+  const cur = window.pageYOffset;
+  if (cur > lastScroll && cur > 80) {
     topbar.style.transform = "translateY(-100%)";
     header.style.top = "0px";
-    mobileMenu.style.top = "70px";
-
   } else {
-    // UP SCROLL
     topbar.style.transform = "translateY(0)";
     header.style.top = "40px";
-    mobileMenu.style.top = "110px";
   }
-
-  lastScroll = currentScroll;
+  lastScroll = cur;
 });
 
-// MOBILE MENU
-menuBtn.addEventListener("click", () => {
+document.getElementById("menu-btn").addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
+document.getElementById("mobile-service-btn").addEventListener("click", () => {
+  document.getElementById("mobile-service-menu").classList.toggle("hidden");
+});
+document.getElementById("mobile-company-btn").addEventListener("click", () => {
+  document.getElementById("mobile-company-menu").classList.toggle("hidden");
+});
 
-// LUCIDE ICONS
-lucide.createIcons();
-</script>
-<div id="footer"></div>
-<script>
-fetch("footer.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute("data-target"));
+  let count = 0;
+  const step = Math.ceil(target / 40);
+  const interval = setInterval(() => {
+    count = Math.min(count + step, target);
+    el.textContent = count + (el.parentElement.querySelector('.lbl').textContent.includes('%') ? '' : '+');
+    if (count >= target) clearInterval(interval);
+  }, 40);
+}
+
+const reveals = document.querySelectorAll(".reveal");
+const counters = document.querySelectorAll(".num[data-target]");
+let countersStarted = false;
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add("visible");
   });
+}, { threshold: 0.12 });
+
+reveals.forEach(el => observer.observe(el));
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !countersStarted) {
+      countersStarted = true;
+      counters.forEach(animateCounter);
+    }
+  });
+}, { threshold: 0.5 });
+
+const statRow = document.querySelector(".stat-row");
+if (statRow) counterObserver.observe(statRow);
+
+const tabs = document.querySelectorAll(".ftab");
+const sectionLabels = document.querySelectorAll(".section-label[data-cat]");
+const cardGroups = document.querySelectorAll(".scroll-cards[data-cat]");
+const caseItems = document.querySelectorAll(".case[data-cat]");
+const videoWraps = document.querySelectorAll(".showcase-video-wrap[data-cat]");
+const emptyState = document.getElementById("empty-state");
+
+function applyFilter(filter) {
+  let visibleCount = 0;
+
+  sectionLabels.forEach(label => {
+    const cat = label.getAttribute("data-cat");
+    const matches = filter === "all" || cat === filter || (cat === "all-cases" && filter !== "website");
+    label.style.display = matches ? "" : "none";
+  });
+
+  cardGroups.forEach(group => {
+    const cat = group.getAttribute("data-cat");
+    const matches = filter === "all" || cat === filter;
+    group.style.display = matches ? "" : "none";
+    if (matches) visibleCount++;
+  });
+
+  caseItems.forEach(item => {
+    const cat = item.getAttribute("data-cat");
+    const matches = filter === "all" || cat === filter;
+    item.style.display = matches ? "" : "none";
+    if (matches) visibleCount++;
+  });
+
+  videoWraps.forEach(wrap => {
+    const cat = wrap.getAttribute("data-cat");
+    const matches = filter === "all" || cat === filter;
+    wrap.style.display = matches ? "" : "none";
+  });
+
+  const caseStudiesLabel = document.querySelector('.section-label[data-cat="all-cases"]');
+  const anyCaseVisible = Array.from(caseItems).some(item => item.style.display !== "none");
+  if (caseStudiesLabel) caseStudiesLabel.style.display = anyCaseVisible ? "" : "none";
+
+  emptyState.classList.toggle("show", visibleCount === 0);
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    if (el.style.display !== "none") el.classList.add("visible");
+  });
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    tabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    applyFilter(tab.getAttribute("data-filter"));
+  });
+});
+
+applyFilter("all");
+
+function setupSplitImageScroll() {
+  const HOVER_VISIBLE_HEIGHT = 300;
+  const MIN_DURATION = 4;
+  const MAX_DURATION = 16;
+  const PIXELS_PER_SECOND = 55;
+
+  document.querySelectorAll(".scard-split .split-img").forEach(wrap => {
+    const img = wrap.querySelector("img");
+    if (!img) return;
+
+    function recalc() {
+      if (!img.naturalWidth || !img.naturalHeight) return;
+      const displayedWidth = wrap.clientWidth;
+      const scale = displayedWidth / img.naturalWidth;
+      const displayedHeight = img.naturalHeight * scale;
+      const distance = Math.max(0, displayedHeight - HOVER_VISIBLE_HEIGHT);
+
+      wrap.style.setProperty("--scroll-distance", distance + "px");
+
+      const duration = Math.min(MAX_DURATION, Math.max(MIN_DURATION, distance / PIXELS_PER_SECOND));
+      img.style.transitionDuration = duration + "s";
+    }
+
+    if (img.complete && img.naturalWidth) {
+      recalc();
+    } else {
+      img.addEventListener("load", recalc);
+    }
+    window.addEventListener("resize", recalc);
+  });
+}
+setupSplitImageScroll();
+
+fetch("footer.html")
+  .then(r => r.text())
+  .then(d => { document.getElementById("footer").innerHTML = d; });
 </script>
-<script>
-  lucide.createIcons();
-</script>
+
 </body>
 </html>
-
