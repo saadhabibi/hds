@@ -511,7 +511,7 @@
     color: rgba(108,62,244,0.12);
   }
   .tcard .stars { display: flex; gap: 2px; margin-bottom: 14px; }
-  .tcard .stars i { width: 14px; height: 14px; color: #facc15; fill: #facc15; }
+  .tcard .stars i { width: 14px; height: 14px; color: #FFD700; fill: #FFD700; }
   .tcard blockquote { font-size: 14px; color: var(--text2); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
   .tcard .tauthor { display: flex; align-items: center; gap: 12px; }
   .tcard .tavatar {
@@ -729,28 +729,6 @@
   <span class="eyebrow"><i data-lucide="sparkles"></i>Our Work</span>
   <h1>Real Results for<br><em>Real Businesses</em></h1>
   <p>Websites, GMB, SEO, and Marketing — on every project, we've helped businesses win more calls and customers.</p>
-  <div class="stat-row">
-    <div class="stat-item">
-      <i data-lucide="layout-template"></i>
-      <span class="num" data-target="20">0</span>
-      <span class="lbl">Projects Delivered</span>
-    </div>
-    <div class="stat-item">
-      <i data-lucide="smile"></i>
-      <span class="num" data-target="15">0</span>
-      <span class="lbl">Happy Clients</span>
-    </div>
-    <div class="stat-item">
-      <i data-lucide="map-pin"></i>
-      <span class="num" data-target="3">0</span>
-      <span class="lbl">Cities Served</span>
-    </div>
-    <div class="stat-item">
-      <i data-lucide="shield-check"></i>
-      <span class="num" data-target="100">0</span>
-      <span class="lbl">% Honest Work</span>
-    </div>
-  </div>
 </section>
 
 <div class="filter-section">
@@ -759,7 +737,6 @@
     <button class="ftab" data-filter="website"><i data-lucide="globe"></i>Websites</button>
     <button class="ftab" data-filter="gmb"><i data-lucide="map-pin"></i>GMB / SEO</button>
     <button class="ftab" data-filter="marketing"><i data-lucide="megaphone"></i>Marketing</button>
-    <button class="ftab" data-filter="social"><i data-lucide="share-2"></i>Social Media</button>
   </div>
 </div>
 
@@ -785,7 +762,7 @@
       <span class="split-tag"><i data-lucide="code"></i>Website Development</span>
       <h3>Shri Ram Public School Shiksha Samiti</h3>
       <p>Fully responsive, modern multi-page school website — built and customized exactly as per the client's requirements</p>
-      <a href="#" target="_blank" class="split-link">
+      <a href="https://www.srpses.org" target="_blank" class="split-link">
         Visit Website <i data-lucide="arrow-up-right"></i>
       </a>
     </div>
@@ -835,33 +812,6 @@
 </div>
 
 <div class="cases">
-
-  <div class="case reveal" data-cat="website">
-    <div class="case-media frame-blue">
-     <img src="i/lo.png">
-     
-    </div>
-    <div class="case-body">
-      <span class="eyebrow"><i data-lucide="bookmark"></i>Case Study 01 · LeoBerry Shoes, Agra</span>
-      <h2>Taking a Shoe Business Online — Sales Inquiries Started Rolling In</h2>
-      <p>LeoBerry Shoes had no online presence at all. Customers only came in through walk-ins. We built a full luxury website for them — dark theme, mobile-first, with a WhatsApp CTA built around the product showcase.</p>
-      <p>After launch, the business started receiving direct WhatsApp inquiries and began showing up on Google.</p>
-      <div class="results">
-        <div class="rpill"><i data-lucide="check-circle-2"></i><span class="rnum">Live</span><span class="rlbl">Website Live</span></div>
-        <div class="rpill"><i data-lucide="message-circle"></i><span class="rnum">WA</span><span class="rlbl">WhatsApp Leads</span></div>
-        <div class="rpill"><i data-lucide="smartphone"></i><span class="rnum">100%</span><span class="rlbl">Mobile First</span></div>
-      </div>
-      <div class="services-used">
-        <span class="stag"><i data-lucide="code"></i>Website Development</span>
-        <span class="stag"><i data-lucide="smartphone"></i>Mobile Design</span>
-        <span class="stag"><i data-lucide="message-circle"></i>WhatsApp CTA</span>
-        <span class="stag"><i data-lucide="search"></i>SEO Setup</span>
-      </div>
-      <a href="https://leoberryshoes.com/" target="_blank" class="scard-link" style="margin-top:20px;font-size:13px;">
-        View Live Website <i data-lucide="arrow-up-right"></i>
-      </a>
-    </div>
-  </div>
 
   <div class="case rev reveal" data-cat="marketing">
     <div class="case-media frame-green">
@@ -1035,20 +985,7 @@ document.getElementById("mobile-company-btn").addEventListener("click", () => {
   document.getElementById("mobile-company-menu").classList.toggle("hidden");
 });
 
-function animateCounter(el) {
-  const target = parseInt(el.getAttribute("data-target"));
-  let count = 0;
-  const step = Math.ceil(target / 40);
-  const interval = setInterval(() => {
-    count = Math.min(count + step, target);
-    el.textContent = count + (el.parentElement.querySelector('.lbl').textContent.includes('%') ? '' : '+');
-    if (count >= target) clearInterval(interval);
-  }, 40);
-}
-
 const reveals = document.querySelectorAll(".reveal");
-const counters = document.querySelectorAll(".num[data-target]");
-let countersStarted = false;
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -1057,18 +994,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 reveals.forEach(el => observer.observe(el));
-
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting && !countersStarted) {
-      countersStarted = true;
-      counters.forEach(animateCounter);
-    }
-  });
-}, { threshold: 0.5 });
-
-const statRow = document.querySelector(".stat-row");
-if (statRow) counterObserver.observe(statRow);
 
 const tabs = document.querySelectorAll(".ftab");
 const sectionLabels = document.querySelectorAll(".section-label[data-cat]");
