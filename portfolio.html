@@ -368,7 +368,7 @@
   .case.rev { direction: rtl; }
   .case.rev > * { direction: ltr; }
 
-  .case-media { position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
+  .case-media { position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); background: #f6f5ff; display: flex; align-items: center; justify-content: center; }
   .case-media img { width: 100%; display: block; border-radius: 18px; transition: transform 0.5s ease; }
   .case-media:hover img { transform: scale(1.03); }
   .case-media video { width: 100%; height: 400px; display: block; border-radius: 18px; object-fit: cover; }
@@ -559,7 +559,7 @@
   @media(max-width: 900px) {
     .case { grid-template-columns: 1fr; gap: 28px; }
     .case.rev { direction: ltr; }
-    .case-media img { height: 280px !important; }
+    .case-media img { height: auto !important; }
     .testi-grid { grid-template-columns: 1fr; }
   }
   @media(max-width: 640px) {
@@ -840,7 +840,7 @@
 
   <div class="case reveal" data-cat="marketing">
     <div class="case-media">
-      <img src="i/sr2 (1).jpeg" alt="Admission Campaign" style="height:400px;object-fit:cover;">
+      <img src="i/rr.png" alt="Admission Campaign" style="object-fit:contain;">
       <span class="case-badge"><i data-lucide="target"></i>Ad Campaign</span>
     </div>
     <div class="case-body">
@@ -863,7 +863,7 @@
 
   <div class="case rev reveal" data-cat="gmb">
     <div class="case-media">
-      <img src="i/den (2).png" alt="GMB Optimization" style="height:400px;object-fit:cover;">
+      <img src="i/rt.png" alt="GMB Optimization" style="height:400px;object-fit:cover;object-position:top;">
       <span class="case-badge"><i data-lucide="map-pin"></i>GMB Optimization</span>
     </div>
     <div class="case-body">
