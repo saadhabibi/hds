@@ -414,17 +414,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible{
   .wa-float{right:16px; bottom:16px; width:52px; height:52px; font-size:1.4rem;}
 }
 
-/* ============================================
-   FOOTER HEADING FIX
-   footer.html is loaded separately via fetch() and its markup isn't
-   visible from this file. The most common cause of "footer heading
-   not showing" is the global h1–h4 rule above forcing indigo text
-   color, which disappears if the footer itself has a dark
-   background. This override makes footer headings inherit the
-   footer's own text color instead of the global indigo, and removes
-   any leftover opacity/transform from .reveal if the footer reuses
-   that class without ever getting the is-visible trigger.
-   ============================================ */
+
 #footer h1, #footer h2, #footer h3, #footer h4{
   color:inherit;
 }
