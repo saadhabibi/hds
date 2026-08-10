@@ -156,7 +156,7 @@
     object-fit: cover;
   }
 
-  .site-preview { padding: 0; }
+  .site-preview { padding: 0; position: relative; }
   .site-header-mock {
     background: var(--grad); padding: 18px 20px;
     display: flex; justify-content: space-between; align-items: center;
@@ -265,26 +265,23 @@
   }
   .package-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; }
   .package-card.featured .package-name { color: white; }
-  .package-desc { font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .package-desc { font-size: 0.85rem; margin-bottom: 1.5rem; color: var(--muted); }
   .package-card.featured .package-desc { color: rgba(255,255,255,0.8); }
-  .package-desc:not(.featured .package-desc) { color: var(--muted); }
-  .package-price { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 600; margin-bottom: 1.5rem; }
+  .package-price { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--purple-mid); }
   .package-card.featured .package-price { color: rgba(255,255,255,0.9); }
-  .package-price:not(.featured .package-price) { color: var(--purple-mid); }
   .package-features { list-style: none; margin-bottom: 1.8rem; display: flex; flex-direction: column; gap: 0.7rem; }
   .package-features li { font-size: 0.88rem; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
   .package-card.featured .package-features li { color: rgba(255,255,255,0.92); }
-  .package-features li::before { content: '✓'; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
-  .package-card:not(.featured) .package-features li::before { color: var(--purple-mid); }
+  .package-features li::before { content: '✓'; font-weight: 800; flex-shrink: 0; margin-top: 1px; color: var(--purple-mid); }
   .package-card.featured .package-features li::before { color: #FFD700; }
   .pkg-btn {
     display: block; text-align: center; padding: 0.85rem;
     border-radius: 50px; font-size: 0.9rem; font-weight: 700;
     text-decoration: none; transition: all .3s;
+    background: var(--grad); color: white; box-shadow: 0 6px 18px rgba(83,74,183,0.25);
   }
-  .package-card:not(.featured) .pkg-btn { background: var(--grad); color: white; box-shadow: 0 6px 18px rgba(83,74,183,0.25); }
   .package-card:not(.featured) .pkg-btn:hover { box-shadow: 0 10px 28px rgba(83,74,183,0.4); transform: translateY(-1px); }
-  .package-card.featured .pkg-btn { background: white; color: var(--purple-mid); }
+  .package-card.featured .pkg-btn { background: white; color: var(--purple-mid); box-shadow: none; }
   .package-card.featured .pkg-btn:hover { background: #f0eefd; }
 
   /* ---- TECH STACK ---- */
@@ -537,7 +534,7 @@
     <div>
       <div class="hero-badge"><span></span> Web Development Experts</div>
       <h1>Build a Website That Actually <span class="gradient-text">Gets You Customers</span></h1>
-      <p class="hero-desc">We design and develop fast, mobile-friendly, SEO-optimized websites that help local businesses in India get more calls, WhatsApp inquiries, and real results — not just a pretty design.</p>
+      <p class="hero-desc">We design and develop fast, mobile-friendly, SEO-optimized websites that help businesses get more calls, WhatsApp inquiries, and real results — not just a pretty design.</p>
       <div class="hero-btns">
         <a href="https://wa.me/919458265093?text=Hello%20Habibi%20Digital,%20I%20need%20a%20website" class="btn-primary"> <i class="fa-brands fa-whatsapp"></i> WhatsApp Us Now</a>
         <a href="#packages" class="btn-secondary">View Packages →</a>
@@ -550,20 +547,44 @@
       </div>
     </div>
 
-    <!-- Hero Visual: Website Screenshot with Browser Frame -->
+    <!-- Hero Visual: CSS-built browser mockup (no external screenshot dependency) -->
     <div class="hero-visual">
       <div class="browser-bar">
         <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
         <div class="url-bar">🔒 www.habibidigital.in</div>
       </div>
-      <!-- Website screenshot image - replace src with your actual screenshot -->
-      <div class="site-img-wrap" style="position:relative;">
-        <img
-          src="i/habibidigitalsolution2.png"
-          alt="Habibi Digital Solution Website Preview"
-          onerror="this.parentElement.innerHTML=getFallback()"
-          style="width:100%; display:block; min-height:300px; object-fit:cover;"
-        />
+      <div class="site-preview">
+        <div class="site-header-mock">
+          <div class="mock-logo">Habibi Digital Solution</div>
+          <div class="mock-nav">
+            <span>Home</span><span>Services</span><span>Contact</span>
+          </div>
+        </div>
+        <div class="site-hero-mock">
+          <div class="mock-headline">We Build Websites That Get You Customers</div>
+          <div class="mock-sub">Fast. Mobile-friendly. SEO-optimized. Trusted by 100+ businesses across India.</div>
+          <div class="mock-btn-row">
+            <div class="mock-btn p">💬 WhatsApp</div>
+            <div class="mock-btn s">View Packages</div>
+          </div>
+        </div>
+        <div class="site-cards-mock">
+          <div class="mock-card">
+            <div class="mock-card-icon"></div>
+            <div class="mock-card-title">Landing Page</div>
+            <div class="mock-card-text">Fast 48hr delivery</div>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon"></div>
+            <div class="mock-card-title">Business Site</div>
+            <div class="mock-card-text">SEO optimized</div>
+          </div>
+          <div class="mock-card">
+            <div class="mock-card-icon"></div>
+            <div class="mock-card-title">eCommerce</div>
+            <div class="mock-card-text">UPI & Razorpay</div>
+          </div>
+        </div>
         <div class="img-badge">
           <div class="img-badge-dot"></div>
           Live Website • habibidigital.in
@@ -832,45 +853,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
   });
 });
-
-// Fallback mock if screenshot doesn't load
-function getFallback() {
-  return `<div style="padding:0;">
-    <div style="background:linear-gradient(135deg,#534AB7,#185FA5,#378ADD);padding:18px 20px;display:flex;justify-content:space-between;align-items:center;">
-      <div style="font-weight:800;color:white;font-size:0.9rem;">Habibi Digital</div>
-      <div style="display:flex;gap:12px;"><span style="font-size:0.65rem;color:rgba(255,255,255,0.8);">Home</span><span style="font-size:0.65rem;color:rgba(255,255,255,0.8);">Services</span><span style="font-size:0.65rem;color:rgba(255,255,255,0.8);">Contact</span></div>
-    </div>
-    <div style="padding:20px;background:linear-gradient(135deg,#f0eefd,#e8f3fd);">
-      <div style="font-weight:800;color:#26215C;font-size:0.95rem;margin-bottom:6px;">We Build Websites That Get You Customers</div>
-      <div style="font-size:0.65rem;color:#5a5a7a;margin-bottom:12px;line-height:1.5;">Fast. Mobile-friendly. SEO-optimized. Trusted by 100+ businesses across India.</div>
-      <div style="display:flex;gap:8px;">
-        <div style="padding:5px 14px;border-radius:50px;font-size:0.6rem;font-weight:600;background:linear-gradient(135deg,#534AB7,#378ADD);color:white;">💬 WhatsApp</div>
-        <div style="padding:5px 14px;border-radius:50px;font-size:0.6rem;font-weight:600;background:white;color:#534AB7;border:1px solid #7F77DD;">View Packages</div>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:12px 20px 20px;">
-      <div style="background:white;border-radius:8px;padding:10px;border:1px solid rgba(83,74,183,0.15);">
-        <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#534AB7,#378ADD);margin-bottom:6px;"></div>
-        <div style="font-size:0.62rem;font-weight:700;color:#26215C;margin-bottom:3px;">Landing Page</div>
-        <div style="font-size:0.55rem;color:#5a5a7a;line-height:1.4;">Fast 48hr delivery</div>
-      </div>
-      <div style="background:white;border-radius:8px;padding:10px;border:1px solid rgba(83,74,183,0.15);">
-        <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#534AB7,#378ADD);margin-bottom:6px;"></div>
-        <div style="font-size:0.62rem;font-weight:700;color:#26215C;margin-bottom:3px;">Business Site</div>
-        <div style="font-size:0.55rem;color:#5a5a7a;line-height:1.4;">SEO optimized</div>
-      </div>
-      <div style="background:white;border-radius:8px;padding:10px;border:1px solid rgba(83,74,183,0.15);">
-        <div style="width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#534AB7,#378ADD);margin-bottom:6px;"></div>
-        <div style="font-size:0.62rem;font-weight:700;color:#26215C;margin-bottom:3px;">eCommerce</div>
-        <div style="font-size:0.55rem;color:#5a5a7a;line-height:1.4;">UPI & Razorpay</div>
-      </div>
-    </div>
-    <div style="position:absolute;bottom:14px;left:14px;background:white;border-radius:12px;padding:8px 14px;display:flex;align-items:center;gap:8px;box-shadow:0 4px 16px rgba(0,0,0,0.12);font-size:0.75rem;font-weight:600;color:#1a1a2e;">
-      <div style="width:8px;height:8px;border-radius:50%;background:#06d6a0;"></div>
-      Live • habibidigital.in
-    </div>
-  </div>`;
-}
 </script>
 <script>
   lucide.createIcons();
